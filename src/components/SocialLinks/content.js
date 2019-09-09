@@ -1,26 +1,18 @@
-const handle = "johndoe"
-
 const links = [
   {
     label: "Github",
-    url: `https://github.com/${handle}`,
+    url: `https://github.com/eduardolirainfo`,
   },
   {
     label: "Twitter",
-    url: `https://twitter.com/${handle}`,
+    url: `https://twitter.com/dudulira`,
   },
-  {
-    label: "Youtube",
-    url: `https://www.youtube.com/${handle}`,
-  },
+
   {
     label: "Instagram",
-    url: `https://www.instagram.com/${handle}`,
+    url: `https://www.instagram.com/eduardolirainfo`,
   },
-  {
-    label: "Unsplash",
-    url: `https://unsplash.com/${handle}`,
-  },
+
 ]
 
 export default links

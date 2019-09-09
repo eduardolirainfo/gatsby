@@ -9,7 +9,8 @@ import { ThList as List } from "styled-icons/typicons/ThList"
 
 import getThemeColor from "../../utils/getThemeColor"
 
-import * as S from "./styled"
+import * as S from './styled'
+import * as GA from './trackers'
 
 const MenuBar = () => {
   const [theme, setTheme] = useState(null)
@@ -73,7 +74,13 @@ const MenuBar = () => {
         >
           {isListMode ? <Grid /> : <List />}
         </S.MenuBarItem>
-        <S.MenuBarItem title="Ir para o Topo">
+        <S.MenuBarItem
+          title="Ir para o Topo"
+          onClick={() => {
+            GA.topClickTrack()
+            window.scroll({ top: 0, behavior: 'smooth' })
+          }}
+        >
           <Arrow />
         </S.MenuBarItem>
       </S.MenuBarGroup>

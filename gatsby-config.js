@@ -74,8 +74,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Eduardo Lira`,
-        short_name: `Eduardo Lira`,
+        name: `John Doe`,
+        short_name: `John Doe`,
         start_url: `/`,
         background_color: `#16202c`,
         theme_color: `#16202c`,
@@ -87,5 +87,6 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     `gatsby-plugin-offline`,
+    `gatsby-plugin-netlify-cms`,
   ],
 }
