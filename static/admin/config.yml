@@ -3,7 +3,6 @@ backend:
   repo: eduardolirainfo/gatsby
   branch: master
   site_domain: https://eduardolira.xyz
-
 publish_mode: editorial_workflow
 media_folder: "static/assets/img"
 public_folder: "assets/img"
