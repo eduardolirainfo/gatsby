@@ -16,15 +16,11 @@ Uma técnica não muito segura, é definir estas informações no arquivo wp-con
 
 Você pode inserir as linhas abaixo dentro do código PHP deste arquivo (\*\*wp-config.php\*\*):
 
-\`\``php?start_inline=1
+`define('FTP_HOST', 'ftp.seudominio.com.br');`
 
-define('FTP_HOST', 'ftp.seudominio.com.br');
+`define('FTP_USER', 'usuarioftp');`
 
-define('FTP_USER', 'usuarioftp');
-
-define('FTP_PASS', 'senhaftp');
-
-\`\``
+`define('FTP_PASS', 'senhaftp');`
 
 Após inserido o código acima, chega de toda vez que for instalar um plugin, ser solicitados tais dados de acesso FTP.
 
@@ -34,14 +30,10 @@ Existe uma outra técnica que pode funcionar e não expõe seus dados de acesso.
 
 Insira somente a última linha de código abaixo no arquivo\*\* wp-config.php\*\*. Preferencialmente abaixo da que chama o \*\*wp-settings.php\*\*.
 
-\`\``php?start_inline=1
-
 /\*\* Sets up WordPress vars and included files. */
 
 require_once(ABSPATH . 'wp-settings.php');
 
 define('FS_METHOD','direct');
-
-\`\``
 
 Até a próxima!
