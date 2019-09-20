@@ -30,10 +30,10 @@ Existe uma outra técnica que pode funcionar e não expõe seus dados de acesso.
 
 Insira somente a última linha de código abaixo no arquivo\*\* wp-config.php\*\*. Preferencialmente abaixo da que chama o \*\*wp-settings.php\*\*.
 
-/\*\* Sets up WordPress vars and included files. */
+`/** Sets up WordPress vars and included files. */`
 
-require_once(ABSPATH . 'wp-settings.php');
+`require_once(ABSPATH . 'wp-settings.php');`
 
-define('FS_METHOD','direct');
+`define('FS_METHOD','direct');`
 
 Até a próxima!
