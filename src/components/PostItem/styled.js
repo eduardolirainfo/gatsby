@@ -2,6 +2,8 @@ import styled from "styled-components"
 import media from "styled-media-query"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 
+import transitions from "../../styles/transitions"
+
 export const PostItemLink = styled(AniLink)`
   color: var(--texts);
   display: flex;
@@ -10,10 +12,33 @@ export const PostItemLink = styled(AniLink)`
   body#grid & {
     background-color: var(--background);
   }
-
-  &:hover {
+    -webkit-box-shadow:0 1px 1px rgba(0,0,0,0.15),0 10px 0 -5px var(--background),0 10px 1px -4px rgba(0,0,0,0.15),0 20px 0 -10px var(--background),0 20px 1px -9px rgba(0,0,0,0.15);
+    box-shadow:0 1px 1px rgba(0,0,0,0.15),0 10px 0 -5px var(--background),0 10px 1px -4px rgba(0,0,0,0.15),0 20px 0 -10px var(--background),0 20px 1px -9px rgba(0,0,0,0.15);
+    -webkit-transition:all ease-in-out .3s;
+    -webkit-transition:all ease-in-out .3s;
+    transition:all ease-in-out .3s
+    position: relative;
+    margin: .1rem 0 1rem 0;
+    -webkit-transition: -webkit-box-shadow .25s;
+    -webkit-transition: -webkit-box-shadow .25s;
+    transition: -webkit-box-shadow .25s;
+    -webkit-transition: box-shadow .25s;
+    transition: box-shadow .25s;
+    transition: box-shadow .25s, -webkit-box-shadow .25s;
+    -webkit-transition: box-shadow .25s,-webkit-box-shadow .25s;
+    transition: box-shadow .25s,-webkit-box-shadow .25s;
+    border-radius: 2px;
+  
+  &:hover{
+    -webkit-transition:all ease .3s;
+    transition:all ease .3s;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%238e75b6' fill-opacity='0.4' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
     color: var(--highlight);
+    -webkit-box-shadow:0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    box-shadow:0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19)
   }
+
+
 `
 
 export const PostItemWrapper = styled.section`
@@ -29,6 +54,15 @@ export const PostItemWrapper = styled.section`
     flex-direction: column;
     justify-content: center;
   }
+  body#grid &:hover{
+    -webkit-transition:all ease .3s;
+    transition:all ease .3s;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%238e75b6' fill-opacity='0.4' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+    color:#fff
+    -webkit-box-shadow:0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    box-shadow:0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19)
+  
+  }
 
   ${media.lessThan("large")`
     align-items: flex-start;
@@ -39,10 +73,8 @@ export const PostItemWrapper = styled.section`
 
 export const PostItemTag = styled.div`
   align-items: center;
-  background: ${props =>
-    props.background ? props.background : "var(--highlight)"};
-  border-radius: 50%;
-  color: #fff;
+  border-radius: 5% 40% 5%;
+  color: var(--texts);
   display: flex;
   font-size: 1.3rem;
   font-weight: 700;
@@ -50,6 +82,14 @@ export const PostItemTag = styled.div`
   min-height: 90px;
   min-width: 90px;
   text-transform: uppercase;
+  transition: ${transitions.ALL};
+  border: 0.1rem dashed
+    ${props => (props.background ? props.background : " var(--highlight)")};
+  &:hover {
+    color: ${props =>
+      props.background ? props.background : " var(--highlight)"};
+    transition: ${transitions.COLOR};
+  }
 
   ${media.lessThan("large")`
     border-radius: 0;

@@ -6,7 +6,6 @@ import SocialLinks from '../components/SocialLinks'
 
 import { MainContent } from '../styles/base'
 
-
 const AboutPage = () => (
   <Layout>
     <SEO
@@ -14,8 +13,15 @@ const AboutPage = () => (
       description="Saiba um pouco mais sobre o desenvolvedor por trás deste blog."
     />
     <MainContent>
-
-
+      <h1>Sobre mim</h1>
+      <p>
+        Meu nome é Eduardo Lira, nasci no Rio de janeiro/RJ e
+        atualmente sou desenvolvedor na {' '}
+        <a href="https://studiovs.com.br" target="_blank" rel="noopener noreferrer">
+          Studio VS 
+        </a>
+      </p>
+      
 
       <SocialLinks hideStyle />
     </MainContent>

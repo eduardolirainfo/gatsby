@@ -1,7 +1,9 @@
-import styled from "styled-components"
-import media from "styled-media-query"
+import styled from 'styled-components'
+import media from 'styled-media-query'
 
-export const SidebarWrapper = styled.aside`
+import transitions from '../../styles/transitions'
+
+export const SidebarContainer = styled.aside`
   align-items: center;
   border-right: 1px solid var(--borders);
   background: var(--mediumBackground);
@@ -12,11 +14,13 @@ export const SidebarWrapper = styled.aside`
   padding: 2rem;
   text-align: center;
   width: 20rem;
+  transition: ${transitions.ALL};
 
-  ${media.lessThan("large")`
+  ${media.lessThan('large')`
     align-items: flex-start;
     height: auto;
-    padding: 1rem 2rem;
+    padding: 1rem;
+    position: inherit;
     width: 100%;
   `}
 `

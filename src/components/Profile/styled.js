@@ -2,6 +2,8 @@ import styled from "styled-components"
 import media from "styled-media-query"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 
+import transitions from '../../styles/transitions'
+
 export const ProfileWrapper = styled.section`
   color: var(--texts);
   display: flex;
@@ -11,7 +13,7 @@ export const ProfileWrapper = styled.section`
 export const ProfileLink = styled(AniLink)`
   color: var(--texts);
   text-decoration: none;
-  transition: color 0.5s;
+  transition: ${transitions.COLOR};
 
   ${media.lessThan("large")`
     display: flex;

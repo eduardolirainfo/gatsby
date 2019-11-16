@@ -1,42 +1,36 @@
-import React from "react"
-import propTypes from "prop-types"
-import AniLink from "gatsby-plugin-transition-link/AniLink"
+import React from 'react'
+import propTypes from 'prop-types'
 
-import getThemeColor from "../../utils/getThemeColor"
-import * as S from "./styled"
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
+import getThemeColor from '../../utils/getThemeColor'
 
-const Pagination = ({
-  isFirst,
-  isLast,
-  currentPage,
-  numPages,
-  prevPage,
-  nextPage,
-}) => (
+import * as S from './styled'
+
+const Pagination = props => (
   <S.PaginationWrapper>
-    {!isFirst && (
+    {!props.isFirst && (
       <AniLink
-        to={prevPage}
+        to={props.prevPage}
+        rel="prev"
         cover
         direction="left"
         bg={getThemeColor()}
-        duration={0.6}
       >
-        ← página anterior
+        ← Página Anterior
       </AniLink>
     )}
     <p>
-      {currentPage} de {numPages}
+      {props.currentPage} de {props.numPages}
     </p>
-    {!isLast && (
+    {!props.isLast && (
       <AniLink
-        to={nextPage}
+        to={props.nextPage}
+        rel="next"
         cover
         direction="right"
         bg={getThemeColor()}
-        duration={0.6}
       >
-        proxima página →
+        Próxima Página →
       </AniLink>
     )}
   </S.PaginationWrapper>
@@ -47,8 +41,8 @@ Pagination.propTypes = {
   isLast: propTypes.bool.isRequired,
   currentPage: propTypes.number.isRequired,
   numPages: propTypes.number.isRequired,
-  prevPage: propTypes.string,
-  nextPage: propTypes.string,
+  prevPage: propTypes.string.isRequired,
+  nextPage: propTypes.string.isRequired
 }
 
 export default Pagination

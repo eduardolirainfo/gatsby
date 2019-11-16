@@ -1,6 +1,8 @@
 import styled from "styled-components"
 import media from "styled-media-query"
 
+import transitions from '../../styles/transitions'
+
 export const SocialLinksWrapper = styled.nav`
   margin: 2rem auto;
   width: 100%;
@@ -22,8 +24,7 @@ export const SocialLinksItem = styled.li``
 export const SocialLinksLink = styled.a`
   color: var(--texts);
   text-decoration: none;
-  transition: color 0.5s;
-
+  transition: ${transitions.COLOR};
   &:hover {
     color: var(--highlight);
   }
