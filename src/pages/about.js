@@ -1,10 +1,10 @@
-import React from 'react'
+import React from "react"
 
-import Layout from '../components/Layout/'
-import SEO from '../components/Seo'
-import SocialLinks from '../components/SocialLinks'
+import Layout from "../components/Layout/"
+import SEO from "../components/Seo"
+import SocialLinks from "../components/SocialLinks"
 
-import { MainContent } from '../styles/base'
+import { MainContent } from "../styles/base"
 
 const AboutPage = () => (
   <Layout>
@@ -15,13 +15,16 @@ const AboutPage = () => (
     <MainContent>
       <h1>Sobre mim</h1>
       <p>
-        Meu nome é Eduardo Lira, nasci no Rio de janeiro/RJ e
-        atualmente sou desenvolvedor na {' '}
-        <a href="https://studiovs.com.br" target="_blank" rel="noopener noreferrer">
-          Studio VS 
+        Meu nome é Eduardo Lira, nasci no Rio de janeiro/RJ e atualmente sou
+        desenvolvedor na{" "}
+        <a
+          href="http://studiovs.com.br/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Studio VS
         </a>
       </p>
-      
 
       <SocialLinks hideStyle />
     </MainContent>
