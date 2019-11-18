@@ -69,8 +69,8 @@ Os desenvolvedores do Gatsby usam Node.js, React, GraphQL e Webpack para definir
 
 Em vez de duplicar o conteúdo de outros lugares, vincularemos você a alguns dos nossos recursos favoritos que, na nossa opinião, explicam o que é o Gatsby e por que você deve usá-lo.
 
-* GatsbyJS - construindo sites modernos e rápidos com React Kyle Mathews (@kylemathews): uma palestra relâmpago do fundador da Gatsby, Kyle Mathews, dando uma visão geral do projeto.
-* gatsbyjs.org: A casa oficial do projeto Gatsby de código aberto. Cotains alguns ótimos guias de introdução e a documentação oficial do projeto.
+* [GatsbyJS - construindo sites modernos e rápidos com React Kyle Mathews (@kylemathews):](https://www.youtube.com/watch?v=-EftEYczRVI) uma palestra relâmpago do fundador da Gatsby, Kyle Mathews, dando uma visão geral do projeto.
+* [gatsbyjs.org](https://www.gatsbyjs.com/): A casa oficial do projeto Gatsby de código aberto. Cotains alguns ótimos guias de introdução e a documentação oficial do projeto.
 * gatsbyjs.com: a organização comercial que apoia o desenvolvimento da Gatsby. O site deles faz um bom trabalho ao vender o conjunto de recursos do Gatsby e fornecer alguns exemplos de casos de uso para os tipos de coisas que o Gatsby realmente faz bem.
 
 Uma primeira olhada no Gatsby, um gerador de sites estáticos para o React: este vídeo da LevelUpTuts oferece uma excelente visão geral do Gatsby e da tecnologia subjacente.
