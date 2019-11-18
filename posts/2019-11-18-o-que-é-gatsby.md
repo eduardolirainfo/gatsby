@@ -26,6 +26,8 @@ Explique o que é Gatsby, por que você pode querer usá-lo e para quais casos d
 
 Simplificando, o Gatsby é uma ferramenta CLI, escrita em Node, que gera pacotes estáticos de HTML e JavaScript executando a renderização no servidor de um aplicativo React. Você fornece componentes React e cospe arquivos HTML otimizados.
 
+![Gatsby is a CLI tool](/assets/img/gatsby-and-drupal.png "Gatsby is a CLI tool")
+
 ## Ilustração mostrando o componente React sendo convertido em HTML estático.
 
 Os aplicativos Gatsby são mais do que apenas HTML estático. Ao usar a hidratação, depois que os ativos HTML estáticos são exibidos ao usuário, o HTML DOM é hidratado com o mesmo aplicativo React que foi usado para gerar o HTML em primeiro lugar. Nesse ponto, ele é transformado em um aplicativo Web progressivo completo.
