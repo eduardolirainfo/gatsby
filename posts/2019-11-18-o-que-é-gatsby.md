@@ -18,7 +18,7 @@ O Gatsby (https://www.gatsbyjs.org/) é um gerador de aplicativos da Web diverti
 
 No final deste tutorial, você deve entender melhor o que é o Gatsby e o que você pode fazer com ele.
 
-Objetivo
+## Objetivo
 
 Explique o que é Gatsby, por que você pode querer usá-lo e para quais casos de uso é bom.
 
