@@ -12,9 +12,8 @@ O Gatsby (https://www.gatsbyjs.org/) é um gerador de aplicativos da Web diverti
 
 ## Neste tutorial, vamos:
 
-\    Forneça uma breve visão geral do que é Gatsby
-
-\    Link para muitos recursos adicionais para explorar mais sobre o Gatsby e seus casos de uso
+* Forneça uma breve visão geral do que é Gatsby
+* Link para muitos recursos adicionais para explorar mais sobre o Gatsby e seus casos de uso
 
 No final deste tutorial, você deve entender melhor o que é o Gatsby e o que você pode fazer com ele.
 
@@ -44,15 +43,11 @@ Tweet do @acdlite diz; Dica: Ao avaliar as bibliotecas, verifique se está muito
 
 O Gatsby faz várias coisas automaticamente para você, assim você não precisa se preocupar em implementar as melhores práticas, incluindo o seguinte:
 
-\    Divisão de código baseada em rota
-
-\    Recursos críticos essenciais
-
-\    Rotas de pré-busca / pré-cache
-
-\    Otimizações de imagem
-
-\    Trabalhadores de serviço para suporte offline
+* Divisão de código baseada em rota
+* Recursos críticos essenciais
+* Rotas de pré-busca / pré-cache
+* Otimizações de imagem
+* Trabalhadores de serviço para suporte offline
 
 A maior parte disso é feita nos bastidores para você. Em muitos casos, à medida que novas técnicas se tornam disponíveis, o Gatsby poderá implementá-las e usá-las em seu aplicativo, sem que você precise fazer nada.
 
@@ -74,15 +69,13 @@ Os desenvolvedores do Gatsby usam Node.js, React, GraphQL e Webpack para definir
 
 Em vez de duplicar o conteúdo de outros lugares, vincularemos você a alguns dos nossos recursos favoritos que, na nossa opinião, explicam o que é o Gatsby e por que você deve usá-lo.
 
-\    GatsbyJS - construindo sites modernos e rápidos com React Kyle Mathews (@kylemathews): uma palestra relâmpago do fundador da Gatsby, Kyle Mathews, dando uma visão geral do projeto.
-
-\    gatsbyjs.org: A casa oficial do projeto Gatsby de código aberto. Cotains alguns ótimos guias de introdução e a documentação oficial do projeto.
-
-\    gatsbyjs.com: a organização comercial que apoia o desenvolvimento da Gatsby. O site deles faz um bom trabalho ao vender o conjunto de recursos do Gatsby e fornecer alguns exemplos de casos de uso para os tipos de coisas que o Gatsby realmente faz bem.
+* GatsbyJS - construindo sites modernos e rápidos com React Kyle Mathews (@kylemathews): uma palestra relâmpago do fundador da Gatsby, Kyle Mathews, dando uma visão geral do projeto.
+* gatsbyjs.org: A casa oficial do projeto Gatsby de código aberto. Cotains alguns ótimos guias de introdução e a documentação oficial do projeto.
+* gatsbyjs.com: a organização comercial que apoia o desenvolvimento da Gatsby. O site deles faz um bom trabalho ao vender o conjunto de recursos do Gatsby e fornecer alguns exemplos de casos de uso para os tipos de coisas que o Gatsby realmente faz bem.
 
 Uma primeira olhada no Gatsby, um gerador de sites estáticos para o React: este vídeo da LevelUpTuts oferece uma excelente visão geral do Gatsby e da tecnologia subjacente.
 
-\    Web Performance 101 - também, por que o Gatsby é tão rápido?
+* Web Performance 101 - também, por que o Gatsby é tão rápido?
 
 Confira o Gatsby Showcase para exemplos de aplicativos criados com o Gatsby.
 
