@@ -1,6 +1,8 @@
 import styled from "styled-components"
 import media from "styled-media-query"
 
+import transitions from "../../styles/transitions"
+
 export const SearchWrapper = styled.section`
   background: var(--background);
   display: flex;
@@ -42,10 +44,11 @@ export const SearchWrapper = styled.section`
       border-bottom: 1px solid var(--borders);
       border-top: 1px solid var(--borders);
       display: grid;
-      grid-area: card;
+      grid-area: grid;
       grid-gap: 1px;
       grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
       margin-top: 2rem;
+      transition: ${transitions.ALL};
     }
 
     .ais-Hits-item {

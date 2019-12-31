@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import media from "styled-media-query"
-import AniLink from 'gatsby-plugin-transition-link/AniLink'
-import transitions from '../../styles/transitions';
+import AniLink from "gatsby-plugin-transition-link/AniLink"
+import transitions from "../../styles/transitions"
 
 export const MainContent = styled.section`
   margin: auto;
@@ -183,14 +183,14 @@ export const MainContent = styled.section`
     border-bottom: 1px dashed var(--highlight);
     color: var(--highlight);
     text-decoration: none;
-    transition: opacity 0.5s;
-
+    transition: ${transitions.ALL};
     svg {
       color: var(--postColor);
     }
 
     &:hover {
-      opacity: 0.8;
+      opacity: 0.5;
+      border-bottom: 1px solid var(--highlight);
     }
   }
 `
@@ -228,14 +228,14 @@ export const PostWrapper = styled.section`
   width: 100%;
   transition: ${transitions.ALL};
   &:not(.disableCard) {
-    body#card & {
+    body#grid & {
       border: none;
       padding: 2rem 1rem;
       flex-direction: column;
       justify-content: center;
     }
   }
-  ${media.lessThan('large')`
+  ${media.lessThan("large")`
     align-items: flex-start;
     flex-direction: column;
     padding: 2rem 1rem;
@@ -247,11 +247,12 @@ export const PostLink = styled(AniLink)`
   display: flex;
   text-decoration: none;
   transition: ${transitions.COLOR};
-  body#card & {
+  body#grid & {
     background-color: var(--background);
   }
   &:hover {
     color: var(--highlight);
+    text-decoration: underline;
   }
 `
 
@@ -289,10 +290,10 @@ export const PostTag = styled.div`
   min-height: 90px;
   min-width: 90px;
   text-transform: uppercase;
-  body#card & {
+  body#grid & {
     margin-bottom: 1.5rem;
   }
-  ${media.lessThan('large')`
+  ${media.lessThan("large")`
     border-radius: 0;
     font-size: 1rem;
     min-height: auto;

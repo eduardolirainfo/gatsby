@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import media from "styled-media-query"
 
-import transitions from '../../styles/transitions'
+import transitions from "../../styles/transitions"
 
 export const LayoutWrapper = styled.section`
   display: flex;
@@ -20,7 +20,7 @@ export const LayoutMain = styled.main`
 
   body#grid & {
     grid-template-areas:
-      "posts"
+      "grid"
       "pagination";
   }
 
