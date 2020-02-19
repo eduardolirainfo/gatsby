@@ -1,7 +1,8 @@
 import "lazysizes"
-//require("prismjs/themes/prism.css")
-import "gatsby-syntax-highlights-dracula"
 // import "gatsby-prismjs-dracula"
+import "gatsby-syntax-highlights-dracula"
+
+// require("prismjs/themes/prism.css")
 
 if (typeof window !== "undefined") {
   // eslint-disable-next-line global-require
