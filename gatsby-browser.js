@@ -1,5 +1,6 @@
 import "lazysizes"
-import "gatsby-syntax-highlights-dracula"
+// import "gatsby-syntax-highlights-dracula"
+require("prismjs/themes/prism-solarizedlight.css")
 
 if (typeof window !== "undefined") {
   // eslint-disable-next-line global-require
