@@ -1,9 +1,10 @@
 ---
-date: 2016-01-10 05:54:23
+date: "2019-03-17"
 title: Imperfection is beauty, madness is genius
 description: And it's better to be absolutely ridiculous than absolutely boring
 category: css
 background: "#24809e"
+path: "/blog/imperfection-is-beauty"
 ---
 
 Proin suscipit luctus orci placerat fringilla. Donec hendrerit laoreet risus eget adipiscing. Suspendisse in urna ligula, a volutpat mauris. Sed enim mi, [bibendum](http://google.com) eu pulvinar vel, sodales vitae dui.

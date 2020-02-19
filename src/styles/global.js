@@ -62,7 +62,7 @@ const GlobalStyles = createGlobalStyle`
   	width: 100%;
   	height: auto;
   }
-  body.dark {
+  /* body.dark {
     --texts: #d4d4dc;
     --postColor: #fff;
     --highlight: #a39274;
@@ -70,10 +70,16 @@ const GlobalStyles = createGlobalStyle`
     --background:  #200526 ;
     --white: #fff;
     --black: #222;
+     pre[class*="language-"]{
+      padding:16px;
+    }
   }
 
-  body.light {
-    --postColor:#333;
+body.dark  pre[class*="language-"], body.dark  code[class*="language-"] {
+    background:none !important;
+}
+body.light {
+    --postColor:#111;
     --texts: #555555;
     --highlight: #00bfed;
     --mediumBackground: #f5f5f5;
@@ -81,5 +87,52 @@ const GlobalStyles = createGlobalStyle`
     --white: #fff;
     --black: #222;
   }
+body.light  pre[class*="language-"]{
+    padding:16px;
+} */
+  body.dark {
+    --texts: #fff;
+    --postColor: #fff;
+    --highlight: #DEB992;
+    --mediumBackground:#27293d;
+    --background: #1e1e2f;
+    --white: #fff;
+    --black: #222;
+    --borders: #343855;
+  }
+
+body.dark  pre[class*="language-"], body.dark  code[class*="language-"] {
+    background:none !important;
+}
+body.light {
+    --postColor:#111;
+    --texts: #555555;
+    --highlight: #00bfed;
+    --mediumBackground: #f5f5f5;
+    --background: #fff;
+    --white: #fff;
+    --black: #222;
+    --borders: #dedede;
+  }
+body.light  pre[class*="language-"]{
+    padding:16px;
+}
+html::-webkit-scrollbar-thumb {
+    background: -webkit-gradient(linear,left top,left bottom,from(#344675),to(#263148));
+    /* background: linear-gradient(180deg,#200526,#07737a); */
+    background-image: linear-gradient(to bottom left,#344675,#263148,#344675);
+    border-radius: 30px;
+    transition:all .15s ease;
+    box-shadow: inset 2px 2px 2px hsla(0,0%,100%,.25), inset -2px -2px 2px rgba(0,0,0,.25);
+}
+html::-webkit-scrollbar-track {
+  background: linear-gradient(90deg,#201c29,#201c29 1px,#100e17 0,#100e17);
+}
+html::-webkit-scrollbar {
+    width: 1rem;
+    height: 1rem;
+}
+
+ 
 `
 export default GlobalStyles
