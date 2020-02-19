@@ -8,6 +8,7 @@ module.exports = {
     position: `Developer`,
     description: `A blog about backend, Frontend development and other cool stuff.`,
     author: `@dudulira`,
+    pathPrefix: "/eduardolirainfo/gatsby",
     siteUrl: `https://eduardolira.xyz`,
   },
   plugins: [
