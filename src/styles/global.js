@@ -97,18 +97,42 @@ body.light  pre[class*="language-"]{
   padding-right: 0.8em;
 }
 
-/* Prompt for all users */
 .command-line-prompt > span[data-user]:before {
   content: "[" attr(data-user) "@" attr(data-host) "] $";
 }
 
-/* Prompt for root */
 .command-line-prompt > span[data-user="root"]:before {
   content: "[" attr(data-user) "@" attr(data-host) "] #";
 }
 
 .command-line-prompt > span[data-prompt]:before {
   content: attr(data-prompt);
+}
+/**
+ * If you already use line highlighting
+ */
+
+/* Adjust the position of the line numbers */
+.gatsby-highlight pre[class*="language-"].line-numbers {
+  padding-left: 2.8em;
+}
+
+/**
+ * If you only want to use line numbering
+ */
+
+.gatsby-highlight {
+  background-color: #fdf6e3;
+  border-radius: 0.3em;
+  margin: 0.5em 0;
+  padding: 1em;
+  overflow: auto;
+}
+
+.gatsby-highlight pre[class*="language-"].line-numbers {
+  padding: 0;
+  padding-left: 2.8em;
+  overflow: initial;
 }
 
   body.dark {
@@ -122,9 +146,9 @@ body.light  pre[class*="language-"]{
     --borders: #343855;
   }
 
-body.dark  pre[class*="language-"], body.dark  code[class*="language-"] {
+/* body.dark  pre[class*="language-"], body.dark  code[class*="language-"] {
     background:none !important;
-}
+} */
 body.light {
     --postColor:#111;
     --texts: #555555;
@@ -135,9 +159,9 @@ body.light {
     --black: #222;
     --borders: #dedede;
   }
-body.light  pre[class*="language-"]{
+/* body.light  pre[class*="language-"]{
     padding:16px;
-}
+} */
 html::-webkit-scrollbar-thumb {
     background: -webkit-gradient(linear,left top,left bottom,from(#344675),to(#263148));
     /* background: linear-gradient(180deg,#200526,#07737a); */
