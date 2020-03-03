@@ -118,6 +118,8 @@ body.light {
 /* body.light  pre[class*="language-"]{
     padding:16px;
 } */
+
+
 html::-webkit-scrollbar-thumb {
     background: -webkit-gradient(linear,left top,left bottom,from(#344675),to(#263148));
     /* background: linear-gradient(180deg,#200526,#07737a); */
