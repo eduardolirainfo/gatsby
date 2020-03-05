@@ -101,10 +101,10 @@ body.light  pre[class*="language-"]{
     --black: #222;
     --borders: #343855;
   }
-
+/* 
 body.dark  pre[class*="language-"], body.dark  code[class*="language-"] {
     background:none !important;
-}
+} */
 body.light {
     --postColor:#111;
     --texts: #555555;
