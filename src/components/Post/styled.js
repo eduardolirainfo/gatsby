@@ -227,6 +227,7 @@ export const PostWrapper = styled.section`
   padding: 2rem 3rem;
   width: 100%;
   transition: ${transitions.ALL};
+
   &:not(.disableCard) {
     body#grid & {
       border: none;
