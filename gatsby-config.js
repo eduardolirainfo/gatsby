@@ -14,7 +14,16 @@ module.exports = {
   plugins: [
     `gatsby-plugin-transition-link`,
     `gatsby-plugin-styled-components`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `posts`,
+        path: `${__dirname}/posts`,
+      },
+    },
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-netlify-cms`,
+
     `gatsby-plugin-netlify`,
 
     // needs to be the first to work with gatsby-remark-images
@@ -24,7 +33,12 @@ module.exports = {
         name: `uploads`,
         path: `${__dirname}/static/assets/img`,
       },
+      resolve: "gatsby-plugin-netlify-cache",
+      options: {
+        cachePublic: true,
+      },
     },
+
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -157,12 +171,5 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     `gatsby-plugin-offline`,
-    `gatsby-plugin-netlify-cms`,
-    {
-      resolve: `gatsby-plugin-netlify-cms`,
-      options: {
-        enableIdentityWidget: false,
-      },
-    },
   ],
 }

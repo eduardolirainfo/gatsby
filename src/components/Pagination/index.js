@@ -1,10 +1,10 @@
-import React from 'react'
-import propTypes from 'prop-types'
+import React from "react"
+import propTypes from "prop-types"
 
-import AniLink from 'gatsby-plugin-transition-link/AniLink'
-import getThemeColor from '../../utils/getThemeColor'
+import AniLink from "gatsby-plugin-transition-link/AniLink"
+import getThemeColor from "../../utils/getThemeColor"
 
-import * as S from './styled'
+import * as S from "./styled"
 
 const Pagination = props => (
   <S.PaginationWrapper>
@@ -42,7 +42,7 @@ Pagination.propTypes = {
   currentPage: propTypes.number.isRequired,
   numPages: propTypes.number.isRequired,
   prevPage: propTypes.string.isRequired,
-  nextPage: propTypes.string.isRequired
+  nextPage: propTypes.string.isRequired,
 }
 
 export default Pagination

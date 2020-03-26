@@ -90,7 +90,7 @@ import SEO from "../components/Seo"
 import PostItem from "../components/PostItem"
 import Pagination from "../components/Pagination"
 
-import * as S from "../components/ListWrapper/styled"
+import * as S from "../components/ListWrapper"
 
 const BlogList = props => {
   const postList = props.data.allMarkdownRemark.edges

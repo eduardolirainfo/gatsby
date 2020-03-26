@@ -2,7 +2,7 @@ import styled from "styled-components"
 import media from "styled-media-query"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 
-import transitions from '../../styles/transitions'
+import transitions from "../../styles/transitions"
 
 export const ProfileWrapper = styled.section`
   color: var(--texts);
