@@ -5,7 +5,11 @@ const links = [
   },
   {
     label: 'Sobre Mim',
-    url: '/about/'
+    url: '/sobre/'
+  },
+  {
+    label: 'Feed RSS',
+    url: '/feed.rss/'
   }
 ]
 

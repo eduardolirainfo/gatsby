@@ -8,6 +8,7 @@ export const LayoutWrapper = styled.section`
 
   ${media.lessThan("large")`
     flex-direction: column;
+    padding-top: 4.125rem;
   `}
 `
 
@@ -15,16 +16,17 @@ export const LayoutMain = styled.main`
   background: var(--background);
   min-height: 100vh;
   padding: 0 3.75rem 0 20rem;
-  transition: ${transitions.BACKGROUND};
+  transition: ${transitions.DEFAULT};
   width: 100%;
 
-  body#grid & {
+  body#card & {
     grid-template-areas:
-      "grid"
+      "card"
       "pagination";
   }
 
   ${media.lessThan("large")`
-    padding: 4.125rem 0 3rem 0;
+    /* padding: 4.125rem 0 3rem 0; */
+    padding: 0 0 3rem 0;
   `}
 `

@@ -1,35 +1,18 @@
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import React from 'react'
+import PropTypes from 'prop-types'
 
-import getThemeColor from "../../utils/getThemeColor"
-import Avatar from "../Avatar"
-import * as S from "./styled"
+import Avatar from '../Avatar'
+import * as S from './styled'
 
-const Profile = () => {
-  const {
-    site: {
-      siteMetadata: { title, position, description },
-    },
-  } = useStaticQuery(graphql`
-    query MySiteMetadata {
-      site {
-        siteMetadata {
-          title
-          position
-          description
-        }
-      }
-    }
-  `)
+import getThemeColor from '../../utils/getThemeColor'
 
+const Profile = ({ title, position, authorDescription }) => {
   return (
-    <S.ProfileWrapper>
+    <S.ProfileContainer>
       <S.ProfileLink
+        paintDrip
         to="/"
-        cover
-        direction="left"
-        bg={getThemeColor()}
-        duration={0.6}
+        hex={getThemeColor()}
       >
         <Avatar />
         <S.ProfileAuthor>
@@ -37,9 +20,15 @@ const Profile = () => {
           <S.ProfilePosition>{position}</S.ProfilePosition>
         </S.ProfileAuthor>
       </S.ProfileLink>
-      <S.ProfileDescription>{description}</S.ProfileDescription>
-    </S.ProfileWrapper>
+      <S.ProfileDescription>{authorDescription}</S.ProfileDescription>
+    </S.ProfileContainer>
   )
+}
+
+Profile.propTypes = {
+  title: PropTypes.string.isRequired,
+  position: PropTypes.string.isRequired,
+  authorDescription: PropTypes.string.isRequired
 }
 
 export default Profile

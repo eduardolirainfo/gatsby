@@ -5,9 +5,10 @@ import AniLink from "gatsby-plugin-transition-link/AniLink"
 import transitions from "../../styles/transitions"
 
 export const RecommendedWrapper = styled.section`
-  border-bottom: 1px solid var(--borders);
-  border-top: 1px solid var(--borders);
+  /* border-bottom: 1px solid var(--borders);
+  border-top: 1px solid var(--borders); */
   background: var(--mediumBackground);
+  transition: ${transitions.ALL};
   display: flex;
 `
 
@@ -16,10 +17,17 @@ export const RecommendedLink = styled(AniLink)`
   background: var(--mediumBackground);
   color: var(--highlight);
   display: flex;
-  padding: 3rem;
+  padding: 2rem;
   text-decoration: none;
-  transition: ${transitions.BACKGROUND};
+  transition: ${transitions.ALL};
   width: 50%;
+  position: relative;
+   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15),
+    0 10px 0 -5px var(--background), 0 10px 1px -4px rgba(0, 0, 0, 0.15),
+    0 20px 0 -10px var(--background), 0 20px 1px -9px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 10px 0 -5px var(--background),
+    0 10px 1px -4px rgba(0, 0, 0, 0.15), 0 20px 0 -10px var(--background),
+    0 20px 1px -9px rgba(0, 0, 0, 0.15);
 
   ${media.lessThan("large")`
     padding: 2rem 1rem;
@@ -28,7 +36,8 @@ export const RecommendedLink = styled(AniLink)`
   `}
 
   &:hover {
-    background: var(--borders);
+    background: var(--background);
+    color: var(--texts);
   }
 
   &.previous {
@@ -47,6 +56,7 @@ export const RecommendedLink = styled(AniLink)`
       box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14),
         0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2);
     }
+
   }
 
   &.next {
@@ -59,6 +69,7 @@ export const RecommendedLink = styled(AniLink)`
     transition: box-shadow 0.25s, -webkit-box-shadow 0.25s;
     -webkit-transition: box-shadow 0.25s, -webkit-box-shadow 0.25s;
     transition: box-shadow 0.25s, -webkit-box-shadow 0.25s;
+
     &:hover {
       -webkit-box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14),
         0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2);
@@ -66,6 +77,11 @@ export const RecommendedLink = styled(AniLink)`
         0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2);
     }
   }
+  &.previous:only-child {
+    margin-left: auto;
+    /* border-left: 1px solid var(--borders); */
+  }
+
   &.next:only-child {
     margin-left: auto;
     /* border-left: 1px solid var(--borders); */
@@ -73,13 +89,22 @@ export const RecommendedLink = styled(AniLink)`
 
   &.previous:before {
     content: "\\2190";
+    margin-left: 0.5rem;
+  }
+  /* &.next:before {
+    content: "\\2192";
     margin-right: 0.5rem;
     &:hover {
     }
-  }
-
-  &.next:after {
-    content: "\\2192";
+  } */
+  /* &.previous:after {
+    content: "\\2190";
     margin-left: 0.5rem;
+  } */
+  &.next:after {
+      content: "\\2192";
+    margin-right: 0.5rem;
+    &:hover {
+    }
   }
 `

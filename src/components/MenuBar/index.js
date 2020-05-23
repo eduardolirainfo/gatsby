@@ -1,24 +1,25 @@
+import React, { useState, useEffect } from "react"
 
-import React, { useState, useEffect } from 'react'
+import { Home } from "styled-icons/boxicons-solid/Home"
+import { SearchAlt2 as Search } from "styled-icons/boxicons-regular/SearchAlt2"
+import { UpArrowAlt as Arrow } from "styled-icons/boxicons-regular/UpArrowAlt"
+import { Sun as Light } from "styled-icons/boxicons-solid/Sun"
+import { Moon as Dark } from "styled-icons/boxicons-solid/Moon"
+import { ListUl as List } from "styled-icons/boxicons-regular/ListUl"
+import { Grid } from "styled-icons/boxicons-solid/Grid"
 
-import { Home } from 'styled-icons/boxicons-solid/Home'
-import { SearchAlt2 as Search } from 'styled-icons/boxicons-regular/SearchAlt2'
-import { UpArrowAlt as Arrow } from 'styled-icons/boxicons-regular/UpArrowAlt'
-import { Highlight as Light } from "styled-icons/material/Highlight"
-import { ThList } from 'styled-icons/typicons/ThList'
-import { Grid } from 'styled-icons/boxicons-solid/Grid'
 
-import getThemeColor from '../../utils/getThemeColor'
+import getThemeColor from "../../utils/getThemeColor"
 
-import * as S from './styled'
-import * as GA from './trackers'
+import * as S from "./styled"
+import * as GA from "./trackers"
 
 const MenuBar = () => {
   const [theme, setTheme] = useState(null)
   const [display, setDisplay] = useState(null)
 
-  const isDarkMode = theme === 'dark'
-  const isListMode = display === 'list'
+  const isDarkMode = theme === "dark"
+  const isListMode = display === "list"
 
   if (theme !== null && display !== null) {
     GA.themeTracker(theme)
@@ -79,12 +80,12 @@ const MenuBar = () => {
         <S.MenuBarItem
           title="Mudar o Tema"
           onClick={() => {
-            window.__setPreferredTheme(isDarkMode ? 'light' : 'dark')
+            window.__setPreferredTheme(isDarkMode ? "light" : "dark")
 
             if (window.DISQUS !== undefined) {
               window.setTimeout(() => {
                 window.DISQUS.reset({
-                  reload: true
+                  reload: true,
                 })
               }, 300)
             }
@@ -92,22 +93,22 @@ const MenuBar = () => {
           className={theme}
           isDarkMode={isDarkMode}
         >
-          <Light />
+          {!isDarkMode ? <Dark /> : <Light />}
         </S.MenuBarItem>
         <S.MenuBarItem
           title="Mudar visualização"
           onClick={() => {
-            window.__setPreferredDisplay(isListMode ? 'grid' : 'list')
+            window.__setPreferredDisplay(isListMode ? "card" : "list")
           }}
           className="display"
         >
-          {!isListMode ? <ThList /> : <Grid />}
+          {!isListMode ? <List /> : <Grid />}
         </S.MenuBarItem>
         <S.MenuBarItem
           title="Ir para o Topo"
           onClick={() => {
             GA.topClickTrack()
-            window.scroll({ top: 0, behavior: 'smooth' })
+            window.scroll({ top: 0, behavior: "smooth" })
           }}
         >
           <Arrow />

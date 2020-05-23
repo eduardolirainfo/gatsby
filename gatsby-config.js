@@ -6,12 +6,50 @@ module.exports = {
   siteMetadata: {
     title: `Eduardo Lira`,
     position: `Developer`,
-    description: `A blog about backend, Frontend development and other cool stuff.`,
+    description: `Um blog sobre desenvolvimento web, programação e outras coisas legais.`,
+    authorDescription: `Ideias, café e tecnologias`,
     author: `@dudulira`,
     pathPrefix: "/eduardolirainfo/gatsby",
     siteUrl: `https://eduardolira.xyz`,
   },
   plugins: [
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [{
+          resolve: "gatsby-remark-relative-images",
+          options: {
+            name: "uploads",
+          },
+        },
+        {
+          resolve: "@weknow/gatsby-remark-codepen",
+          options: {
+            theme: "dark",
+            height: 400
+          }
+        },
+          `gatsby-remark-responsive-iframe`,
+          `gatsby-remark-external-links`,
+        {
+          resolve: `gatsby-remark-autolink-headers`,
+          options: {
+            icon: false,
+            removeAccents: true
+          }
+        },
+        {
+          resolve: "gatsby-remark-images",
+          options: {
+            maxWidth: 960,
+            linkImagesToOriginal: false,
+          },
+        },
+          `gatsby-remark-lazy-load`,
+          `gatsby-remark-prismjs`,
+        ],
+      },
+    },
     `gatsby-plugin-transition-link`,
     `gatsby-plugin-styled-components`,
     {
@@ -22,6 +60,8 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-netlify-cms`,
+
     `gatsby-plugin-netlify`,
 
     // needs to be the first to work with gatsby-remark-images
@@ -51,28 +91,6 @@ module.exports = {
         path: `${__dirname}/posts`,
       },
     },
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          {
-            resolve: "gatsby-remark-relative-images",
-            options: {
-              name: "uploads",
-            },
-          },
-          {
-            resolve: "gatsby-remark-images",
-            options: {
-              maxWidth: 960,
-              linkImagesToOriginal: false,
-            },
-          },
-          `gatsby-remark-lazy-load`,
-          `gatsby-remark-prismjs`,
-        ],
-      },
-    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -99,12 +117,6 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-purgecss",
-      options: {
-        printRejected: true,
-      },
-    },
-    {
       resolve: `gatsby-plugin-feed`,
       options: {
         query: `
@@ -119,24 +131,26 @@ module.exports = {
             }
           }
         `,
-        feeds: [
-          {
-            serialize: ({ query: { site, allMarkdownRemark } }) => {
-              return allMarkdownRemark.edges.map(edge => {
-                return Object.assign({}, edge.node.frontmatter, {
-                  description: edge.node.excerpt,
-                  date: edge.node.frontmatter.date,
-                  url: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  custom_elements: [
-                    {
-                      "content:encoded": edge.node.html,
-                    },
-                  ],
-                })
+        feeds: [{
+          serialize: ({
+            query: {
+              site,
+              allMarkdownRemark
+            }
+          }) => {
+            return allMarkdownRemark.edges.map(edge => {
+              return Object.assign({}, edge.node.frontmatter, {
+                description: edge.node.excerpt,
+                date: edge.node.frontmatter.date,
+                url: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                custom_elements: [{
+                  "content:encoded": edge.node.html,
+                },],
               })
-            },
-            query: `
+            })
+          },
+          query: `
               {
                 allMarkdownRemark(
                   sort: { order: DESC, fields: [frontmatter___date] },
@@ -148,27 +162,46 @@ module.exports = {
                       fields { slug }
                       frontmatter {
                         title
-                        date
+                        date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
                       }
                     }
                   }
                 }
               }
             `,
-            output: "/rss.xml",
-            title: "RSS Feed",
-            // optional configuration to insert feed reference in pages:
-            // if `string` is used, it will be used to create RegExp and then test if pathname of
-            // current page satisfied this regular expression;
-            // if not provided or `undefined`, all pages will have feed reference inserted
-          },
-        ],
+          output: "/rss.xml",
+          title: "RSS Feed",
+          // optional configuration to insert feed reference in pages:
+          // if `string` is used, it will be used to create RegExp and then test if pathname of
+          // current page satisfied this regular expression;
+          // if not provided or `undefined`, all pages will have feed reference inserted
+        },],
       },
     },
     `gatsby-plugin-sitemap`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    `gatsby-plugin-offline`,
-    `gatsby-plugin-netlify-cms`,
+
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [{
+          family: `Lato`,
+          variants: [`300`, `900`],
+        },],
+      },
+    },
+    // {
+    //   resolve: "gatsby-plugin-page-progress",
+    //   options: {
+    //     includePaths: ["/", {
+    //       regex: "^/"
+    //     }],
+    //     excludePaths: ["/sobre", "/"],
+    //     height: 3,
+    //     prependToBody: false,
+    //     color: `#b17acc`,
+    //   },
+    // },
   ],
 }

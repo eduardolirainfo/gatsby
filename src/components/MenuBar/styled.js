@@ -8,6 +8,7 @@ import transitions from "../../styles/transitions"
 export const MenuBarWrapper = styled.aside`
   align-items: center;
   background: var(--mediumBackground);
+  background-image: var(--bgimage);
   border-left: 1px solid var(--borders);
   display: flex;
   flex-direction: column;
@@ -17,7 +18,6 @@ export const MenuBarWrapper = styled.aside`
   position: fixed;
   right: 0;
   width: 3.75rem;
-  transition: ${transitions.ALL};
 
   ${media.lessThan("large")`
     border-top: 1px solid var(--borders);
@@ -27,13 +27,14 @@ export const MenuBarWrapper = styled.aside`
     padding: 0;
     position: fixed;
     width: 100%;
+
   `}
 `
 
 export const MenuBarGroup = styled.div`
   display: flex;
   flex-direction: column;
-  transition: ${transitions.ALL};
+  /* transition: ${transitions.ALL}; */
   ${media.lessThan("large")`
     flex-direction: row;
   `}
@@ -41,26 +42,40 @@ export const MenuBarGroup = styled.div`
 
 export const MenuBarLink = styled(AniLink)`
   display: block;
+  transition: ${transitions.ALL};
 
+  svg &{
+  transition: ${transitions.ALL};
+  }
   &.active {
     span {
       color: var(--highlight);
+      box-shadow: 9px 9px 30px 0px rgba(1, 50, 101, 0.11);
     }
   }
 `
-
 export const MenuBarItem = styled.span`
-  color: var(--texts);
+  color: var(--postColor);
   cursor: pointer;
   display: block;
   height: 3.75rem;
   padding: 1.1rem;
   position: relative;
   width: 3.75rem;
-  transition: ${transitions.COLOR};
+  transition: ${transitions.ALL};
 
-  &.light {
-    color: #d4d400;
+
+
+  /* &.light {
+    transition: ${transitions.ALL};
+  }
+  &.dark {
+    transition: ${transitions.ALL};
+  } */
+
+   &:hover{
+      transition: ${transitions.ALL};
+      box-shadow: 9px 9px 30px 0px rgba(1, 50, 101, 0.11);
   }
 
   &.display {

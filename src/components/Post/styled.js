@@ -145,7 +145,7 @@ export const MainContent = styled.section`
   }
 
   strong {
-    font-weight: 700;
+    font-weight: 800;
   }
 
   .gatsby-resp-image-background-image {
@@ -178,20 +178,41 @@ export const MainContent = styled.section`
   .instagram-media {
     margin: 1rem auto !important;
   }
-
   a {
-    border-bottom: 1px dashed var(--highlight);
-    color: var(--highlight);
-    text-decoration: none;
     transition: ${transitions.ALL};
+    color:var(--highlight);
+   text-decoration: none;
+   line-height: 1.6;
+   position: relative;
+   z-index: 0;
+   display: inline-block;
+   overflow: hidden;
+   vertical-align: bottom;
     svg {
       color: var(--postColor);
+      transition: ${transitions.ALL};
+    }
+    &:hover{
+   color: #fff;
     }
 
-    &:hover {
-      opacity: 0.5;
-      border-bottom: 1px solid var(--highlight);
-    }
+  &::before {
+   content: "";
+   position: absolute;
+   z-index: -1;
+   top: 0;
+   left: 0;
+   transform: translateY(calc(100% - 2px));
+   width: 100%;
+   height: 100%;
+   background-image: linear-gradient(60deg,  var(--mediumBackground) 0%, var(--highlight) 100%);
+   transition: transform .25s ease-out;
+  }
+  &:hover::before {
+   transform: translateY(0);
+   transition: transform .25s ease-out;
+}
+
   }
 `
 export const PostHeader = styled.header`
@@ -199,6 +220,7 @@ export const PostHeader = styled.header`
   margin: auto;
   max-width: 70rem;
   padding: 5rem 5rem 0;
+  transform-style: preserve-3d;
 
   ${media.lessThan("large")`
     padding: 3rem 0 0;
@@ -207,17 +229,25 @@ export const PostHeader = styled.header`
 `
 
 export const PostTitle = styled.h1`
-  font-size: 4rem;
-  font-weight: 700;
+  font-size: 3.75rem;
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  font-style: normal;
   padding: 0 1.4rem;
   margin: 1rem auto;
-  color: var(--hightlight) !important;
+  color: var(--texts) !important;
+  text-transform: uppercase;
+  /* font-size: 1.875rem;
+    margin: 0 0 30px; */
+  text-shadow: 0 3px 0 #b2a98f;
+  /* text-shadow: 0 3px 0 #b2a98f, 0 14px 10px rgba(0, 0, 0, 0.15),
+    0 24px 2px rgba(0, 0, 0, 0.1), 0 34px 30px rgba(0, 0, 0, 0.1); */
 
   ${media.lessThan("large")`
     font-size: 2.8rem;
     line-height: 1.1;
     padding: 0 1rem;
-  `}
+  `};
 `
 
 export const PostWrapper = styled.section`
@@ -229,7 +259,7 @@ export const PostWrapper = styled.section`
   transition: ${transitions.ALL};
 
   &:not(.disableCard) {
-    body#grid & {
+    body#card & {
       border: none;
       padding: 2rem 1rem;
       flex-direction: column;
@@ -242,13 +272,12 @@ export const PostWrapper = styled.section`
     padding: 2rem 1rem;
   `}
 `
-
 export const PostLink = styled(AniLink)`
   color: var(--texts);
   display: flex;
   text-decoration: none;
   transition: ${transitions.COLOR};
-  body#grid & {
+  body#card & {
     background-color: var(--background);
   }
   &:hover {
@@ -258,8 +287,9 @@ export const PostLink = styled(AniLink)`
 `
 
 export const PostDescription = styled.h2`
-  font-size: 2rem;
-  font-weight: 200;
+  font-size: 1.5rem;
+  color: var(--postDescription);
+  font-weight: 300;
   padding: 0 1.4rem;
 
   ${media.lessThan("large")`
@@ -268,57 +298,104 @@ export const PostDescription = styled.h2`
     padding: 0 1rem;
   `}
 `
+export const PostCategories = styled(AniLink)`
+  font-size: 0.9rem;
+  font-weight: 900;
+  padding: 0rem 0.2rem 0 1.4rem;
+  color:var(--postDescription);
+  float:left;
+  text-tranform: uppercase;
+  display: flex;
+  transition: ${transitions.COLOR};
+  &:hover{
+    color: ${props =>
+    props.background ? props.background : " var(--background)"};
+  }
+`
+export const LinkCat = styled(AniLink)`
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 2rem 3rem;
+    width: 100%;
+    transition: ${transitions.ALL};
+    color: var(--highlight);
+    font-size: 1.7rem;
+  &:hover{
+    opacity: 0.5;
+  }
+`
 
 export const PostDate = styled.p`
-  font-size: 1.1rem;
-  font-weight: 100;
+  font-size: 0.9rem;
+  font-weight: 300;
   padding: 0 1.4rem;
-
+  color:var(--postDescription);
   ${media.lessThan("large")`
     padding: 0 1rem;
   `}
 `
 
-export const PostTag = styled.div`
-  align-items: center;
-  background: var(--highlight);
-  border-radius: 50%;
-  color: var(--white);
-  display: flex;
-  font-size: 1.3rem;
-  font-weight: 700;
-  justify-content: center;
-  min-height: 90px;
-  min-width: 90px;
-  text-transform: uppercase;
-  body#grid & {
-    margin-bottom: 1.5rem;
+export const ItemTags = styled.ul`
+  list-style: none;
+  margin: -2rem 0 2rem;
+  overflow: hidden;
+  padding: 0 5rem;
+  /* transition: ${transitions.COLOR}; */
+
+  & li {
+      float: left;
+ }
+`
+export const TagLink = styled(AniLink)`
+  font-family: "Open Sans", sans-serif;
+  background: var(--mediumBackground);
+  border-left: inset 0 1px var(--postColor);
+  border-radius: 3px 0 0 3px;
+  color: var(--postColor);
+  display: inline-block;
+  height: 26px;
+  line-height: 26px;
+  padding: 0 20px 0 23px;
+  position: relative;
+  margin: 0 10px 10px 0;
+  text-decoration: none;
+  border-left: 3px solid var(--borders);
+  /* transition: ${transitions.DEFAULT}; */
+  &::before{
+    background:var(--background);
+    border-radius: 10px;
+    box-shadow: inset 0 1px var(--borders);
+    content: '';
+    height: 6px;
+    left: 10px;
+    position: absolute;
+    width: 6px;
+    top: 10px;
   }
-  ${media.lessThan("large")`
-    border-radius: 0;
+  &::after {
+    background: var(--background);
+    border-bottom: 13px solid transparent;
+    border-left: 10px solid var(--mediumBackground);
+    border-top: 13px solid transparent;
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  &:hover {
+    background-color: var(--highlight);
+    border-left-color: var(--highlight);
+    color: var(--mediumBackground);
     font-size: 1rem;
-    min-height: auto;
-    min-width: auto;
-    padding: .2rem .5rem;
-    margin-bottom: .7rem;
-  `}
-  &.is-js {
-    background: #d6ba32;
-    color: #000;
   }
-  &.is-misc {
-    background: #47650b;
-  }
-  &.is-dev {
-    background: #61728f;
-  }
-  &.is-svg {
-    background: #7d669e;
-  }
-  &.is-css {
-    background: #24809e;
-  }
-  &.is-jekyll {
-    background: #b31917;
+  &:hover::after {
+    border-left-color: ${props =>
+    props.color ? props.color : " var(--highlight)"};
   }
 `

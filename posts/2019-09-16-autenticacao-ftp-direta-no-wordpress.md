@@ -1,11 +1,12 @@
 ---
-title: Autenticação FTP direta no WordPress
+title: Autenticacao FTP direta no WordPress
 description: >-
   Vamos aprender uma simples de autenticação no servidor de hospedagem
   utilizando o Wordpress
 date: "2012-06-09 11:14:39"
-thumbnail: /assets/img/mountains.jpg
-category: misc
+image: /assets/img/mountains.jpg
+categories: MISC
+tags: ["tesoux", "teste2"]
 background: "#7AAB13"
 ---
 

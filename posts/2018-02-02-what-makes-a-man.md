@@ -2,8 +2,9 @@
 date: 2018-02-02 05:54:23
 title: What makes a man?
 description: Spend his whole life in disguise?
-category: misc
-background: "#47650b"
+categories: jekyll
+background: "#24809e"
+tags: ["testoux","testouy"]
 ---
 
 Proin suscipit luctus orci placerat fringilla. Donec hendrerit laoreet risus eget adipiscing. Suspendisse in urna ligula, a volutpat mauris. Sed enim mi, [bibendum](http://google.com) eu pulvinar vel, sodales vitae dui.
@@ -29,7 +30,13 @@ const Sidebar = () => (
 export default Sidebar
 ```
 
+
+
 Fusce a metus eu diam varius congue nec nec sapien. Vestibulum orci tortor, sollicitudin ac euismod non, placerat ac augue. Nunc convallis accumsan justo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec malesuada vehicula lectus, viverra sodales ipsum gravida nec.
+
+```js
+alert('how cool is this!');
+```
 
 > Proin ornare ligula eu tellus tempus elementum. Aenean bibendum iaculis mi, nec blandit lacus interdum vitae. Vestibulum non nibh risus, a scelerisque purus. Ut vel arcu ac tortor adipiscing hendrerit vel sed massa. Fusce sem libero, lacinia vulputate interdum non, porttitor non quam. Aliquam sed felis ligula. Duis non nulla magna.
 

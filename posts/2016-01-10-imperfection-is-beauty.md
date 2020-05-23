@@ -2,9 +2,9 @@
 date: "2019-03-17"
 title: Imperfection is beauty, madness is genius
 description: And it's better to be absolutely ridiculous than absolutely boring
-category: css
+tags: ["css"]
 background: "#24809e"
-path: "/blog/imperfection-is-beauty"
+categories: jekyll
 ---
 
 Proin suscipit luctus orci placerat fringilla. Donec hendrerit laoreet risus eget adipiscing. Suspendisse in urna ligula, a volutpat mauris. Sed enim mi, [bibendum](http://google.com) eu pulvinar vel, sodales vitae dui.

@@ -1,7 +1,7 @@
-import styled from 'styled-components'
-import media from 'styled-media-query'
+import styled from "styled-components"
+import media from "styled-media-query"
 
-import transitions from '../../styles/transitions'
+import transitions from "../../styles/transitions"
 
 export const SidebarContainer = styled.aside`
   align-items: center;
@@ -16,11 +16,17 @@ export const SidebarContainer = styled.aside`
   width: 20rem;
   transition: ${transitions.ALL};
 
-  ${media.lessThan('large')`
+  background-color: var(--mediumBackground);
+  /* border-bottom-right-radius: 40px;
+    border-bottom-left-radius: 40px; */
+
+
+  ${media.lessThan("large")`
     align-items: flex-start;
     height: auto;
     padding: 1rem;
     position: inherit;
     width: 100%;
   `}
+
 `

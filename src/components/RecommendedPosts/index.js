@@ -1,57 +1,67 @@
-import styled from "styled-components"
-import media from "styled-media-query"
-import AniLink from "gatsby-plugin-transition-link/AniLink"
+import React from "react"
+import propTypes from "prop-types"
+import ReactGA from "react-ga"
 
-import transitions from "../../styles/transitions"
+import * as S from "./styled"
 
-export const RecommendedWrapper = styled.section`
-  border-bottom: 1px solid var(--borders);
-  border-top: 1px solid var(--borders);
-  background: var(--mediumBackground);
-  display: flex;
-`
+import getThemeColor from "../../utils/getThemeColor"
 
-export const RecommendedLink = styled(AniLink)`
-  align-items: center;
-  background: var(--mediumBackground);
-  color: var(--highlight);
-  display: flex;
-  padding: 3rem;
-  text-decoration: none;
-  transition: ${transitions.BACKGROUND};
-  width: 50%;
+const RecommendedClickTrack = () => {
+  ReactGA.event({
+    category: "menu link",
+    action: "click",
+    label: "Clicou num recommended link",
+  })
+}
 
-  ${media.lessThan("large")`
-    padding: 2rem 1rem;
-    line-height: 1.3;
-    font-size: .9rem;
-  `}
+const RecommendedPosts = ({ next, previous }) => (
+  <S.RecommendedWrapper>
+    {previous && (
+      <S.RecommendedLink
+        to={previous.fields.slug}
+        rel="prev"
+        cover
+        direction="left"
+        bg={getThemeColor()}
+        className="previous"
+        onClick={() => RecommendedClickTrack()}
+      >
+        {previous.frontmatter.title}
+      </S.RecommendedLink>
+    )}
+    {next && (
+      <S.RecommendedLink
+        to={next.fields.slug}
+        rel="next"
+        cover
+        direction="right"
+        bg={getThemeColor()}
+        className="next"
+        onClick={() => RecommendedClickTrack()}
+      >
+        {next.frontmatter.title}
+      </S.RecommendedLink>
+    )}
+  </S.RecommendedWrapper>
+)
 
-  &:hover {
-    background: var(--borders);
-  }
+RecommendedPosts.propTypes = {
+  next: propTypes.shape({
+    frontmatter: propTypes.shape({
+      title: propTypes.string.isRequired,
+    }),
+    fields: propTypes.shape({
+      slug: propTypes.string.isRequired,
+    }),
+  }),
+  previous: propTypes.shape({
+    frontmatter: propTypes.shape({
+      title: propTypes.string.isRequired,
+    }),
+    fields: propTypes.shape({
+      slug: propTypes.string.isRequired,
+    }),
+  }),
+}
 
-  &.previous {
-    border-right: 1px solid var(--borders);
-  }
-
-  &.next {
-    justify-content: flex-end;
-  }
-
-  &.next:only-child {
-    margin-left: auto;
-    border-left: 1px solid var(--borders);
-  }
-
-  &.previous:before {
-    content: "\\2190";
-    margin-right: 0.5rem;
-  }
-
-  &.next:after {
-    content: "\\2192";
-    margin-left: 0.5rem;
-  }
-`
-export default RecommendedWrapper
+export default RecommendedPosts
