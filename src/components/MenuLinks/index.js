@@ -18,9 +18,9 @@ const menuLinkClickTrack = link => {
 const MenuLinks = () => {
   return (
     <S.MenuLinksWrapper>
-      <S.MenuLinksList >
+      <S.MenuLinksList>
         {links.map((link, i) => (
-          <S.MenuLinksItem key={i} >
+          <S.MenuLinksItem key={i}>
             <AniLink
               swipe
               top="exit"

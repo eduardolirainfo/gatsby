@@ -14,6 +14,8 @@ const postQuery = `{
           date_timestamp: date
           date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
           description
+          background
+          tags
         }
         excerpt(pruneLength: 5000)
       }
@@ -21,7 +23,7 @@ const postQuery = `{
   }
 }`
 
-const flatten = arr =>
+const flatten = (arr) =>
   arr.map(({ node: { frontmatter, ...rest } }) => ({
     ...frontmatter,
     date_timestamp: parseInt(

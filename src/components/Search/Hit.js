@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 
 import PostItem from "../PostItem"
 
-const Hit = props => {
+const Hit = (props) => {
   const { hit } = props
 
   return (
@@ -14,6 +14,7 @@ const Hit = props => {
       date={hit.date}
       description={hit.description}
       categories={hit.categories}
+      tags={hit.tags}
     />
   )
 }

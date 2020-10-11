@@ -7,7 +7,7 @@ import * as S from "./styled"
 
 const algolia = {
   appId: process.env.GATSBY_ALGOLIA_APP_ID,
-  searchOnlyApiKey: process.env.GATSBY_ALGOLIA_SEARCH_KEY,
+  searchOnlyApiKey: process.env.GATSBY_ALGOLIA_SEARCH_ONLY_KEY,
   indexName: process.env.GATSBY_ALGOLIA_INDEX_NAME,
 }
 

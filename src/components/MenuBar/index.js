@@ -8,7 +8,6 @@ import { Moon as Dark } from "styled-icons/boxicons-solid/Moon"
 import { ListUl as List } from "styled-icons/boxicons-regular/ListUl"
 import { Grid } from "styled-icons/boxicons-solid/Grid"
 
-
 import getThemeColor from "../../utils/getThemeColor"
 
 import * as S from "./styled"
@@ -53,29 +52,16 @@ const MenuBar = () => {
           to="/search"
           cover
           direction="right"
+          duration={0.8}
           bg={getThemeColor()}
-          title="Search"
+          title="Pesquisar"
           activeClassName="active"
         >
           <S.MenuBarItem onClick={() => GA.searchClickTrack()}>
             <Search />
           </S.MenuBarItem>
         </S.MenuBarLink>
-        {/* <S.MenuBarLink
-          to="/cursos/"
-          cover
-          direction="right"
-          bg={getThemeColor()}
-          title="Cursos"
-          activeClassName="active"
-        >
-          <S.MenuBarItem onClick={() => GA.courseClickTrack()}>
-            <GraduationCap />
-            <S.MenuBarNotification />
-          </S.MenuBarItem>
-        </S.MenuBarLink> */}
       </S.MenuBarGroup>
-
       <S.MenuBarGroup>
         <S.MenuBarItem
           title="Mudar o Tema"
@@ -95,15 +81,15 @@ const MenuBar = () => {
         >
           {!isDarkMode ? <Dark /> : <Light />}
         </S.MenuBarItem>
-        <S.MenuBarItem
-          title="Mudar visualização"
-          onClick={() => {
-            window.__setPreferredDisplay(isListMode ? "card" : "list")
-          }}
-          className="display"
-        >
-          {!isListMode ? <List /> : <Grid />}
-        </S.MenuBarItem>
+         {/* Mudar visualização */}
+                <S.MenuBarItem title="Mudar visualização"
+                    onClick={() => {
+                        window.__setPreferredDisplay(isListMode ? "card" : "list")
+                    }}
+                    className={display}
+                >
+                    {isListMode ? <List/> : < Grid />}
+                </S.MenuBarItem>
         <S.MenuBarItem
           title="Ir para o Topo"
           onClick={() => {

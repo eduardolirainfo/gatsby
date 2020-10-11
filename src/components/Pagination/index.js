@@ -14,34 +14,34 @@ const Pagination = ({
   prevPage,
   nextPage,
 }) => (
-    <S.PaginationWrapper>
-      {!isFirst && (
-        <AniLink
-          to={prevPage}
-          cover
-          direction="left"
-          bg={getThemeColor()}
-          duration={0.6}
-        >
-          ← página anterior
-        </AniLink>
-      )}
-      <p>
-        {currentPage} de {numPages}
-      </p>
-      {!isLast && (
-        <AniLink
-          to={nextPage}
-          cover
-          direction="right"
-          bg={getThemeColor()}
-          duration={0.6}
-        >
-          proxima página →
-        </AniLink>
-      )}
-    </S.PaginationWrapper>
-  )
+  <S.PaginationWrapper>
+    {!isFirst && (
+      <AniLink
+        to={prevPage}
+        cover
+        direction="left"
+        bg={getThemeColor()}
+        duration={0.6}
+      >
+        ← página anterior
+      </AniLink>
+    )}
+    <p>
+      {currentPage} de {numPages}
+    </p>
+    {!isLast && (
+      <AniLink
+        to={nextPage}
+        cover
+        direction="right"
+        bg={getThemeColor()}
+        duration={0.6}
+      >
+        proxima página →
+      </AniLink>
+    )}
+  </S.PaginationWrapper>
+)
 
 Pagination.propTypes = {
   isFirst: propTypes.bool.isRequired,

@@ -1,19 +1,13 @@
 import React from "react"
 import PropTypes from "prop-types"
-
-// Utilities
-// import kebabCase from "lodash/kebabCase"
-// import AniLink from "gatsby-plugin-transition-link/AniLink"
-
 // Components
 import { graphql } from "gatsby"
-import Layout from '../components/Layout';
+import Layout from "../components/Layout"
 import SEO from "../components/Seo"
 import PostItem from "../components/PostItem"
 
 import * as S from "../components/ListWrapper/styled"
 import * as P from "../components/Post/styled"
-
 
 const Categories = ({ pageContext, data }) => {
   const { category } = pageContext
@@ -21,7 +15,7 @@ const Categories = ({ pageContext, data }) => {
 
   const catHeader = `${totalCount} post${
     totalCount === 1 ? "" : "s"
-    } na categoria "${category}"`
+  } na categoria "${category}"`
   return (
     <Layout>
       <SEO
@@ -29,10 +23,9 @@ const Categories = ({ pageContext, data }) => {
         description="Navegue entre as categorias de nosso blog"
       />
       <P.PostHeader>
-        <P.PostTitle>{catHeader}</P.PostTitle>
+        <P.PostTitleCat>{catHeader}</P.PostTitleCat>
       </P.PostHeader>
       <S.ListWrapper>
-
         {edges.map(({ node }, i) => {
           // const { slug } = node.fields
           // const { title } = node.frontmatter
@@ -50,14 +43,10 @@ const Categories = ({ pageContext, data }) => {
           )
         })}
       </S.ListWrapper>
-      <P.LinkCat
-        swipe
-        direction="up"
-        top="entry"
-        to="/categorias">
+      <P.LinkCat swipe direction="up" to="/categorias">
         Ver todas as categorias
       </P.LinkCat>
-    </Layout >
+    </Layout>
   )
 }
 Categories.propTypes = {
@@ -97,12 +86,12 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-           background
-           categories
-           date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
-           description
-           title
-           tags
+            background
+            categories
+            date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
+            description
+            title
+            tags
           }
         }
       }

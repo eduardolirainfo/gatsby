@@ -19,15 +19,15 @@ export const RecommendedLink = styled(AniLink)`
   display: flex;
   padding: 2rem;
   text-decoration: none;
-  transition: ${transitions.ALL};
   width: 50%;
   position: relative;
-   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15),
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15),
     0 10px 0 -5px var(--background), 0 10px 1px -4px rgba(0, 0, 0, 0.15),
     0 20px 0 -10px var(--background), 0 20px 1px -9px rgba(0, 0, 0, 0.15);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 10px 0 -5px var(--background),
     0 10px 1px -4px rgba(0, 0, 0, 0.15), 0 20px 0 -10px var(--background),
     0 20px 1px -9px rgba(0, 0, 0, 0.15);
+  transition: ${transitions.ALL};
 
   ${media.lessThan("large")`
     padding: 2rem 1rem;
@@ -50,13 +50,14 @@ export const RecommendedLink = styled(AniLink)`
     transition: box-shadow 0.25s, -webkit-box-shadow 0.25s;
     -webkit-transition: box-shadow 0.25s, -webkit-box-shadow 0.25s;
     transition: box-shadow 0.25s, -webkit-box-shadow 0.25s;
+    transition: ${transitions.ALL};
+
     &:hover {
       -webkit-box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14),
         0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2);
       box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14),
         0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2);
     }
-
   }
 
   &.next {
@@ -69,6 +70,7 @@ export const RecommendedLink = styled(AniLink)`
     transition: box-shadow 0.25s, -webkit-box-shadow 0.25s;
     -webkit-transition: box-shadow 0.25s, -webkit-box-shadow 0.25s;
     transition: box-shadow 0.25s, -webkit-box-shadow 0.25s;
+    transition: ${transitions.ALL};
 
     &:hover {
       -webkit-box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14),
@@ -102,7 +104,7 @@ export const RecommendedLink = styled(AniLink)`
     margin-left: 0.5rem;
   } */
   &.next:after {
-      content: "\\2192";
+    content: "\\2192";
     margin-right: 0.5rem;
     &:hover {
     }

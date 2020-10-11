@@ -6,20 +6,19 @@ import PropTypes from "prop-types"
 
 // Components
 import { graphql } from "gatsby"
-import Layout from '../components/Layout';
+import Layout from "../components/Layout"
 import SEO from "../components/Seo"
 import PostItem from "../components/PostItem"
 
 import * as S from "../components/ListWrapper/styled"
 import * as P from "../components/Post/styled"
-// import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 const Tags = ({ pageContext, data }) => {
   const { tag } = pageContext
   const { edges, totalCount } = data.allMarkdownRemark
   const tagHeader = `${totalCount} post${
     totalCount === 1 ? "" : "s"
-    } com a tag "${tag}"`
+  } com a tag "${tag}"`
   return (
     <Layout>
       <SEO
@@ -44,15 +43,10 @@ const Tags = ({ pageContext, data }) => {
           )
         })}
       </S.ListWrapper>
-      <P.LinkCat
-        swipe
-        direction="up"
-        top="exit"
-        to="/tags">
+      <P.LinkCat swipe direction="up" to="/tags">
         Ver todas as tags
-</P.LinkCat>
-    </Layout >
-
+      </P.LinkCat>
+    </Layout>
   )
 }
 Tags.propTypes = {
@@ -92,12 +86,12 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-           background
-           categories
-           date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
-           description
-           title
-           tags
+            background
+            categories
+            date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
+            description
+            title
+            tags
           }
         }
       }

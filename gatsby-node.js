@@ -11,11 +11,10 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     createNodeField({
       node,
       name: `slug`,
-      value: `/${slug.slice(12)}`
+      value: `/${slug.slice(12)}`,
     })
   }
 }
-
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
@@ -24,7 +23,6 @@ exports.createPages = ({ graphql, actions }) => {
   const blogList = path.resolve(`./src/templates/blog-list.js`)
   const tagTemplate = path.resolve(`./src/templates/tags.js`)
   const catTemplate = path.resolve(`./src/templates/categories.js`)
-
 
   return graphql(
     `
@@ -47,23 +45,23 @@ exports.createPages = ({ graphql, actions }) => {
               }
             }
             next {
-            fields {
-              slug
+              fields {
+                slug
+              }
+              frontmatter {
+                title
+                date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
+              }
             }
-            frontmatter {
-              title
-              date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
+            previous {
+              fields {
+                slug
+              }
+              frontmatter {
+                title
+                date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
+              }
             }
-          }
-          previous {
-            fields {
-              slug
-            }
-            frontmatter {
-              title
-              date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
-            }
-           }
           }
         }
         tagsGroup: allMarkdownRemark(limit: 2000) {
@@ -73,12 +71,12 @@ exports.createPages = ({ graphql, actions }) => {
           }
         }
         categoriesGroup: allMarkdownRemark(limit: 2000) {
-        group(field: frontmatter___categories) {
-          fieldValue
+          group(field: frontmatter___categories) {
+            fieldValue
+          }
         }
       }
-    }
-  `
+    `
   ).then(result => {
     if (result.errors) {
       throw result.errors
@@ -114,8 +112,8 @@ exports.createPages = ({ graphql, actions }) => {
           limit: postsPerPage,
           skip: i * postsPerPage,
           numPages,
-          currentPage: i + 1
-        }
+          currentPage: i + 1,
+        },
       })
     })
 
@@ -169,7 +167,6 @@ exports.createPages = ({ graphql, actions }) => {
     // })
   })
 }
-
 
 // exports.onCreateNode = ({ node, actions, getNode }) => {
 //   const { createNodeField } = actions

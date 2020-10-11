@@ -10,7 +10,7 @@ const algolia = {
   indexName: process.env.GATSBY_ALGOLIA_INDEX_NAME,
 }
 
-const SearchPage = props => {
+const SearchPage = (props) => {
   return (
     <Layout>
       <SEO

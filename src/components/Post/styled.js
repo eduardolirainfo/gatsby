@@ -6,7 +6,7 @@ import transitions from "../../styles/transitions"
 export const MainContent = styled.section`
   margin: auto;
   max-width: 70rem;
-  padding: 2rem 5rem;
+  padding: 2rem 3rem;
 
   ${media.lessThan("large")`
     padding: 2rem 0;
@@ -180,57 +180,59 @@ export const MainContent = styled.section`
   }
   a {
     transition: ${transitions.ALL};
-    color:var(--highlight);
-   text-decoration: none;
-   line-height: 1.6;
-   position: relative;
-   z-index: 0;
-   display: inline-block;
-   overflow: hidden;
-   vertical-align: bottom;
+    color: var(--highlight);
+    text-decoration: none;
+    line-height: 1.6;
+    position: relative;
+    z-index: 0;
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: bottom;
     svg {
       color: var(--postColor);
       transition: ${transitions.ALL};
     }
-    &:hover{
-   color: #fff;
+    &:hover {
+      color: #fff;
     }
 
-  &::before {
-   content: "";
-   position: absolute;
-   z-index: -1;
-   top: 0;
-   left: 0;
-   transform: translateY(calc(100% - 2px));
-   width: 100%;
-   height: 100%;
-   background-image: linear-gradient(60deg,  var(--mediumBackground) 0%, var(--highlight) 100%);
-   transition: transform .25s ease-out;
-  }
-  &:hover::before {
-   transform: translateY(0);
-   transition: transform .25s ease-out;
-}
-
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      transform: translateY(calc(100% - 2px));
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(
+        60deg,
+        var(--mediumBackground) 0%,
+        var(--highlight) 100%
+      );
+      transition: transform 0.25s ease-out;
+    }
+    &:hover::before {
+      transform: translateY(0);
+      transition: transform 0.25s ease-out;
+    }
   }
 `
 export const PostHeader = styled.header`
   color: var(--postColor);
   margin: auto;
   max-width: 70rem;
-  padding: 5rem 5rem 0;
+  padding: 3rem 3rem 0;
   transform-style: preserve-3d;
 
   ${media.lessThan("large")`
-    padding: 3rem 0 0;
+    padding: 2rem 0 0;
     max-width: 100%;
   `}
 `
 
 export const PostTitle = styled.h1`
   font-size: 3.75rem;
-  font-family: "Lato", sans-serif;
   font-weight: 900;
   font-style: normal;
   padding: 0 1.4rem;
@@ -245,6 +247,27 @@ export const PostTitle = styled.h1`
 
   ${media.lessThan("large")`
     font-size: 2.8rem;
+    line-height: 1.1;
+    padding: 0 1rem;
+  `};
+`
+
+export const PostTitleCat = styled.h2`
+  font-size: 1.875rem;
+  font-weight: 900;
+  font-style: normal;
+  padding: 0;
+  margin: 0rem 0rem 2rem;
+  color: var(--texts) !important;
+  text-transform: uppercase;
+  /* font-size: 1.875rem;
+    margin: 0 0 30px; */
+  text-shadow: 0 3px 0 #b2a98f;
+  /* text-shadow: 0 3px 0 #b2a98f, 0 14px 10px rgba(0, 0, 0, 0.15),
+    0 24px 2px rgba(0, 0, 0, 0.1), 0 34px 30px rgba(0, 0, 0, 0.1); */
+
+  ${media.lessThan("large")`
+    font-size: 1.8rem;
     line-height: 1.1;
     padding: 0 1rem;
   `};
@@ -302,31 +325,30 @@ export const PostCategories = styled(AniLink)`
   font-size: 0.9rem;
   font-weight: 900;
   padding: 0rem 0.2rem 0 1.4rem;
-  color:var(--postDescription);
-  float:left;
+  color: #b17acc;
+  float: left;
   text-tranform: uppercase;
   display: flex;
   transition: ${transitions.COLOR};
-  &:hover{
-    color: ${props =>
-    props.background ? props.background : " var(--background)"};
+  &:hover {
+    color: #8a4baf;
   }
 `
 export const LinkCat = styled(AniLink)`
-    -webkit-align-items: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    padding: 2rem 3rem;
-    width: 100%;
-    transition: ${transitions.ALL};
-    color: var(--highlight);
-    font-size: 1.7rem;
-  &:hover{
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 2rem 3rem;
+  width: 100%;
+  transition: ${transitions.ALL};
+  color: var(--highlight);
+  font-size: 1.7rem;
+  &:hover {
     opacity: 0.5;
   }
 `
@@ -335,7 +357,7 @@ export const PostDate = styled.p`
   font-size: 0.9rem;
   font-weight: 300;
   padding: 0 1.4rem;
-  color:var(--postDescription);
+  color: var(--postDescription);
   ${media.lessThan("large")`
     padding: 0 1rem;
   `}
@@ -353,7 +375,6 @@ export const ItemTags = styled.ul`
  }
 `
 export const TagLink = styled(AniLink)`
-  font-family: "Open Sans", sans-serif;
   background: var(--mediumBackground);
   border-left: inset 0 1px var(--postColor);
   border-radius: 3px 0 0 3px;
@@ -396,6 +417,6 @@ export const TagLink = styled(AniLink)`
   }
   &:hover::after {
     border-left-color: ${props =>
-    props.color ? props.color : " var(--highlight)"};
+      props.color ? props.color : " var(--highlight)"};
   }
 `

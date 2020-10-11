@@ -5,14 +5,14 @@ import AniLink from "gatsby-plugin-transition-link/AniLink"
 import transitions from "../../styles/transitions"
 
 export const PostItemWrapper = styled.section`
- align-items: center;
+  align-items: center;
   /* border-bottom: 1px solid var(--borders); */
   display: flex;
   padding: 2rem 3rem;
   width: 100%;
   transition: ${transitions.ALL};
 
-   &:not(.disableCard) {
+  &:not(.disableCard) {
     body#card & {
       border: none;
       padding: 2rem 2rem;
@@ -21,31 +21,29 @@ export const PostItemWrapper = styled.section`
     }
   }
 
-
- body#card & {
+  body#card & {
     border: none;
     /* padding: 2rem 1rem; */
     flex-direction: column;
     justify-content: center;
   }
 
- body#card &:hover {
-    -webkit-transition:all ease .3s;
-    transition:all ease .3s;
-    background-image:var(--cardHover);
-    -webkit-box-shadow:0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-    box-shadow:0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  body#card &:hover {
+    -webkit-transition: all ease 0.3s;
+    transition: all ease 0.3s;
+    background-image: var(--cardHover);
+    -webkit-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2),
+      0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2),
+      0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 
+  &:hover {
+    /* transform: perspective(300px) translate3d(0, 0, 3px); */
+  }
 
- &:hover{
-   /* transform: perspective(300px) translate3d(0, 0, 3px); */
-
- }
-
-
-  &:hover{
-        /* -webkit-box-shadow: 0 15px 10px #777;
+  &:hover {
+    /* -webkit-box-shadow: 0 15px 10px #777;
     -moz-box-shadow: 0 15px 10px #777;
     box-shadow: 0 15px 10px #777; */
   }
@@ -58,7 +56,7 @@ export const PostItemWrapper = styled.section`
 export const PostItemLink = styled(AniLink)`
   position: relative;
   overflow: hidden;
-    color: var(--texts);
+  color: var(--texts);
   display: flex;
   text-decoration: none;
   transition: ${transitions.COLOR};
@@ -68,26 +66,26 @@ export const PostItemLink = styled(AniLink)`
     left: 39px;
     top: 5px;
     list-style-type: none;
-}
-& ul li {
-  width: 2px;
-  height: 2px;
-  border-radius: 2px;
-  margin: 6px 0;
-  background-color: var(--mediumBackground);
-}
- &:before {
-  content: "";
-  z-index: 99;
-  position: absolute;
-  top: -10px;
-  left: 32px;
-  display: block;
-  width: 16px;
-  height: 16px;
-  border-radius: 16px;
-  background-color: var(--mediumBackground);
-}
+  }
+  & ul li {
+    width: 2px;
+    height: 2px;
+    border-radius: 2px;
+    margin: 6px 0;
+    background-color: var(--mediumBackground);
+  }
+  &:before {
+    content: "";
+    z-index: 99;
+    position: absolute;
+    top: -10px;
+    left: 32px;
+    display: block;
+    width: 16px;
+    height: 16px;
+    border-radius: 16px;
+    background-color: var(--mediumBackground);
+  }
   &:after {
     content: "";
     z-index: 99;
@@ -100,9 +98,8 @@ export const PostItemLink = styled(AniLink)`
     border-radius: 16px;
     background-color: var(--mediumBackground);
   }
- body#card & {
+  body#card & {
     background-color: var(--background);
-
   }
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15),
     0 10px 0 -5px var(--background), 0 10px 1px -4px rgba(0, 0, 0, 0.15),
@@ -147,18 +144,22 @@ export const PostItemLink = styled(AniLink)`
       0 6px 20px 0 rgba(0, 0, 0, 0.19);
     box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2),
       0 6px 20px 0 rgba(0, 0, 0, 0.19);
-      /* transform: scale(1.1); */
-
+    /* transform: scale(1.1); */
   }
-  &:hover i{
+  &:hover i {
     opacity: 1;
     -webkit-transform: scale(2);
     transform: scale(2);
-    }
-  &:hover span{
-    transform: scale(72.5);
+  }
+  &:hover span {
+    transform: scale(5);
     opacity: 0.9;
+  }
+  ${media.lessThan("large")`
+    & ul{
+      display: none;
     }
+  `}
 `
 
 // export const ItemTags = styled.ul`
@@ -173,7 +174,6 @@ export const PostItemLink = styled(AniLink)`
 //  }
 // `
 // export const TagLink = styled(AniLink)`
-//   font-family: "Open Sans", sans-serif;
 //   background: var(--mediumBackground);
 //   border-left: inset 0 1px var(--postColor);
 //   border-radius: 3px 0 0 3px;
@@ -234,36 +234,36 @@ export const PostItemTag = styled.div`
   transition: ${transitions.ALL};
   /* background-color: #21d4fd; */
   /* background-image: linear-gradient(19deg, #21d4fd 0%, #b721ff 100%); */
-   border: 3px solid ${props =>
-    props.background ? props.background : " var(--highlight)"};
-       border-top: dashed;
+  border: 3px solid
+    ${props => (props.background ? props.background : " var(--highlight)")};
+  border-top: dashed;
   border-bottom: dotted;
-     border-radius: var(--radiusTheme);
+  border-radius: var(--radiusTheme);
 
   &:hover {
-        animation: var(--animaTag);
-       overflow: hidden;
-    }
+    animation: var(--animaTag);
+    overflow: hidden;
+  }
 
-    span{
-        position: absolute;
-        right: 14px;
-        top: 14px;
-        width: 5px;
-        height: 5px;
-        background-color: ${props =>
-    props.background ? props.background : " var(--background)"};
-        border: none;
-        /* -moz-box-shadow:    inset 0 0 5px #000000;
+  span {
+    position: absolute;
+    right: 14px;
+    top: 14px;
+    width: 5px;
+    height: 5px;
+    background-color: ${props =>
+      props.background ? props.background : " var(--background)"};
+    border: none;
+    /* -moz-box-shadow:    inset 0 0 5px #000000;
         -webkit-box-shadow: inset 0 0 5px #000000;
         box-shadow:         inset 0 0 5px #000000; */
-        border-radius:50%;
-        cursor: pointer;
-        outline: none;
-        transition: ${transitions.ALL};
-         /* mix-blend-mode: hard-light; */
-    }
- ${media.lessThan("large")`
+    border-radius: 50%;
+    cursor: pointer;
+    outline: none;
+    transition: ${transitions.ALL};
+    /* mix-blend-mode: hard-light; */
+  }
+  ${media.lessThan("large")`
     border-radius: 0;
     font-size: 1rem;
     min-height: auto;
@@ -271,7 +271,7 @@ export const PostItemTag = styled.div`
     padding: .2rem .5rem;
     margin-bottom: .7rem;
   `}
- body#card & {
+  body#card & {
     margin-bottom: 1.5rem;
   }
 `
@@ -282,29 +282,29 @@ export const PostItemInfo = styled.div`
   margin-left: 1.5rem;
   /* z-index: 99; */
 
-  .ArrowRight{
+  .ArrowRight {
     z-index: 100;
     position: absolute;
-    right: 50px;
-    top: 75px;
+    right: 26px;
+    top: 13px;
     font-size: 0.4rem;
     cursor: pointer;
   }
 
- i {
- opacity: 0;
-   color: #fff;
-  font-size: 16px;
-  will-change: transform;
-  -webkit-transform: scale(0.1);
-  transform: scale(0.1);
-  -webkit-transition: all 0.2s ease;
-  transition: all 0.2s ease;
-  svg{
-    margin: -10px auto;
-    transform: rotateY(180deg);
+  i {
+    opacity: 0;
+    color: #fff;
+    font-size: 16px;
+    will-change: transform;
+    -webkit-transform: scale(0.1);
+    transform: scale(0.1);
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    svg {
+      margin: -10px auto;
+      transform: rotateY(180deg);
+    }
   }
-}
 
   ${media.lessThan("large")`
     margin: 0;
@@ -319,7 +319,7 @@ export const PostItemTitle = styled.h1`
   font-weight: 800;
   margin: 0.2rem 0 0.5rem;
   color: var(--texts);
- body#card & {
+  body#card & {
     line-height: 1.1;
     margin: 0.8rem 0;
   }

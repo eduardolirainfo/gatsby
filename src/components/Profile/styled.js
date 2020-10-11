@@ -37,11 +37,7 @@ export const ProfileLink = styled(AniLink)`
   text-decoration: none;
   transition: ${transitions.COLOR};
 
-  &:hover {
-    color: var(--highlight);
-  }
-
-  ${media.lessThan('large')`
+  ${media.lessThan("large")`
     display: flex;
     text-align: left;
   `}
@@ -53,8 +49,13 @@ export const ProfileAuthor = styled.h1`
   margin: 0.5rem auto 1.5rem;
   text-transform: uppercase;
   margin-top: 1rem;
-  letter-spacing: .3px;
-
+  letter-spacing: 0.3px;
+  &:hover {
+    left: 0;
+    left: -2px;
+    text-shadow: -2px 0 #00fff9, 2px 2px #ff00c1;
+    animation: glitch-anim2 1s linear infinite alternate-reverse;
+  }
   &:hover small {
     font-style: italic;
   }

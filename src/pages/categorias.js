@@ -20,44 +20,40 @@ const CatsPage = ({
     },
   },
 }) => (
-    <Layout>
-      <SEO
-        title="Categorias disponíveis"
-        description="Navegue entre as categorias de nosso blog"
-      />
-      <S.PostHeader>
-        <S.PostTitle>Categorias disponíveis</S.PostTitle>
-        <S.PostDescription> Navegue entre as categorias de nosso blog </S.PostDescription>
-      </S.PostHeader>
-      <S.MainContent>
-        <ul>
-          {group.map(categoria => (
-            <li key={categoria.fieldValue}>
-              <AniLink
-                swipe
-                direction="down"
-                top="exit"
-                to={`/categorias/${kebabCase(categoria.fieldValue)}/`}>
-                {categoria.fieldValue} ({categoria.totalCount})
-              </AniLink>
-            </li>
-          ))}
-        </ul>
-        <AniLink
-          to="/tags"
-          swipe
-          top="exit"
-          direction="right"
-          duration={.3}
-        >
-          <span>
-            &#60;&#60;
-                </span>
-              Procurar por Tags
-          </AniLink>
-      </S.MainContent>
-    </Layout >
-  )
+  <Layout>
+    <SEO
+      title="Categorias disponíveis"
+      description="Navegue entre as categorias de nosso blog"
+    />
+    <S.PostHeader>
+      <S.PostTitle>Categorias disponíveis</S.PostTitle>
+      <S.PostDescription>
+        {" "}
+        Navegue entre as categorias de nosso blog{" "}
+      </S.PostDescription>
+    </S.PostHeader>
+    <S.MainContent>
+      <ul>
+        {group.map(categories => (
+          <li key={categories.fieldValue}>
+            <AniLink
+              swipe
+              direction="right"
+              duration={0.3}
+              to={`/categorias/${kebabCase(categories.fieldValue)}/`}
+            >
+              {categories.fieldValue} ({categories.totalCount})
+            </AniLink>
+          </li>
+        ))}
+      </ul>
+      <AniLink swipe to="/tags" direction="right" duration={0.3}>
+        <span>&#60;&#60;</span>
+        Procurar por Tags
+      </AniLink>
+    </S.MainContent>
+  </Layout>
+)
 
 CatsPage.propTypes = {
   data: PropTypes.shape({
@@ -81,14 +77,14 @@ export default CatsPage
 
 export const pageQuery = graphql`
   query {
-          site {
-          siteMetadata {
-          title
-        }
+    site {
+      siteMetadata {
+        title
+      }
     }
     allMarkdownRemark(limit: 2000) {
-          group(field: frontmatter___categories) {
-          fieldValue
+      group(field: frontmatter___categories) {
+        fieldValue
         totalCount
       }
     }

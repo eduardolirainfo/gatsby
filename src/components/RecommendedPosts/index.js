@@ -19,9 +19,10 @@ const RecommendedPosts = ({ next, previous }) => (
     {previous && (
       <S.RecommendedLink
         to={previous.fields.slug}
-        rel="prev"
         cover
         direction="left"
+        duration={1}
+        rel="prev"
         bg={getThemeColor()}
         className="previous"
         onClick={() => RecommendedClickTrack()}
@@ -32,9 +33,10 @@ const RecommendedPosts = ({ next, previous }) => (
     {next && (
       <S.RecommendedLink
         to={next.fields.slug}
-        rel="next"
         cover
         direction="right"
+        duration={1}
+        rel="next"
         bg={getThemeColor()}
         className="next"
         onClick={() => RecommendedClickTrack()}

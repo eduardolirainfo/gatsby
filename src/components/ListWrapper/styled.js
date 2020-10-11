@@ -27,16 +27,16 @@ export const ListWrapper = styled.section`
       filter: blur(2px);
     }
   }
-  /* ${media.lessThan('small')`
+  /* ${media.lessThan("small")`
        body#card & { grid-template-columns: repeat(1, 1fr); }
     `}
-     ${media.between('small', 'medium')`
+     ${media.between("small", "medium")`
        body#card & { grid-template-columns: repeat(2, 1fr); }
     `}
-    ${media.between('medium', 'large')`
+    ${media.between("medium", "large")`
        body#card & { grid-template-columns: repeat(3, 1fr); }
    `}
-   ${media.greaterThan('large')`
+   ${media.greaterThan("large")`
        body#card & { grid-template-columns: repeat(4, 1fr); }
    `} */
 

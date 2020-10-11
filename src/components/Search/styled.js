@@ -38,7 +38,7 @@ export const SearchWrapper = styled.section`
     color: var(--texts);
   }
 
- body#card & {
+  body#card & {
     .ais-Hits-list {
       /* background-color: var(--borders);
       border-bottom: 1px solid var(--borders);

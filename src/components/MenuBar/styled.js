@@ -44,8 +44,8 @@ export const MenuBarLink = styled(AniLink)`
   display: block;
   transition: ${transitions.ALL};
 
-  svg &{
-  transition: ${transitions.ALL};
+  svg & {
+    transition: ${transitions.ALL};
   }
   &.active {
     span {

@@ -13,13 +13,12 @@ export const SidebarContainer = styled.aside`
   position: fixed;
   padding: 2rem;
   text-align: center;
-  width: 20rem;
+  width: 17.5rem;
   transition: ${transitions.ALL};
 
   background-color: var(--mediumBackground);
   /* border-bottom-right-radius: 40px;
     border-bottom-left-radius: 40px; */
-
 
   ${media.lessThan("large")`
     align-items: flex-start;
@@ -28,5 +27,4 @@ export const SidebarContainer = styled.aside`
     position: inherit;
     width: 100%;
   `}
-
 `

@@ -1,16 +1,16 @@
 const links = [
   {
-    label: 'Home',
-    url: '/'
+    label: "Home",
+    url: "/",
   },
   {
-    label: 'Sobre Mim',
-    url: '/sobre/'
+    label: "Sobre Mim",
+    url: "/sobre/",
   },
   {
-    label: 'Feed RSS',
-    url: '/feed.rss/'
-  }
+    label: "Feed RSS",
+    url: "/feed.xml/",
+  },
 ]
 
 export default links
