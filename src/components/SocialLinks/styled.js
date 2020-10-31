@@ -19,7 +19,9 @@ export const SocialLinksList = styled.ul`
   list-style: none;
 `
 
-export const SocialLinksItem = styled.li``
+export const SocialLinksItem = styled.li`
+list-style: none;
+`
 
 export const SocialLinksLink = styled.a`
   color: var(--texts);

@@ -7,6 +7,10 @@ import { Sun as Light } from "styled-icons/boxicons-solid/Sun"
 import { Moon as Dark } from "styled-icons/boxicons-solid/Moon"
 import { ListUl as List } from "styled-icons/boxicons-regular/ListUl"
 import { Grid } from "styled-icons/boxicons-solid/Grid"
+// import { BookContent as Newspaper } from "@styled-icons/boxicons-regular/BookContent"
+import {User} from "@styled-icons/boxicons-regular/User"
+import {RssFeed as Feed} from "@styled-icons/material-rounded/RssFeed"
+
 
 import getThemeColor from "../../utils/getThemeColor"
 
@@ -48,7 +52,46 @@ const MenuBar = () => {
             <Home />
           </S.MenuBarItem>
         </S.MenuBarLink>
-        <S.MenuBarLink
+        {/* <S.MenuBarLink
+          to="/blog/"
+          title="Artigos"
+          cover
+          direction="left"
+          bg="var(--background)"
+          duration={0.6}
+          activeClassName="active"
+        >
+          <S.MenuBarItem>
+            <Newspaper />
+          </S.MenuBarItem>
+        </S.MenuBarLink> */}
+           <S.MenuBarLink
+          to="/sobre/"
+          title="Sobre"
+          cover
+          direction="left"
+          bg="var(--background)"
+          duration={0.6}
+          activeClassName="active"
+        >
+          <S.MenuBarItem>
+            <User />
+          </S.MenuBarItem>
+        </S.MenuBarLink>
+               <S.MenuBarLink
+          to="/feed/"
+          title="Feed"
+          cover
+          direction="left"
+          bg="var(--background)"
+          duration={0.6}
+          activeClassName="active"
+        >
+          <S.MenuBarItem>
+            <Feed />
+          </S.MenuBarItem>
+        </S.MenuBarLink>
+                <S.MenuBarLink
           to="/search"
           cover
           direction="right"
@@ -88,7 +131,7 @@ const MenuBar = () => {
                     }}
                     className={display}
                 >
-                    {isListMode ? <List/> : < Grid />}
+                    {isListMode ? <Grid/> : < List />}
                 </S.MenuBarItem>
         <S.MenuBarItem
           title="Ir para o Topo"

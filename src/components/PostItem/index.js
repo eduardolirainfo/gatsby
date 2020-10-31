@@ -18,10 +18,10 @@ const PostItem = ({
 }) => (
   <S.PostItemLink to={slug} cover direction="right" bg={getThemeColor()}>
     <S.PostItemWrapper>
-      <S.PostItemTag background={background}>
+      <S.PostItemCat background={background}>
         {categories}
         <span></span>
-      </S.PostItemTag>
+      </S.PostItemCat>
 
       <S.PostItemInfo>
         <S.PostItemDate>
@@ -29,43 +29,20 @@ const PostItem = ({
         </S.PostItemDate>
         <S.PostItemTitle>{title}</S.PostItemTitle>
         <S.PostItemDescription>{description}</S.PostItemDescription>
-        {/* <S.ItemTags>
+        {/* {<S.PostItemTag>
             {tags ? <>{tags.map(((tag, index) => {
               return (
                 <li key={tag + `tag`}>
-                  <S.TagLink>{tag}</S.TagLink>
+                  <S.PostItemLink>{tag}</S.PostItemLink>
                 </li>
               )
             }))}</> : <></>}
-          </S.ItemTags> */}
+          </S.PostItemTag> } */}
         {/* <i className="ArrowRight">
           {<small>Continuar leitura</small> }
           <ArrowLeftOutlined />
         </i> */}
         <ul>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
         </ul>
       </S.PostItemInfo>
     </S.PostItemWrapper>

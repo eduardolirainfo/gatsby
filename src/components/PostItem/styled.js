@@ -219,7 +219,7 @@ export const PostItemLink = styled(AniLink)`
 //   }
 // `
 
-export const PostItemTag = styled.div`
+export const PostItemCat = styled.div`
   align-items: center;
   text-decoration: none;
   color: ${props =>
@@ -276,6 +276,40 @@ export const PostItemTag = styled.div`
   }
 `
 
+export const PostItemTag = styled.p`
+  width: 50%;
+  height: 1rem;
+  text-align: left;
+  text-decoration: none;
+  list-style: none;
+  color: ${props =>
+    props.background ? props.background : " var(--highlight)"};
+  display: flex;
+  font-size: 0.8rem;
+  font-weight: 800;
+  max-height: 90px;
+  justify-content: center;
+  text-transform: uppercase;
+  transition: ${transitions.ALL};
+  // background-color: #21d4fd;
+  color: linear-gradient(19deg, #21d4fd 0%, #b721ff 100%);
+  &:hover {
+    overflow: hidden;
+  }
+
+  ${media.lessThan("large")`
+    border-radius: 0;
+    font-size: 1rem;
+    min-height: auto;
+    min-width: auto;
+    padding: .2rem .5rem;
+    margin-bottom: .7rem;
+  `}
+  body#card & {
+    margin-bottom: 1.5rem;
+  }
+`
+
 export const PostItemInfo = styled.div`
   display: flex;
   flex-direction: column;
@@ -311,7 +345,7 @@ export const PostItemInfo = styled.div`
   `}
 `
 export const PostItemDate = styled.time`
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: var(--texts);
 `
 export const PostItemTitle = styled.h1`
@@ -394,6 +428,18 @@ export const PostItemTitle = styled.h1`
 `
 
 export const PostItemDescription = styled.p`
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.2;
+  color: var(--postColor);
+`
+export const ItemTags = styled.p`
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.2;
+  color: var(--postColor);
+`
+export const TagLink = styled.p`
   font-size: 1rem;
   font-weight: 300;
   line-height: 1.2;
