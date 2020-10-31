@@ -5,6 +5,7 @@ import getThemeColor from "../../utils/getThemeColor"
 
 import * as S from "./styled"
 
+
 const PostItem = ({
   slug,
   background,
