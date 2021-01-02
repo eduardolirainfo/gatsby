@@ -29,18 +29,24 @@ const TagsPage = ({
     <S.MainContent>
       <ul>
         {group.map(tag => (
-          <li key={tag.fieldValue}>
+          <S.ListTag key={tag.fieldValue}>
             {/* <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
                   {tag.fieldValue} ({tag.totalCount})
             </Link> */}
-            <AniLink
+            <S.TagLink
               swipe
               direction="right"
               to={`/tags/${kebabCase(tag.fieldValue)}/`}
             >
-              {tag.fieldValue} ({tag.totalCount})
-            </AniLink>
-          </li>
+            <S.Button>
+  <S.Btn__content>
+    {tag.fieldValue}
+</S.Btn__content>
+  <S.Btn__glitch></S.Btn__glitch>
+  <S.Btn__label>({tag.totalCount})</S.Btn__label>
+</S.Button>
+ </S.TagLink>
+          </S.ListTag>
         ))}
       </ul>
       <AniLink swipe direction="right" to="/categorias">

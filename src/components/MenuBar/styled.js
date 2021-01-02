@@ -7,9 +7,9 @@ import transitions from "../../styles/transitions"
 
 export const MenuBarWrapper = styled.aside`
   align-items: center;
-  background: var(--mediumBackground);
+  background: var(--bgMenuBar);
   background-image: var(--bgimage);
-  border-left: 1px solid var(--borders);
+  border-left: 1px solid var(--bordersMenuBar);
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -18,7 +18,6 @@ export const MenuBarWrapper = styled.aside`
   position: fixed;
   right: 0;
   width: 3.75rem;
-
   ${media.lessThan("large")`
     border-top: 1px solid var(--borders);
     bottom: 0;
@@ -34,7 +33,6 @@ export const MenuBarWrapper = styled.aside`
 export const MenuBarGroup = styled.div`
   display: flex;
   flex-direction: column;
-  /* transition: ${transitions.ALL}; */
   ${media.lessThan("large")`
     flex-direction: row;
   `}
@@ -46,16 +44,23 @@ export const MenuBarLink = styled(AniLink)`
 
   svg & {
     transition: ${transitions.ALL};
+    &::hover{
+      background-image: linear-gradient( 60deg,var(--mediumBackground) 0%,var(--highlight) 100% )
+      text-shadow: var(--textShadowConvert);
+
+    }
   }
+
   &.active {
     span {
       color: var(--highlight);
       box-shadow: 9px 9px 30px 0px rgba(1, 50, 101, 0.11);
+
     }
   }
 `
 export const MenuBarItem = styled.span`
-  color: var(--postColor);
+  color: var(--colorMenuItem);
   cursor: pointer;
   display: block;
   height: 3.75rem;
@@ -63,9 +68,6 @@ export const MenuBarItem = styled.span`
   position: relative;
   width: 3.75rem;
   transition: ${transitions.ALL};
-
-
-
   /* &.light {
     transition: ${transitions.ALL};
   }

@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react"
 
-import { Home } from "styled-icons/boxicons-solid/Home"
-import { SearchAlt2 as Search } from "styled-icons/boxicons-regular/SearchAlt2"
-import { UpArrowAlt as Arrow } from "styled-icons/boxicons-regular/UpArrowAlt"
-import { Sun as Light } from "styled-icons/boxicons-solid/Sun"
-import { Moon as Dark } from "styled-icons/boxicons-solid/Moon"
-import { ListUl as List } from "styled-icons/boxicons-regular/ListUl"
-import { Grid } from "styled-icons/boxicons-solid/Grid"
-// import { BookContent as Newspaper } from "@styled-icons/boxicons-regular/BookContent"
+import { Home } from "@styled-icons/boxicons-solid/Home"
+import { SearchAlt2 as Search } from "@styled-icons/boxicons-regular/SearchAlt2"
+import { UpArrowAlt as Arrow } from "@styled-icons/boxicons-regular/UpArrowAlt"
+import { Sun as Light } from "@styled-icons/boxicons-solid/Sun"
+import { Moon as Dark } from "@styled-icons/boxicons-solid/Moon"
+import { ListUl as List } from "@styled-icons/boxicons-regular/ListUl"
+import { Grid } from "@styled-icons/boxicons-solid/Grid"
 import {User} from "@styled-icons/boxicons-regular/User"
 import {RssFeed as Feed} from "@styled-icons/material-rounded/RssFeed"
 
@@ -15,7 +14,6 @@ import {RssFeed as Feed} from "@styled-icons/material-rounded/RssFeed"
 import getThemeColor from "../../utils/getThemeColor"
 
 import * as S from "./styled"
-import * as GA from "./trackers"
 
 const MenuBar = () => {
   const [theme, setTheme] = useState(null)
@@ -23,11 +21,6 @@ const MenuBar = () => {
 
   const isDarkMode = theme === "dark"
   const isListMode = display === "list"
-
-  if (theme !== null && display !== null) {
-    GA.themeTracker(theme)
-    GA.displayTracker(display)
-  }
 
   useEffect(() => {
     setTheme(window.__theme)
@@ -79,7 +72,7 @@ const MenuBar = () => {
           </S.MenuBarItem>
         </S.MenuBarLink>
                <S.MenuBarLink
-          to="/feed/"
+          to="/rss.xml"
           title="Feed"
           cover
           direction="left"
@@ -100,7 +93,7 @@ const MenuBar = () => {
           title="Pesquisar"
           activeClassName="active"
         >
-          <S.MenuBarItem onClick={() => GA.searchClickTrack()}>
+          <S.MenuBarItem>
             <Search />
           </S.MenuBarItem>
         </S.MenuBarLink>
@@ -136,7 +129,6 @@ const MenuBar = () => {
         <S.MenuBarItem
           title="Ir para o Topo"
           onClick={() => {
-            GA.topClickTrack()
             window.scroll({ top: 0, behavior: "smooth" })
           }}
         >

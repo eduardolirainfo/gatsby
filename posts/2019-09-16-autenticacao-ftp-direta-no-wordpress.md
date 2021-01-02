@@ -7,7 +7,7 @@ date: "2012-06-09 11:14:39"
 image: /assets/img/mountains.jpg
 categories: MISC
 tags: ["tesoux", "teste2"]
-background: "#7AAB13"
+background: "#2bfea0"
 ---
 
 Para instalar temas ou um simples plugin, vem aquela bendita tela onde são solicitados host, usuário e senha FTP. Muitos usuários leigos entram em contato com a empresa de hospedagem para pedir o endereço de Host FTP, que geralmente é ftp.nomedodominio.com.br . Todos sabemos que essa é uma medida de segurança válida, por questões de permissão e usuário dos diretórios.

@@ -30,19 +30,6 @@ const PostItem = ({
         </S.PostItemDate>
         <S.PostItemTitle>{title}</S.PostItemTitle>
         <S.PostItemDescription>{description}</S.PostItemDescription>
-        {/* {<S.PostItemTag>
-            {tags ? <>{tags.map(((tag, index) => {
-              return (
-                <li key={tag + `tag`}>
-                  <S.PostItemLink>{tag}</S.PostItemLink>
-                </li>
-              )
-            }))}</> : <></>}
-          </S.PostItemTag> } */}
-        {/* <i className="ArrowRight">
-          {<small>Continuar leitura</small> }
-          <ArrowLeftOutlined />
-        </i> */}
         <ul>
         </ul>
       </S.PostItemInfo>

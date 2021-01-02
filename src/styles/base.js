@@ -95,13 +95,13 @@ export const MainContent = styled.section`
 
   ul,
   ol {
-    list-style: disc;
+    list-style: none;
     padding-left: 2.5rem;
     margin: 0 auto 1.6rem;
   }
 
   li {
-    padding: 0.625rem 0;
+    padding: 0.7rem 0;
 
     & > ul {
       margin-bottom: 0;
@@ -156,6 +156,7 @@ export const MainContent = styled.section`
     font-weight: 800;
     letter-spacing: 0.069rem;
     line-height: 1.4;
+    font-family: var(--fontFamily);
   }
 
   h1 {
@@ -226,11 +227,11 @@ export const MainContent = styled.section`
   }
 
   a {
+    animation: var(--animationText);
     border-bottom: 1px dashed var(--highlight);
     color: var(--highlight);
     text-decoration: none;
     transition: opacity 0.5s;
-
     svg {
       color: var(--postColor);
     }

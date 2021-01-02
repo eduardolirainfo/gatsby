@@ -1,18 +1,13 @@
 import React from "react"
 import propTypes from "prop-types"
-import ReactGA from "react-ga"
+import { ArrowReturnLeft } from "@styled-icons/bootstrap/ArrowReturnLeft"
+import { ArrowReturnRight } from "@styled-icons/bootstrap/ArrowReturnRight"
+
 
 import * as S from "./styled"
 
 import getThemeColor from "../../utils/getThemeColor"
 
-const RecommendedClickTrack = () => {
-  ReactGA.event({
-    category: "menu link",
-    action: "click",
-    label: "Clicou num recommended link",
-  })
-}
 
 const RecommendedPosts = ({ next, previous }) => (
   <S.RecommendedWrapper>
@@ -25,9 +20,9 @@ const RecommendedPosts = ({ next, previous }) => (
         rel="prev"
         bg={getThemeColor()}
         className="previous"
-        onClick={() => RecommendedClickTrack()}
       >
-        {previous.frontmatter.title}
+       <ArrowReturnLeft />
+       {previous.frontmatter.title}
       </S.RecommendedLink>
     )}
     {next && (
@@ -39,9 +34,9 @@ const RecommendedPosts = ({ next, previous }) => (
         rel="next"
         bg={getThemeColor()}
         className="next"
-        onClick={() => RecommendedClickTrack()}
       >
         {next.frontmatter.title}
+         <ArrowReturnRight />
       </S.RecommendedLink>
     )}
   </S.RecommendedWrapper>

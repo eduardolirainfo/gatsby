@@ -6,7 +6,7 @@ description: >-
 date: "2015-10-23 11:14:39"
 image: /assets/img/mountains.jpg
 categories: MISC
-background: "#7AAB13"
+background: "#2bfea0"
 tags: ["teste1","teste2"]
 ---
 

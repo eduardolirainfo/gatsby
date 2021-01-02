@@ -54,7 +54,59 @@ const pluginConfig = [
   `gatsby-plugin-netlify-cms`,
 
   `gatsby-plugin-netlify`,
-
+  {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allMarkdownRemark } }) => {
+              return allMarkdownRemark.edges.map(edge => {
+                return Object.assign({}, edge.node.frontmatter, {
+                  description: edge.node.excerpt,
+                  date: edge.node.frontmatter.date,
+                  url: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  custom_elements: [{ "content:encoded": edge.node.html }],
+                })
+              })
+            },
+            query: `
+              {
+                allMarkdownRemark(
+                  sort: { order: DESC, fields: [frontmatter___date] },
+                ) {
+                  edges {
+                    node {
+                      excerpt
+                      html
+                      fields { slug }
+                      frontmatter {
+                        title
+                        date
+                      }
+                    }
+                  }
+                }
+              }
+            `,
+            output: "/rss.xml",
+            title: "RSS Feed do site",
+          },
+        ],
+      }
+    },
   // needs to be the first to work with gatsby-remark-images
   {
     resolve: `gatsby-source-filesystem`,
@@ -108,79 +160,26 @@ const pluginConfig = [
     },
   },
   {
-    resolve: `gatsby-plugin-feed`,
-    options: {
-      query: `
-          {
-            site {
-              siteMetadata {
-                title
-                description
-                siteUrl
-                site_url: siteUrl
-              }
-            }
-          }
-        `,
-      feeds: [
-        {
-          serialize: ({ query: { site, allMarkdownRemark } }) => {
-            return allMarkdownRemark.edges.map(edge => {
-              return Object.assign({}, edge.node.frontmatter, {
-                description: edge.node.excerpt,
-                date: edge.node.frontmatter.date,
-                url: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                custom_elements: [
-                  {
-                    "content:encoded": edge.node.html,
-                  },
-                ],
-              })
-            })
-          },
-          query: `
-              {
-                allMarkdownRemark(
-                  sort: { order: DESC, fields: [frontmatter___date] },
-                ) {
-                  edges {
-                    node {
-                      excerpt
-                      html
-                      fields { slug }
-                      frontmatter {
-                        title
-                        date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
-                      }
-                    }
-                  }
-                }
-              }
-            `,
-          output: "/feed.xml",
-          title: "RSS Feed",
-          // optional configuration to insert feed reference in pages:
-          // if `string` is used, it will be used to create RegExp and then test if pathname of
-          // current page satisfied this regular expression;
-          // if not provided or `undefined`, all pages will have feed reference inserted
-        },
-      ],
-    },
+   resolve: `gatsby-plugin-offline`,
+  options: {
+    precachePages: [`/*`]
   },
-  `gatsby-plugin-offline`,
+  },
+
   `gatsby-plugin-sitemap`,
   // this (optional) plugin enables Progressive Web App + Offline functionality
   // To learn more, visit: https://gatsby.dev/offline
 
   // {
-  //   resolve: `gatsby-plugin-prefetch-google-fonts`,
-  //   options: {
-  //     fonts: [{
-  //       family: `Lato`,
-  //       variants: [`300`, `900`],
-  //     },],
-  //   },
+  //   resolve: `gatsby-plugin-google-fonts`,
+  //     options: {
+  //       fonts: [
+  //         `Lato\:300,400,400i,700`,
+  //         `Share+Tech+Mono`,
+  //         `Orbitron\:300,400,400i,700` // you can also specify font weights and styles
+  //       ],
+  //       display: 'swap'
+  //     }
   // },
 
   // "gatsby-plugin-page-progress",
@@ -208,16 +207,38 @@ if (process.env.CONTEXT === "production") {
       apiKey: process.env.ALGOLIA_ADMIN_KEY,
       queries,
       chunkSize: 10000, // default: 1000
-      enablePartialUpdates: true,
-    },
+      enablePartialUpdates: true
+    }
   }
 
-  const analytics = {
-    resolve: `gatsby-plugin-google-analytics`,
+  //   const analytics = {
+  //   resolve: `gatsby-plugin-google-analytics`,
+  //   options: {
+  //     trackingId: process.env.GOOGLE_ANALYTICS_ID,
+  //     head: false,
+  //     anonymize: true,
+  //     respectDNT: true
+  //   }
+  // }
+
+    const analytics = {
+    resolve: `gatsby-plugin-google-gtag`,
     options: {
-      trackingId: process.env.GOOGLE_ANALYTICS_ID,
-      head: false,
-    },
+      trackingIds: [
+        process.env.GOOGLE_ANALYTICS_ID
+      ],
+      gtagConfig: {
+          anonymize_ip: true,
+          cookie_expires: 0,
+        },
+      pluginConfig: {
+          // Puts tracking script in the head instead of the body
+          head: false,
+          // Setting this parameter is also optional
+          respectDNT: true,
+          // Avoids sending pageview hits from custom paths
+        }
+    }
   }
 
   pluginConfig.push(algolia)
@@ -232,7 +253,7 @@ module.exports = {
     authorDescription: `Ideias, café e tecnologias`,
     author: `@dudulira`,
     pathPrefix: "/eduardolirainfo/gatsby",
-    siteUrl: `https://eduardolira.xyz`,
+    siteUrl: `https://eduardolira.net.br`,
   },
   plugins: pluginConfig,
 }

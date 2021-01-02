@@ -50,13 +50,13 @@ export const MainContent = styled.section`
 
   ul,
   ol {
-    list-style: disc;
+    list-style: none;
     padding-left: 2.5rem;
     margin: 0 auto 1.6rem;
   }
 
   li {
-    padding: 0.625rem 0;
+    padding: 0.7rem 0;
 
     & > ul {
       margin-bottom: 0;
@@ -89,6 +89,7 @@ export const MainContent = styled.section`
     border-left: 0.3rem solid var(--highlight);
     padding: 0 1.875rem;
     margin: 3.125rem auto;
+    animation: var(--animationText);
   }
 
   hr {
@@ -110,6 +111,7 @@ export const MainContent = styled.section`
     font-weight: 800;
     letter-spacing: 0.069rem;
     line-height: 1.4;
+    font-family: var(--fontFamily);
   }
 
   h1 {
@@ -175,47 +177,22 @@ export const MainContent = styled.section`
     `}
   }
 
-  .instagram-media {
-    margin: 1rem auto !important;
-  }
   a {
-    transition: ${transitions.ALL};
+    animation: var(--animationText);
+    border-bottom: 1px dashed var(--highlight);
     color: var(--highlight);
     text-decoration: none;
-    line-height: 1.6;
-    position: relative;
-    z-index: 0;
-    display: inline-block;
-    overflow: hidden;
-    vertical-align: bottom;
+    transition: opacity 0.5s;
     svg {
       color: var(--postColor);
-      transition: ${transitions.ALL};
-    }
-    &:hover {
-      color: #fff;
     }
 
-    &::before {
-      content: "";
-      position: absolute;
-      z-index: -1;
-      top: 0;
-      left: 0;
-      transform: translateY(calc(100% - 2px));
-      width: 100%;
-      height: 100%;
-      background-image: linear-gradient(
-        60deg,
-        var(--mediumBackground) 0%,
-        var(--highlight) 100%
-      );
-      transition: transform 0.25s ease-out;
+    &:hover {
+      opacity: 0.8;
     }
-    &:hover::before {
-      transform: translateY(0);
-      transition: transform 0.25s ease-out;
-    }
+  }
+  .instagram-media {
+    margin: 1rem auto !important;
   }
 `
 export const PostHeader = styled.header`
@@ -233,15 +210,17 @@ export const PostHeader = styled.header`
 
 export const PostTitle = styled.h1`
   font-size: 3.75rem;
-  font-weight: 900;
+  font-weight: 700;
   font-style: normal;
   padding: 0 1.4rem;
   margin: 1rem auto;
-  color: var(--texts) !important;
+  color: var(--postTitle) !important;
   text-transform: uppercase;
+  font-family: var(--fontFamily);
+
   /* font-size: 1.875rem;
-    margin: 0 0 30px; */
-  text-shadow: 0 3px 0 #b2a98f;
+    margin: 0 0 30px;
+  text-shadow: 0 3px 0 #b2a98f; */
   /* text-shadow: 0 3px 0 #b2a98f, 0 14px 10px rgba(0, 0, 0, 0.15),
     0 24px 2px rgba(0, 0, 0, 0.1), 0 34px 30px rgba(0, 0, 0, 0.1); */
 
@@ -305,7 +284,7 @@ export const PostLink = styled(AniLink)`
   }
   &:hover {
     color: var(--highlight);
-    text-decoration: underline;
+    // text-decoration: underline;
   }
 `
 
@@ -314,6 +293,7 @@ export const PostDescription = styled.h2`
   color: var(--postDescription);
   font-weight: 300;
   padding: 0 1.4rem;
+  font-family: 'Share Tech Mono', monospace;
 
   ${media.lessThan("large")`
     font-size: 1.6rem;
@@ -330,11 +310,14 @@ export const PostCategories = styled(AniLink)`
   text-tranform: uppercase;
   display: flex;
   transition: ${transitions.COLOR};
+  text-decoration: none;
   &:hover {
     color: #8a4baf;
   }
 `
 export const LinkCat = styled(AniLink)`
+  text-decoration: none;
+  list-style: none;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -348,9 +331,6 @@ export const LinkCat = styled(AniLink)`
   transition: ${transitions.ALL};
   color: var(--highlight);
   font-size: 1.7rem;
-  &:hover {
-    opacity: 0.5;
-  }
 `
 
 export const PostDate = styled.p`
@@ -365,58 +345,210 @@ export const PostDate = styled.p`
 
 export const ItemTags = styled.ul`
   list-style: none;
-  margin: -2rem 0 2rem;
+  margin:  0 0 4rem;
   overflow: hidden;
-  padding: 0 5rem;
+  padding: 0 4rem;
+  display: flex;
+  flex-direction: row;
   /* transition: ${transitions.COLOR}; */
-
+/*
   & li {
       float: left;
- }
+ }*/
+`
+
+export const ListTag = styled.li`
+  padding: 0.65rem 0rem 0.65rem 0rem;
+  display: inline flow-root list-item;
 `
 export const TagLink = styled(AniLink)`
-  background: var(--mediumBackground);
-  border-left: inset 0 1px var(--postColor);
-  border-radius: 3px 0 0 3px;
   color: var(--postColor);
   display: inline-block;
-  height: 26px;
   line-height: 26px;
-  padding: 0 20px 0 23px;
+  padding: 0 1rem 0 1rem;
   position: relative;
   margin: 0 10px 10px 0;
   text-decoration: none;
-  border-left: 3px solid var(--borders);
-  /* transition: ${transitions.DEFAULT}; */
-  &::before{
-    background:var(--background);
-    border-radius: 10px;
-    box-shadow: inset 0 1px var(--borders);
-    content: '';
-    height: 6px;
-    left: 10px;
-    position: absolute;
-    width: 6px;
-    top: 10px;
+  transition: ${transitions.DEFAULT};
+
+`
+export const TagPost = styled(AniLink)`
+  color: var(--postColor);
+  display: inline-block;
+  line-height: 26px;
+  padding: 0 1rem 0 1rem;
+  position: relative;
+  margin: 0 10px 10px 0;
+  text-decoration: none;
+  transition: ${transitions.DEFAULT};
+`
+export const Btn__label = styled.span`
+  height: 1rem;
+  font-size: .65rem;
+  position: absolute;
+  bottom: -4px;
+  right: 8%;
+  padding: 0 5px;
+  background-color: var(--background);
+  z-index: 3;
+`
+export const Btn__glitch = styled.span`
+ display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--postTitle);
+  filter: drop-shadow(-2px 3px #67e3f3) drop-shadow(-1px -3px #02d8f3) drop-shadow(2px 1px #02d8f3);
+`
+export const Btn__content = styled.span`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  background-color: var(--postTitle);
+  clip-path: polygon(92% 0, 100% 25%, 100% 100%, 8% 100%, 0% 75%, 0 0);
+  color: var(--mediumBackground);
+  border-right: 0.3rem solid var(--highlight);
+
+`
+export const Button  = styled.button`
+  width: 10rem;
+  height: 2.45rem;
+  border: 0;
+  outline: none;
+  background-color: var(--black);
+  cursor: pointer;
+  position: relative;
+  // font-family: Tomorrow, sans-serif;
+  font-size: .85rem;
+  text-transform: uppercase;
+  color: var(--texts);
+  clip-path: polygon(92% 0, 100% 25%, 100% 100%, 8% 100%, 0% 75%, 0 0);
+  &:hover ${Btn__glitch},
+  &:hover ${Btn__content}::after,
+  &:focus ${Btn__glitch},
+  &:focus ${Btn__content}::after {
+    display: block;
+    animation: glitch-animation 2s linear 0s infinite;
   }
-  &::after {
-    background: var(--background);
-    border-bottom: 13px solid transparent;
-    border-left: 10px solid var(--mediumBackground);
-    border-top: 13px solid transparent;
-    content: '';
-    position: absolute;
-    right: 0;
-    top: 0;
+  /* secret trick */
+@keyframes glitch-animation {
+  0% {
+    opacity: 1;
+    transform: translateZ(0);
+    clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%);
   }
-  &:hover {
-    background-color: var(--highlight);
-    border-left-color: var(--highlight);
-    color: var(--mediumBackground);
-    font-size: 1rem;
+
+  2% {
+    clip-path: polygon(0 78%, 100% 78%, 100% 100%, 0 100%);
+    transform: translate(-5px);
   }
-  &:hover::after {
-    border-left-color: ${props =>
-      props.color ? props.color : " var(--highlight)"};
+
+  6% {
+    clip-path: polygon(0 78%, 100% 78%, 100% 100%, 0 100%);
+    transform: translate(5px);
   }
+
+  8% {
+    clip-path: polygon(0 78%, 100% 78%, 100% 100%, 0 100%);
+    transform: translate(-5px);
+  }
+
+  9% {
+    clip-path: polygon(0 78%, 100% 78%, 100% 100%, 0 100%);
+    transform: translate(0);
+  }
+
+  10% {
+    clip-path: polygon(0 54%, 100% 54%, 100% 44%, 0 44%);
+    transform: translate3d(5px, 0, 0);
+  }
+
+  13% {
+    clip-path: polygon(0 54%, 100% 54%, 100% 44%, 0 44%);
+    transform: translateZ(0);
+  }
+
+  13.1% {
+    clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+    transform: translate3d(5px, 0, 0);
+  }
+
+  15% {
+    clip-path: polygon(0 60%, 100% 60%, 100% 40%, 0 40%);
+    transform: translate3d(5px, 0, 0);
+  }
+
+  20% {
+    clip-path: polygon(0 60%, 100% 60%, 100% 40%, 0 40%);
+    transform: translate3d(-5px, 0, 0);
+  }
+
+  20.1% {
+    clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+    transform: translate3d(5px, 0, 0);
+  }
+
+  25% {
+    clip-path: polygon(0 85%, 100% 85%, 100% 40%, 0 40%);
+    transform: translate3d(5px, 0, 0);
+  }
+
+  30% {
+    clip-path: polygon(0 85%, 100% 85%, 100% 40%, 0 40%);
+    transform: translate3d(-5px, 0, 0);
+  }
+
+  30.1% {
+    clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+  }
+
+  35% {
+    clip-path: polygon(0 63%, 100% 63%, 100% 80%, 0 80%);
+    transform: translate(-5px);
+  }
+
+  40% {
+    clip-path: polygon(0 63%, 100% 63%, 100% 80%, 0 80%);
+    transform: translate(5px);
+  }
+
+  45% {
+    clip-path: polygon(0 63%, 100% 63%, 100% 80%, 0 80%);
+    transform: translate(-5px);
+  }
+
+  50% {
+    clip-path: polygon(0 63%, 100% 63%, 100% 80%, 0 80%);
+    transform: translate(0);
+  }
+
+  55% {
+    clip-path: polygon(0 10%, 100% 10%, 100% 0, 0 0);
+    transform: translate3d(5px, 0, 0);
+  }
+
+  60% {
+    clip-path: polygon(0 10%, 100% 10%, 100% 0, 0 0);
+    transform: translateZ(0);
+    opacity: 1;
+  }
+
+  60.1% {
+    clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+    opacity: 1;
+  }
+
+  to {
+    clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+    opacity: 1;
+  }
+}
+
 `

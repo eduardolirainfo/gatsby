@@ -32,7 +32,7 @@ class BlogPostTemplate extends React.Component {
               direction="down"
               to={`/categorias/${kebabCase(categories)}`}
             >
-              {categories}
+              # {categories}
             </S.PostCategories>
           )}
           <S.PostDate>
@@ -51,7 +51,16 @@ class BlogPostTemplate extends React.Component {
               {tags.map((tag, index) => {
                 return (
                   <li key={tag + `tag`}>
-                    <S.TagLink to={`/tags/${kebabCase(tag)}`}>{tag}</S.TagLink>
+                    <S.TagPost
+                    swipe
+                    direction="down"
+                    to={`/tags/${kebabCase(tag)}`}><S.Button>
+  <S.Btn__content>
+    {tag}
+</S.Btn__content>
+  <S.Btn__glitch></S.Btn__glitch>
+</S.Button>
+</S.TagPost>
                   </li>
                 )
               })}

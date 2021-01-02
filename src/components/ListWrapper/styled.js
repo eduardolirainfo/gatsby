@@ -27,7 +27,8 @@ export const ListWrapper = styled.section`
       filter: blur(2px);
     }
   }
-  /* ${media.lessThan("small")`
+  /*
+  ${media.lessThan("small")`
        body#card & { grid-template-columns: repeat(1, 1fr); }
     `}
      ${media.between("small", "medium")`
@@ -38,6 +39,6 @@ export const ListWrapper = styled.section`
    `}
    ${media.greaterThan("large")`
        body#card & { grid-template-columns: repeat(4, 1fr); }
-   `} */
+   `}*/
 
 `

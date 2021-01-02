@@ -5,13 +5,12 @@ import transitions from "../../styles/transitions"
 
 export const LayoutWrapper = styled.section`
   display: flex;
-
+  overflow: hidden;
   ${media.lessThan("large")`
     flex-direction: column;
     padding-top: 4.125rem;
   `}
 `
-
 export const LayoutMain = styled.main`
   background: var(--background);
   min-height: 100vh;

@@ -9,7 +9,7 @@ const links = [
   },
   {
     label: "Feed RSS",
-    url: "/feed.xml/",
+    url: "/rss.xml/",
   },
 ]
 

@@ -35,19 +35,29 @@ const CatsPage = ({
     <S.MainContent>
       <ul>
         {group.map(categories => (
-          <li key={categories.fieldValue}>
-            <AniLink
+         <S.ListTag key={categories.fieldValue}>
+            <S.TagLink
               swipe
               direction="right"
               duration={0.3}
               to={`/categorias/${kebabCase(categories.fieldValue)}/`}
             >
-              {categories.fieldValue} ({categories.totalCount})
-            </AniLink>
-          </li>
+            <S.Button>
+  <S.Btn__content>
+    {categories.fieldValue}
+</S.Btn__content>
+  <S.Btn__glitch></S.Btn__glitch>
+  <S.Btn__label>({categories.totalCount})</S.Btn__label>
+</S.Button>
+ </S.TagLink>
+          </S.ListTag>
+
+
+
+
         ))}
       </ul>
-      <AniLink swipe to="/tags" direction="right" duration={0.3}>
+      <AniLink swipe to="/tags" direction="right" >
         <span>&#60;&#60;</span>
         Procurar por Tags
       </AniLink>
