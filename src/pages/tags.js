@@ -8,7 +8,7 @@ import AniLink from "gatsby-plugin-transition-link/AniLink"
 // Components
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
-import SEO from "../components/Seo"
+import Seo from "../components/Seo"
 
 import * as S from "../components/Post/styled"
 
@@ -21,7 +21,7 @@ const TagsPage = ({
   },
 }) => (
   <Layout>
-    <SEO title={title} />
+    <Seo title={title}/>
     <S.PostHeader>
       <S.PostTitle>Tags utilizadas</S.PostTitle>
       <S.PostDescription> Navegue entre as tags do blog </S.PostDescription>

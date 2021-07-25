@@ -1,5 +1,5 @@
 ---
-date: "2019-03-17"
+date: 2018-02-02 05:54:23
 title: Imperfection is beauty, madness is genius
 description: And it's better to be absolutely ridiculous than absolutely boring
 tags: ["css"]

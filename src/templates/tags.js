@@ -7,7 +7,7 @@ import PropTypes from "prop-types"
 // Components
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
-import SEO from "../components/Seo"
+import Seo from "../components/Seo"
 import PostItem from "../components/PostItem"
 
 import * as S from "../components/ListWrapper/styled"
@@ -21,7 +21,7 @@ const Tags = ({ pageContext, data }) => {
   } com a tag "${tag}"`
   return (
     <Layout>
-      <SEO
+      <Seo
         title="Categoria {tag}"
         description="Navegue entre as categorias de nosso blog"
       />

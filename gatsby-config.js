@@ -3,45 +3,16 @@ require("dotenv").config()
 const queries = require("./src/utils/algolia_queries")
 
 const pluginConfig = [
-  {
-    resolve: `gatsby-transformer-remark`,
-    options: {
-      plugins: [
-        {
-          resolve: "gatsby-remark-relative-images-v2",
-          options: {
-            name: "uploads",
-          },
-        },
-        {
-          resolve: "@weknow/gatsby-remark-codepen",
-          options: {
-            theme: "dark",
-            height: 400,
-          },
-        },
-        `gatsby-remark-responsive-iframe`,
-        `gatsby-remark-external-links`,
-        {
-          resolve: `gatsby-remark-autolink-headers`,
-          options: {
-            icon: false,
-            removeAccents: true,
-          },
-        },
-        {
-          resolve: "gatsby-remark-images",
-          options: {
-            maxWidth: 960,
-            linkImagesToOriginal: false,
-          },
-        },
-        `gatsby-remark-lazy-load`,
-        `gatsby-remark-prismjs`,
-      ],
-    },
-  },
+  `gatsby-plugin-twitter`,
+  `gatsby-plugin-react-helmet`,
   `gatsby-plugin-transition-link`,
+  {
+    resolve: 'gatsby-source-filesystem',
+    options: {
+      path: `${__dirname}/static/assets/img`,
+      name: 'uploads'
+    }
+  },
   `gatsby-plugin-styled-components`,
   {
     resolve: `gatsby-source-filesystem`,
@@ -50,10 +21,7 @@ const pluginConfig = [
       path: `${__dirname}/posts`,
     },
   },
-  `gatsby-plugin-react-helmet`,
   `gatsby-plugin-netlify-cms`,
-
-  `gatsby-plugin-netlify`,
   {
       resolve: `gatsby-plugin-feed`,
       options: {
@@ -107,16 +75,11 @@ const pluginConfig = [
         ],
       }
     },
-  // needs to be the first to work with gatsby-remark-images
   {
     resolve: `gatsby-source-filesystem`,
     options: {
       name: `uploads`,
       path: `${__dirname}/static/assets/img`,
-    },
-    resolve: "gatsby-plugin-netlify-cache",
-    options: {
-      cachePublic: true,
     },
   },
 
@@ -134,19 +97,48 @@ const pluginConfig = [
       path: `${__dirname}/posts`,
     },
   },
-  `gatsby-transformer-sharp`,
+  `gatsby-plugin-image`,
   `gatsby-plugin-sharp`,
-  // {
-  // resolve: `gatsby-plugin-algolia-search`,
-  // options: {
-  //   appId: process.env.GATSBY_ALGOLIA_APP_ID,
-  //   apiKey: process.env.ALGOLIA_ADMIN_KEY,
-  //   indexName: process.env.GATSBY_ALGOLIA_INDEX_NAME,
-  //   queries,
-  //   chunkSize: 10000, // default: 1000
-  //   enablePartialUpdates: true,
-  // },
-  // },
+  `gatsby-transformer-sharp`,
+  {
+    resolve: `gatsby-transformer-remark`,
+    options: {
+      plugins: [
+        {
+          resolve: "gatsby-remark-relative-images-v2",
+          options: {
+            name: "uploads",
+          },
+        },
+        {
+          resolve: "@weknow/gatsby-remark-codepen",
+          options: {
+            theme: "dark",
+            height: 400,
+          },
+        },
+        `gatsby-remark-responsive-iframe`,
+        `gatsby-remark-external-links`,
+        {
+          resolve: `gatsby-remark-autolink-headers`,
+          options: {
+            icon: false,
+            removeAccents: true,
+          },
+        },
+        {
+          resolve: "gatsby-remark-images",
+          options: {
+            maxWidth: 960,
+            linkImagesToOriginal: false,
+          },
+        },
+        `gatsby-remark-lazy-load`,
+        `gatsby-remark-prismjs`,
+      ],
+    },
+  },
+
   {
     resolve: `gatsby-plugin-manifest`,
     options: {
@@ -156,7 +148,7 @@ const pluginConfig = [
       background_color: `#4D3153`,
       theme_color: `#200526`,
       display: `minimal-ui`,
-      icon: `src/images/ed-icon.png`, // This path is relative to the root of the site.
+      icon: `src/images/ed-icon.png`, 
     },
   },
   {
@@ -167,37 +159,6 @@ const pluginConfig = [
   },
 
   `gatsby-plugin-sitemap`,
-  // this (optional) plugin enables Progressive Web App + Offline functionality
-  // To learn more, visit: https://gatsby.dev/offline
-
-  // {
-  //   resolve: `gatsby-plugin-google-fonts`,
-  //     options: {
-  //       fonts: [
-  //         `Lato\:300,400,400i,700`,
-  //         `Share+Tech+Mono`,
-  //         `Orbitron\:300,400,400i,700` // you can also specify font weights and styles
-  //       ],
-  //       display: 'swap'
-  //     }
-  // },
-
-  // "gatsby-plugin-page-progress",
-  // {
-  //   resolve: "gatsby-plugin-page-progress",
-  //   options: {
-  //     includePaths: [
-  //       "/",
-  //       {
-  //         regex: "^/",
-  //       },
-  //     ],
-  //     excludePaths: ["/sobre", "/"],
-  //     height: 3,
-  //     prependToBody: false,
-  //     color: `#b17acc`,
-  //   },
-  // },
 ]
 if (process.env.CONTEXT === "production") {
   const algolia = {
@@ -211,16 +172,6 @@ if (process.env.CONTEXT === "production") {
     }
   }
 
-  //   const analytics = {
-  //   resolve: `gatsby-plugin-google-analytics`,
-  //   options: {
-  //     trackingId: process.env.GOOGLE_ANALYTICS_ID,
-  //     head: false,
-  //     anonymize: true,
-  //     respectDNT: true
-  //   }
-  // }
-
     const analytics = {
     resolve: `gatsby-plugin-google-gtag`,
     options: {
@@ -232,11 +183,8 @@ if (process.env.CONTEXT === "production") {
           cookie_expires: 0,
         },
       pluginConfig: {
-          // Puts tracking script in the head instead of the body
           head: false,
-          // Setting this parameter is also optional
           respectDNT: true,
-          // Avoids sending pageview hits from custom paths
         }
     }
   }
@@ -249,11 +197,15 @@ module.exports = {
   siteMetadata: {
     title: `Eduardo Lira`,
     position: `Developer`,
-    description: `Um blog sobre desenvolvimento web, programação e outras coisas legais.`,
+    description: `Um blog sobre programação e outras coisas legais.`,
     authorDescription: `Ideias, café e tecnologias`,
     author: `@dudulira`,
     pathPrefix: "/eduardolirainfo/gatsby",
     siteUrl: `https://eduardolira.net.br`,
   },
   plugins: pluginConfig,
+  flags: {
+    DEV_SSR: false,
+    FAST_DEV: true
+  }
 }

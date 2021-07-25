@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 
-import SEO from "../components/Seo"
+import Seo from "../components/Seo"
 import GlobalStyles from "../styles/global"
 import transitions from "../styles/transitions"
 
@@ -157,7 +157,7 @@ const Button = styled(Link)`
 
 const NotFoundPage = () => (
   <Container>
-    <SEO title="404: Not found" />
+    <Seo title="404: Not found" />
     <GlobalStyles />
     <Title>404</Title>
     <Text>Ué? Cadê? Parece que não tem o que você procura.</Text>

@@ -8,7 +8,7 @@ import Layout from "../components/Layout"
 import { graphql } from "gatsby"
 
 
-import SEO from "../components/Seo"
+import Seo from "../components/Seo"
 import PostItem from "../components/PostItem"
 import Pagination from "../components/Pagination"
 
@@ -28,7 +28,7 @@ class BlogIndex extends React.Component {
 
     return (
       <Layout location={this.props.location}>
-        <SEO title="Home" />
+        <Seo title="Home" />
         <S.ListWrapper>
           {postList.map(({ node }, i) => {
             return (

@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 // Components
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
-import SEO from "../components/Seo"
+import Seo from "../components/Seo"
 import PostItem from "../components/PostItem"
 
 import * as S from "../components/ListWrapper/styled"
@@ -18,7 +18,7 @@ const Categories = ({ pageContext, data }) => {
   } na categoria "${category}"`
   return (
     <Layout>
-      <SEO
+      <Seo
         title="Categoria {category}"
         description="Navegue entre as categorias de nosso blog"
       />
