@@ -18,11 +18,11 @@ const AboutPage = () => (
         Meu nome é Eduardo Lira, nasci no Rio de janeiro/RJ e atualmente sou
         desenvolvedor na{" "}
         <a
-          href="http://studiovs.com.br/"
+          href="https://www.sofis.com.br/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Studio VS
+          Sofis Tecnologia
         </a>
       </p>
 
