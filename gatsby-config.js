@@ -173,21 +173,12 @@ if (process.env.CONTEXT === "production") {
   }
 
     const analytics = {
-    resolve: `gatsby-plugin-google-gtag`,
-    options: {
-      trackingIds: [
-        process.env.GOOGLE_ANALYTICS_ID
-      ],
-      gtagConfig: {
-          anonymize_ip: true,
-          cookie_expires: 0,
-        },
-      pluginConfig: {
-          head: false,
-          respectDNT: true,
-        }
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        header: true,
+        trackingId: process.env.GOOGLE_ANALYTICS_ID,
+      }
     }
-  }
 
   pluginConfig.push(algolia)
   pluginConfig.push(analytics)
