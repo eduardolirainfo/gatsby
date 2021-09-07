@@ -77,14 +77,14 @@
     "prettier": "^2.2.1"
   },
   "keywords": [
-    "gatsby",
+    "eduardo lira",
     "frontend",
     "blog"
   ],
   "license": "MIT",
   "scripts": {
     "build": "gatsby build --prefix-paths && gh-pages -d public",
-    "develop": "gatsby develop",
+    "dev": "gatsby develop",
     "develop:playground": "GATSBY_GRAPHQL_IDE=playground gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
@@ -93,9 +93,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/eduardolirainfo/gatsby"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/eduardolirainfo/gatsby/issues"
   }
 }

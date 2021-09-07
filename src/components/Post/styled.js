@@ -370,6 +370,8 @@ export const TagLink = styled(AniLink)`
   margin: 0 10px 10px 0;
   text-decoration: none;
   transition: ${transitions.DEFAULT};
+  border-bottom: none !important;
+
 
 `
 export const TagPost = styled(AniLink)`
