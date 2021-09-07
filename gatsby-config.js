@@ -175,7 +175,7 @@ if (process.env.CONTEXT === "production") {
     const analytics = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        header: true,
+        head: false,
         trackingId: process.env.GOOGLE_ANALYTICS_ID,
       }
     }
