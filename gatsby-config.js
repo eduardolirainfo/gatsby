@@ -1,4 +1,4 @@
-require("dotenv").config()
+require('dotenv').config({path: `.env`,})
 
 const queries = require("./src/utils/algolia_queries")
 
@@ -176,7 +176,7 @@ if (process.env.CONTEXT === "production") {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         head: false,
-        trackingId: process.env.GOOGLE_ANALYTICS_ID,
+        trackingId: process.env.GOOGLE_ANALYTICS_ID
       }
     }
 
