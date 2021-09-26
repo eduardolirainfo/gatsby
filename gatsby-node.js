@@ -2,9 +2,9 @@ const path = require(`path`)
 const _ = require("lodash")
 
 const { createFilePath } = require(`gatsby-source-filesystem`)
-exports.sourceNodes = ({ actions, schema }) => {
-  const { createTypes } = actions
 
+exports.createSchemaCustomization = ({ actions, schema }) => {
+  const { createTypes } = actions
   createTypes(`
     type MarkdownRemarkFrontmatter {
       image: String

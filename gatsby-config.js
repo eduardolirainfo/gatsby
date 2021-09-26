@@ -103,12 +103,6 @@ const pluginConfig = [
     resolve: `gatsby-transformer-remark`,
     options: {
       plugins: [
-        {
-          resolve: "gatsby-remark-relative-images-v2",
-          options: {
-            name: "uploads",
-          },
-        },
         `gatsby-remark-lazy-load`,
         `gatsby-remark-prismjs`,
       ],

@@ -4,6 +4,21 @@
   "description": "Um blog simples para nossa diversão",
   "version": "0.2.0",
   "author": "Eduardo Lira <eduardoliraifo@gmail.com>",
+  "keywords": [
+    "eduardo lira",
+    "frontend",
+    "blog"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "cross-env GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages --prefix-paths",
+    "dev": "gatsby develop",
+    "develop:playground": "GATSBY_GRAPHQL_IDE=playground gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "start": "yarn run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""
+  },
   "dependencies": {
     "@material-ui/core": "^4.11.2",
     "@material-ui/icons": "^4.11.2",
@@ -13,7 +28,7 @@
     "codemirror": "^5.58.3",
     "cross-env": "^7.0.3",
     "dotenv": "^10.0.0",
-    "eslint-plugin-flowtype": "^5.2.0",
+    "eslint-plugin-flowtype": "^6.1.0",
     "gatsby": "^4.0.0-zz-next.1",
     "gatsby-plugin-advanced-sitemap": "^2.0.0",
     "gatsby-plugin-algolia-search": "^0.5.7",
@@ -23,7 +38,6 @@
     "gatsby-plugin-image": "^1.6.0",
     "gatsby-plugin-layout": "^2.6.0",
     "gatsby-plugin-manifest": "^3.1.0",
-    "gatsby-plugin-netlify-cms": "^5.1.0",
     "gatsby-plugin-offline": "^4.6.0",
     "gatsby-plugin-page-progress": "^2.1.1",
     "gatsby-plugin-prefetch-google-fonts": "^1.4.3",
@@ -48,10 +62,9 @@
     "gatsby-transformer-remark": "^4.3.0",
     "gatsby-transformer-sharp": "^3.6.0",
     "gsap": "^3.6.1",
-    "http-server": "^0.12.3",
+    "http-server": "^13.0.2",
     "install": "^0.13.0",
     "lazysizes": "^5.2.2",
-    "netlify-cms-app": "^2.14.4",
     "npm": "^7.16.0",
     "prism-themes": "^1.5.0",
     "prismjs": "^1.23.0",
@@ -78,21 +91,6 @@
     "gatsby-remark-code-titles": "^1.1.0",
     "gatsby-remark-default-html-attrs": "^1.0.1",
     "prettier": "^2.2.1"
-  },
-  "keywords": [
-    "eduardo lira",
-    "frontend",
-    "blog"
-  ],
-  "license": "MIT",
-  "scripts": {
-    "build": "cross-env GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages --prefix-paths && gh-pages -d public",
-    "dev": "gatsby develop",
-    "develop:playground": "GATSBY_GRAPHQL_IDE=playground gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""
   },
   "repository": {
     "type": "git",
