@@ -13,7 +13,7 @@ const AboutPage = () => (
       description="Saiba um pouco mais sobre o desenvolvedor por trás deste blog."
     />
     <MainContent>
-      <h1>Sobre mim</h1>
+      <h2>Sobre mim</h2>
       <p>
         Meu nome é Eduardo Lira, nasci no Rio de janeiro/RJ e atualmente sou
         desenvolvedor na{" "}

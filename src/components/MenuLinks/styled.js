@@ -35,7 +35,7 @@ export const MenuLinksItem = styled.li`
     display: inline-block;
     overflow: hidden;
     vertical-align: bottom;
-    font-family: var(--fontFamily);
+    font-family: -apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica Neue','Arial','Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';
 
     &:hover {
       color: var(--bordersMenuBar);

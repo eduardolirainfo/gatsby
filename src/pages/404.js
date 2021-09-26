@@ -43,7 +43,6 @@ const Title = styled.h1`
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   transition: ${transitions.ALL};
   color: var(--cyber);
-  font-family: 'Share Tech Mono', monospace;
   text-shadow: 0 0 5px var(--cyberHl);
   &:hover {
     text-shadow: -0.06em 0 #f00, 0.06em 0 var(--cyberHl);
@@ -53,7 +52,7 @@ const Title = styled.h1`
 const Text = styled.p`
   background: var(--background);
   color: var(--texts);
-  // font-family: Courier, monospace;
+  font-family: -apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica Neue','Arial','Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';
 `
 
 const Button = styled(Link)`
@@ -62,7 +61,7 @@ const Button = styled(Link)`
   margin-top: 1rem;
   padding: 0 10px;
   font-size: 2em;
-  font-family: var(--fontFamily);
+  font-family: -apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica Neue','Arial','Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';
   text-shadow: 0 0 5px #afd33d;
  position: relative;
   color: #afd33d;

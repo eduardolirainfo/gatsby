@@ -3,6 +3,7 @@ require('dotenv').config({path: `.env`,})
 const queries = require("./src/utils/algolia_queries")
 
 const pluginConfig = [
+  `gatsby-plugin-advanced-sitemap`,
   `gatsby-plugin-twitter`,
   `gatsby-plugin-react-helmet`,
   `gatsby-plugin-transition-link`,
@@ -21,7 +22,6 @@ const pluginConfig = [
       path: `${__dirname}/posts`,
     },
   },
-  `gatsby-plugin-netlify-cms`,
   {
       resolve: `gatsby-plugin-feed`,
       options: {
@@ -98,7 +98,6 @@ const pluginConfig = [
     },
   },
   `gatsby-plugin-image`,
-  `gatsby-plugin-sharp`,
   `gatsby-transformer-sharp`,
   {
     resolve: `gatsby-transformer-remark`,
@@ -110,35 +109,21 @@ const pluginConfig = [
             name: "uploads",
           },
         },
-        {
-          resolve: "@weknow/gatsby-remark-codepen",
-          options: {
-            theme: "dark",
-            height: 400,
-          },
-        },
-        `gatsby-remark-responsive-iframe`,
-        `gatsby-remark-external-links`,
-        {
-          resolve: `gatsby-remark-autolink-headers`,
-          options: {
-            icon: false,
-            removeAccents: true,
-          },
-        },
-        {
-          resolve: "gatsby-remark-images",
-          options: {
-            maxWidth: 960,
-            linkImagesToOriginal: false,
-          },
-        },
         `gatsby-remark-lazy-load`,
         `gatsby-remark-prismjs`,
       ],
     },
   },
-
+  {
+    resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          quality: 100,
+          formats: ["auto", "webp", "avif"],
+          placeholder: "blurred",
+        },
+      },
+    },
   {
     resolve: `gatsby-plugin-manifest`,
     options: {
@@ -148,7 +133,7 @@ const pluginConfig = [
       background_color: `#4D3153`,
       theme_color: `#200526`,
       display: `minimal-ui`,
-      icon: `src/images/ed-icon.png`, 
+      icon: `src/images/ed-icon.png`,
     },
   },
   {
@@ -191,7 +176,7 @@ module.exports = {
     description: `Um blog sobre programação e outras coisas legais.`,
     authorDescription: `Ideias, café e tecnologias`,
     author: `@dudulira`,
-    pathPrefix: "/eduardolirainfo/gatsby",
+    pathPrefix: `/eduardolirainfo/gatsby`,
     siteUrl: `https://eduardolira.net.br`,
   },
   plugins: pluginConfig,

@@ -5,6 +5,7 @@ export const CommentsWrapper = styled.section`
   margin: auto;
   max-width: 70rem;
   padding: 3rem 6.4rem 3rem;
+  display: grid;
 
   ${media.lessThan("large")`
     padding: 3rem 1.4rem 0;
@@ -30,7 +31,7 @@ padding: 0 1.4rem;
 margin: 0 auto;
 color: var(--postTitle) !important;
 text-transform: uppercase;
-font-family: var(--fontFamily);
+font-family: -apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica Neue','Arial','Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';
 padding-bottom: 2rem;
 
   ${media.lessThan("large")`

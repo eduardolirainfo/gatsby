@@ -31,7 +31,7 @@ export const RecommendedLink = styled(AniLink)`
 border: 2px solid var(--borderInputColor);
 -webkit-clip-path: polygon( 0 0, 100% 0, 100% calc(100% - 1rem + 2px), calc(100% - 1rem + 2px) 100%, 0 100% );
 clip-path: polygon( 0 0, 100% 0, 100% calc(100% - 1rem + 2px), calc(100% - 1rem + 2px) 100%, 0 100% );
-font-family: var(--fontFamily);
+font-family: -apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica Neue','Arial','Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';
 
 animation: var(--animationText);
 

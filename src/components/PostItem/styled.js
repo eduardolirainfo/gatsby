@@ -91,6 +91,7 @@ export const PostItemWrapper = styled.section`
   padding: 2rem 3rem;
   width: 100%;
   transition: ${transitions.ALL};
+  
 
   &:not(.disableCard) {
     body#card & {
@@ -98,6 +99,13 @@ export const PostItemWrapper = styled.section`
       padding: 2rem 2rem;
       flex-direction: column;
       justify-content: center;
+      background-image:url(${props => props.image});
+      width: 100%;
+      height: 100%;
+      border-radius: 8px;
+      background-blend-mode: multiply;
+      background-size: contain;
+background-repeat: no-repeat;
     }
   }
 
@@ -106,6 +114,13 @@ export const PostItemWrapper = styled.section`
     /* padding: 2rem 1rem; */
     flex-direction: column;
     justify-content: center;
+    background-image: url(${props => props.image});
+    width: 100%;
+      height: 100%;
+      border-radius: 8px;
+      background-blend-mode: multiply;
+      background-size: contain;
+background-repeat: no-repeat;
   }
 
   body#card &:hover {
@@ -419,7 +434,6 @@ export const PostItemDescription = styled.p`
   font-weight: 300;
   line-height: 1.2;
   color: var(--postColor);
-  font-family: 'Share Tech Mono', monospace;
 `
 export const ItemTags = styled.p`
   font-size: 1rem;

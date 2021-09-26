@@ -85,11 +85,29 @@ export const MainContent = styled.section`
   }
 
   blockquote {
-    color: var(--postColor);
-    border-left: 0.3rem solid var(--highlight);
-    padding: 0 1.875rem;
-    margin: 3.125rem auto;
-    animation: var(--animationText);
+    border-width: 2px 0;
+    border-style: solid;
+    border-color: var(--highlight);
+    padding: 1.5em 0 0.5em;
+    margin: 1.5em 0;
+    position: relative;
+    p{
+      animation: var(--animationText);
+    }
+  }
+
+  blockquote:before{
+    content: "\\201C";
+    position: absolute;
+    top: 0em;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 3rem;
+    height: 2rem;
+    background: var(--background);
+    color: var(--highlight);
+    font: 6em/1.08em 'PT Sans', sans-serif;
+    text-align: center;
   }
 
   hr {
@@ -111,7 +129,7 @@ export const MainContent = styled.section`
     font-weight: 800;
     letter-spacing: 0.069rem;
     line-height: 1.4;
-    font-family: var(--fontFamily);
+    font-family: -apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica Neue','Arial','Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';
   }
 
   h1 {
@@ -208,7 +226,7 @@ export const PostHeader = styled.header`
   `}
 `
 
-export const PostTitle = styled.h1`
+export const PostTitle = styled.h2`
   font-size: 3.75rem;
   font-weight: 700;
   font-style: normal;
@@ -216,14 +234,8 @@ export const PostTitle = styled.h1`
   margin: 1rem auto;
   color: var(--postTitle) !important;
   text-transform: uppercase;
-  font-family: var(--fontFamily);
-
-  /* font-size: 1.875rem;
-    margin: 0 0 30px;
-  text-shadow: 0 3px 0 #b2a98f; */
-  /* text-shadow: 0 3px 0 #b2a98f, 0 14px 10px rgba(0, 0, 0, 0.15),
-    0 24px 2px rgba(0, 0, 0, 0.1), 0 34px 30px rgba(0, 0, 0, 0.1); */
-
+  font-family: -apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica Neue','Arial','Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';
+  
   ${media.lessThan("large")`
     font-size: 2.8rem;
     line-height: 1.1;
@@ -232,18 +244,15 @@ export const PostTitle = styled.h1`
 `
 
 export const PostTitleCat = styled.h2`
-  font-size: 1.875rem;
-  font-weight: 900;
-  font-style: normal;
   padding: 0;
   margin: 0rem 0rem 2rem;
   color: var(--texts) !important;
   text-transform: uppercase;
-  /* font-size: 1.875rem;
-    margin: 0 0 30px; */
-  text-shadow: 0 3px 0 #b2a98f;
-  /* text-shadow: 0 3px 0 #b2a98f, 0 14px 10px rgba(0, 0, 0, 0.15),
-    0 24px 2px rgba(0, 0, 0, 0.1), 0 34px 30px rgba(0, 0, 0, 0.1); */
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-image: radial-gradient( 100% 100% at 100% 0%, #5ADAFF 0%, #5468FF 100% );
+  background-size: 400% 400%;
+  animation: animateGradient 5s ease infinite;
 
   ${media.lessThan("large")`
     font-size: 1.8rem;
@@ -288,12 +297,11 @@ export const PostLink = styled(AniLink)`
   }
 `
 
-export const PostDescription = styled.h2`
+export const PostDescription = styled.h3`
   font-size: 1.5rem;
   color: var(--postDescription);
   font-weight: 300;
   padding: 0 1.4rem;
-  font-family: 'Share Tech Mono', monospace;
 
   ${media.lessThan("large")`
     font-size: 1.6rem;
@@ -302,15 +310,20 @@ export const PostDescription = styled.h2`
   `}
 `
 export const PostCategories = styled(AniLink)`
-  font-size: 0.9rem;
-  font-weight: 900;
+  font-size: 1.1rem;
+  font-weight: bold;
   padding: 0rem 0.2rem 0 1.4rem;
-  color: #b17acc;
   float: left;
   text-tranform: uppercase;
   display: flex;
   transition: ${transitions.COLOR};
   text-decoration: none;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-image: var(--gradienteLink);
+  background-size: 400% 400%;
+  animation: animateGradient 5s ease infinite;
   &:hover {
     color: #8a4baf;
   }
@@ -334,8 +347,8 @@ export const LinkCat = styled(AniLink)`
 `
 
 export const PostDate = styled.p`
-  font-size: 0.9rem;
-  font-weight: 300;
+  font-size: 1.1rem;
+  font-weight:100;
   padding: 0 1.4rem;
   color: var(--postDescription);
   ${media.lessThan("large")`
@@ -424,10 +437,9 @@ export const Button  = styled.button`
   height: 2.45rem;
   border: 0;
   outline: none;
-  background-color: var(--black);
+  background-color: transparent;
   cursor: pointer;
   position: relative;
-  // font-family: Tomorrow, sans-serif;
   font-size: .85rem;
   text-transform: uppercase;
   color: var(--texts);

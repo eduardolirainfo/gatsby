@@ -156,7 +156,7 @@ export const MainContent = styled.section`
     font-weight: 800;
     letter-spacing: 0.069rem;
     line-height: 1.4;
-    font-family: var(--fontFamily);
+    font-family: -apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica Neue','Arial','Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';
   }
 
   h1 {

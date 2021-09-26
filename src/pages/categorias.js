@@ -51,10 +51,6 @@ const CatsPage = ({
 </S.Button>
  </S.TagLink>
           </S.ListTag>
-
-
-
-
         ))}
       </ul>
       <AniLink swipe to="/tags" direction="right" >

@@ -107,7 +107,6 @@ const GlobalStyles = createGlobalStyle`
     --cyber: #fd0130;
     --cyberHl: rgba(253, 1, 48, .8);
     --postTitle: #f8ef00;
-    --fontFamily: 'Orbitron',monospace;
     --highlightText: 0 0 2px #02d7f2;
     --bgInput : #391419;
     --borderInputColor: #9c3230;
@@ -132,6 +131,7 @@ const GlobalStyles = createGlobalStyle`
     --linearPre: linear-gradient( 60deg, var(--background) 0%, var(--mediumBackground) 180% );
     --cardHover: none;
     --bgimage: linear-gradient(45deg,rgba(0,0,0,0.25) 25%,transparent 25%,transparent 50%,rgba(0,0,0,0.25) 50%,rgba(0,0,0,0.25) 75%,transparent 75%,transparent);
+    --gradienteLink: linear-gradient(-90deg, yellow, orange)
 
 
   }
@@ -140,8 +140,8 @@ body.light {
     --postColor:rgba(0, 0, 0, 0.84);
     --postDescription: rgba(0, 0, 0, 0.54);
     --texts: #000;
-    --postTitle: #050A0E;
-    --highlight: #8a4baf;
+    --postTitle: hsl(255deg, 85%, 30%);
+    --highlight: hsl(333deg, 100%, 45%);
     --mediumBackground: #f5f5f5;
     --background: #fff;
     --white: #fff;
@@ -153,7 +153,6 @@ body.light {
     --bgimage: none;
     --cyber : #000;
     --cyberHl: rgba(255, 255, 255, .8);
-    --fontFamily: 'Lato',monospace;
     --highlightText: none;
      --bgInput : transparent;
      --borderInputColor: #dedede;
@@ -175,6 +174,8 @@ body.light {
     --catHl: 0 0 2px;
     linear-gradient( 45deg,var(--postColor) 0%,var(--postDescription) 30% );
     --cardHover: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%238e75b6' fill-opacity='0.4' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+    --gradienteLink: linear-gradient( 45deg, #95f7d0, #63b9be, #887dc5, #d478ff, #ff94e7, #fec6c0, #fdff94, #b6f9bd );
+
   }
 
 :not(pre) > code[class*="language-"], pre[class*="language-"] {
@@ -185,6 +186,20 @@ pre[class*="language-"] {
     border-top: var(--highlight) 1px solid;
     border-bottom: var(--highlight) 1px solid;
 }
+
+@keyframes animateGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
 
 @keyframes textShadow {
   0% {

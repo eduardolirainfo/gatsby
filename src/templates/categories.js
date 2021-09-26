@@ -5,6 +5,8 @@ import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import Seo from "../components/Seo"
 import PostItem from "../components/PostItem"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
+
 
 import * as S from "../components/ListWrapper/styled"
 import * as P from "../components/Post/styled"
@@ -43,9 +45,11 @@ const Categories = ({ pageContext, data }) => {
           )
         })}
       </S.ListWrapper>
-      <P.LinkCat swipe direction="up" to="/categorias">
-        Ver todas as categorias
-      </P.LinkCat>
+      <P.MainContent>
+        <AniLink swipe direction="up" to="/categorias">
+          Ver todas as categorias
+        </AniLink>
+      </P.MainContent>
     </Layout>
   )
 }

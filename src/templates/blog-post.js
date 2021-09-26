@@ -95,7 +95,6 @@ export const pageQuery = graphql`
         description
         date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
         categories
-        image
         tags
       }
       html
