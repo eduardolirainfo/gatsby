@@ -40,9 +40,8 @@ class BlogIndex extends React.Component {
                 date={node.frontmatter.date}
                 timeToRead={node.timeToRead}
                 title={node.frontmatter.title}
-                tags={node.frontmatter.tags}
                 description={node.frontmatter.description}
-                image={node.frontmatter.image}
+                tags={node.frontmatter.tags}
               />
             )
           })}
@@ -86,7 +85,6 @@ export const pageQuery = graphql`
            description
            title
            tags
-           image
           }
           timeToRead
         }

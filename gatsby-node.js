@@ -3,17 +3,17 @@ const _ = require("lodash")
 
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
-exports.createSchemaCustomization = ({ actions, schema }) => {
-  const { createTypes } = actions
-  createTypes(`
-    type MarkdownRemarkFrontmatter {
-      image: String
-    }
-    type MarkdownRemark implements Node {
-      frontmatter: MarkdownRemarkFrontmatter
-    }
-  `)
-}
+// exports.createSchemaCustomization = ({ actions, schema }) => {
+//   const { createTypes } = actions
+//   createTypes(`
+//     type MarkdownRemarkFrontmatter {
+//       image: String
+//     }
+//     type MarkdownRemark implements Node {
+//       frontmatter: MarkdownRemarkFrontmatter
+//     }
+//   `)
+// }
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
@@ -113,7 +113,7 @@ exports.createPages = ({ graphql, actions }) => {
     })
 
     // Create blog post list pages
-    const postsPerPage = 20
+    const postsPerPage = 4
     const numPages = Math.ceil(posts.length / postsPerPage)
 
     Array.from({ length: numPages }).forEach((_, i) => {

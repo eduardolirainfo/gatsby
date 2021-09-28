@@ -15,7 +15,7 @@ const PostItem = ({
   title,
   description,
   disableCard,
-  // tags
+  tags
 }) => (
   <S.PostItemLink to={slug} cover direction="right" bg={getThemeColor()}>
     <S.PostItemWrapper>
@@ -44,9 +44,9 @@ PostItem.propTypes = {
   date: PropTypes.string.isRequired,
   timeToRead: PropTypes.number,
   title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
+  description: PropTypes.string,
   disableCard: PropTypes.bool,
-  // tags: PropTypes.string.isRequired,
+  tags: PropTypes.array,
 }
 
 export default PostItem

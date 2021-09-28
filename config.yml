@@ -2,7 +2,7 @@ backend:
   name: github
   repo: eduardolirainfo/gatsby
   branch: master
-  site_domain: https://eduardolira.net.br
+  site_domain: https://eduardolira.dev.br
 
 publish_mode: editorial_workflow
 media_folder: "static/assets/img"

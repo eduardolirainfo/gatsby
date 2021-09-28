@@ -15,7 +15,7 @@ export const ListWrapper = styled.section`
     grid-gap: 0 0.75rem;
    }
   &:hover {
-    transition: ${transitions.ALL};
+    transition: ${transitions.DEFAULT};
     a:not(:hover) {
       -webkit-transition: all .4s ease;
       -moz-transition: all .4s ease;

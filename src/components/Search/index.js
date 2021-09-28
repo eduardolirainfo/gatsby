@@ -30,7 +30,7 @@ const Search = (props) => {
           >
             <Configure hitsPerPage={200} distinct />
             {/* eslint-disable-next-line jsx-a11y/no-autofocus */}
-            <SearchBox autoFocus translations={{ placeholder: "Pesquisar..." }} 
+            <SearchBox autoFocus translations={{ placeholder: "Pesquisar..." }}
             />
             <Stats
               translations={{

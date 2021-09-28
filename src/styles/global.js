@@ -1,7 +1,6 @@
 import { createGlobalStyle } from "styled-components"
 
 const GlobalStyles = createGlobalStyle`
-
   html, body, div, span, applet, object, iframe,
   h1, h2, h3, h4, h5, h6, p, blockquote, pre,
   a, abbr, acronym, address, big, cite, code,
@@ -93,18 +92,21 @@ const GlobalStyles = createGlobalStyle`
 
  body.dark {
     --texts: rgba(255,255,255,0.8);
+    --textsMetaDate: #594a9d;
     --postColor: #d9d7e0;
     --postDescription: rgba(155,155,155,0.8);
     // --highlight: #0bf9c7;
     // --highlight:#00F0FF;
     --highlight:#02d7f2;
     --mediumBackground: #362066;
-    --background: rgba(19,18,23,0.975 );
+    // --background: rgba(19,18,23,0.975 );
+    --background: #1e1935;
     --white: #fff;
     --black: #050A0E;
     --borders: #36313d;
     --bordersMenuBar: #fed33f;
     --cyber: #fd0130;
+    --titlePostList: rgba(255, 255, 255, 0.85);
     --cyberHl: rgba(253, 1, 48, .8);
     --postTitle: #f8ef00;
     --highlightText: 0 0 2px #02d7f2;
@@ -140,6 +142,7 @@ body.light {
     --postColor:rgba(0, 0, 0, 0.84);
     --postDescription: rgba(0, 0, 0, 0.54);
     --texts: #000;
+    --textsMetaDate: #000;
     --postTitle: hsl(255deg, 85%, 30%);
     --highlight: hsl(333deg, 100%, 45%);
     --mediumBackground: #f5f5f5;
@@ -152,6 +155,7 @@ body.light {
     --animaTag: none;
     --bgimage: none;
     --cyber : #000;
+    --titlePostList: #000;
     --cyberHl: rgba(255, 255, 255, .8);
     --highlightText: none;
      --bgInput : transparent;

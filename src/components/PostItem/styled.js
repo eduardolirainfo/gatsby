@@ -5,10 +5,12 @@ import AniLink from "gatsby-plugin-transition-link/AniLink"
 import transitions from "../../styles/transitions"
 
 export const PostItemTitle = styled.h1`
-  font-size: 1.6rem;
-  font-weight: lighter;
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 2.25rem;
+  font-weight: bold;
+  text-transform: uppercase;
   margin: 0.2rem 0 0.5rem;
-  color: var(--cyber);
+  color: var(--titlePostList);
   display: inline-block;
   vertical-align: middle;
   -webkit-transform: perspective(1px) translateZ(0);
@@ -19,8 +21,7 @@ export const PostItemTitle = styled.h1`
   transition-property: transform;
   -webkit-transform-origin: 0 100%;
   transform-origin: 0 100%;
-font-family: var(--fontFamily);
-text-shadow: 0 0 5px var(--cyberHl);
+  // text-shadow: 0 0 5px var(--cyberHl);
   body#card & {
     line-height: 1.1;
     margin: 0.8rem 0;
@@ -91,7 +92,6 @@ export const PostItemWrapper = styled.section`
   padding: 2rem 3rem;
   width: 100%;
   transition: ${transitions.ALL};
-  
 
   &:not(.disableCard) {
     body#card & {
@@ -99,40 +99,31 @@ export const PostItemWrapper = styled.section`
       padding: 2rem 2rem;
       flex-direction: column;
       justify-content: center;
-      background-image:url(${props => props.image});
       width: 100%;
       height: 100%;
       border-radius: 8px;
-      background-blend-mode: multiply;
-      background-size: contain;
-background-repeat: no-repeat;
+      transition: ${transitions.ALL};
     }
   }
 
   body#card & {
     border: none;
-    /* padding: 2rem 1rem; */
     flex-direction: column;
     justify-content: center;
-    background-image: url(${props => props.image});
     width: 100%;
-      height: 100%;
-      border-radius: 8px;
-      background-blend-mode: multiply;
-      background-size: contain;
-background-repeat: no-repeat;
+    height: 100%;
+    border-radius: 8px;
+    transition: ${transitions.ALL};
   }
 
   body#card &:hover {
-    -webkit-transition: all ease 0.3s;
-    transition: all ease 0.3s;
+    transition: ${transitions.ALL};
     background-image: var(--cardHover);
     -webkit-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2),
       0 6px 20px 0 rgba(0, 0, 0, 0.19);
     box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2),
       0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
-
 
   &:hover ${PostItemTitle}, &:focus ${PostItemTitle}, &:active ${PostItemTitle}{
       -webkit-transform: skew(-5deg);
@@ -141,15 +132,15 @@ background-repeat: no-repeat;
       box-shadow: none;
   }
 
-  &:hover {
-    /* transform: perspective(300px) translate3d(0, 0, 3px); */
-  }
+  // &:hover {
+  //    transform: perspective(300px) translate3d(0, 0, 3px);
+  // }
 
-  &:hover {
-    /* -webkit-box-shadow: 0 15px 10px #777;
-    -moz-box-shadow: 0 15px 10px #777;
-    box-shadow: 0 15px 10px #777; */
-  }
+  // &:hover {
+  //    -webkit-box-shadow: 0 15px 10px #777;
+  //   -moz-box-shadow: 0 15px 10px #777;
+  //   box-shadow: 0 15px 10px #777;
+  // }
   ${media.lessThan("large")`
     align-items: flex-start;
     flex-direction: column;
@@ -172,11 +163,11 @@ export const PostItemCat = styled.div`
   transition: ${transitions.ALL};
   border-radius: 3rem;
   box-shadow: var(--catHl) ${props => props.background ? props.background : " var(--highlight)"};
-  // &:hover {
-  //   animation: var(--animaTag);
-  //   overflow: hidden;
-  //   transform: rotate(360dg);
-  // }
+  &:hover {
+    animation: var(--animaTag);
+    overflow: hidden;
+    transform: rotate(360dg);
+  }
   span {
     position: absolute;
     right: 14px;
@@ -185,7 +176,7 @@ export const PostItemCat = styled.div`
     height: 5px;
     background-color: ${props =>
       props.background ? props.background : " var(--background)"};
-    border: none;
+    // border: none;
     border-radius: 50%;
     cursor: pointer;
     outline: none;
@@ -211,7 +202,7 @@ export const PostItemLink = styled(AniLink)`
   text-decoration: none;
   transition: ${transitions.COLOR};
     &:hover a{
-      box-shadow: var(--borderInput);
+      // box-shadow: var(--borderInput);
     }
    &:hover p{
       color: ${props =>
@@ -243,23 +234,26 @@ export const PostItemLink = styled(AniLink)`
     background-color: var(--mediumBackground);
   }
   body#card & {
-    border: var(--borderCard) var(--borderInputColor);
+    // border: var(--borderCard) var(--borderInputColor);
     &:hover{
-      box-shadow: var(--borderInput);
+      transition: ${transitions.ALL};
+      // box-shadow: var(--borderInput);
     }
   }
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15),
     0 10px 0 -5px var(--background), 0 10px 1px -4px rgba(0, 0, 0, 0.15),
     0 20px 0 -10px var(--background), 0 20px 1px -9px rgba(0, 0, 0, 0.15);
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 10px 0 -5px var(--background),
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 10px 0 -5px var(--background),
     0 10px 1px -4px rgba(0, 0, 0, 0.15), 0 20px 0 -10px var(--background),
     0 20px 1px -9px rgba(0, 0, 0, 0.15);
   position: relative;
   margin: 0.1rem 0 1rem 0;
-  border: var(--borderCard) var(--borderInputColor);
+  // border: var(--borderCard) var(--borderInputColor);
 
   &:hover {
     background-image: var(--cardHover);
+    transition: ${transitions.ALL};
+    // box-shadow: var(--borderInput);
   }
   &:hover i {
     opacity: 1;
@@ -333,62 +327,6 @@ export const PostItemLink = styled(AniLink)`
   `}
 `
 
-// export const ItemTags = styled.ul`
-//   list-style: none;
-//   margin: -2rem 0 2rem;
-//   overflow: hidden;
-//   padding: 0 5rem;
-//   /* transition: ${transitions.COLOR}; */
-
-//   & li {
-//       float: left;
-//  }
-// `
-// export const TagLink = styled(AniLink)`
-//   background: var(--mediumBackground);
-//   border-left: inset 0 1px var(--postColor);
-//   border-radius: 3px 0 0 3px;
-//   color: var(--postColor);
-//   display: inline-block;
-//   height: 26px;
-//   line-height: 26px;
-//   padding: 0 20px 0 23px;
-//   position: relative;
-//   margin: 0 10px 10px 0;
-//   text-decoration: none;
-//   /* transition: ${transitions.DEFAULT}; */
-//   &::before{
-//     background:var(--mediumBackground);
-//     border-radius: 10px;
-//     box-shadow: inset 0 1px var(--postColor);
-//     content: '';
-//     height: 6px;
-//     left: 10px;
-//     position: absolute;
-//     width: 6px;
-//     top: 10px;
-//   }
-//   &::after {
-//     background: var(--background);
-//     border-bottom: 13px solid transparent;
-//     border-left: 10px solid var(--mediumBackground);
-//     border-top: 13px solid transparent;
-//     content: '';
-//     position: absolute;
-//     right: 0;
-//     top: 0;
-//   }
-//   &:hover {
-//     background-color:${props =>
-//     props.background ? props.background : " var(--highlight)"};
-//     color: white;
-//     font-size: 1rem;
-//   }
-//   &:hover::after {
-//     border-left-color: ${props =>
-//     props.background ? props.background : " var(--highlight)"};
-//   }
-// `
 export const PostItemInfo = styled.div`
   display: flex;
   flex-direction: column;
@@ -425,7 +363,7 @@ export const PostItemInfo = styled.div`
 `
 export const PostItemDate = styled.time`
   font-size: 0.8rem;
-  color: var(--texts);
+  color: var(--textsMetaDate);
 `
 
 
@@ -434,6 +372,7 @@ export const PostItemDescription = styled.p`
   font-weight: 300;
   line-height: 1.2;
   color: var(--postColor);
+  font-family: Kalam, sans-serif;
 `
 export const ItemTags = styled.p`
   font-size: 1rem;

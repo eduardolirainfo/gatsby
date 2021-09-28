@@ -85,6 +85,7 @@ export const MainContent = styled.section`
   }
 
   blockquote {
+    font-family: Kalam;
     border-width: 2px 0;
     border-style: solid;
     border-color: var(--highlight);
@@ -226,16 +227,20 @@ export const PostHeader = styled.header`
   `}
 `
 
-export const PostTitle = styled.h2`
-  font-size: 3.75rem;
-  font-weight: 700;
+export const PostTitle = styled.h1`
   font-style: normal;
   padding: 0 1.4rem;
   margin: 1rem auto;
   color: var(--postTitle) !important;
   text-transform: uppercase;
-  font-family: -apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica Neue','Arial','Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';
-  
+  font-family: "Poppins", Arial, sans-serif;
+  background: linear-gradient(45deg, var(--postTitle) 32.5%, var(--highlight) 50.5%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+  font-size: calc(3.75vw + 3.75vh);
+  letter-spacing: -0.2rem;
+  line-height: 1.25;
   ${media.lessThan("large")`
     font-size: 2.8rem;
     line-height: 1.1;
@@ -271,7 +276,7 @@ export const PostWrapper = styled.section`
 
   &:not(.disableCard) {
     body#card & {
-      border: none;
+      // border: none;
       padding: 2rem 1rem;
       flex-direction: column;
       justify-content: center;
@@ -298,9 +303,14 @@ export const PostLink = styled(AniLink)`
 `
 
 export const PostDescription = styled.h3`
+  // font-size: 1.5rem;
+  // color: var(--postDescription);
+  // font-weight: 300;
+  // padding: 0 1.4rem;
+  font-family: Kalam;
+  font-weight: 300;
   font-size: 1.5rem;
   color: var(--postDescription);
-  font-weight: 300;
   padding: 0 1.4rem;
 
   ${media.lessThan("large")`

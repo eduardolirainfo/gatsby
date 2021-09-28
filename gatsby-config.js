@@ -97,12 +97,28 @@ const pluginConfig = [
       path: `${__dirname}/posts`,
     },
   },
+  {
+    resolve: `gatsby-plugin-google-fonts`,
+    options: {
+      fonts: [
+        `Kalam`,
+        `Poppins`
+      ],
+      display: 'swap'
+    }
+  },
   `gatsby-plugin-image`,
   `gatsby-transformer-sharp`,
   {
     resolve: `gatsby-transformer-remark`,
     options: {
       plugins: [
+        {
+          resolve: "gatsby-remark-relative-images-v2",
+          options: {
+            name: "uploads",
+          },
+        },
         `gatsby-remark-lazy-load`,
         `gatsby-remark-prismjs`,
       ],
@@ -117,7 +133,7 @@ const pluginConfig = [
           placeholder: "blurred",
         },
       },
-    },
+  },
   {
     resolve: `gatsby-plugin-manifest`,
     options: {
@@ -171,7 +187,7 @@ module.exports = {
     authorDescription: `Ideias, café e tecnologias`,
     author: `@dudulira`,
     pathPrefix: `/eduardolirainfo/gatsby`,
-    siteUrl: `https://eduardolira.net.br`,
+    siteUrl: `https://eduardolira.dev.br`,
   },
   plugins: pluginConfig,
   flags: {

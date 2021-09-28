@@ -1,8 +1,6 @@
 ---
-title: Habilitar Keep-Alive em meu servidor de hospedagem
-description: De uma forma assustadora ao habilitar o Keep-alive através do
-  arquivo .htaccess no servidor Apache Linux, meu site foi otimizado de forma
-  instantânea.
+title: "Habilitar Keep-Alive em meu servidor de hospedagem"
+description: "De uma forma assustadora ao habilitar o Keep-alive através do arquivo .htaccess no servidor Apache Linux, meu site foi otimizado de forma instantânea."
 date: 2012-09-23 11:17:09
 categories: misc
 background: "#7AAB13"

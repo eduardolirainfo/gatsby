@@ -55,6 +55,7 @@ export const ProfileDescription = styled.p`
   font-size: 1rem;
   font-weight: 300;
   line-height: 1.4;
+  font-family: Kalam, sans-serif;
   transition: ${transitions.ALL};
 
   ${media.lessThan("large")`
