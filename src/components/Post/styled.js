@@ -6,7 +6,7 @@ import transitions from "../../styles/transitions"
 export const MainContent = styled.section`
   margin: auto;
   max-width: 70rem;
-  padding: 2rem 3rem;
+  padding: 2rem 5rem;
 
   ${media.lessThan("large")`
     padding: 2rem 0;
@@ -24,9 +24,9 @@ export const MainContent = styled.section`
   iframe,
   .button-post {
     color: var(--postColor);
-    font-size: 1.25rem;
+    font-size: 1.3rem;
     font-weight: 300;
-    line-height: 1.7;
+    line-height: 1.9;
     letter-spacing: 0.069rem;
     padding: 0 1.4rem;
 
@@ -86,15 +86,16 @@ export const MainContent = styled.section`
 
   blockquote {
     font-family: Kalam;
-    border-width: 2px 0;
+    border-width: 5px 0;
     border-style: solid;
     border-color: var(--highlight);
     padding: 1.5em 0 0.5em;
     margin: 1.5em 0;
     position: relative;
-    p {
+    box-shadow: 0em 1em 2em -2em var(--highlight);
+    /* p {
       animation: var(--animationText);
-    }
+    } */
   }
 
   blockquote:before {
@@ -109,6 +110,8 @@ export const MainContent = styled.section`
     color: var(--highlight);
     font: 6em/1.08em "PT Sans", sans-serif;
     text-align: center;
+    box-shadow: inset -5px 5px 0px 0px var(--highlight);
+    border-radius: 10%;
   }
 
   hr {
@@ -203,15 +206,22 @@ export const MainContent = styled.section`
     border-bottom: 1px dashed var(--highlight);
     color: var(--highlight);
     text-decoration: none;
-    transition: opacity 0.5s;
+    transition: opacity 0.5s;    
     svg {
       color: var(--postColor);
+    }
+    &.anchor{
+      fill: "red";
+      text-decoration: none !important;
+      visibility: initial !important;
+      display: contents;
     }
 
     &:hover {
       opacity: 0.8;
     }
   }
+
   .instagram-media {
     margin: 1rem auto !important;
   }
@@ -220,7 +230,7 @@ export const PostHeader = styled.header`
   color: var(--postColor);
   margin: auto;
   max-width: 70rem;
-  padding: 3rem 3rem 0;
+  padding: 5rem 5rem 0px;
   transform-style: preserve-3d;
 
   ${media.lessThan("large")`
@@ -234,7 +244,6 @@ export const PostTitle = styled.h1`
   padding: 0 1.4rem;
   margin: 1rem auto;
   color: var(--postTitle) !important;
-  text-transform: uppercase;
   font-family: "Poppins", Arial, sans-serif;
   background: linear-gradient(
     45deg,
@@ -243,18 +252,18 @@ export const PostTitle = styled.h1`
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-weight: 800;
-  font-size: calc(3.75vw + 3.75vh);
+  font-weight: 900;
+  font-size: 4rem;
   letter-spacing: -0.2rem;
   line-height: 1.25;
   ${media.lessThan("large")`
-    font-size: 2.8rem;
+    font-size: 2.25rem;
     line-height: 1.1;
     padding: 0 1rem;
   `};
 `
 
-export const PostTitleCat = styled.h2`
+export const PostTitleCat = styled.h1`
   padding: 0;
   margin: 0rem 0rem 2rem;
   color: var(--texts) !important;
@@ -313,10 +322,7 @@ export const PostLink = styled(AniLink)`
 `
 
 export const PostDescription = styled.h3`
-  // font-size: 1.5rem;
-  // color: var(--postDescription);
-  // font-weight: 300;
-  // padding: 0 1.4rem;
+  font-weight: 300;
   font-family: Kalam;
   font-weight: 300;
   font-size: 1.5rem;
@@ -437,6 +443,7 @@ export const Btn__glitch = styled.span`
     drop-shadow(2px 1px #02d8f3);
 `
 export const Btn__content = styled.span`
+  font-family: "Kalam";
   display: flex;
   align-items: center;
   justify-content: center;

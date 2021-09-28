@@ -17,7 +17,6 @@ const GlobalStyles = createGlobalStyle`
     margin: 0;
     padding: 0;
     border: 0;
-    font-size: 100%;
     font: inherit;
     vertical-align: baseline;
   }
@@ -93,8 +92,9 @@ const GlobalStyles = createGlobalStyle`
  body.dark {
     --texts: rgba(255,255,255,0.8);
     --textsMetaDate: #594a9d;
-    --postColor: #d9d7e0;
-    --postDescription: rgba(155,155,155,0.8);
+    // --postColor: #d9d7e0;
+    --postColor: #fff;
+    --postDescription: #8b9493;
     // --highlight: #0bf9c7;
     // --highlight:#00F0FF;
     --highlight:#02d7f2;
@@ -155,7 +155,7 @@ body.light {
     --animaTag: none;
     --bgimage: none;
     --cyber : #000;
-    --titlePostList: #000;
+    --titlePostList: #070336;
     --cyberHl: rgba(255, 255, 255, .8);
     --highlightText: none;
      --bgInput : transparent;
@@ -336,25 +336,26 @@ pre[class*="language-"] {
     box-shadow: 2.6208764473832513px 0 1px rgba(0,30,255,0.5), -2.6208764473832513px 0 1px rgba(255,0,80,0.3), 0 0 3px;
   }
 }
-// ::-webkit-scrollbar {
-//     width: 12px;
-// }
 
-// ::-webkit-scrollbar-track {
-// 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-// 	background-color: var(--background);
-// 	border-radius: 10px;
-// }
+::-webkit-scrollbar {
+    width: 12px;
+}
 
-// ::-webkit-scrollbar-thumb {
-// 	border-radius: 10px;
-// 	background-image: -webkit-gradient(linear,
-// 									   left bottom,
-// 									   left top,
-// 									   color-stop(0.44, rgba(177,122,204,0.5)),
-// 									   color-stop(0.72, rgb(75,36,94)),
-// 									   color-stop(0.86, rgb(30,14,37)));
-// }
+::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: var(--background);
+	border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	background-image: -webkit-gradient(linear,
+									   left bottom,
+									   left top,
+									   color-stop(0.44, rgba(177,122,204,0.5)),
+									   color-stop(0.72, rgb(75,36,94)),
+									   color-stop(0.86, rgb(30,14,37)));
+}
 
 `
 export default GlobalStyles

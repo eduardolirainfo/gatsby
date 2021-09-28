@@ -45,7 +45,7 @@ const Categories = ({ pageContext, data }) => {
         })}
       </S.ListWrapper>
       <P.MainContent>
-        <AniLink swipe direction="up" to="/categorias">
+        <AniLink swipe direction="right" to="/categorias">
           Ver todas as categorias
         </AniLink>
       </P.MainContent>

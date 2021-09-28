@@ -13,6 +13,7 @@ export const RecommendedWrapper = styled.section`
 `
 
 export const RecommendedLink = styled(AniLink)`
+  font-size: 1.25rem;
   align-items: center;
   color: var(--highlight);
   display: flex;

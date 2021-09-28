@@ -57,7 +57,7 @@ Em versões antigas, ao que parece, era só adicionar o código acima no <code>f
 No caso deste post, o aprendizado adquirido ocorreu porque nenhuma das opções de redefinição de senha indicadas pela documentação do aplicativo surtiu efeito.
 Veja mais detalhes nesta página: [Redefinindo Senha]
 
-#### Continuando...
+## Continuando...
 
 Ao adicionar o **wp_set_password** passamos o primeiro parâmetro interessante para nós (salve e atualize a página de login, sem tentar acesso ainda).
 O Wordpress vai checar a criptografia, por isso o acesso ainda não pode ser realizado.

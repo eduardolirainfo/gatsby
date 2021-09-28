@@ -1,25 +1,21 @@
 import React from "react"
 import { graphql } from "gatsby"
-
 import { kebabCase } from "lodash"
-
 import Layout from "../components/Layout"
 import Seo from "../components/Seo"
 import RecommendedPosts from "../components/RecommendedPosts"
 import Comments from "../components/Comments"
-
 import * as S from "../components/Post/styled"
 
-class BlogPostTemplate extends React.Component {
-  render() {
-    const post = this.props.data.markdownRemark
-    const siteTitle = this.props.data.site.siteMetadata.title
-    const { previous, next } = this.props.pageContext
+const BlogPostTemplate = props => {
+    const post = props.data.markdownRemark
+    const siteTitle = props.data.site.siteMetadata.title
+    const { previous, next } = props.pageContext
     const tags = post.frontmatter.tags
     const categories = post.frontmatter.categories
 
     return (
-      <Layout location={this.props.location} title={siteTitle}>
+      <Layout location={props.location} title={siteTitle}>
         <Seo
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
@@ -29,14 +25,14 @@ class BlogPostTemplate extends React.Component {
           {categories && (
             <S.PostCategories
               swipe
-              direction="down"
+              direction="right"
               to={`/categorias/${kebabCase(categories)}`}
             >
               # {categories}
             </S.PostCategories>
           )}
           <S.PostDate>
-            • {post.frontmatter.date} • {post.timeToRead} min de leitura
+            • {post.frontmatter.date} • {post.timeToRead} min
           </S.PostDate>
           <S.PostTitle>{post.frontmatter.title}</S.PostTitle>
           <S.PostDescription>{post.frontmatter.description}</S.PostDescription>
@@ -47,13 +43,13 @@ class BlogPostTemplate extends React.Component {
         {tags && tags.length > 0 ? ` - ` : ``}
         <S.ItemTags>
           {tags ? (
-            <>
+            <div>
               {tags.map((tag, index) => {
                 return (
                   <li key={tag + `tag`}>
                     <S.TagPost
                       swipe
-                      direction="down"
+                      direction="right"
                       to={`/tags/${kebabCase(tag)}`}
                     >
                       <S.Button>
@@ -64,9 +60,9 @@ class BlogPostTemplate extends React.Component {
                   </li>
                 )
               })}
-            </>
+            </div>
           ) : (
-            <></>
+            <div></div>
           )}
         </S.ItemTags>
         <RecommendedPosts next={next} previous={previous} />
@@ -74,10 +70,7 @@ class BlogPostTemplate extends React.Component {
       </Layout>
     )
   }
-}
-
-export default BlogPostTemplate
-
+ 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
     site {
@@ -102,3 +95,4 @@ export const pageQuery = graphql`
     }
   }
 `
+export default BlogPostTemplate

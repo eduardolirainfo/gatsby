@@ -5,7 +5,7 @@ tags: ["Desenvolvimento"]
 draft: false
 description: "O que é um algoritmo?"
 categories: dev
-image: []
+image: ""
 author:
   twitter: "dudulira"
   name: "Eduardo Lira"
@@ -16,7 +16,7 @@ Antes do seu computador executar uma tarefa ele recebe um algoritmo de instruç�
 > **Podemos dizer que algoritmo é um conjuntos de passos que define como uma tarefa será
 > executada.**
 
-No artigo anterior da série( [#1 - O que é um programa?](/blog/o-que-e-um-programa)) vimos que um programa é uma sequência de instruções que especifica como executar uma operação de computação.
+No artigo anterior da série( [#1 - O que é um programa?](/o-que-e-um-programa)) vimos que um programa é uma sequência de instruções que especifica como executar uma operação de computação.
 
 Então, sabemos que o algoritmo denota a totalidade das ações que constituem um determinado processo.
 

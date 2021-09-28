@@ -11,63 +11,60 @@ import PostItem from "../components/PostItem"
 import Pagination from "../components/Pagination"
 
 import * as S from "../components/ListWrapper/styled"
+const BlogList = props => {
+  const postList = props.data.allMarkdownRemark.edges
 
-class BlogIndex extends React.Component {
-  render() {
-    const { data } = this.props
-    // const siteTitle = data.site.siteMetadata.title
-    const postList = data.allMarkdownRemark.edges
+  const { currentPage, numPages } = props.pageContext
+  const isFirst = currentPage === 1
+  const isLast = currentPage === numPages
+  const prevPage = currentPage - 1 === 1 ? "/" : `/page/${currentPage - 1}`
+  const nextPage = `/page/${currentPage + 1}`
 
-    const { currentPage, numPages } = this.props.pageContext
-    const isFirst = currentPage === 1
-    const isLast = currentPage === numPages
-    const prevPage = currentPage - 1 === 1 ? "/" : `/pagina/${currentPage - 1}`
-    const nextPage = `/pagina/${currentPage + 1}`
+  return (
+    <Layout>
+      <Seo title="Home" />
+      <S.ListWrapper>
+        {postList.map(
+          ({
+            node: {
+              frontmatter: { background, category, date, description, title },
+              timeToRead,
+              fields: { slug },
+            }
+          },i) => (
+            <PostItem
+              key={i}
+              slug={slug}
+              background={background}
+              category={category}
+              date={date}
+              timeToRead={timeToRead}
+              title={title}
+              description={description}
+            />
+          )
+        )}
+      </S.ListWrapper>
 
-    return (
-      <Layout location={this.props.location}>
-        <Seo title="Home" />
-        <S.ListWrapper>
-          {postList.map(({ node }, i) => {
-            return (
-              <PostItem
-                key={i}
-                slug={node.fields.slug}
-                background={node.frontmatter.background}
-                categories={node.frontmatter.categories}
-                date={node.frontmatter.date}
-                timeToRead={node.timeToRead}
-                title={node.frontmatter.title}
-                description={node.frontmatter.description}
-                tags={node.frontmatter.tags}
-              />
-            )
-          })}
-        </S.ListWrapper>
-
-        <Pagination
-          isFirst={isFirst}
-          isLast={isLast}
-          currentPage={currentPage}
-          numPages={numPages}
-          prevPage={prevPage}
-          nextPage={nextPage}
-        />
-      </Layout>
-    )
-  }
+      <Pagination
+        isFirst={isFirst}
+        isLast={isLast}
+        currentPage={currentPage}
+        numPages={numPages}
+        prevPage={prevPage}
+        nextPage={nextPage}
+      />
+    </Layout>
+  )
 }
 
-export default BlogIndex
-
-export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+export const query = graphql`
+  query PostList($skip: Int!, $limit: Int!) {
+    allMarkdownRemark(
+      sort: { fields: frontmatter___date, order: DESC }
+      limit: $limit
+      skip: $skip
+    ) {
       edges {
         node {
           excerpt
@@ -88,3 +85,5 @@ export const pageQuery = graphql`
     }
   }
 `
+
+export default BlogList

@@ -6,6 +6,7 @@ const pluginConfig = [
   `gatsby-plugin-advanced-sitemap`,
   `gatsby-plugin-twitter`,
   `gatsby-plugin-react-helmet`,
+  `gatsby-plugin-catch-links`,
   `gatsby-plugin-transition-link`,
   {
     resolve: "gatsby-source-filesystem",
@@ -20,59 +21,6 @@ const pluginConfig = [
     options: {
       name: `posts`,
       path: `${__dirname}/posts`,
-    },
-  },
-  {
-    resolve: `gatsby-plugin-feed`,
-    options: {
-      query: `
-          {
-            site {
-              siteMetadata {
-                title
-                description
-                siteUrl
-                site_url: siteUrl
-              }
-            }
-          }
-        `,
-      feeds: [
-        {
-          serialize: ({ query: { site, allMarkdownRemark } }) => {
-            return allMarkdownRemark.edges.map((edge) => {
-              return Object.assign({}, edge.node.frontmatter, {
-                description: edge.node.excerpt,
-                date: edge.node.frontmatter.date,
-                url: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                custom_elements: [{ "content:encoded": edge.node.html }],
-              })
-            })
-          },
-          query: `
-              {
-                allMarkdownRemark(
-                  sort: { order: DESC, fields: [frontmatter___date] },
-                ) {
-                  edges {
-                    node {
-                      excerpt
-                      html
-                      fields { slug }
-                      frontmatter {
-                        title
-                        date
-                      }
-                    }
-                  }
-                }
-              }
-            `,
-          output: "/rss.xml",
-          title: "RSS Feed do site",
-        },
-      ],
     },
   },
   {
@@ -110,14 +58,36 @@ const pluginConfig = [
     resolve: `gatsby-transformer-remark`,
     options: {
       plugins: [
+        `gatsby-remark-responsive-iframe`,
+        `gatsby-remark-copy-linked-files`,
         {
           resolve: "gatsby-remark-relative-images-v2",
           options: {
             name: "uploads",
+          }
+        },
+        {
+          resolve: "gatsby-remark-images",
+          options: {
+            maxWidth: 960,
+            linkImagesToOriginal: false,
           },
         },
-        `gatsby-remark-lazy-load`,
-        `gatsby-remark-prismjs`,
+        {
+          resolve: "gatsby-remark-external-links",
+          options: {
+            target: "_self",
+            rel: "nofollow"
+          }
+        },
+        `gatsby-remark-autolink-headers`,
+        `gatsby-remark-lazy-load`,              
+        {
+          resolve: 'gatsby-remark-prismjs',
+          options: {
+            showLineNumbers: true,
+          },
+        },     
       ],
     },
   },
@@ -152,12 +122,68 @@ const pluginConfig = [
 
   `gatsby-plugin-sitemap`,
 ]
+
+
 if (process.env.CONTEXT === "production") {
+  const feed = {
+    resolve: "gatsby-plugin-feed", 
+    options: {
+      query: `
+          {
+            site {
+              siteMetadata {
+                title
+                author
+                description
+                siteUrl
+              }
+            }
+          }
+      `,
+      feeds: [
+        {
+          serialize: ({ query: { site, allMarkdownRemark } }) => {
+            return allMarkdownRemark.edges.map(edge => {
+              return Object.assign({}, edge.node.frontmatter, {
+                description: edge.node.excerpt,
+                date: edge.node.frontmatter.date,
+                url: `${site.siteMetadata.siteUrl}/${edge.node.fields.slug}`,
+                guid: `${site.siteMetadata.siteUrl}/${edge.node.fields.slug}`
+              });
+            });
+          },
+          query: `
+            {
+              allMarkdownRemark(
+                sort: { fields: [frontmatter___date], order: DESC }
+              ) {
+                edges {
+                  node {
+                    excerpt(pruneLength: 95)
+                    fields { slug }
+                    frontmatter {
+                      title
+                      description
+                      date(formatString: "YYYY-MM-DD")
+                      tags
+                    }
+                  }
+                }
+              }
+            }
+          `,
+          output: "/rss.xml",
+          title: "Eduardo's blog RSS Feed",
+        },
+      ],
+    },
+  }
   const algolia = {
     resolve: `gatsby-plugin-algolia-search`,
     options: {
       appId: process.env.GATSBY_ALGOLIA_APP_ID,
       apiKey: process.env.ALGOLIA_ADMIN_KEY,
+      indexName: process.env.GATSBY_ALGOLIA_INDEX_NAME,
       queries,
       chunkSize: 10000, // default: 1000
       enablePartialUpdates: true,
@@ -174,6 +200,7 @@ if (process.env.CONTEXT === "production") {
 
   pluginConfig.push(algolia)
   pluginConfig.push(analytics)
+  pluginConfig.push(feed)
 }
 
 module.exports = {

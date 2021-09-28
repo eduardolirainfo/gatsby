@@ -14,7 +14,7 @@ export const LayoutWrapper = styled.section`
 export const LayoutMain = styled.main`
   background: var(--background);
   min-height: 100vh;
-  padding: 0 3.75rem 0 18rem;
+  padding: 1rem 3.75rem 0 23rem;
   transition: ${transitions.DEFAULT};
   width: 99%;
 
@@ -25,6 +25,6 @@ export const LayoutMain = styled.main`
   }
 
   ${media.lessThan("large")`
-    padding: 0 0 3rem 0;
+    padding: 1rem 0 3rem 0;
   `}
 `

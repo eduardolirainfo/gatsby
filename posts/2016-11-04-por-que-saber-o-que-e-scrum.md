@@ -27,21 +27,21 @@ Apesar da existência de quilos de papeis com documentação detalhada, com a qu
 
 Acredito que a palavra ultrapassado já resume. Então vamos ver um resumo da SCRUM.
 
-#### As pessoas são mais importantes do que os processos
+## As pessoas são mais importantes do que os processos
 
 Em empresas de todos os tamanhos a burocracia é o primeiro passo para construir os processos (aqui no Brasil então..), considerando que é a falta de organização a raiz de todos os problemas. Mas se existe essa raiz, são os funcionários que estão insatisfeitos com seu trabalho, ignorando os clientes e suas necessidades, incapazes de realizar o seu melhor.
 
-#### A documentação do produto não é o mais importante
+## A documentação do produto não é o mais importante
 
 Outra atividade favorita da burocracia é a documentação. Ela é ótima para gastar metade dos recursos e apertar os prazos. O que importa não é o papel, mas gerenciar sua organização, sua equipe e criar um produto que os clientes realmente precisam. Se você tem um ótimo produto, sua documentação não será ruim.
 
-#### A colaboração do cliente é mais importante do que contratos perfeitos
+## A colaboração do cliente é mais importante do que contratos perfeitos
 
 É necessário construir uma relação com o cliente, de modo que ele esteja constantemente envolvido em seu trabalho, ver o que o produto é. Se você seguir a estratégia atual, perceberá a perspectiva de que está adequando seu produto. Isso pode ser feito, se você conectar-se com o cliente, e não apenas a um contrato.
 
 A situação ideal é quando você tem parceiros compreensivos, associados trabalhando para atingir o mesmo objetivo, e não precisa segurar contratos e passar o tempo. Contratos e papéis  são uma maneira de se proteger. Construa um relacionamento em que nenhuma das partes terá que se defender.
 
-#### A capacidade de mudar é mais importante do que seguir um plano
+## A capacidade de mudar é mais importante do que seguir um plano
 
 A pior coisa deve ser criar um produto que no final ninguém quer aproveitar. Imagine que você desenvolveu algo em 3 anos que não serve para nada, sabe que não decolar. Aí, você vê outro mercado depois desse período e acha que o problema é com ele. Isso acontece com planos grandiosos elaborados somente no início, não se adequam ao mercado que está sempre mudando.
 
@@ -51,7 +51,7 @@ Mas como assim? No Scrum, você deve ter um objetivo grande, mas utilizar ele de
 
 Em pequenas iterações ( 2-4 semanas)  se desloca para o alvo, olha para trás, faz uma estimativa com a retrospectiva feita, executa algo sobre o resultado da última iteração, se ele não te trouxe mais perto do objetivo. Desta forma,  pode-se evitar grandes problemas na entrega do projeto final.
 
-#### Posições e títulos não são importantes, importante é o que você faz
+## Posições e títulos não são importantes, importante é o que você faz
 
 Se a equipe é composta de profissionais apaixonados, que são confiáveis e que estão diretamente envolvidos na criação de valor, eles não precisam de um chefe superintendente com um belo, mas inútil título.
 

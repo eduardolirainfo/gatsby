@@ -3,23 +3,27 @@ const _ = require("lodash")
 
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
-// exports.createSchemaCustomization = ({ actions, schema }) => {
-//   const { createTypes } = actions
-//   createTypes(`
-//     type MarkdownRemarkFrontmatter {
-//       image: String
-//     }
-//     type MarkdownRemark implements Node {
-//       frontmatter: MarkdownRemarkFrontmatter
-//     }
-//   `)
-// }
+exports.createSchemaCustomization = ({ actions, schema }) => {
+  const { createTypes } = actions
+  createTypes(`
+    type MarkdownRemarkFrontmatter {
+      image: String
+    }
+    type MarkdownRemark implements Node {
+      frontmatter: MarkdownRemarkFrontmatter
+    }
+  `)
+}
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
 
   if (node.internal.type === `MarkdownRemark`) {
-    const slug = createFilePath({ node, getNode, basePath: `pages` })
+    const slug = createFilePath({ 
+      node, 
+      getNode, 
+      basePath: `pages`
+    })
     createNodeField({
       node,
       name: `slug`,
@@ -52,8 +56,9 @@ exports.createPages = ({ graphql, actions }) => {
                 date(locale: "pt-BR", formatString: "DD [de] MMMM [de] YYYY")
                 description
                 categories
-                title
+                title                
                 tags
+                image
               }
             }
             next {
@@ -108,23 +113,24 @@ exports.createPages = ({ graphql, actions }) => {
           slug: post.node.fields.slug,
           previous,
           next,
-        },
+        }, 
+        defer: index + 1 > 6,
       })
     })
 
     // Create blog post list pages
-    const postsPerPage = 4
+    const postsPerPage = 6
     const numPages = Math.ceil(posts.length / postsPerPage)
 
-    Array.from({ length: numPages }).forEach((_, i) => {
+    Array.from({ length: numPages }).forEach((_, index) => {
       createPage({
-        path: i === 0 ? `/` : `/pagina/${i + 1}`,
+        path: index === 0 ? `/` : `/page/${index + 1}`,
         component: blogList,
         context: {
           limit: postsPerPage,
-          skip: postsPerPage,
+          skip: index * postsPerPage,
           numPages,
-          currentPage: i + 1,
+          currentPage: index + 1,
         },
       })
     })
@@ -154,41 +160,8 @@ exports.createPages = ({ graphql, actions }) => {
           category: category.fieldValue,
         },
       })
-    })
-    // const allCategories = Object.keys(countCategories)
-
-    // allCategories.forEach((cat, i) => {
-    //   const link = `/categorias/${kebabCase(cat)}`
-
-    //   Array.from({
-    //     length: Math.ceil(countCategories[cat] / postsPerPage),
-    //   }).forEach((_, i) => {
-    //     createPage({
-    //       path: i === 0 ? link : `${link}/pagina/${i + 1}`,
-    //       component: catTemplate,
-    //       context: {
-    //         allCategories: allCategories,
-    //         category: cat,
-    //         limit: postsPerPage,
-    //         skip: i * postsPerPage,
-    //         currentPage: i + 1,
-    //         numPages: Math.ceil(countCategories[cat] / postsPerPage),
-    //       },
-    //     })
-    //   })
-    // })
+    })   
   })
 }
 
-// exports.onCreateNode = ({ node, actions, getNode }) => {
-//   const { createNodeField } = actions
 
-//   if (node.internal.type === `MarkdownRemark`) {
-//     const value = createFilePath({ node, getNode })
-//     createNodeField({
-//       name: `slug`,
-//       node,
-//       value,
-//     })
-//   }
-// }

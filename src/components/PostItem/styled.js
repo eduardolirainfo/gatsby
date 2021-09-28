@@ -9,7 +9,7 @@ export const PostItemTitle = styled.h1`
   font-size: 2.25rem;
   font-weight: bold;
   text-transform: uppercase;
-  margin: 0.2rem 0 0.5rem;
+  margin: 0.4rem 0 0.4rem;
   color: var(--titlePostList);
   display: inline-block;
   vertical-align: middle;
@@ -205,7 +205,6 @@ export const PostItemLink = styled(AniLink)`
   color: var(--texts);
   display: flex;
   text-decoration: none;
-  transition: ${transitions.COLOR};
   &:hover a {
     // box-shadow: var(--borderInput);
   }
@@ -239,26 +238,23 @@ export const PostItemLink = styled(AniLink)`
     background-color: var(--mediumBackground);
   }
   body#card & {
-    // border: var(--borderCard) var(--borderInputColor);
+    transition: ${transitions.ALL};
     &:hover {
-      transition: ${transitions.ALL};
-      // box-shadow: var(--borderInput);
+      box-shadow: none;
     }
   }
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15),
-    0 10px 0 -5px var(--background), 0 10px 1px -4px rgba(0, 0, 0, 0.15),
+    0 10px 0 -5px var(--background), 0 10px 1px -4px rgba(0, 0, 0, 0.25),
     0 20px 0 -10px var(--background), 0 20px 1px -9px rgba(0, 0, 0, 0.15);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 10px 0 -5px var(--background),
-    0 10px 1px -4px rgba(0, 0, 0, 0.15), 0 20px 0 -10px var(--background),
+    0 10px 1px -4px rgba(0, 0, 0, 0.25), 0 20px 0 -10px var(--background),
     0 20px 1px -9px rgba(0, 0, 0, 0.15);
   position: relative;
   margin: 0.1rem 0 1rem 0;
-  // border: var(--borderCard) var(--borderInputColor);
-
+  transition: ${transitions.ALL};
   &:hover {
-    background-image: var(--cardHover);
-    transition: ${transitions.ALL};
-    // box-shadow: var(--borderInput);
+    background-image: var(--cardHover);    
+    box-shadow: none;
   }
   &:hover i {
     opacity: 1;
@@ -374,7 +370,7 @@ export const PostItemDescription = styled.p`
   font-size: 1rem;
   font-weight: 300;
   line-height: 1.2;
-  color: var(--postColor);
+  color: var(--postDescription);
   font-family: Kalam, sans-serif;
 `
 export const ItemTags = styled.p`

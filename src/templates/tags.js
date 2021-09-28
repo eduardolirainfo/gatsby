@@ -45,7 +45,7 @@ const Tags = ({ pageContext, data }) => {
         })}
       </S.ListWrapper>
       <P.MainContent>
-        <AniLink swipe direction="up" to="/tags">
+        <AniLink swipe direction="left" to="/tags">
           Ver todas as tags
         </AniLink>
       </P.MainContent>

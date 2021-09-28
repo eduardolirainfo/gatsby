@@ -1,15 +1,15 @@
 ---
 title: "MaterializeCSS  X  Bootstrap?"
-date: 2016-10-25 03:10:51 Z
+date: "2016-10-25 03:10:51 Z"
 tags: ["CSS"]
-image: "/assets/img/mlizess.png"
+image: "/assets/img/cover.jpg"
 description: "Materialize versus bootstrap, ainda existe alguma rivalidade?"
 author:
   twitter: "dudulira"
   name: "Eduardo Lira"
 ---
 
-#### Existe um duelo?
+## Existe um duelo?
 
 Falar do Framework **MateralizeCSS** será fácil. Por isso, este post deve ser bem objetivo. Vamos conhecer melhor este maravilhoso framework front-end.
 
@@ -21,15 +21,15 @@ Veja os perfil dos caras nessa página: [O time](http://materializecss.com/about
 
 Assim como o Material Design tem seus princípios, o MaterializeCSS também. Vamos conhecer um pouco mais.
 
-#### Acelerar seu desenvolvimento
+## Acelerar seu desenvolvimento
 
 Parece um tanto óbvio, já que você vai utilizar um Framework, quer mais velocidade no desenvolvimento do projeto. O **MaterializeCSS** faz todo o trabalho pesado para você com componentes personalizados. Além disso, ele refina animações e transições para proporcionar uma experiência mais suave para os desenvolvedores web e designers.
 
-#### Foco na experiência do Usuário
+## Foco na experiência do Usuário
 
 Através da utilização de elementos e princípios do material design, os desenvolvedores do **MaterializeCSS** foram capazes de criar uma estrutura que incorpora componentes e animações que fornecem mais resposta dos usuários. Além disso, um único sistema sensível e subjacente em todas as plataformas permite ao usuário uma experiência mais unificada.
 
-#### Fácil de trabalhar
+## Fácil de trabalhar
 
 Foi criada uma documentação rica e detalhada com exemplos de código específicos para ajudar novos desenvolvedores. É possível ter um maior entendimento das classes e dos recursos _JavaScript_. A comunidade é ativa e todos estão sempre dispostos para ajudar, incluindo os próprios criadores. Realmente tudo muito útil, até mesmo para quem está começando.
 
@@ -37,7 +37,7 @@ A existência de estilos pré-definidos, a facilidade de trabalho com apoio de u
 
 Então, temos grandes possibilidades de desenvolvimento com uma pequena curva de aprendizado. Resultando assim, em efeitos fluidos, design atraente e até mesmo a capacidade de utilizar <strong>SASS CSS</strong>.
 
-#### Conclusão
+## Conclusão
 
 Dizer que o **MaterializeCSS** é um concorrente direto do Bootstrap seria equivocado da minha parte. Falta pouco para ele realmente disputar com esse ou outro framework. <del>Ele é um bebê rsrs</del> .
 

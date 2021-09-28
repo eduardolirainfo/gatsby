@@ -29,9 +29,8 @@ const Search = (props) => {
             indexName={props.algolia.indexName}
           >
             <Configure hitsPerPage={200} distinct />
-            {/* eslint-disable-next-line jsx-a11y/no-autofocus */}
             <SearchBox
-              autoFocus
+              autoFocus // eslint-disable-line
               translations={{ placeholder: "Pesquisar..." }}
             />
             <Stats
