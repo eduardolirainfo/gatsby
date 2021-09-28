@@ -92,12 +92,12 @@ export const MainContent = styled.section`
     padding: 1.5em 0 0.5em;
     margin: 1.5em 0;
     position: relative;
-    p{
+    p {
       animation: var(--animationText);
     }
   }
 
-  blockquote:before{
+  blockquote:before {
     content: "\\201C";
     position: absolute;
     top: 0em;
@@ -107,7 +107,7 @@ export const MainContent = styled.section`
     height: 2rem;
     background: var(--background);
     color: var(--highlight);
-    font: 6em/1.08em 'PT Sans', sans-serif;
+    font: 6em/1.08em "PT Sans", sans-serif;
     text-align: center;
   }
 
@@ -130,7 +130,9 @@ export const MainContent = styled.section`
     font-weight: 800;
     letter-spacing: 0.069rem;
     line-height: 1.4;
-    font-family: -apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica Neue','Arial','Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';
+    font-family: -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto",
+      "Helvetica Neue", "Arial", "Noto Sans", sans-serif, "Apple Color Emoji",
+      "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 
   h1 {
@@ -234,7 +236,11 @@ export const PostTitle = styled.h1`
   color: var(--postTitle) !important;
   text-transform: uppercase;
   font-family: "Poppins", Arial, sans-serif;
-  background: linear-gradient(45deg, var(--postTitle) 32.5%, var(--highlight) 50.5%);
+  background: linear-gradient(
+    45deg,
+    var(--postTitle) 32.5%,
+    var(--highlight) 50.5%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 800;
@@ -255,7 +261,11 @@ export const PostTitleCat = styled.h2`
   text-transform: uppercase;
   -webkit-background-clip: text;
   background-clip: text;
-  background-image: radial-gradient( 100% 100% at 100% 0%, #5ADAFF 0%, #5468FF 100% );
+  background-image: radial-gradient(
+    100% 100% at 100% 0%,
+    #5adaff 0%,
+    #5468ff 100%
+  );
   background-size: 400% 400%;
   animation: animateGradient 5s ease infinite;
 
@@ -358,7 +368,7 @@ export const LinkCat = styled(AniLink)`
 
 export const PostDate = styled.p`
   font-size: 1.1rem;
-  font-weight:100;
+  font-weight: 100;
   padding: 0 1.4rem;
   color: var(--postDescription);
   ${media.lessThan("large")`
@@ -368,13 +378,13 @@ export const PostDate = styled.p`
 
 export const ItemTags = styled.ul`
   list-style: none;
-  margin:  0 0 4rem;
+  margin: 0 0 4rem;
   overflow: hidden;
   padding: 0 4rem;
   display: flex;
   flex-direction: row;
   /* transition: ${transitions.COLOR}; */
-/*
+  /*
   & li {
       float: left;
  }*/
@@ -394,8 +404,6 @@ export const TagLink = styled(AniLink)`
   text-decoration: none;
   transition: ${transitions.DEFAULT};
   border-bottom: none !important;
-
-
 `
 export const TagPost = styled(AniLink)`
   color: var(--postColor);
@@ -409,7 +417,7 @@ export const TagPost = styled(AniLink)`
 `
 export const Btn__label = styled.span`
   height: 1rem;
-  font-size: .65rem;
+  font-size: 0.65rem;
   position: absolute;
   bottom: -4px;
   right: 8%;
@@ -418,14 +426,15 @@ export const Btn__label = styled.span`
   z-index: 3;
 `
 export const Btn__glitch = styled.span`
- display: none;
+  display: none;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background-color: var(--postTitle);
-  filter: drop-shadow(-2px 3px #67e3f3) drop-shadow(-1px -3px #02d8f3) drop-shadow(2px 1px #02d8f3);
+  filter: drop-shadow(-2px 3px #67e3f3) drop-shadow(-1px -3px #02d8f3)
+    drop-shadow(2px 1px #02d8f3);
 `
 export const Btn__content = styled.span`
   display: flex;
@@ -440,9 +449,8 @@ export const Btn__content = styled.span`
   clip-path: polygon(92% 0, 100% 25%, 100% 100%, 8% 100%, 0% 75%, 0 0);
   color: var(--mediumBackground);
   border-right: 0.3rem solid var(--highlight);
-
 `
-export const Button  = styled.button`
+export const Button = styled.button`
   width: 10rem;
   height: 2.45rem;
   border: 0;
@@ -450,129 +458,132 @@ export const Button  = styled.button`
   background-color: transparent;
   cursor: pointer;
   position: relative;
-  font-size: .85rem;
+  font-size: 0.85rem;
   text-transform: uppercase;
   color: var(--texts);
   clip-path: polygon(92% 0, 100% 25%, 100% 100%, 8% 100%, 0% 75%, 0 0);
-  &:hover ${Btn__glitch},
-  &:hover ${Btn__content}::after,
-  &:focus ${Btn__glitch},
-  &:focus ${Btn__content}::after {
+  &:hover
+    ${Btn__glitch},
+    &:hover
+    ${Btn__content}::after,
+    &:focus
+    ${Btn__glitch},
+    &:focus
+    ${Btn__content}::after {
     display: block;
     animation: glitch-animation 2s linear 0s infinite;
   }
   /* secret trick */
-@keyframes glitch-animation {
-  0% {
-    opacity: 1;
-    transform: translateZ(0);
-    clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%);
-  }
+  @keyframes glitch-animation {
+    0% {
+      opacity: 1;
+      transform: translateZ(0);
+      clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%);
+    }
 
-  2% {
-    clip-path: polygon(0 78%, 100% 78%, 100% 100%, 0 100%);
-    transform: translate(-5px);
-  }
+    2% {
+      clip-path: polygon(0 78%, 100% 78%, 100% 100%, 0 100%);
+      transform: translate(-5px);
+    }
 
-  6% {
-    clip-path: polygon(0 78%, 100% 78%, 100% 100%, 0 100%);
-    transform: translate(5px);
-  }
+    6% {
+      clip-path: polygon(0 78%, 100% 78%, 100% 100%, 0 100%);
+      transform: translate(5px);
+    }
 
-  8% {
-    clip-path: polygon(0 78%, 100% 78%, 100% 100%, 0 100%);
-    transform: translate(-5px);
-  }
+    8% {
+      clip-path: polygon(0 78%, 100% 78%, 100% 100%, 0 100%);
+      transform: translate(-5px);
+    }
 
-  9% {
-    clip-path: polygon(0 78%, 100% 78%, 100% 100%, 0 100%);
-    transform: translate(0);
-  }
+    9% {
+      clip-path: polygon(0 78%, 100% 78%, 100% 100%, 0 100%);
+      transform: translate(0);
+    }
 
-  10% {
-    clip-path: polygon(0 54%, 100% 54%, 100% 44%, 0 44%);
-    transform: translate3d(5px, 0, 0);
-  }
+    10% {
+      clip-path: polygon(0 54%, 100% 54%, 100% 44%, 0 44%);
+      transform: translate3d(5px, 0, 0);
+    }
 
-  13% {
-    clip-path: polygon(0 54%, 100% 54%, 100% 44%, 0 44%);
-    transform: translateZ(0);
-  }
+    13% {
+      clip-path: polygon(0 54%, 100% 54%, 100% 44%, 0 44%);
+      transform: translateZ(0);
+    }
 
-  13.1% {
-    clip-path: polygon(0 0, 0 0, 0 0, 0 0);
-    transform: translate3d(5px, 0, 0);
-  }
+    13.1% {
+      clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+      transform: translate3d(5px, 0, 0);
+    }
 
-  15% {
-    clip-path: polygon(0 60%, 100% 60%, 100% 40%, 0 40%);
-    transform: translate3d(5px, 0, 0);
-  }
+    15% {
+      clip-path: polygon(0 60%, 100% 60%, 100% 40%, 0 40%);
+      transform: translate3d(5px, 0, 0);
+    }
 
-  20% {
-    clip-path: polygon(0 60%, 100% 60%, 100% 40%, 0 40%);
-    transform: translate3d(-5px, 0, 0);
-  }
+    20% {
+      clip-path: polygon(0 60%, 100% 60%, 100% 40%, 0 40%);
+      transform: translate3d(-5px, 0, 0);
+    }
 
-  20.1% {
-    clip-path: polygon(0 0, 0 0, 0 0, 0 0);
-    transform: translate3d(5px, 0, 0);
-  }
+    20.1% {
+      clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+      transform: translate3d(5px, 0, 0);
+    }
 
-  25% {
-    clip-path: polygon(0 85%, 100% 85%, 100% 40%, 0 40%);
-    transform: translate3d(5px, 0, 0);
-  }
+    25% {
+      clip-path: polygon(0 85%, 100% 85%, 100% 40%, 0 40%);
+      transform: translate3d(5px, 0, 0);
+    }
 
-  30% {
-    clip-path: polygon(0 85%, 100% 85%, 100% 40%, 0 40%);
-    transform: translate3d(-5px, 0, 0);
-  }
+    30% {
+      clip-path: polygon(0 85%, 100% 85%, 100% 40%, 0 40%);
+      transform: translate3d(-5px, 0, 0);
+    }
 
-  30.1% {
-    clip-path: polygon(0 0, 0 0, 0 0, 0 0);
-  }
+    30.1% {
+      clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+    }
 
-  35% {
-    clip-path: polygon(0 63%, 100% 63%, 100% 80%, 0 80%);
-    transform: translate(-5px);
-  }
+    35% {
+      clip-path: polygon(0 63%, 100% 63%, 100% 80%, 0 80%);
+      transform: translate(-5px);
+    }
 
-  40% {
-    clip-path: polygon(0 63%, 100% 63%, 100% 80%, 0 80%);
-    transform: translate(5px);
-  }
+    40% {
+      clip-path: polygon(0 63%, 100% 63%, 100% 80%, 0 80%);
+      transform: translate(5px);
+    }
 
-  45% {
-    clip-path: polygon(0 63%, 100% 63%, 100% 80%, 0 80%);
-    transform: translate(-5px);
-  }
+    45% {
+      clip-path: polygon(0 63%, 100% 63%, 100% 80%, 0 80%);
+      transform: translate(-5px);
+    }
 
-  50% {
-    clip-path: polygon(0 63%, 100% 63%, 100% 80%, 0 80%);
-    transform: translate(0);
-  }
+    50% {
+      clip-path: polygon(0 63%, 100% 63%, 100% 80%, 0 80%);
+      transform: translate(0);
+    }
 
-  55% {
-    clip-path: polygon(0 10%, 100% 10%, 100% 0, 0 0);
-    transform: translate3d(5px, 0, 0);
-  }
+    55% {
+      clip-path: polygon(0 10%, 100% 10%, 100% 0, 0 0);
+      transform: translate3d(5px, 0, 0);
+    }
 
-  60% {
-    clip-path: polygon(0 10%, 100% 10%, 100% 0, 0 0);
-    transform: translateZ(0);
-    opacity: 1;
-  }
+    60% {
+      clip-path: polygon(0 10%, 100% 10%, 100% 0, 0 0);
+      transform: translateZ(0);
+      opacity: 1;
+    }
 
-  60.1% {
-    clip-path: polygon(0 0, 0 0, 0 0, 0 0);
-    opacity: 1;
-  }
+    60.1% {
+      clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+      opacity: 1;
+    }
 
-  to {
-    clip-path: polygon(0 0, 0 0, 0 0, 0 0);
-    opacity: 1;
+    to {
+      clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+      opacity: 1;
+    }
   }
-}
-
 `

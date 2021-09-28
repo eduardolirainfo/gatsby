@@ -1,11 +1,10 @@
-import React from 'react'
-import AniLink from 'gatsby-plugin-transition-link/AniLink'
+import React from "react"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 import links from "./content"
 import * as S from "./styled"
 
 import getThemeColor from "../../utils/getThemeColor"
-
 
 const MenuLinks = () => {
   return (

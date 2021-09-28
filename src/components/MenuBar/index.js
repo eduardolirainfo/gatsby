@@ -7,9 +7,8 @@ import { Sun as Light } from "@styled-icons/boxicons-solid/Sun"
 import { Moon as Dark } from "@styled-icons/boxicons-solid/Moon"
 import { ListUl as List } from "@styled-icons/boxicons-regular/ListUl"
 import { Grid } from "@styled-icons/boxicons-solid/Grid"
-import {User} from "@styled-icons/boxicons-regular/User"
-import {RssFeed as Feed} from "@styled-icons/material-rounded/RssFeed"
-
+import { User } from "@styled-icons/boxicons-regular/User"
+import { RssFeed as Feed } from "@styled-icons/material-rounded/RssFeed"
 
 import getThemeColor from "../../utils/getThemeColor"
 
@@ -58,7 +57,7 @@ const MenuBar = () => {
             <Newspaper />
           </S.MenuBarItem>
         </S.MenuBarLink> */}
-           <S.MenuBarLink
+        <S.MenuBarLink
           to="/sobre/"
           title="Sobre"
           cover
@@ -71,7 +70,7 @@ const MenuBar = () => {
             <User />
           </S.MenuBarItem>
         </S.MenuBarLink>
-               <S.MenuBarLink
+        <S.MenuBarLink
           to="/rss.xml"
           title="Feed"
           cover
@@ -84,7 +83,7 @@ const MenuBar = () => {
             <Feed />
           </S.MenuBarItem>
         </S.MenuBarLink>
-                <S.MenuBarLink
+        <S.MenuBarLink
           to="/search"
           cover
           direction="right"
@@ -117,15 +116,16 @@ const MenuBar = () => {
         >
           {!isDarkMode ? <Dark /> : <Light />}
         </S.MenuBarItem>
-         {/* Mudar visualização */}
-                <S.MenuBarItem title="Mudar visualização"
-                    onClick={() => {
-                        window.__setPreferredDisplay(isListMode ? "card" : "list")
-                    }}
-                    className={display}
-                >
-                    {isListMode ? <Grid/> : < List />}
-                </S.MenuBarItem>
+        {/* Mudar visualização */}
+        <S.MenuBarItem
+          title="Mudar visualização"
+          onClick={() => {
+            window.__setPreferredDisplay(isListMode ? "card" : "list")
+          }}
+          className={display}
+        >
+          {isListMode ? <Grid /> : <List />}
+        </S.MenuBarItem>
         <S.MenuBarItem
           title="Ir para o Topo"
           onClick={() => {

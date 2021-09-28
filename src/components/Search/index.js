@@ -1,18 +1,18 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from "react"
+import PropTypes from "prop-types"
 
-import algoliasearch from 'algoliasearch/lite'
+import algoliasearch from "algoliasearch/lite"
 
 import {
   InstantSearch,
   SearchBox,
   Hits,
   Stats,
-  Configure
-} from 'react-instantsearch-dom'
+  Configure,
+} from "react-instantsearch-dom"
 
-import Hit from './Hit'
-import * as S from './styled'
+import Hit from "./Hit"
+import * as S from "./styled"
 
 const Search = (props) => {
   const searchClient = algoliasearch(
@@ -30,7 +30,9 @@ const Search = (props) => {
           >
             <Configure hitsPerPage={200} distinct />
             {/* eslint-disable-next-line jsx-a11y/no-autofocus */}
-            <SearchBox autoFocus translations={{ placeholder: "Pesquisar..." }}
+            <SearchBox
+              autoFocus
+              translations={{ placeholder: "Pesquisar..." }}
             />
             <Stats
               translations={{
@@ -38,7 +40,7 @@ const Search = (props) => {
                   return nbHits === 1
                     ? `${nbHits} resultado encontrado em ${timeSpentMS}ms`
                     : `${nbHits} resultados encontrados em ${timeSpentMS}ms`
-                }
+                },
               }}
             />
             <Hits hitComponent={Hit} />
@@ -54,7 +56,7 @@ const Search = (props) => {
 }
 
 Search.propTypes = {
-  algolia: PropTypes.object.isRequired
+  algolia: PropTypes.object.isRequired,
 }
 
 export default Search

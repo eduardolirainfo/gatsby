@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import media from "styled-media-query"
-import { Algolia } from '@styled-icons/fa-brands/Algolia'
+import { Algolia } from "@styled-icons/fa-brands/Algolia"
 import transitions from "../../styles/transitions"
 
 export const SearchWrapper = styled.section`
@@ -55,21 +55,23 @@ export const SearchWrapper = styled.section`
       background-color: var(--background);
     }
   }
-input[type=search], textarea {
-  -webkit-transition: all 0.30s ease-in-out;
-  -moz-transition: all 0.30s ease-in-out;
-  -ms-transition: all 0.30s ease-in-out;
-  -o-transition: all 0.30s ease-in-out;
-  outline: none;
-  border: 1px solid var(--borderInputColor);
-  background: var(--bgInput);
-}
+  input[type="search"],
+  textarea {
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    outline: none;
+    border: 1px solid var(--borderInputColor);
+    background: var(--bgInput);
+  }
 
-input[type=search]:focus, textarea:focus {
-  box-shadow: 0 0 5px var(--borderInputColor);
-  border: 1px solid var(--borderInputColor);
-}
-  .ais-SearchBox-form{
+  input[type="search"]:focus,
+  textarea:focus {
+    box-shadow: 0 0 5px var(--borderInputColor);
+    border: 1px solid var(--borderInputColor);
+  }
+  .ais-SearchBox-form {
   }
 
   .ais-SearchBox-input {
@@ -97,7 +99,7 @@ input[type=search]:focus, textarea:focus {
   .ais-SearchBox-reset {
     display: none;
   }
- `
+`
 // export const SearchWrapper = styled.section`
 //   background: var(--background);
 //   display: flex;
@@ -133,7 +135,6 @@ input[type=search]:focus, textarea:focus {
 //     color: var(--texts);
 //   }
 
-
 //   body#card & {
 //     .ais-Hits-list {
 //       transition: ${transitions.ALL};
@@ -159,7 +160,6 @@ input[type=search]:focus, textarea:focus {
 //   }
 // `
 
-
 export const SearchTitle = styled.h1`
   color: var(--texts);
   font-size: 1rem;
@@ -167,17 +167,17 @@ export const SearchTitle = styled.h1`
   padding: 3rem 2rem;
   text-align: right;
 
-  ${media.lessThan('large')`
+  ${media.lessThan("large")`
     padding: 1rem;
     line-height: 1.1;
   `}
 `
 
-  export const AlgoliaIcon = styled(Algolia)`
+export const AlgoliaIcon = styled(Algolia)`
   height: 1.2rem;
   margin-left: 0.5rem;
   width: 1.2rem;
-  `
+`
 
 // import styled from 'styled-components'
 // import media from 'styled-media-query'

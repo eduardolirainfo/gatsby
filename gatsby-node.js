@@ -49,7 +49,7 @@ exports.createPages = ({ graphql, actions }) => {
                 slug
               }
               frontmatter {
-                date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
+                date(locale: "pt-BR", formatString: "DD [de] MMMM [de] YYYY")
                 description
                 categories
                 title
@@ -62,7 +62,7 @@ exports.createPages = ({ graphql, actions }) => {
               }
               frontmatter {
                 title
-                date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
+                date(locale: "pt-BR", formatString: "DD [de] MMMM [de] YYYY")
               }
             }
             previous {
@@ -71,7 +71,7 @@ exports.createPages = ({ graphql, actions }) => {
               }
               frontmatter {
                 title
-                date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
+                date(locale: "pt-BR", formatString: "DD [de] MMMM [de] YYYY")
               }
             }
           }
@@ -122,7 +122,7 @@ exports.createPages = ({ graphql, actions }) => {
         component: blogList,
         context: {
           limit: postsPerPage,
-          skip: i * postsPerPage,
+          skip: postsPerPage,
           numPages,
           currentPage: i + 1,
         },
@@ -133,7 +133,7 @@ exports.createPages = ({ graphql, actions }) => {
     const tags = result.data.tagsGroup.group
 
     // Make tag pages
-    tags.forEach(tag => {
+    tags.forEach((tag) => {
       createPage({
         path: `/tags/${_.kebabCase(tag.fieldValue)}/`,
         component: tagTemplate,
@@ -146,7 +146,7 @@ exports.createPages = ({ graphql, actions }) => {
     const categories = result.data.categoriesGroup.group
 
     // Make tag pages
-    categories.forEach(category => {
+    categories.forEach((category) => {
       createPage({
         path: `/categorias/${_.kebabCase(category.fieldValue)}/`,
         component: catTemplate,

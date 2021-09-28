@@ -15,12 +15,12 @@ export const SidebarContainer = styled.aside`
   text-align: center;
   width: 17.5rem;
   transition: ${transitions.ALL};
-background: var(--bgSidebar);
-background-repeat: repeat, repeat, repeat, repeat, repeat;
-background-attachment: scroll, scroll, scroll, scroll, scroll;
-background-repeat: no-repeat;
-background-attachment: fixed;
-background-color: var(--mediumBackground);
+  background: var(--bgSidebar);
+  background-repeat: repeat, repeat, repeat, repeat, repeat;
+  background-attachment: scroll, scroll, scroll, scroll, scroll;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: var(--mediumBackground);
 
   /*${media.lessThan("large")`
     align-items: flex-start;
@@ -29,15 +29,15 @@ background-color: var(--mediumBackground);
     position: inherit;
     width: 100%;
   `}*/
-    ${media.lessThan('large')`
+  ${media.lessThan("large")`
     align-items: flex-start;
     border: 0;
     height: calc(100% - 50px);
     padding: 0;
     position: inherit;
     width: 100%;
-    transform: ${props =>
-      props.isMenuOpen ? 'translateX(0)' : 'translateX(-100vw)'};
+    transform: ${(props) =>
+      props.isMenuOpen ? "translateX(0)" : "translateX(-100vw)"};
   `}
 `
 export const SidebarLinksContainer = styled.section`

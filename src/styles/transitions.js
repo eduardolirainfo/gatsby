@@ -7,7 +7,7 @@ const transitions = {
   DEFAULT: defaultTransition,
   COLOR: colorTransition,
   BACKGROUND: bgTransition,
-  ALL: defaultTiming
+  ALL: defaultTiming,
 }
 
 export default transitions

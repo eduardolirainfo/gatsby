@@ -3,11 +3,9 @@ import propTypes from "prop-types"
 import { ArrowReturnLeft } from "@styled-icons/bootstrap/ArrowReturnLeft"
 import { ArrowReturnRight } from "@styled-icons/bootstrap/ArrowReturnRight"
 
-
 import * as S from "./styled"
 
 import getThemeColor from "../../utils/getThemeColor"
-
 
 const RecommendedPosts = ({ next, previous }) => (
   <S.RecommendedWrapper>
@@ -21,8 +19,8 @@ const RecommendedPosts = ({ next, previous }) => (
         bg={getThemeColor()}
         className="previous"
       >
-       <ArrowReturnLeft />
-       {previous.frontmatter.title}
+        <ArrowReturnLeft />
+        {previous.frontmatter.title}
       </S.RecommendedLink>
     )}
     {next && (
@@ -36,7 +34,7 @@ const RecommendedPosts = ({ next, previous }) => (
         className="next"
       >
         {next.frontmatter.title}
-         <ArrowReturnRight />
+        <ArrowReturnRight />
       </S.RecommendedLink>
     )}
   </S.RecommendedWrapper>

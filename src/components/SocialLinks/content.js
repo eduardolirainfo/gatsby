@@ -3,7 +3,7 @@ const links = [
     label: "Github",
     url: `https://github.com/eduardolirainfo`,
   },
-   {
+  {
     label: "Instagram",
     url: `https://www.instagram.com/eduardolirainfo`,
   },

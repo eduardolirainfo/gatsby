@@ -34,7 +34,7 @@ export const ProfileAuthor = styled.h1`
   text-transform: uppercase;
   margin-top: 1rem;
   letter-spacing: 0.3px;
-   display: inline-block;
+  display: inline-block;
   vertical-align: middle;
   -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
@@ -63,55 +63,70 @@ export const ProfileDescription = styled.p`
   `}
 `
 export const ProfileContainer = styled.section`
-  display: ${props => (props.isMobileHeader ? 'none' : 'flex')};
+  display: ${(props) => (props.isMobileHeader ? "none" : "flex")};
   color: var(--texts);
   flex-direction: column;
 
-
-   &:hover ${ProfileAuthor}, &:focus ${ProfileAuthor}, &:active ${ProfileAuthor}{
-      -webkit-transform: skew(-10deg);
-  transform: skew(-10deg);
+  &:hover
+    ${ProfileAuthor},
+    &:focus
+    ${ProfileAuthor},
+    &:active
+    ${ProfileAuthor} {
+    -webkit-transform: skew(-10deg);
+    transform: skew(-10deg);
   }
 
-  &:hover ${AvatarWrapper}, &:focus ${AvatarWrapper}, &:active ${AvatarWrapper} {
-  -webkit-animation-name: bob-on-hover-float, bob-on-hover;
-  animation-name: bob-on-hover-float, bob-on-hover;
-  -webkit-animation-duration: .3s, 1.5s;
-  animation-duration: .3s, 1.5s;
-  -webkit-animation-delay: 0s, .3s;
-  animation-delay: 0s, .3s;
-  -webkit-animation-timing-function: ease-out, ease-in-out;
-  animation-timing-function: ease-out, ease-in-out;
-  -webkit-animation-iteration-count: 1, infinite;
-  animation-iteration-count: 1, infinite;
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-  -webkit-animation-direction: normal, alternate;
-  animation-direction: normal, alternate;
+  &:hover
+    ${AvatarWrapper},
+    &:focus
+    ${AvatarWrapper},
+    &:active
+    ${AvatarWrapper} {
+    -webkit-animation-name: bob-on-hover-float, bob-on-hover;
+    animation-name: bob-on-hover-float, bob-on-hover;
+    -webkit-animation-duration: 0.3s, 1.5s;
+    animation-duration: 0.3s, 1.5s;
+    -webkit-animation-delay: 0s, 0.3s;
+    animation-delay: 0s, 0.3s;
+    -webkit-animation-timing-function: ease-out, ease-in-out;
+    animation-timing-function: ease-out, ease-in-out;
+    -webkit-animation-iteration-count: 1, infinite;
+    animation-iteration-count: 1, infinite;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-direction: normal, alternate;
+    animation-direction: normal, alternate;
   }
 
-  &:hover ${ProfileAuthor}{
+  &:hover ${ProfileAuthor} {
     left: 0;
     left: -2px;
   }
-  &:hover small ${ProfileAuthor}{
+  &:hover small ${ProfileAuthor} {
     font-style: italic;
   }
-   &:hover ${ProfileDescription}, &:focus ${ProfileDescription}, &:active ${ProfileDescription} {
-      border-top: 3px solid var(--highlight);
-      border-bottom: 3px solid var(--highlight);
-      color: var(--highlight);
-      transform: skewX(-10deg);
-      opacity: 0.9;
-      background-image: linear-gradient( 60deg,
-        var(--mediumBackground) 0%,
-        var(--highlight) 180%
-      );
-      }
+  &:hover
+    ${ProfileDescription},
+    &:focus
+    ${ProfileDescription},
+    &:active
+    ${ProfileDescription} {
+    border-top: 3px solid var(--highlight);
+    border-bottom: 3px solid var(--highlight);
+    color: var(--highlight);
+    transform: skewX(-10deg);
+    opacity: 0.9;
+    background-image: linear-gradient(
+      60deg,
+      var(--mediumBackground) 0%,
+      var(--highlight) 180%
+    );
+  }
 
-  ${media.lessThan('large')`
+  ${media.lessThan("large")`
     align-items: flex-start;
-    display: ${props => (props.isMobileHeader ? 'flex' : 'none')};
+    display: ${(props) => (props.isMobileHeader ? "flex" : "none")};
     background: var(--mediumBackground);
     border-bottom: 1px solid var(--borders);
     padding: 1rem;

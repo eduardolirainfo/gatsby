@@ -1,20 +1,15 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from "react"
+import PropTypes from "prop-types"
 
-import Avatar from '../Avatar'
-import * as S from './styled'
+import Avatar from "../Avatar"
+import * as S from "./styled"
 
-import getThemeColor from '../../utils/getThemeColor'
+import getThemeColor from "../../utils/getThemeColor"
 
 const Profile = ({ title, position, authorDescription, isMobileHeader }) => {
   return (
     <S.ProfileContainer isMobileHeader={isMobileHeader}>
-      <S.ProfileLink
-        paintDrip
-        to="/"
-        hex={getThemeColor()}
-        duration={0.6}
-      >
+      <S.ProfileLink paintDrip to="/" hex={getThemeColor()} duration={0.6}>
         <Avatar />
         <S.ProfileAuthor>
           {title}
@@ -29,7 +24,7 @@ const Profile = ({ title, position, authorDescription, isMobileHeader }) => {
 Profile.propTypes = {
   title: PropTypes.string.isRequired,
   position: PropTypes.string.isRequired,
-  authorDescription: PropTypes.string.isRequired
+  authorDescription: PropTypes.string.isRequired,
 }
 
 export default Profile

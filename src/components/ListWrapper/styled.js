@@ -13,14 +13,14 @@ export const ListWrapper = styled.section`
     transition: ${transitions.DEFAULT};
     margin: 0 auto;
     grid-gap: 0 0.75rem;
-   }
+  }
   &:hover {
     transition: ${transitions.DEFAULT};
     a:not(:hover) {
-      -webkit-transition: all .4s ease;
-      -moz-transition: all .4s ease;
-      -o-transition: all .4s ease;
-      transition: all .4s ease;
+      -webkit-transition: all 0.4s ease;
+      -moz-transition: all 0.4s ease;
+      -o-transition: all 0.4s ease;
+      transition: all 0.4s ease;
       -webkit-transition-delay: 3s;
       transition-delay: 3s;
       -webkit-filter: blur(2px);
@@ -40,5 +40,4 @@ export const ListWrapper = styled.section`
    ${media.greaterThan("large")`
        body#card & { grid-template-columns: repeat(4, 1fr); }
    `}*/
-
 `

@@ -28,32 +28,46 @@ export const RecommendedLink = styled(AniLink)`
     0 20px 1px -9px rgba(0, 0, 0, 0.15);
   transition: ${transitions.ALL};
   background-color: var(--bgInput);
-border: 2px solid var(--borderInputColor);
--webkit-clip-path: polygon( 0 0, 100% 0, 100% calc(100% - 1rem + 2px), calc(100% - 1rem + 2px) 100%, 0 100% );
-clip-path: polygon( 0 0, 100% 0, 100% calc(100% - 1rem + 2px), calc(100% - 1rem + 2px) 100%, 0 100% );
-font-family: -apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica Neue','Arial','Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';
+  border: 2px solid var(--borderInputColor);
+  -webkit-clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - 1rem + 2px),
+    calc(100% - 1rem + 2px) 100%,
+    0 100%
+  );
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - 1rem + 2px),
+    calc(100% - 1rem + 2px) 100%,
+    0 100%
+  );
+  font-family: -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto",
+    "Helvetica Neue", "Arial", "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
-animation: var(--animationText);
+  animation: var(--animationText);
 
-&::before{
-  background-color: var(--borderInputColor);
-bottom: 5px;
-content: "";
-display: block;
-height: 3px;
-position: absolute;
-right: -6px;
-top: auto;
-transform: rotate(-45deg);
-width: 22px;
-z-index: 100;
-}
-svg{
-  height: 3.2rem;
-padding: .9rem;
-position: relative;
-width: 3.2rem;
-}
+  &::before {
+    background-color: var(--borderInputColor);
+    bottom: 5px;
+    content: "";
+    display: block;
+    height: 3px;
+    position: absolute;
+    right: -6px;
+    top: auto;
+    transform: rotate(-45deg);
+    width: 22px;
+    z-index: 100;
+  }
+  svg {
+    height: 3.2rem;
+    padding: 0.9rem;
+    position: relative;
+    width: 3.2rem;
+  }
   ${media.lessThan("large")`
     padding: 2rem 1rem;
     line-height: 1.3;
@@ -64,7 +78,7 @@ width: 3.2rem;
     background: var(--background);
     color: var(--bordersMenuBar);
   }
-  &:hover a{
+  &:hover a {
     filter: saturate(800%);
   }
 

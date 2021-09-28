@@ -1,4 +1,4 @@
-require('dotenv').config({path: `.env`,})
+require("dotenv").config({ path: `.env` })
 
 const queries = require("./src/utils/algolia_queries")
 
@@ -8,11 +8,11 @@ const pluginConfig = [
   `gatsby-plugin-react-helmet`,
   `gatsby-plugin-transition-link`,
   {
-    resolve: 'gatsby-source-filesystem',
+    resolve: "gatsby-source-filesystem",
     options: {
       path: `${__dirname}/static/assets/img`,
-      name: 'uploads'
-    }
+      name: "uploads",
+    },
   },
   `gatsby-plugin-styled-components`,
   {
@@ -23,9 +23,9 @@ const pluginConfig = [
     },
   },
   {
-      resolve: `gatsby-plugin-feed`,
-      options: {
-        query: `
+    resolve: `gatsby-plugin-feed`,
+    options: {
+      query: `
           {
             site {
               siteMetadata {
@@ -37,20 +37,20 @@ const pluginConfig = [
             }
           }
         `,
-        feeds: [
-          {
-            serialize: ({ query: { site, allMarkdownRemark } }) => {
-              return allMarkdownRemark.edges.map(edge => {
-                return Object.assign({}, edge.node.frontmatter, {
-                  description: edge.node.excerpt,
-                  date: edge.node.frontmatter.date,
-                  url: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  custom_elements: [{ "content:encoded": edge.node.html }],
-                })
+      feeds: [
+        {
+          serialize: ({ query: { site, allMarkdownRemark } }) => {
+            return allMarkdownRemark.edges.map((edge) => {
+              return Object.assign({}, edge.node.frontmatter, {
+                description: edge.node.excerpt,
+                date: edge.node.frontmatter.date,
+                url: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                custom_elements: [{ "content:encoded": edge.node.html }],
               })
-            },
-            query: `
+            })
+          },
+          query: `
               {
                 allMarkdownRemark(
                   sort: { order: DESC, fields: [frontmatter___date] },
@@ -69,12 +69,12 @@ const pluginConfig = [
                 }
               }
             `,
-            output: "/rss.xml",
-            title: "RSS Feed do site",
-          },
-        ],
-      }
+          output: "/rss.xml",
+          title: "RSS Feed do site",
+        },
+      ],
     },
+  },
   {
     resolve: `gatsby-source-filesystem`,
     options: {
@@ -100,12 +100,9 @@ const pluginConfig = [
   {
     resolve: `gatsby-plugin-google-fonts`,
     options: {
-      fonts: [
-        `Kalam`,
-        `Poppins`
-      ],
-      display: 'swap'
-    }
+      fonts: [`Kalam`, `Poppins`],
+      display: "swap",
+    },
   },
   `gatsby-plugin-image`,
   `gatsby-transformer-sharp`,
@@ -126,13 +123,13 @@ const pluginConfig = [
   },
   {
     resolve: `gatsby-plugin-sharp`,
-      options: {
-        defaults: {
-          quality: 100,
-          formats: ["auto", "webp", "avif"],
-          placeholder: "blurred",
-        },
+    options: {
+      defaults: {
+        quality: 100,
+        formats: ["auto", "webp", "avif"],
+        placeholder: "blurred",
       },
+    },
   },
   {
     resolve: `gatsby-plugin-manifest`,
@@ -147,10 +144,10 @@ const pluginConfig = [
     },
   },
   {
-   resolve: `gatsby-plugin-offline`,
-  options: {
-    precachePages: [`/*`]
-  },
+    resolve: `gatsby-plugin-offline`,
+    options: {
+      precachePages: [`/*`],
+    },
   },
 
   `gatsby-plugin-sitemap`,
@@ -163,17 +160,17 @@ if (process.env.CONTEXT === "production") {
       apiKey: process.env.ALGOLIA_ADMIN_KEY,
       queries,
       chunkSize: 10000, // default: 1000
-      enablePartialUpdates: true
-    }
+      enablePartialUpdates: true,
+    },
   }
 
-    const analytics = {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        head: false,
-        trackingId: "UA-63318724-1"
-      }
-    }
+  const analytics = {
+    resolve: `gatsby-plugin-google-analytics`,
+    options: {
+      head: false,
+      trackingId: "UA-63318724-1",
+    },
+  }
 
   pluginConfig.push(algolia)
   pluginConfig.push(analytics)
@@ -192,6 +189,6 @@ module.exports = {
   plugins: pluginConfig,
   flags: {
     DEV_SSR: false,
-    FAST_DEV: true
-  }
+    FAST_DEV: true,
+  },
 }

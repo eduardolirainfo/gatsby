@@ -27,7 +27,6 @@ export const PostItemTitle = styled.h1`
     margin: 0.8rem 0;
   }
 
-
   @-moz-keyframes morphing {
     0% {
       border-radius: 30% 70% 70% 30%/30% 30% 70% 70%;
@@ -125,11 +124,16 @@ export const PostItemWrapper = styled.section`
       0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 
-  &:hover ${PostItemTitle}, &:focus ${PostItemTitle}, &:active ${PostItemTitle}{
-      -webkit-transform: skew(-5deg);
-      transform: skew(-5deg);
-      text-shadow: var(--highlightText);
-      box-shadow: none;
+  &:hover
+    ${PostItemTitle},
+    &:focus
+    ${PostItemTitle},
+    &:active
+    ${PostItemTitle} {
+    -webkit-transform: skew(-5deg);
+    transform: skew(-5deg);
+    text-shadow: var(--highlightText);
+    box-shadow: none;
   }
 
   // &:hover {
@@ -152,7 +156,7 @@ export const PostItemCat = styled.div`
   align-items: center;
   margin-right: 1.5rem;
   text-decoration: none;
-  color: ${props =>
+  color: ${(props) =>
     props.background ? props.background : " var(--highlight)"};
   display: flex;
   font-weight: 900;
@@ -162,7 +166,8 @@ export const PostItemCat = styled.div`
   text-transform: uppercase;
   transition: ${transitions.ALL};
   border-radius: 3rem;
-  box-shadow: var(--catHl) ${props => props.background ? props.background : " var(--highlight)"};
+  box-shadow: var(--catHl)
+    ${(props) => (props.background ? props.background : " var(--highlight)")};
   &:hover {
     animation: var(--animaTag);
     overflow: hidden;
@@ -174,7 +179,7 @@ export const PostItemCat = styled.div`
     top: 14px;
     width: 5px;
     height: 5px;
-    background-color: ${props =>
+    background-color: ${(props) =>
       props.background ? props.background : " var(--background)"};
     // border: none;
     border-radius: 50%;
@@ -201,23 +206,23 @@ export const PostItemLink = styled(AniLink)`
   display: flex;
   text-decoration: none;
   transition: ${transitions.COLOR};
-    &:hover a{
-      // box-shadow: var(--borderInput);
-    }
-   &:hover p{
-      color: ${props =>
-    props.background ? props.background : " var(--highlight)"};
+  &:hover a {
+    // box-shadow: var(--borderInput);
   }
-  &:hover time{
-      color: ${props =>
-    props.background ? props.background : " var(--highlight)"};
+  &:hover p {
+    color: ${(props) =>
+      props.background ? props.background : " var(--highlight)"};
   }
-  &:hover ${PostItemCat}{
-      animation: var(--animationBox);
+  &:hover time {
+    color: ${(props) =>
+      props.background ? props.background : " var(--highlight)"};
   }
-  &:hover h1{
-      color: ${props =>
-    props.background ? props.background : " var(--highlight)"};
+  &:hover ${PostItemCat} {
+    animation: var(--animationBox);
+  }
+  &:hover h1 {
+    color: ${(props) =>
+      props.background ? props.background : " var(--highlight)"};
   }
   & ul {
     z-index: 99;
@@ -235,7 +240,7 @@ export const PostItemLink = styled(AniLink)`
   }
   body#card & {
     // border: var(--borderCard) var(--borderInputColor);
-    &:hover{
+    &:hover {
       transition: ${transitions.ALL};
       // box-shadow: var(--borderInput);
     }
@@ -243,7 +248,7 @@ export const PostItemLink = styled(AniLink)`
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15),
     0 10px 0 -5px var(--background), 0 10px 1px -4px rgba(0, 0, 0, 0.15),
     0 20px 0 -10px var(--background), 0 20px 1px -9px rgba(0, 0, 0, 0.15);
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 10px 0 -5px var(--background),
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 10px 0 -5px var(--background),
     0 10px 1px -4px rgba(0, 0, 0, 0.15), 0 20px 0 -10px var(--background),
     0 20px 1px -9px rgba(0, 0, 0, 0.15);
   position: relative;
@@ -263,62 +268,62 @@ export const PostItemLink = styled(AniLink)`
   }
 
   &:hover span {
-    animation: shake 3s cubic-bezier(.36,.07,.19,.97) both;
+    animation: shake 3s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
     transform: translate3d(0, 0, 0);
     backface-visibility: hidden;
     perspective: 100px;
   }
 
-@-webkit-keyframes shake {
-  0% {
-    -webkit-transform: translateX(0);
-  }
+  @-webkit-keyframes shake {
+    0% {
+      -webkit-transform: translateX(0);
+    }
 
-  20% {
-    -webkit-transform: translateX(-10px);
-  }
+    20% {
+      -webkit-transform: translateX(-10px);
+    }
 
-  40% {
-    -webkit-transform: translateX(10px);
-  }
+    40% {
+      -webkit-transform: translateX(10px);
+    }
 
-  60% {
-    -webkit-transform: translateX(-10px);
-  }
+    60% {
+      -webkit-transform: translateX(-10px);
+    }
 
-  80% {
-    -webkit-transform: translateX(10px);
-  }
+    80% {
+      -webkit-transform: translateX(10px);
+    }
 
-  100% {
-    -webkit-transform: translateX(0);
+    100% {
+      -webkit-transform: translateX(0);
+    }
   }
-}
-@keyframes shake {
-  0% {
-    transform: translateX(0);
-  }
+  @keyframes shake {
+    0% {
+      transform: translateX(0);
+    }
 
-  20% {
-    transform: translateX(-10px);
-  }
+    20% {
+      transform: translateX(-10px);
+    }
 
-  40% {
-    transform: translateX(10px);
-  }
+    40% {
+      transform: translateX(10px);
+    }
 
-  60% {
-    transform: translateX(-10px);
-  }
+    60% {
+      transform: translateX(-10px);
+    }
 
-  80% {
-    transform: translateX(10px);
-  }
+    80% {
+      transform: translateX(10px);
+    }
 
-  100% {
-    transform: translateX(0);
+    100% {
+      transform: translateX(0);
+    }
   }
-}
 
   ${media.lessThan("large")`
     & ul{
@@ -330,9 +335,8 @@ export const PostItemLink = styled(AniLink)`
 export const PostItemInfo = styled.div`
   display: flex;
   flex-direction: column;
-   z-index: 99; */
-
-  .ArrowRight {
+  z-index: 99;
+  */ .ArrowRight {
     z-index: 100;
     position: absolute;
     right: 26px;
@@ -366,7 +370,6 @@ export const PostItemDate = styled.time`
   color: var(--textsMetaDate);
 `
 
-
 export const PostItemDescription = styled.p`
   font-size: 1rem;
   font-weight: 300;
@@ -385,7 +388,6 @@ export const TagLink = styled.p`
   font-weight: 300;
   line-height: 1.2;
   color: var(--postColor);
-
 `
 export const TagPost = styled.p`
   font-size: 1rem;

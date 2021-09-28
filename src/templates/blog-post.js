@@ -52,15 +52,15 @@ class BlogPostTemplate extends React.Component {
                 return (
                   <li key={tag + `tag`}>
                     <S.TagPost
-                    swipe
-                    direction="down"
-                    to={`/tags/${kebabCase(tag)}`}><S.Button>
-  <S.Btn__content>
-    {tag}
-</S.Btn__content>
-  <S.Btn__glitch></S.Btn__glitch>
-</S.Button>
-</S.TagPost>
+                      swipe
+                      direction="down"
+                      to={`/tags/${kebabCase(tag)}`}
+                    >
+                      <S.Button>
+                        <S.Btn__content>{tag}</S.Btn__content>
+                        <S.Btn__glitch></S.Btn__glitch>
+                      </S.Button>
+                    </S.TagPost>
                   </li>
                 )
               })}

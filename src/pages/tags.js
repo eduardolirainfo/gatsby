@@ -21,14 +21,14 @@ const TagsPage = ({
   },
 }) => (
   <Layout>
-    <Seo title={title}/>
+    <Seo title={title} />
     <S.PostHeader>
       <S.PostTitle>Tags utilizadas</S.PostTitle>
       <S.PostDescription> Navegue entre as tags do blog </S.PostDescription>
     </S.PostHeader>
     <S.MainContent>
       <ul>
-        {group.map(tag => (
+        {group.map((tag) => (
           <S.ListTag key={tag.fieldValue}>
             {/* <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
                   {tag.fieldValue} ({tag.totalCount})
@@ -38,14 +38,12 @@ const TagsPage = ({
               direction="right"
               to={`/tags/${kebabCase(tag.fieldValue)}/`}
             >
-            <S.Button>
-  <S.Btn__content>
-    {tag.fieldValue}
-</S.Btn__content>
-  <S.Btn__glitch></S.Btn__glitch>
-  <S.Btn__label>({tag.totalCount})</S.Btn__label>
-</S.Button>
- </S.TagLink>
+              <S.Button>
+                <S.Btn__content>{tag.fieldValue}</S.Btn__content>
+                <S.Btn__glitch></S.Btn__glitch>
+                <S.Btn__label>({tag.totalCount})</S.Btn__label>
+              </S.Button>
+            </S.TagLink>
           </S.ListTag>
         ))}
       </ul>

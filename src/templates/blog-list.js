@@ -1,4 +1,3 @@
-
 import React from "react"
 
 // Utilities
@@ -6,7 +5,6 @@ import Layout from "../components/Layout"
 
 // Components
 import { graphql } from "gatsby"
-
 
 import Seo from "../components/Seo"
 import PostItem from "../components/PostItem"
@@ -45,7 +43,6 @@ class BlogIndex extends React.Component {
               />
             )
           })}
-
         </S.ListWrapper>
 
         <Pagination
@@ -56,13 +53,12 @@ class BlogIndex extends React.Component {
           prevPage={prevPage}
           nextPage={nextPage}
         />
-      </Layout >
+      </Layout>
     )
   }
 }
 
 export default BlogIndex
-
 
 export const pageQuery = graphql`
   query {
@@ -79,12 +75,12 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-           background
-           categories
-           date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
-           description
-           title
-           tags
+            background
+            categories
+            date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
+            description
+            title
+            tags
           }
           timeToRead
         }

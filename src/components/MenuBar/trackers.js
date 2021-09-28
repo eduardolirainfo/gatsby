@@ -1,4 +1,4 @@
-import ReactGA from 'react-ga'
+import ReactGA from "react-ga"
 
 export const searchClickTrack = () => {
   ReactGA.event({
@@ -8,7 +8,7 @@ export const searchClickTrack = () => {
   })
 }
 
-export const themeTracker = theme => {
+export const themeTracker = (theme) => {
   ReactGA.event({
     category: "theme",
     action: "view",
@@ -17,7 +17,7 @@ export const themeTracker = theme => {
   })
 }
 
-export const displayTracker = display => {
+export const displayTracker = (display) => {
   ReactGA.event({
     category: "display",
     action: "view",

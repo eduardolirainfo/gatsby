@@ -75,9 +75,9 @@ export const MenuBarItem = styled.span`
     transition: ${transitions.ALL};
   } */
 
-   &:hover{
-      transition: ${transitions.ALL};
-      box-shadow: 9px 9px 30px 0px rgba(1, 50, 101, 0.11);
+  &:hover {
+    transition: ${transitions.ALL};
+    box-shadow: 9px 9px 30px 0px rgba(1, 50, 101, 0.11);
   }
 
   &.display {
