@@ -3,8 +3,7 @@ import React from "react"
 import Layout from "../components/Layout"
 import Seo from "../components/Seo"
 import SocialLinks from "../components/SocialLinks"
-
-import { MainContent } from "../styles/base"
+import { MainContent } from "../components/Post/styled"
 
 const AboutPage = () => (
   <Layout>

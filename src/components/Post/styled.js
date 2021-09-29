@@ -469,14 +469,11 @@ export const Button = styled.button`
   text-transform: uppercase;
   color: var(--texts);
   clip-path: polygon(92% 0, 100% 25%, 100% 100%, 8% 100%, 0% 75%, 0 0);
-  &:hover
-    ${Btn__glitch},
-    &:hover
-    ${Btn__content}::after,
-    &:focus
-    ${Btn__glitch},
-    &:focus
-    ${Btn__content}::after {
+  
+  &:hover ${Btn__glitch},
+  &:hover ${Btn__content}::after,
+  &:focus ${Btn__glitch},
+  &:focus ${Btn__content}::after {
     display: block;
     animation: glitch-animation 2s linear 0s infinite;
   }

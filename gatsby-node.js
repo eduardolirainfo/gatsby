@@ -113,8 +113,7 @@ exports.createPages = ({ graphql, actions }) => {
           slug: post.node.fields.slug,
           previous,
           next,
-        }, 
-        defer: index + 1 > 6,
+        }
       })
     })
 
