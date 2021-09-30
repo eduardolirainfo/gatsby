@@ -5885,6 +5885,13 @@ eslint-plugin-flowtype@^6.1.0:
     lodash "^4.17.21"
     string-natural-compare "^3.0.1"
 
+"eslint-plugin-gatsby@npm:gatsby-plugin-eslint-config":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-eslint-config/-/gatsby-plugin-eslint-config-2.0.1.tgz#b512b437b815344be193e7b63c0fb974e1553ed3"
+  integrity sha512-bcraD6/6jL60VoU8RGyda8NOZYX0DcflGaJMMzSo5vUr3eaFrTLtYbBhfwZ3TEQOSSZHEJZW3gwYuk4Ua+v6IQ==
+  dependencies:
+    eslint-webpack-plugin "^2.5.4"
+
 eslint-plugin-graphql@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-graphql/-/eslint-plugin-graphql-4.0.0.tgz#d238ff2baee4d632cfcbe787a7a70a1f50428358"

@@ -15,13 +15,13 @@ O problema pode ser resolvido realizando os seguintes passos:
 
 Remover os temporários de cache e sessões:
 
-```.sh
+```shell
 rm -rf var/cache/* var/session/*
 ```
 
 E, em seguida, fazer uma correção de permissões de arquivos:
 
-```.sh
+```shell
 find . -type f -exec chmod 644 {} \;
 find . -type d -exec chmod 755 {} \;
 chmod o+w var var/.htaccess app/etc

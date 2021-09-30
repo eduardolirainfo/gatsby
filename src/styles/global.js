@@ -61,34 +61,6 @@ const GlobalStyles = createGlobalStyle`
   	height: auto;
   }
 
-// pre[class*="language-"] {
-//   border-radius: 20px;
-//   border: none;
-//   position: relative;
-//   padding: 100px 70px 70px;
-//   z-index: 1;
-//   margin: .5em 0;
-//   overflow: auto;
-// }
-// pre[class*="language-"]:before {
-//     content: attr(data-title);
-//     position: absolute;
-//     padding: 2px 10px 3px;
-//     font-size: 12px;
-//     top: 40px;
-//     right: 45px;
-//     text-align: right;
-//     color: #444;
-//     font-weight: 700;
-//     letter-spacing: .8px;
-//     opacity: .8;
-//     text-transform: uppercase;
-//     border-radius: 5px;
-//     background: #ddd;
-// }
-
-
-
  body.dark {
     --texts: rgba(255,255,255,0.8);
     --textsMetaDate: #594a9d;
@@ -190,20 +162,6 @@ pre[class*="language-"] {
     border-top: var(--highlight) 1px solid;
     border-bottom: var(--highlight) 1px solid;
 }
-
-@keyframes animateGradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-
 
 @keyframes textShadow {
   0% {

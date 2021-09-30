@@ -81,13 +81,13 @@ const pluginConfig = [
           }
         },
         `gatsby-remark-autolink-headers`,
-        `gatsby-remark-lazy-load`,              
+        `gatsby-remark-lazy-load`,
         {
           resolve: 'gatsby-remark-prismjs',
           options: {
             showLineNumbers: true,
           },
-        },     
+        },
       ],
     },
   },
@@ -99,6 +99,13 @@ const pluginConfig = [
         formats: ["auto", "webp", "avif"],
         placeholder: "blurred",
       },
+    },
+  },
+  {
+    resolve: "eslint-plugin-gatsby",
+    options: {
+      extensions: ["js", "jsx", "ts", "tsx"],
+      failOnError: false,
     },
   },
   {
@@ -126,7 +133,7 @@ const pluginConfig = [
 
 if (process.env.CONTEXT === "production") {
   const feed = {
-    resolve: "gatsby-plugin-feed", 
+    resolve: "gatsby-plugin-feed",
     options: {
       query: `
           {

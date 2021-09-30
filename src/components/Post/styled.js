@@ -206,7 +206,7 @@ export const MainContent = styled.section`
     border-bottom: 1px dashed var(--highlight);
     color: var(--highlight);
     text-decoration: none;
-    transition: opacity 0.5s;    
+    transition: opacity 0.5s;
     svg {
       color: var(--postColor);
     }
@@ -353,6 +353,17 @@ export const PostCategories = styled(AniLink)`
   &:hover {
     color: #8a4baf;
   }
+  @keyframes animateGradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
 `
 export const LinkCat = styled(AniLink)`
   text-decoration: none;
@@ -469,7 +480,7 @@ export const Button = styled.button`
   text-transform: uppercase;
   color: var(--texts);
   clip-path: polygon(92% 0, 100% 25%, 100% 100%, 8% 100%, 0% 75%, 0 0);
-  
+
   &:hover ${Btn__glitch},
   &:hover ${Btn__content}::after,
   &:focus ${Btn__glitch},

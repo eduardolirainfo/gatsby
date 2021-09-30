@@ -42,23 +42,6 @@ export const MenuLinksItem = styled.li`
       -webkit-transform: skew(-10deg);
       transform: skew(-10deg);
     }
-
-    // &::before {
-    //   content: "";
-    //   position: absolute;
-    //   z-index: -1;
-    //   top: 0;
-    //   left: 0;
-    //   transform: translateY(calc(100% - 2px));
-    //   width: 100%;
-    //   height: 100%;
-    //   background-image: linear-gradient(
-    //     60deg,
-    //     var(--mediumBackground) 0%,
-    //     var(--highlight) 100%
-    //   );
-    //   transition: transform 0.25s ease-out;
-    // }
     &:hover::before {
       transform: translateY(0);
       transition: transform 0.25s ease-out;
