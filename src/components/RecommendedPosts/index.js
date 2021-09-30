@@ -1,5 +1,4 @@
 import React from "react"
-import propTypes from "prop-types"
 import { ArrowReturnLeft } from "@styled-icons/bootstrap/ArrowReturnLeft"
 import { ArrowReturnRight } from "@styled-icons/bootstrap/ArrowReturnRight"
 
@@ -40,23 +39,5 @@ const RecommendedPosts = ({ next, previous }) => (
   </S.RecommendedWrapper>
 )
 
-RecommendedPosts.propTypes = {
-  next: propTypes.shape({
-    frontmatter: propTypes.shape({
-      title: propTypes.string.isRequired,
-    }),
-    fields: propTypes.shape({
-      slug: propTypes.string.isRequired,
-    }),
-  }),
-  previous: propTypes.shape({
-    frontmatter: propTypes.shape({
-      title: propTypes.string.isRequired,
-    }),
-    fields: propTypes.shape({
-      slug: propTypes.string.isRequired,
-    }),
-  }),
-}
 
 export default RecommendedPosts

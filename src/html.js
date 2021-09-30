@@ -1,10 +1,8 @@
 import React from "react"
-import PropTypes from "prop-types"
 
-export default class HTML extends React.Component {
-  render() {
+const HTML = ({htmlAttributes, headComponents, bodyAttributes, preBodyComponents, body, postBodyComponents })=> {
     return (
-      <html {...this.props.htmlAttributes}>
+      <html {...htmlAttributes}>
         <head>
           <meta charSet="UTF-8" />
 
@@ -17,9 +15,9 @@ export default class HTML extends React.Component {
             name="google-site-verification"
             content="8kDtWUmUQEh7QXoj_shRaxcgYAVpHs_YQ7TeniN0kmI"
           />
-          {this.props.headComponents}
+          {headComponents}
         </head>
-        <body {...this.props.bodyAttributes} className="dark">
+        <body {...bodyAttributes} className="dark">
           <script
             dangerouslySetInnerHTML={{
               __html: `
@@ -67,27 +65,20 @@ export default class HTML extends React.Component {
             `,
             }}
           />
-          {this.props.preBodyComponents}
+          {preBodyComponents}
           <noscript>
             Esse site não funciona sem JavaScript, seja legal e habilite =)
           </noscript>
           <div
             key={`body`}
             id="___gatsby"
-            dangerouslySetInnerHTML={{ __html: this.props.body }}
+            dangerouslySetInnerHTML={{ __html: body }}
           />
-          {this.props.postBodyComponents}
+          {postBodyComponents}
         </body>
       </html>
     )
   }
-}
 
-HTML.propTypes = {
-  htmlAttributes: PropTypes.object,
-  headComponents: PropTypes.array,
-  bodyAttributes: PropTypes.object,
-  preBodyComponents: PropTypes.array,
-  body: PropTypes.string,
-  postBodyComponents: PropTypes.array,
-}
+
+  export default HTML

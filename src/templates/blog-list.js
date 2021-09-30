@@ -11,6 +11,7 @@ import PostItem from "../components/PostItem"
 import Pagination from "../components/Pagination"
 
 import * as S from "../components/ListWrapper/styled"
+
 const BlogList = props => {
   const postList = props.data.allMarkdownRemark.edges
 

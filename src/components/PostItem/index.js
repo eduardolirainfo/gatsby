@@ -1,6 +1,4 @@
 import React from "react"
-import PropTypes from "prop-types"
-// import { ArrowLeftOutlined } from "@material-ui/icons"
 import getThemeColor from "../../utils/getThemeColor"
 
 import * as S from "./styled"
@@ -35,16 +33,5 @@ const PostItem = ({
   </S.PostItemLink>
 )
 
-PostItem.propTypes = {
-  slug: PropTypes.string.isRequired,
-  background: PropTypes.string,
-  categories: PropTypes.string,
-  date: PropTypes.string.isRequired,
-  timeToRead: PropTypes.number,
-  title: PropTypes.string.isRequired,
-  description: PropTypes.string,
-  disableCard: PropTypes.bool,
-  tags: PropTypes.array,
-}
 
 export default PostItem

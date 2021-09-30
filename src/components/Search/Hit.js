@@ -1,5 +1,4 @@
 import React from "react"
-import PropTypes from "prop-types"
 
 import PostItem from "../PostItem"
 
@@ -19,8 +18,5 @@ const Hit = (props) => {
   )
 }
 
-Hit.propTypes = {
-  hit: PropTypes.object.isRequired,
-}
 
 export default Hit

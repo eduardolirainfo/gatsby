@@ -1,5 +1,4 @@
 import React from "react"
-import PropTypes from "prop-types"
 
 import algoliasearch from "algoliasearch/lite"
 
@@ -52,10 +51,6 @@ const Search = (props) => {
       )}
     </S.SearchWrapper>
   )
-}
-
-Search.propTypes = {
-  algolia: PropTypes.object.isRequired,
 }
 
 export default Search
