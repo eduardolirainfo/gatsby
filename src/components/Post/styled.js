@@ -8,6 +8,27 @@ export const MainContent = styled.section`
   max-width: 70rem;
   padding: 2rem 5rem;
 
+  &::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 10px;
+    background-size: 20px 40px;
+    background-image: radial-gradient(var(--borderInputColor), var(--background), var(--background));
+  }
+  &::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 15px;
+    background-size: 40px 40px;
+    background-image: radial-gradient(var(--borderInputColor), var(--background), var(--background));
+  }
+
   ${media.lessThan("large")`
     padding: 2rem 0;
     max-width: 100%;
@@ -93,9 +114,6 @@ export const MainContent = styled.section`
     margin: 1.5em 0;
     position: relative;
     box-shadow: 0em 1em 2em -2em var(--highlight);
-    /* p {
-      animation: var(--animationText);
-    } */
   }
 
   blockquote:before {
@@ -202,30 +220,25 @@ export const MainContent = styled.section`
   }
 
   a {
-    animation: var(--animationText);
+    /* animation: var(--animationText); */
     border-bottom: 1px dashed var(--highlight);
     color: var(--highlight);
     text-decoration: none;
-    transition: opacity 0.5s;
+    transition: ${transitions.ALL}; 
     svg {
       color: var(--postColor);
     }
-    &.anchor{
-      fill: "red";
-      text-decoration: none !important;
-      visibility: initial !important;
-      display: contents;
-    }
-
     &:hover {
       opacity: 0.8;
-    }
+      border-bottom: 3mm ridge var(--highlight);
+      }
   }
 
   .instagram-media {
     margin: 1rem auto !important;
   }
 `
+
 export const PostHeader = styled.header`
   color: var(--postColor);
   margin: auto;
@@ -256,6 +269,10 @@ export const PostTitle = styled.h1`
   font-size: 4rem;
   letter-spacing: -0.2rem;
   line-height: 1.25;
+  transition: ${transitions.ALL};
+  &:hover {
+    text-shadow:3px 3px var(--mediumBackground);
+  }
   ${media.lessThan("large")`
     font-size: 2.25rem;
     line-height: 1.1;
@@ -317,7 +334,6 @@ export const PostLink = styled(AniLink)`
   }
   &:hover {
     color: var(--highlight);
-    // text-decoration: underline;
   }
 `
 
@@ -340,7 +356,7 @@ export const PostCategories = styled(AniLink)`
   font-weight: bold;
   padding: 0rem 0.2rem 0 1.4rem;
   float: left;
-  text-tranform: uppercase;
+  transform: uppercase;
   display: flex;
   transition: ${transitions.COLOR};
   text-decoration: none;
@@ -365,6 +381,15 @@ export const PostCategories = styled(AniLink)`
     }
   }
 `
+
+export const BackButton = styled(AniLink)`
+    color: var(--textsMetaDate);
+    display: flex;
+    text-decoration: none;
+    margin: 0px 0px 1.5rem 1.5rem;
+    transition: ${transitions.COLOR};
+`
+
 export const LinkCat = styled(AniLink)`
   text-decoration: none;
   list-style: none;
@@ -430,7 +455,7 @@ export const TagPost = styled(AniLink)`
   position: relative;
   margin: 0 10px 10px 0;
   text-decoration: none;
-  transition: ${transitions.DEFAULT};
+  transition: ${transitions.DEFAULT};  
 `
 export const Btn__label = styled.span`
   height: 1rem;
@@ -602,3 +627,5 @@ export const Button = styled.button`
     }
   }
 `
+
+

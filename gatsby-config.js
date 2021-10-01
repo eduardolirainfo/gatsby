@@ -48,7 +48,7 @@ const pluginConfig = [
   {
     resolve: `gatsby-plugin-google-fonts`,
     options: {
-      fonts: [`Kalam`, `Poppins`],
+      fonts: [`Kalam`, `Poppins\:400,800`],
       display: "swap",
     },
   },
@@ -80,6 +80,12 @@ const pluginConfig = [
             rel: "nofollow"
           }
         },
+        {
+          resolve: "gatsby-remark-smartypants",
+          options: {
+            dashes: "oldschool",
+          },
+        },
         `gatsby-remark-autolink-headers`,
         `gatsby-remark-lazy-load`,
         {
@@ -102,17 +108,10 @@ const pluginConfig = [
     },
   },
   {
-    resolve: "eslint-plugin-gatsby",
-    options: {
-      extensions: ["js", "jsx", "ts", "tsx"],
-      failOnError: false,
-    },
-  },
-  {
     resolve: `gatsby-plugin-manifest`,
     options: {
       name: `Eduardo Lira`,
-      short_name: `Eduardo Lira`,
+      short_name: `dudulira`,
       start_url: `/`,
       background_color: `#4D3153`,
       theme_color: `#200526`,

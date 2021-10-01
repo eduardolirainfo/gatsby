@@ -3,7 +3,8 @@ title: "#1 - Protegendo o arquivo de configuração"
 date: 2012-09-08
 tags: ["Wordpress"]
 description: "Protegendo arquivo de configuração em sua instalação Wordpress"
-categories: dev
+categories: Wp
+background: "#117ac9"
 author:
   twitter: "dudulira"
   name: "Eduardo Lira"

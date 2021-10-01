@@ -3,7 +3,8 @@ title: Corrigir problema com código de rastreio Prestashop
 date: 2015-05-20 14:52:00 Z
 tags: ["Prestashop"]
 image: "/static/images/"
-categories: dev
+categories: presta
+background: "#ff0076"
 description: "Vamos corrigir um bug da Prestashop, que não exibe o campo para preencher o código de rastreio"
 author:
   twitter: "dudulira"

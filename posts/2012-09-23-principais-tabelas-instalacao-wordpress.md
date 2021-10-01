@@ -3,7 +3,8 @@ title: Principais tabelas da instalação Wordpress
 date: 2012-09-23
 tags: ["Wordpress"]
 description: "A principais tabelas de instalação no Wordpress"
-categories: dev
+categories: Wp
+background: "#117ac9"
 author:
   twitter: "dudulira"
   name: "Eduardo Lira"

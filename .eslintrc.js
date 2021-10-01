@@ -1,4 +1,6 @@
 module.exports = {
-  plugins: ["gatsby"],
-  extends: ["plugin:gatsby/recommended"],
+  globals: {
+    __PATH_PREFIX__: true,
+  },
+  extends: `react-app`,
 }

@@ -240,6 +240,7 @@ export const MainContent = styled.section`
 
     &:hover {
       opacity: 0.8;
+      text-decoration-style: wavy;
     }
   }
 `

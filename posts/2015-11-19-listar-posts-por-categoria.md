@@ -3,6 +3,8 @@ title: "Listar posts por categoria"
 date: 2015-11-19 14:04:27 Z
 tags: ["Wordpress"]
 image: "/static/images"
+categories: Wp
+background: #117ac9
 description: "Listar posts por categoria"
 author:
   twitter: "dudulira"

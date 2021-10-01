@@ -4,7 +4,8 @@ date: 2015-05-16 09:45:23 Z
 tags: ["Wordpress"]
 image: "/static/images/"
 description: "Neste post vamos aprender alguns métodos sobre como quebrar a senha de usuários Wordpress"
-categories: dev
+categories: Wp
+background: #117ac9
 author:
   twitter: "dudulira"
   name: "Eduardo Lira"

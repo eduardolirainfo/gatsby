@@ -2,7 +2,8 @@
 title: PayPal - Callback URL is wrong type
 date: 2015-08-07 00:00:00 Z
 tags: ["Magento"]
-categories: dev
+categories: Mag
+background: "#f68d2e"
 summary: Vamos corrigir este erro de configuração do Paypal na loja Magento
 author:
   twitter: "dudulira"

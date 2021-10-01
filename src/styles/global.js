@@ -148,7 +148,7 @@ body.light {
               linear-gradient(250deg, rgba(255,255,255,0) 25%, rgba(255,255,255,0.2) 20%, rgba(255,255,255,0.2) 50%),
               repeating-linear-gradient(179deg, rgba(255,255,255,0.1), rgba(255,255,255,0.1) 3px, rgba(0,0,0,0.1) 3px, rgba(0,0,0,0.1) 5px);
     --catHl: 0 0 2px;
-    linear-gradient( 45deg,var(--postColor) 0%,var(--postDescription) 30% );
+    --linearPre: linear-gradient( 45deg,var(--postColor) 0%,var(--postDescription) 30% );
     --cardHover: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%238e75b6' fill-opacity='0.4' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
     --gradienteLink: linear-gradient( 45deg, #95f7d0, #63b9be, #887dc5, #d478ff, #ff94e7, #fec6c0, #fdff94, #b6f9bd );
 

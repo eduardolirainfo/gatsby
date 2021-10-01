@@ -22,6 +22,11 @@ const BlogPostTemplate = props => {
           image={post.frontmatter.image}
         />
         <S.PostHeader>
+        <S.BackButton 
+        swipe
+        direction="right"
+        to={`/`}
+        >← Voltar na listagem</S.BackButton>
           {categories && (
             <S.PostCategories
               swipe

@@ -2,7 +2,8 @@
 title: "Fatal error order history state is empty"
 date: 2013-07-29 00:00:00 Z
 tags: ["Prestashop"]
-categories: dev
+categories: presta
+background: "#ff0076"
 description: "Erro no status de pagamento Prestashop"
 author:
   twitter: "dudulira"

@@ -2,7 +2,8 @@
 title: Exclusão de pedidos Prestashop
 date: 2015-05-29 00:00:00 Z
 tags: ["Prestashop"]
-categories: dev
+categories: presta
+background: "#ff0076"
 description: "Como excluir pedidos no Prestashop"
 author:
   twitter: "dudulira"

@@ -21,6 +21,9 @@ export const PostItemTitle = styled.h1`
   transition-property: transform;
   -webkit-transform-origin: 0 100%;
   transform-origin: 0 100%;
+  /* &:hover{
+    text-shadow:3px 3px var(--cyberHl);
+  } */
   // text-shadow: 0 0 5px var(--cyberHl);
   body#card & {
     line-height: 1.1;

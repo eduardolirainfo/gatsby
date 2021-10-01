@@ -4,7 +4,8 @@ date: 2015-10-22 14:04:27 Z
 tags: ["Prestashop"]
 image: "/static/images/"
 description: "Como corrigir este erro que ocorre ao tentar criar um novo usuário na loja Prestashop"
-categories: dev
+categories: presta
+background: #ff0076
 author:
   twitter: "dudulira"
   name: "Eduardo Lira"

@@ -2,7 +2,8 @@
 title: "Chave de registro já existe"
 date: 2015-08-07 00:00:00 Z
 tags: ["Magento"]
-categories: Dev
+categories: Mag
+background: "#f68d2e"
 description: "Vamos corrigir este erro que ocorre geralmente após a migração da loja Magento"
 author:
 twitter: "dudulira"

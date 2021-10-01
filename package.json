@@ -89,10 +89,13 @@
     "@babel/preset-env": "^7.12.7",
     "@babel/runtime": "^7.12.5",
     "babel-plugin-styled-components": "^1.12.0",
+    "eslint-config-react-app": "^6.0.0",
     "eslint-plugin-gatsby": "npm:gatsby-plugin-eslint-config",
     "gatsby-remark-code-titles": "^1.1.0",
     "gatsby-remark-default-html-attrs": "^1.0.1",
-    "prettier": "^2.2.1"
+    "gatsby-remark-smartypants": "^4.11.0",
+    "prettier": "^2.2.1",
+    "react-lazy-load": "^3.1.13"
   },
   "repository": {
     "type": "git",
