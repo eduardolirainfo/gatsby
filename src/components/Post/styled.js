@@ -277,6 +277,7 @@ export const PostTitle = styled.h1`
     font-size: 2.25rem;
     line-height: 1.1;
     padding: 0 1rem;
+    letter-spacing: 0.069rem;
   `};
 `
 
@@ -492,6 +493,10 @@ export const Btn__content = styled.span`
   clip-path: polygon(92% 0, 100% 25%, 100% 100%, 8% 100%, 0% 75%, 0 0);
   color: var(--mediumBackground);
   border-right: 0.3rem solid var(--highlight);
+  transition: ${transitions.ALL};  
+  &:hover{
+    transform: scale(0.96);
+  }
 `
 export const Button = styled.button`
   width: 10rem;
@@ -513,6 +518,7 @@ export const Button = styled.button`
     display: block;
     animation: glitch-animation 2s linear 0s infinite;
   }
+
   /* secret trick */
   @keyframes glitch-animation {
     0% {

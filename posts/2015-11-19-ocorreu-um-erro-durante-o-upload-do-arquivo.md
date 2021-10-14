@@ -10,9 +10,7 @@ description: "Ocorreu um erro durante o upload do arquivo"
 
 Se você não consegue instalar um **módulo/tema** em sua **Prestashop** e se depara com a mensagem de erro:
 
-<div class="card-panel red white-text">
-Ocorreu um erro durante o upload do arquivo ‘ ( ‘An error has occurred during the file upload’ ):
-</div>
+**Ocorreu um erro durante o upload do arquivo ‘ ( ‘An error has occurred during the file upload’ ):**
 
 Este erro pode ocorrer quando você tenta carregar arquivos de módulos/temas em que o tamanho excede 2MB (Limite de upload de arquivos por padrão).
 

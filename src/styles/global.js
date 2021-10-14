@@ -154,10 +154,12 @@ body.light {
 
   }
 
-:not(pre) > code[class*="language-"], pre[class*="language-"] {
-    background-image: var(--linearPre);
+ :not(pre) > code[class*="language-"], pre[class*="language-"] {
+     background-image: var(--linearPre) !important;
+ }
+.gatsby-highlight{
+  background-image: transparent !important
 }
-
 pre[class*="language-"] {
     border-top: var(--highlight) 1px solid;
     border-bottom: var(--highlight) 1px solid;

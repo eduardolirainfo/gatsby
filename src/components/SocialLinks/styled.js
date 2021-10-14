@@ -21,6 +21,10 @@ export const SocialLinksList = styled.ul`
 
 export const SocialLinksItem = styled.li`
   list-style: none;
+  transition: ${transitions.ALL};
+  &:hover{
+    transform: scale(1.2);
+  }
 `
 
 export const SocialLinksLink = styled.a`

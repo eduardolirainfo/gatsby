@@ -14,13 +14,13 @@ Para correção do erro PHPMAILER_RECIPIENTS_FAILED na tentativa de envio em seu
 
 alterar:
 
-```php?start_inline=1
+```php
 $mail->setSender( array( $email, $name ) );
 ```
 
 para:
 
-```php?start_inline=1
+```php
 $mail->setSender( array( $MailFrom, $name ) );
 $mail->addReplyTo( array( $email, $name ) );
 ```

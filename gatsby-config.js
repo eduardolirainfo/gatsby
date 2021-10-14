@@ -58,6 +58,7 @@ const pluginConfig = [
     resolve: `gatsby-transformer-remark`,
     options: {
       plugins: [
+        `gatsby-remark-emoji`, 
         `gatsby-remark-responsive-iframe`,
         `gatsby-remark-copy-linked-files`,
         {

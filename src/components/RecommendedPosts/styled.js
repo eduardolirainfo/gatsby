@@ -8,18 +8,28 @@ export const RecommendedWrapper = styled.section`
   /* border-bottom: 1px solid var(--borders);
   border-top: 1px solid var(--borders); */
   // background: var(--mediumBackground);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 100%);
+  grid-gap: 10px;
   transition: ${transitions.ALL};
-  display: flex;
+  ${media.lessThan("large")`
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(2,50%);
+    padding: 2rem 1rem;
+    line-height: 1.3;
+    font-size: .9rem;
+  `}
 `
 
 export const RecommendedLink = styled(AniLink)`
   font-size: 1.25rem;
   align-items: center;
   color: var(--highlight);
-  display: flex;
   padding: 2rem;
   text-decoration: none;
-  width: 50%;
+  width: 100%;
   position: relative;
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15),
     0 10px 0 -5px var(--background), 0 10px 1px -4px rgba(0, 0, 0, 0.15),
@@ -44,18 +54,16 @@ export const RecommendedLink = styled(AniLink)`
     calc(100% - 1rem + 2px) 100%,
     0 100%
   );
-  font-family: -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto",
-    "Helvetica Neue", "Arial", "Noto Sans", sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-
   animation: var(--animationText);
-
+  background: linear-gradient(var(--background), var(--background)) padding-box, linear-gradient(to right, var(--background), var(--mediumBackground)) border-box;
+  border: 2px solid transparent;
+  transition: ${transitions.ALL};
   &::before {
-    background-color: var(--borderInputColor);
+    background: linear-gradient(to right, var(--colorMenuItem), var(--highlight));
     bottom: 5px;
     content: "";
     display: block;
-    height: 3px;
+    height: 4px;
     position: absolute;
     right: -6px;
     top: auto;
@@ -76,15 +84,16 @@ export const RecommendedLink = styled(AniLink)`
   `}
 
   &:hover {
-    background: var(--background);
-    color: var(--bordersMenuBar);
+    /* background: var(--background); */
   }
-  &:hover a {
-    filter: saturate(800%);
+  &:first-child {
+    grid-column: 1 / 2; /* span from grid column line 1 to 3 (i.e., span 2 columns) */
+    grid-row: 1 / 2;    /* same concept, but for rows */
   }
-
   &.previous {
-    border-right: 1px solid var(--borders);
+    text-align: left;
+    background: linear-gradient(var(--background), var(--background)) padding-box, linear-gradient(to right, var(--colorMenuItem), var(--highlight)) border-box; 
+    /* border-right: 3px solid var(--borders);   */
     -webkit-transition: -webkit-box-shadow 0.25s;
     -webkit-transition: -webkit-box-shadow 0.25s;
     transition: -webkit-box-shadow 0.25s;
@@ -94,16 +103,20 @@ export const RecommendedLink = styled(AniLink)`
     -webkit-transition: box-shadow 0.25s, -webkit-box-shadow 0.25s;
     transition: box-shadow 0.25s, -webkit-box-shadow 0.25s;
     transition: ${transitions.ALL};
-
     &:hover {
-      -webkit-box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14),
-        0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2);
-      box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14),
-        0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2);
+     border-color: var(--hightlight);
+     transform: scale(0.98);
+     transition: ${transitions.ALL};
+     & svg{
+       transform: scaleY(-1)
+     }
     }
   }
 
   &.next {
+    text-align: right;
+    /* border-right: 3px solid var(--borders);   */
+    background: linear-gradient(var(--background), var(--background)) padding-box, linear-gradient(to right, var(--colorMenuItem), var(--highlight)) border-box; 
     justify-content: flex-end;
     -webkit-transition: -webkit-box-shadow 0.25s;
     -webkit-transition: -webkit-box-shadow 0.25s;
@@ -114,12 +127,13 @@ export const RecommendedLink = styled(AniLink)`
     -webkit-transition: box-shadow 0.25s, -webkit-box-shadow 0.25s;
     transition: box-shadow 0.25s, -webkit-box-shadow 0.25s;
     transition: ${transitions.ALL};
-
     &:hover {
-      -webkit-box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14),
-        0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2);
-      box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14),
-        0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2);
+      border-color: var(--hightlight);
+      transform: scale(0.98);
+      transition: ${transitions.ALL};
+     & svg{
+       transform: scaleY(-1)
+     }
     }
   }
   &.previous:only-child {
