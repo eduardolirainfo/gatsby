@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components"
+import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyles = createGlobalStyle`
   html, body, div, span, applet, object, iframe,
@@ -57,11 +57,10 @@ const GlobalStyles = createGlobalStyle`
   }
   img {
     display: block;
-  	width: 100%;
-  	height: auto;
+    width: 100%;
+    height: auto;
   }
-
- body.dark {
+  body.dark {
     --texts: rgba(255,255,255,0.8);
     --textsMetaDate: #594a9d;
     // --postColor: #d9d7e0;
@@ -302,20 +301,18 @@ pre[class*="language-"] {
 }
 
 ::-webkit-scrollbar-track {
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-	background-color: var(--background);
-	border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background-color: var(--background);
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-	border-radius: 10px;
-	background-image: -webkit-gradient(linear,
-									   left bottom,
-									   left top,
-									   color-stop(0.44, rgba(177,122,204,0.5)),
-									   color-stop(0.72, rgb(75,36,94)),
-									   color-stop(0.86, rgb(30,14,37)));
-}
-
-`
+  border-radius: 10px;
+  background-image: -webkit-gradient(linear,
+    left bottom,
+    left top,
+    color-stop(0.44, rgba(177,122,204,0.5)),
+    color-stop(0.72, rgb(75,36,94)),
+    color-stop(0.86, rgb(30,14,37)));
+}`
 export default GlobalStyles

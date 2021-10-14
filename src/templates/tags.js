@@ -1,26 +1,26 @@
-import React from "react"
+import React from 'react'
 
 // Components
-import { graphql } from "gatsby"
-import Layout from "../components/Layout"
-import Seo from "../components/Seo"
-import PostItem from "../components/PostItem"
-import AniLink from "gatsby-plugin-transition-link/AniLink"
+import { graphql } from 'gatsby'
+import Layout from '../components/Layout'
+import Seo from '../components/Seo'
+import PostItem from '../components/PostItem'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
-import * as S from "../components/ListWrapper/styled"
-import * as P from "../components/Post/styled"
+import * as S from '../components/ListWrapper/styled'
+import * as P from '../components/Post/styled'
 
 const Tags = ({ pageContext, data }) => {
   const { tag } = pageContext
   const { edges, totalCount } = data.allMarkdownRemark
   const tagHeader = `${totalCount} post${
-    totalCount === 1 ? "" : "s"
+    totalCount === 1 ? '' : 's'
   } com a tag "${tag}"`
   return (
     <Layout>
       <Seo
-        title="Categoria {tag}"
-        description="Navegue entre as categorias de nosso blog"
+        title='Categoria {tag}'
+        description='Navegue entre as categorias de nosso blog'
       />
       <P.PostHeader>
         <P.PostTitleCat>{tagHeader}</P.PostTitleCat>
@@ -41,7 +41,7 @@ const Tags = ({ pageContext, data }) => {
         })}
       </S.ListWrapper>
       <P.MainContent>
-        <AniLink swipe direction="left" to="/tags">
+        <AniLink swipe direction='left' to='/tags'>
           Ver todas as tags
         </AniLink>
       </P.MainContent>

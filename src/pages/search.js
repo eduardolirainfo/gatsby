@@ -1,21 +1,21 @@
-import React from "react"
+import React from 'react'
 
-import Layout from "../components/Layout/"
-import Seo from "../components/Seo"
-import Search from "../components/Search"
+import Layout from '../components/Layout/'
+import Seo from '../components/Seo'
+import Search from '../components/Search'
 
 const algolia = {
   appId: process.env.GATSBY_ALGOLIA_APP_ID,
   searchOnlyApiKey: process.env.GATSBY_ALGOLIA_SEARCH_ONLY_KEY,
-  indexName: process.env.GATSBY_ALGOLIA_INDEX_NAME,
+  indexName: process.env.GATSBY_ALGOLIA_INDEX_NAME
 }
 
 const SearchPage = (props) => {
   return (
     <Layout>
       <Seo
-        title="Search"
-        description="Vai lá, não tenha medo. Busque por posts novos e bem antigos."
+        title='Search'
+        description='Vai lá, não tenha medo. Busque por posts novos e bem antigos.'
       />
       <Search algolia={algolia} />
     </Layout>

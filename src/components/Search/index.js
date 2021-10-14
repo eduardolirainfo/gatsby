@@ -1,17 +1,17 @@
-import React from "react"
+import React from 'react'
 
-import algoliasearch from "algoliasearch/lite"
+import algoliasearch from 'algoliasearch/lite'
 
 import {
   InstantSearch,
   SearchBox,
   Hits,
   Stats,
-  Configure,
-} from "react-instantsearch-dom"
+  Configure
+} from 'react-instantsearch-dom'
 
-import Hit from "./Hit"
-import * as S from "./styled"
+import Hit from './Hit'
+import * as S from './styled'
 
 const Search = (props) => {
   const searchClient = algoliasearch(
@@ -30,15 +30,15 @@ const Search = (props) => {
             <Configure hitsPerPage={200} distinct />
             <SearchBox
               autoFocus // eslint-disable-line
-              translations={{ placeholder: "Pesquisar..." }}
+              translations={{ placeholder: 'Pesquisar...' }}
             />
             <Stats
               translations={{
-                stats(nbHits, timeSpentMS) {
+                stats (nbHits, timeSpentMS) {
                   return nbHits === 1
                     ? `${nbHits} resultado encontrado em ${timeSpentMS}ms`
                     : `${nbHits} resultados encontrados em ${timeSpentMS}ms`
-                },
+                }
               }}
             />
             <Hits hitComponent={Hit} />

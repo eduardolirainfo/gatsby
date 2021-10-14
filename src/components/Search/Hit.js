@@ -1,6 +1,6 @@
-import React from "react"
+import React from 'react'
 
-import PostItem from "../PostItem"
+import PostItem from '../PostItem'
 
 const Hit = (props) => {
   const { hit } = props
@@ -17,6 +17,5 @@ const Hit = (props) => {
     />
   )
 }
-
 
 export default Hit

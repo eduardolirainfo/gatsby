@@ -1,25 +1,25 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect } from 'react'
 
-import { Home } from "@styled-icons/boxicons-solid/Home"
-import { SearchAlt2 as Search } from "@styled-icons/boxicons-regular/SearchAlt2"
-import { UpArrowAlt as Arrow } from "@styled-icons/boxicons-regular/UpArrowAlt"
-import { Sun as Light } from "@styled-icons/boxicons-solid/Sun"
-import { Moon as Dark } from "@styled-icons/boxicons-solid/Moon"
-import { ListUl as List } from "@styled-icons/boxicons-regular/ListUl"
-import { Grid } from "@styled-icons/boxicons-solid/Grid"
-import { User } from "@styled-icons/boxicons-regular/User"
-import { RssFeed as Feed } from "@styled-icons/material-rounded/RssFeed"
+import { Home } from '@styled-icons/boxicons-solid/Home'
+import { SearchAlt2 as Search } from '@styled-icons/boxicons-regular/SearchAlt2'
+import { UpArrowAlt as Arrow } from '@styled-icons/boxicons-regular/UpArrowAlt'
+import { Sun as Light } from '@styled-icons/boxicons-solid/Sun'
+import { Moon as Dark } from '@styled-icons/boxicons-solid/Moon'
+import { ListUl as List } from '@styled-icons/boxicons-regular/ListUl'
+import { Grid } from '@styled-icons/boxicons-solid/Grid'
+import { User } from '@styled-icons/boxicons-regular/User'
+import { RssFeed as Feed } from '@styled-icons/material-rounded/RssFeed'
 
-import getThemeColor from "../../utils/getThemeColor"
+import getThemeColor from '../../utils/getThemeColor'
 
-import * as S from "./styled"
+import * as S from './styled'
 
 const MenuBar = () => {
   const [theme, setTheme] = useState(null)
   const [display, setDisplay] = useState(null)
 
-  const isDarkMode = theme === "dark"
-  const isListMode = display === "list"
+  const isDarkMode = theme === 'dark'
+  const isListMode = display === 'list'
 
   useEffect(() => {
     setTheme(window.__theme)
@@ -33,12 +33,12 @@ const MenuBar = () => {
     <S.MenuBarWrapper>
       <S.MenuBarGroup>
         <S.MenuBarLink
-          to="/"
+          to='/'
           cover
-          direction="right"
+          direction='right'
           bg={getThemeColor()}
-          title="Voltar para Home"
-          activeClassName="active"
+          title='Voltar para Home'
+          activeClassName='active'
         >
           <S.MenuBarItem>
             <Home />
@@ -58,39 +58,39 @@ const MenuBar = () => {
           </S.MenuBarItem>
         </S.MenuBarLink> */}
         <S.MenuBarLink
-          to="/sobre/"
-          title="Sobre"
+          to='/sobre/'
+          title='Sobre'
           cover
-          direction="left"
-          bg="var(--background)"
+          direction='left'
+          bg='var(--background)'
           duration={0.6}
-          activeClassName="active"
+          activeClassName='active'
         >
           <S.MenuBarItem>
             <User />
           </S.MenuBarItem>
         </S.MenuBarLink>
         <S.MenuBarLink
-          to="/rss.xml"
-          title="Feed"
+          to='/rss.xml'
+          title='Feed'
           cover
-          direction="left"
-          bg="var(--background)"
+          direction='left'
+          bg='var(--background)'
           duration={0.6}
-          activeClassName="active"
+          activeClassName='active'
         >
           <S.MenuBarItem>
             <Feed />
           </S.MenuBarItem>
         </S.MenuBarLink>
         <S.MenuBarLink
-          to="/search"
+          to='/search'
           cover
-          direction="right"
+          direction='right'
           duration={0.8}
           bg={getThemeColor()}
-          title="Pesquisar"
-          activeClassName="active"
+          title='Pesquisar'
+          activeClassName='active'
         >
           <S.MenuBarItem>
             <Search />
@@ -99,14 +99,14 @@ const MenuBar = () => {
       </S.MenuBarGroup>
       <S.MenuBarGroup>
         <S.MenuBarItem
-          title="Mudar o Tema"
+          title='Mudar o Tema'
           onClick={() => {
-            window.__setPreferredTheme(isDarkMode ? "light" : "dark")
+            window.__setPreferredTheme(isDarkMode ? 'light' : 'dark')
 
             if (window.DISQUS !== undefined) {
               window.setTimeout(() => {
                 window.DISQUS.reset({
-                  reload: true,
+                  reload: true
                 })
               }, 300)
             }
@@ -118,18 +118,18 @@ const MenuBar = () => {
         </S.MenuBarItem>
         {/* Mudar visualização */}
         <S.MenuBarItem
-          title="Mudar visualização"
+          title='Mudar visualização'
           onClick={() => {
-            window.__setPreferredDisplay(isListMode ? "card" : "list")
+            window.__setPreferredDisplay(isListMode ? 'card' : 'list')
           }}
           className={display}
         >
           {isListMode ? <Grid /> : <List />}
         </S.MenuBarItem>
         <S.MenuBarItem
-          title="Ir para o Topo"
+          title='Ir para o Topo'
           onClick={() => {
-            window.scroll({ top: 0, behavior: "smooth" })
+            window.scroll({ top: 0, behavior: 'smooth' })
           }}
         >
           <Arrow />

@@ -1,7 +1,7 @@
-import styled from "styled-components"
-import media from "styled-media-query"
+import styled from 'styled-components'
+import media from 'styled-media-query'
 
-import transitions from "../../styles/transitions"
+import transitions from '../../styles/transitions'
 
 export const SidebarContainer = styled.aside`
   align-items: center;
@@ -22,14 +22,14 @@ export const SidebarContainer = styled.aside`
   background-attachment: fixed;
   background-color: var(--mediumBackground);
   z-index: 2;
-  /*${media.lessThan("large")`
+  /*${media.lessThan('large')`
     align-items: flex-start;
     height: auto;
     padding: 1rem;
     position: inherit;
     width: 100%;
   `}*/
-  ${media.lessThan("large")`
+  ${media.lessThan('large')`
     align-items: flex-start;
     border: 0;
     height: calc(100% - 50px);
@@ -37,7 +37,7 @@ export const SidebarContainer = styled.aside`
     position: inherit;
     width: 100%;
     transform: ${(props) =>
-      props.isMenuOpen ? "translateX(0)" : "translateX(-100vw)"};
+      props.isMenuOpen ? 'translateX(0)' : 'translateX(-100vw)'};
   `}
 `
 export const SidebarLinksContainer = styled.section`

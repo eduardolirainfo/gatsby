@@ -1,12 +1,12 @@
 {
   "name": "eduardosblog",
-  "private": true,
   "description": "Um blog simples para nossa diversão",
   "version": "0.2.0",
   "author": "Eduardo Lira <eduardoliraifo@gmail.com>",
   "keywords": [
     "eduardo lira",
     "frontend",
+    "backend",
     "blog"
   ],
   "license": "MIT",
@@ -14,10 +14,9 @@
     "build": "cross-env GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages --prefix-paths",
     "dev": "gatsby develop",
     "develop:playground": "GATSBY_GRAPHQL_IDE=playground gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "yarn run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""
+    "test": "standard --fix"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.2",
@@ -28,7 +27,6 @@
     "codemirror": "^5.58.3",
     "cross-env": "^7.0.3",
     "dotenv": "^10.0.0",
-    "eslint-plugin-flowtype": "^6.1.0",
     "gatsby": "^4.0.0-zz-next.1",
     "gatsby-plugin-advanced-sitemap": "^2.0.0",
     "gatsby-plugin-algolia-search": "^0.5.7",
@@ -89,14 +87,13 @@
     "@babel/preset-env": "^7.12.7",
     "@babel/runtime": "^7.12.5",
     "babel-plugin-styled-components": "^1.12.0",
-    "eslint-config-react-app": "^6.0.0",
-    "eslint-plugin-gatsby": "npm:gatsby-plugin-eslint-config",
     "gatsby-remark-code-titles": "^1.1.0",
     "gatsby-remark-default-html-attrs": "^1.0.1",
     "gatsby-remark-emoji": "^0.0.3",
     "gatsby-remark-smartypants": "^4.11.0",
-    "prettier": "^2.2.1",
-    "react-lazy-load": "^3.1.13"
+    "lint-staged": "^11.2.3",
+    "react-lazy-load": "^3.1.13",
+    "standard": "^16.0.4"
   },
   "repository": {
     "type": "git",

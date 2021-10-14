@@ -1,10 +1,10 @@
-import React from "react"
-import { Link } from "gatsby"
-import styled from "styled-components"
+import React from 'react'
+import { Link } from 'gatsby'
+import styled from 'styled-components'
 
-import Seo from "../components/Seo"
-import GlobalStyles from "../styles/global"
-import transitions from "../styles/transitions"
+import Seo from '../components/Seo'
+import GlobalStyles from '../styles/global'
+import transitions from '../styles/transitions'
 
 const Container = styled.section`
   align-items: center;
@@ -189,11 +189,11 @@ const Button = styled(Link)`
 
 const NotFoundPage = () => (
   <Container>
-    <Seo title="404: Not found" />
+    <Seo title='404: Not found' />
     <GlobalStyles />
     <Title>404</Title>
     <Text>Ué? Cadê? Parece que não tem o que você procura.</Text>
-    <Button to="/">De volta ao blog!</Button>
+    <Button to='/'>De volta ao blog!</Button>
   </Container>
 )
 

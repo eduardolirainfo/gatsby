@@ -1,5 +1,5 @@
-import styled from "styled-components"
-import media from "styled-media-query"
+import styled from 'styled-components'
+import media from 'styled-media-query'
 
 export const Footer = styled.div`
   background: #ffffff;
@@ -30,7 +30,7 @@ export const Footer = styled.div`
   position: absolute;
   bottom: 0;
   left: 0;
-  ${media.lessThan("large")`
+  ${media.lessThan('large')`
     display: none;
   `}
 `

@@ -1,7 +1,7 @@
-import styled from "styled-components"
-import media from "styled-media-query"
-import { Algolia } from "@styled-icons/fa-brands/Algolia"
-import transitions from "../../styles/transitions"
+import styled from 'styled-components'
+import media from 'styled-media-query'
+import { Algolia } from '@styled-icons/fa-brands/Algolia'
+import transitions from '../../styles/transitions'
 
 export const SearchWrapper = styled.section`
   background: var(--background);
@@ -21,7 +21,7 @@ export const SearchWrapper = styled.section`
   .ais-Stats {
     padding: 0.5rem 3rem;
 
-    ${media.lessThan("large")`
+    ${media.lessThan('large')`
       padding: 0.5rem 1rem;
     `}
   }
@@ -29,7 +29,7 @@ export const SearchWrapper = styled.section`
   .ais-SearchBox {
     padding-top: 6rem;
 
-    ${media.lessThan("large")`
+    ${media.lessThan('large')`
       padding-top: 1rem;
     `}
   }
@@ -167,7 +167,7 @@ export const SearchTitle = styled.h1`
   padding: 3rem 2rem;
   text-align: right;
 
-  ${media.lessThan("large")`
+  ${media.lessThan('large')`
     padding: 1rem;
     line-height: 1.1;
   `}

@@ -1,5 +1,5 @@
-import styled from "styled-components"
-import media from "styled-media-query"
+import styled from 'styled-components'
+import media from 'styled-media-query'
 
 export const CommentsWrapper = styled.section`
   margin: auto;
@@ -7,7 +7,7 @@ export const CommentsWrapper = styled.section`
   padding: 3rem 6.4rem 3rem;
   display: grid;
 
-  ${media.lessThan("large")`
+  ${media.lessThan('large')`
     padding: 3rem 1.4rem 0;
     max-width: 100%;
   `}
@@ -36,7 +36,7 @@ export const CommentsTitle = styled.h2`
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   padding-bottom: 2rem;
 
-  ${media.lessThan("large")`
+  ${media.lessThan('large')`
     font-size: 1.375rem;
   `}
 `

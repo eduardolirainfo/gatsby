@@ -1,8 +1,8 @@
-import styled from "styled-components"
-import media from "styled-media-query"
-import AniLink from "gatsby-plugin-transition-link/AniLink"
+import styled from 'styled-components'
+import media from 'styled-media-query'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
-import transitions from "../../styles/transitions"
+import transitions from '../../styles/transitions'
 
 export const PostItemTitle = styled.h1`
   font-family: "Poppins", Arial, sans-serif;
@@ -148,7 +148,7 @@ export const PostItemWrapper = styled.section`
   //   -moz-box-shadow: 0 15px 10px #777;
   //   box-shadow: 0 15px 10px #777;
   // }
-  ${media.lessThan("large")`
+  ${media.lessThan('large')`
     align-items: flex-start;
     flex-direction: column;
     padding: 2rem 1rem;
@@ -160,7 +160,7 @@ export const PostItemCat = styled.div`
   margin-right: 1.5rem;
   text-decoration: none;
   color: ${(props) =>
-    props.background ? props.background : " var(--highlight)"};
+    props.background ? props.background : ' var(--highlight)'};
   display: flex;
   font-weight: 900;
   justify-content: center;
@@ -170,7 +170,7 @@ export const PostItemCat = styled.div`
   transition: ${transitions.ALL};
   border-radius: 3rem;
   box-shadow: var(--catHl)
-    ${(props) => (props.background ? props.background : " var(--highlight)")};
+    ${(props) => (props.background ? props.background : ' var(--highlight)')};
   &:hover {
     animation: var(--animaTag);
     overflow: hidden;
@@ -183,14 +183,14 @@ export const PostItemCat = styled.div`
     width: 5px;
     height: 5px;
     background-color: ${(props) =>
-      props.background ? props.background : " var(--background)"};
+      props.background ? props.background : ' var(--background)'};
     // border: none;
     border-radius: 50%;
     cursor: pointer;
     outline: none;
     transition: ${transitions.ALL};
   }
-  ${media.lessThan("large")`
+  ${media.lessThan('large')`
     border-radius: 0;
     font-size: 1rem;
     min-height: auto;
@@ -213,18 +213,18 @@ export const PostItemLink = styled(AniLink)`
   }
   &:hover p {
     color: ${(props) =>
-      props.background ? props.background : " var(--highlight)"};
+      props.background ? props.background : ' var(--highlight)'};
   }
   &:hover time {
     color: ${(props) =>
-      props.background ? props.background : " var(--highlight)"};
+      props.background ? props.background : ' var(--highlight)'};
   }
   &:hover ${PostItemCat} {
     animation: var(--animationBox);
   }
   &:hover h1 {
     color: ${(props) =>
-      props.background ? props.background : " var(--highlight)"};
+      props.background ? props.background : ' var(--highlight)'};
   }
   & ul {
     z-index: 99;
@@ -324,7 +324,7 @@ export const PostItemLink = styled(AniLink)`
     }
   }
 
-  ${media.lessThan("large")`
+  ${media.lessThan('large')`
     & ul{
       display: none;
     }
@@ -360,7 +360,7 @@ export const PostItemInfo = styled.div`
     }
   }
 
-  ${media.lessThan("large")`
+  ${media.lessThan('large')`
     margin: 0;
   `}
 `

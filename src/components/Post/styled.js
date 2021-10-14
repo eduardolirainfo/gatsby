@@ -1,7 +1,7 @@
-import styled from "styled-components"
-import media from "styled-media-query"
-import AniLink from "gatsby-plugin-transition-link/AniLink"
-import transitions from "../../styles/transitions"
+import styled from 'styled-components'
+import media from 'styled-media-query'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
+import transitions from '../../styles/transitions'
 
 export const MainContent = styled.section`
   margin: auto;
@@ -29,7 +29,7 @@ export const MainContent = styled.section`
     background-image: radial-gradient(var(--borderInputColor), var(--background), var(--background));
   }
 
-  ${media.lessThan("large")`
+  ${media.lessThan('large')`
     padding: 2rem 0;
     max-width: 100%;
   `}
@@ -51,7 +51,7 @@ export const MainContent = styled.section`
     letter-spacing: 0.069rem;
     padding: 0 1.4rem;
 
-    ${media.lessThan("large")`
+    ${media.lessThan('large')`
       padding: 0 1rem;
       word-break: break-word;
     `}
@@ -100,7 +100,7 @@ export const MainContent = styled.section`
     padding: 0 1.6rem 1.6rem;
     width: 100%;
 
-    ${media.lessThan("large")`
+    ${media.lessThan('large')`
       padding: 0 1rem;
     `}
   }
@@ -159,7 +159,7 @@ export const MainContent = styled.section`
   h1 {
     font-size: 2.8rem;
 
-    ${media.lessThan("large")`
+    ${media.lessThan('large')`
       font-size: 1.875rem;
     `}
   }
@@ -167,7 +167,7 @@ export const MainContent = styled.section`
   h2 {
     font-size: 2.1rem;
 
-    ${media.lessThan("large")`
+    ${media.lessThan('large')`
       font-size: 1.375rem;
     `}
   }
@@ -175,7 +175,7 @@ export const MainContent = styled.section`
   h3 {
     font-size: 1.6rem;
 
-    ${media.lessThan("large")`
+    ${media.lessThan('large')`
       font-size: 1.125rem;
     `}
   }
@@ -214,7 +214,7 @@ export const MainContent = styled.section`
   .gatsby-highlight {
     padding: 0 1.6rem 1.6rem;
 
-    ${media.lessThan("large")`
+    ${media.lessThan('large')`
       padding: 0;
     `}
   }
@@ -246,7 +246,7 @@ export const PostHeader = styled.header`
   padding: 5rem 5rem 0px;
   transform-style: preserve-3d;
 
-  ${media.lessThan("large")`
+  ${media.lessThan('large')`
     padding: 2rem 0 0;
     max-width: 100%;
   `}
@@ -273,7 +273,7 @@ export const PostTitle = styled.h1`
   &:hover {
     text-shadow:3px 3px var(--mediumBackground);
   }
-  ${media.lessThan("large")`
+  ${media.lessThan('large')`
     font-size: 2.25rem;
     line-height: 1.1;
     padding: 0 1rem;
@@ -296,7 +296,7 @@ export const PostTitleCat = styled.h1`
   background-size: 400% 400%;
   animation: animateGradient 5s ease infinite;
 
-  ${media.lessThan("large")`
+  ${media.lessThan('large')`
     font-size: 1.8rem;
     line-height: 1.1;
     padding: 0 1rem;
@@ -319,7 +319,7 @@ export const PostWrapper = styled.section`
       justify-content: center;
     }
   }
-  ${media.lessThan("large")`
+  ${media.lessThan('large')`
     align-items: flex-start;
     flex-direction: column;
     padding: 2rem 1rem;
@@ -346,7 +346,7 @@ export const PostDescription = styled.h3`
   color: var(--postDescription);
   padding: 0 1.4rem;
 
-  ${media.lessThan("large")`
+  ${media.lessThan('large')`
     font-size: 1.6rem;
     line-height: 1.3;
     padding: 0 1rem;
@@ -414,7 +414,7 @@ export const PostDate = styled.p`
   font-weight: 100;
   padding: 0 1.4rem;
   color: var(--postDescription);
-  ${media.lessThan("large")`
+  ${media.lessThan('large')`
     padding: 0 1rem;
   `}
 `
@@ -458,7 +458,7 @@ export const TagPost = styled(AniLink)`
   text-decoration: none;
   transition: ${transitions.DEFAULT};  
 `
-export const Btn__label = styled.span`
+export const BtnLabel = styled.span`
   height: 1rem;
   font-size: 0.65rem;
   position: absolute;
@@ -468,7 +468,7 @@ export const Btn__label = styled.span`
   background-color: var(--background);
   z-index: 3;
 `
-export const Btn__glitch = styled.span`
+export const BtnGlitch = styled.span`
   display: none;
   position: absolute;
   top: 0;
@@ -479,7 +479,7 @@ export const Btn__glitch = styled.span`
   filter: drop-shadow(-2px 3px #67e3f3) drop-shadow(-1px -3px #02d8f3)
     drop-shadow(2px 1px #02d8f3);
 `
-export const Btn__content = styled.span`
+export const BtnContent = styled.span`
   font-family: "Kalam";
   display: flex;
   align-items: center;
@@ -511,10 +511,10 @@ export const Button = styled.button`
   color: var(--texts);
   clip-path: polygon(92% 0, 100% 25%, 100% 100%, 8% 100%, 0% 75%, 0 0);
 
-  &:hover ${Btn__glitch},
-  &:hover ${Btn__content}::after,
-  &:focus ${Btn__glitch},
-  &:focus ${Btn__content}::after {
+  &:hover ${BtnGlitch},
+  &:hover ${BtnContent}::after,
+  &:focus ${BtnGlitch},
+  &:focus ${BtnContent}::after {
     display: block;
     animation: glitch-animation 2s linear 0s infinite;
   }
@@ -633,5 +633,3 @@ export const Button = styled.button`
     }
   }
 `
-
-

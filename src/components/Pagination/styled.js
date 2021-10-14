@@ -1,7 +1,7 @@
-import styled from "styled-components"
-import media from "styled-media-query"
+import styled from 'styled-components'
+import media from 'styled-media-query'
 
-import transitions from "../../styles/transitions"
+import transitions from '../../styles/transitions'
 
 export const PaginationWrapper = styled.section`
   align-items: center;
@@ -12,7 +12,7 @@ export const PaginationWrapper = styled.section`
   justify-content: space-between;
   transition: ${transitions.ALL};
 
-  ${media.lessThan("large")`
+  ${media.lessThan('large')`
     font-size: .8rem;
     padding: 1rem;
   `}

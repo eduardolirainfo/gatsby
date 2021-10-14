@@ -1,26 +1,26 @@
-import React from "react"
+import React from 'react'
 // Components
-import { graphql } from "gatsby"
-import Layout from "../components/Layout"
-import Seo from "../components/Seo"
-import PostItem from "../components/PostItem"
-import AniLink from "gatsby-plugin-transition-link/AniLink"
+import { graphql } from 'gatsby'
+import Layout from '../components/Layout'
+import Seo from '../components/Seo'
+import PostItem from '../components/PostItem'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
-import * as S from "../components/ListWrapper/styled"
-import * as P from "../components/Post/styled"
+import * as S from '../components/ListWrapper/styled'
+import * as P from '../components/Post/styled'
 
 const Categories = ({ pageContext, data }) => {
   const { category } = pageContext
   const { edges, totalCount } = data.allMarkdownRemark
 
   const catHeader = `${totalCount} post${
-    totalCount === 1 ? "" : "s"
+    totalCount === 1 ? '' : 's'
   } na categoria "${category}"`
   return (
     <Layout>
       <Seo
-        title="Categoria {category}"
-        description="Navegue entre as categorias de nosso blog"
+        title='Categoria {category}'
+        description='Navegue entre as categorias de nosso blog'
       />
       <P.PostHeader>
         <P.PostTitleCat>{catHeader}</P.PostTitleCat>
@@ -44,7 +44,7 @@ const Categories = ({ pageContext, data }) => {
         })}
       </S.ListWrapper>
       <P.MainContent>
-        <AniLink swipe direction="right" to="/categorias">
+        <AniLink swipe direction='right' to='/categorias'>
           Ver todas as categorias
         </AniLink>
       </P.MainContent>

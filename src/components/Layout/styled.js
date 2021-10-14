@@ -1,12 +1,12 @@
-import styled from "styled-components"
-import media from "styled-media-query"
+import styled from 'styled-components'
+import media from 'styled-media-query'
 
-import transitions from "../../styles/transitions"
+import transitions from '../../styles/transitions'
 
 export const LayoutWrapper = styled.section`
   display: flex;
   overflow: hidden;
-  ${media.lessThan("large")`
+  ${media.lessThan('large')`
     flex-direction: column;
     padding-top: 4.125rem;
   `}
@@ -24,7 +24,7 @@ export const LayoutMain = styled.main`
       "pagination";
   }
 
-  ${media.lessThan("large")`
+  ${media.lessThan('large')`
     padding: 1rem 0 3rem 0;
   `}
 `

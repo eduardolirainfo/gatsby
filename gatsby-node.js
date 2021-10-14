@@ -1,7 +1,7 @@
-const path = require(`path`)
-const _ = require("lodash")
+const path = require('path')
+const _ = require('lodash')
 
-const { createFilePath } = require(`gatsby-source-filesystem`)
+const { createFilePath } = require('gatsby-source-filesystem')
 
 exports.createSchemaCustomization = ({ actions, schema }) => {
   const { createTypes } = actions
@@ -18,16 +18,16 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
 
-  if (node.internal.type === `MarkdownRemark`) {
-    const slug = createFilePath({ 
-      node, 
-      getNode, 
-      basePath: `pages`
+  if (node.internal.type === 'MarkdownRemark') {
+    const slug = createFilePath({
+      node,
+      getNode,
+      basePath: 'pages'
     })
     createNodeField({
       node,
-      name: `slug`,
-      value: `/${slug.slice(12)}`,
+      name: 'slug',
+      value: `/${slug.slice(12)}`
     })
   }
 }
@@ -35,10 +35,10 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
-  const blogPost = path.resolve(`./src/templates/blog-post.js`)
-  const blogList = path.resolve(`./src/templates/blog-list.js`)
-  const tagTemplate = path.resolve(`./src/templates/tags.js`)
-  const catTemplate = path.resolve(`./src/templates/categories.js`)
+  const blogPost = path.resolve('./src/templates/blog-post.js')
+  const blogList = path.resolve('./src/templates/blog-list.js')
+  const tagTemplate = path.resolve('./src/templates/tags.js')
+  const catTemplate = path.resolve('./src/templates/categories.js')
 
   return graphql(
     `
@@ -112,7 +112,7 @@ exports.createPages = ({ graphql, actions }) => {
         context: {
           slug: post.node.fields.slug,
           previous,
-          next,
+          next
         }
       })
     })
@@ -123,14 +123,14 @@ exports.createPages = ({ graphql, actions }) => {
 
     Array.from({ length: numPages }).forEach((_, index) => {
       createPage({
-        path: index === 0 ? `/` : `/page/${index + 1}`,
+        path: index === 0 ? '/' : `/page/${index + 1}`,
         component: blogList,
         context: {
           limit: postsPerPage,
           skip: index * postsPerPage,
           numPages,
-          currentPage: index + 1,
-        },
+          currentPage: index + 1
+        }
       })
     })
 
@@ -143,8 +143,8 @@ exports.createPages = ({ graphql, actions }) => {
         path: `/tags/${_.kebabCase(tag.fieldValue)}/`,
         component: tagTemplate,
         context: {
-          tag: tag.fieldValue,
-        },
+          tag: tag.fieldValue
+        }
       })
     })
     // Extract categories data from query
@@ -156,11 +156,9 @@ exports.createPages = ({ graphql, actions }) => {
         path: `/categorias/${_.kebabCase(category.fieldValue)}/`,
         component: catTemplate,
         context: {
-          category: category.fieldValue,
-        },
+          category: category.fieldValue
+        }
       })
-    })   
+    })
   })
 }
-
-

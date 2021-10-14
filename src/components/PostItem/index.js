@@ -1,7 +1,7 @@
-import React from "react"
-import getThemeColor from "../../utils/getThemeColor"
+import React from 'react'
+import getThemeColor from '../../utils/getThemeColor'
 
-import * as S from "./styled"
+import * as S from './styled'
 
 const PostItem = ({
   slug,
@@ -12,13 +12,13 @@ const PostItem = ({
   title,
   description,
   disableCard,
-  tags,
+  tags
 }) => (
-  <S.PostItemLink to={slug} cover direction="right" bg={getThemeColor()}>
+  <S.PostItemLink to={slug} cover direction='right' bg={getThemeColor()}>
     <S.PostItemWrapper>
       <S.PostItemCat background={background}>
         {categories}
-        <span></span>
+        <span />
       </S.PostItemCat>
 
       <S.PostItemInfo>
@@ -27,11 +27,10 @@ const PostItem = ({
         </S.PostItemDate>
         <S.PostItemTitle>{title}</S.PostItemTitle>
         <S.PostItemDescription>{description}</S.PostItemDescription>
-        <ul></ul>
+        <ul />
       </S.PostItemInfo>
     </S.PostItemWrapper>
   </S.PostItemLink>
 )
-
 
 export default PostItem

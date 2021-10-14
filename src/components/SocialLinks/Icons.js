@@ -1,11 +1,11 @@
-import { Github } from "@styled-icons/boxicons-logos/Github"
-import { Instagram } from "@styled-icons/boxicons-logos/Instagram"
-import { Whatsapp } from "@styled-icons/boxicons-logos/Whatsapp"
+import { Github } from '@styled-icons/boxicons-logos/Github'
+import { Instagram } from '@styled-icons/boxicons-logos/Instagram'
+import { Whatsapp } from '@styled-icons/boxicons-logos/Whatsapp'
 
 const Icons = {
   Github,
   Whatsapp,
-  Instagram,
+  Instagram
 }
 
 export default Icons

@@ -1,34 +1,34 @@
-import React from "react"
+import React from 'react'
 
 // Utilities
-import kebabCase from "lodash/kebabCase"
-import AniLink from "gatsby-plugin-transition-link/AniLink"
+import kebabCase from 'lodash/kebabCase'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 // Components
-import { graphql } from "gatsby"
-import Layout from "../components/Layout"
-import Seo from "../components/Seo"
+import { graphql } from 'gatsby'
+import Layout from '../components/Layout'
+import Seo from '../components/Seo'
 
-import * as S from "../components/Post/styled"
+import * as S from '../components/Post/styled'
 
 const CatsPage = ({
   data: {
     allMarkdownRemark: { group },
     site: {
-      siteMetadata: { title },
-    },
-  },
+      siteMetadata: { title }
+    }
+  }
 }) => (
   <Layout>
     <Seo
-      title="Categorias disponíveis"
-      description="Navegue entre as categorias de nosso blog"
+      title='Categorias disponíveis'
+      description='Navegue entre as categorias de nosso blog'
     />
     <S.PostHeader>
       <S.PostTitle>Categorias disponíveis</S.PostTitle>
       <S.PostDescription>
-        {" "}
-        Navegue entre as categorias de nosso blog{" "}
+        {' '}
+        Navegue entre as categorias de nosso blog{' '}
       </S.PostDescription>
     </S.PostHeader>
     <S.MainContent>
@@ -37,20 +37,20 @@ const CatsPage = ({
           <S.ListTag key={categories.fieldValue}>
             <S.TagLink
               swipe
-              direction="right"
+              direction='right'
               duration={0.3}
               to={`/categorias/${kebabCase(categories.fieldValue)}/`}
             >
               <S.Button>
-                <S.Btn__content>{categories.fieldValue}</S.Btn__content>
-                <S.Btn__glitch></S.Btn__glitch>
-                <S.Btn__label>({categories.totalCount})</S.Btn__label>
+                <S.BtnContent>{categories.fieldValue}</S.BtnContent>
+                <S.BtnGlitch />
+                <S.BtnLabel>({categories.totalCount})</S.BtnLabel>
               </S.Button>
             </S.TagLink>
           </S.ListTag>
         ))}
       </ul>
-      <AniLink swipe to="/tags" direction="right">
+      <AniLink swipe to='/tags' direction='right'>
         <span>&#60;&#60;</span>
         Procurar por Tags
       </AniLink>

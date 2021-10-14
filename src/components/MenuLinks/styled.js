@@ -1,10 +1,10 @@
-import styled from "styled-components"
-import media from "styled-media-query"
+import styled from 'styled-components'
+import media from 'styled-media-query'
 
-import transitions from "../../styles/transitions"
+import transitions from '../../styles/transitions'
 
 export const MenuLinksWrapper = styled.nav`
-  ${media.lessThan("large")`
+  ${media.lessThan('large')`
     display: none;
   `}
 `

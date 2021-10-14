@@ -1,8 +1,8 @@
-import styled from "styled-components"
-import media from "styled-media-query"
-import AniLink from "gatsby-plugin-transition-link/AniLink"
+import styled from 'styled-components'
+import media from 'styled-media-query'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
-import transitions from "../../styles/transitions"
+import transitions from '../../styles/transitions'
 
 export const RecommendedWrapper = styled.section`
   /* border-bottom: 1px solid var(--borders);
@@ -13,7 +13,7 @@ export const RecommendedWrapper = styled.section`
   grid-template-rows: repeat(2, 100%);
   grid-gap: 10px;
   transition: ${transitions.ALL};
-  ${media.lessThan("large")`
+  ${media.lessThan('large')`
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(2,50%);
@@ -77,7 +77,7 @@ export const RecommendedLink = styled(AniLink)`
     position: relative;
     width: 3.2rem;
   }
-  ${media.lessThan("large")`
+  ${media.lessThan('large')`
     padding: 2rem 1rem;
     line-height: 1.3;
     font-size: .9rem;

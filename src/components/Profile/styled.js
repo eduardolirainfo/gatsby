@@ -1,9 +1,9 @@
-import styled from "styled-components"
-import media from "styled-media-query"
-import AniLink from "gatsby-plugin-transition-link/AniLink"
+import styled from 'styled-components'
+import media from 'styled-media-query'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
-import transitions from "../../styles/transitions"
-import { AvatarWrapper } from "../Avatar/styled"
+import transitions from '../../styles/transitions'
+import { AvatarWrapper } from '../Avatar/styled'
 
 // export const ProfileWrapper = styled.section`
 //   color: var(--texts);
@@ -46,7 +46,7 @@ export const ProfileAuthor = styled.h1`
   -webkit-transform-origin: 0 100%;
   transform-origin: 0 100%;
 
-  ${media.lessThan("large")`
+  ${media.lessThan('large')`
     font-size: 1.2rem;
     margin: 0 0 0 10px;
   `}
@@ -58,12 +58,12 @@ export const ProfileDescription = styled.p`
   font-family: Kalam, sans-serif;
   transition: ${transitions.ALL};
 
-  ${media.lessThan("large")`
+  ${media.lessThan('large')`
     display: none;
   `}
 `
 export const ProfileContainer = styled.section`
-  display: ${(props) => (props.isMobileHeader ? "none" : "flex")};
+  display: ${(props) => (props.isMobileHeader ? 'none' : 'flex')};
   color: var(--texts);
   flex-direction: column;
 
@@ -124,9 +124,9 @@ export const ProfileContainer = styled.section`
     );
   }
 
-  ${media.lessThan("large")`
+  ${media.lessThan('large')`
     align-items: flex-start;
-    display: ${(props) => (props.isMobileHeader ? "flex" : "none")};
+    display: ${(props) => (props.isMobileHeader ? 'flex' : 'none')};
     background: var(--mediumBackground);
     border-bottom: 1px solid var(--borders);
     padding: 1rem;
@@ -138,7 +138,7 @@ export const ProfileLink = styled(AniLink)`
   color: var(--texts);
   text-decoration: none;
   transition: ${transitions.COLOR};
-  ${media.lessThan("large")`
+  ${media.lessThan('large')`
     display: flex;
     text-align: left;
   `}
@@ -150,7 +150,7 @@ export const ProfilePosition = styled.small`
   font-weight: 300;
   transition: ${transitions.ALL};
 
-  ${media.lessThan("large")`
+  ${media.lessThan('large')`
     font-size: 0.8rem;
     margin-top: 0.2rem;
   `}

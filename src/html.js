@@ -1,26 +1,26 @@
-import React from "react"
+import React from 'react'
 
-const HTML = ({htmlAttributes, headComponents, bodyAttributes, preBodyComponents, body, postBodyComponents })=> {
-    return (
-      <html {...htmlAttributes}>
-        <head>
-          <meta charSet="UTF-8" />
+const HTML = ({ htmlAttributes, headComponents, bodyAttributes, preBodyComponents, body, postBodyComponents }) => {
+  return (
+    <html {...htmlAttributes}>
+      <head>
+        <meta charSet='UTF-8' />
 
-          <meta httpEquiv="x-ua-compatible" content="ie=edge" />
-          <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, shrink-to-fit=no"
-          />
-          <meta
-            name="google-site-verification"
-            content="8kDtWUmUQEh7QXoj_shRaxcgYAVpHs_YQ7TeniN0kmI"
-          />
-          {headComponents}
-        </head>
-        <body {...bodyAttributes} className="dark">
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
+        <meta httpEquiv='x-ua-compatible' content='ie=edge' />
+        <meta
+          name='viewport'
+          content='width=device-width, initial-scale=1, shrink-to-fit=no'
+        />
+        <meta
+          name='google-site-verification'
+          content='8kDtWUmUQEh7QXoj_shRaxcgYAVpHs_YQ7TeniN0kmI'
+        />
+        {headComponents}
+      </head>
+      <body {...bodyAttributes} className='dark'>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
               (function() {
                 window.__onThemeChange = function() {};
                 function setTheme(newTheme) {
@@ -62,23 +62,22 @@ const HTML = ({htmlAttributes, headComponents, bodyAttributes, preBodyComponents
 
                 setDisplay(preferredDisplay || 'list');
               })();
-            `,
-            }}
-          />
-          {preBodyComponents}
-          <noscript>
-            Esse site não funciona sem JavaScript, seja legal e habilite =)
-          </noscript>
-          <div
-            key={`body`}
-            id="___gatsby"
-            dangerouslySetInnerHTML={{ __html: body }}
-          />
-          {postBodyComponents}
-        </body>
-      </html>
-    )
-  }
+            `
+          }}
+        />
+        {preBodyComponents}
+        <noscript>
+          Esse site não funciona sem JavaScript, seja legal e habilite =)
+        </noscript>
+        <div
+          key='body'
+          id='___gatsby'
+          dangerouslySetInnerHTML={{ __html: body }}
+        />
+        {postBodyComponents}
+      </body>
+    </html>
+  )
+}
 
-
-  export default HTML
+export default HTML

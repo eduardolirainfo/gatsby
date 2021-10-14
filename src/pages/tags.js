@@ -1,23 +1,23 @@
-import React from "react"
+import React from 'react'
 
 // Utilities
-import { kebabCase } from "lodash"
-import AniLink from "gatsby-plugin-transition-link/AniLink"
+import { kebabCase } from 'lodash'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 // Components
-import { graphql } from "gatsby"
-import Layout from "../components/Layout"
-import Seo from "../components/Seo"
+import { graphql } from 'gatsby'
+import Layout from '../components/Layout'
+import Seo from '../components/Seo'
 
-import * as S from "../components/Post/styled"
+import * as S from '../components/Post/styled'
 
 const TagsPage = ({
   data: {
     allMarkdownRemark: { group },
     site: {
-      siteMetadata: { title },
-    },
-  },
+      siteMetadata: { title }
+    }
+  }
 }) => (
   <Layout>
     <Seo title={title} />
@@ -31,20 +31,20 @@ const TagsPage = ({
           <S.ListTag key={tag.fieldValue}>
             <S.TagLink
               swipe
-              direction="right"
+              direction='right'
               to={`/tags/${kebabCase(tag.fieldValue)}/`}
             >
               <S.Button>
-                <S.Btn__content>{tag.fieldValue}</S.Btn__content>
-                <S.Btn__glitch></S.Btn__glitch>
-                <S.Btn__label>({tag.totalCount})</S.Btn__label>
+                <S.BtnContent>{tag.fieldValue}</S.BtnContent>
+                <S.BtnGlitch />
+                <S.BtnLabel>({tag.totalCount})</S.BtnLabel>
               </S.Button>
             </S.TagLink>
           </S.ListTag>
         ))}
       </ul>
-      <AniLink swipe direction="right" to="/categorias">
-        <span className="text-criptoBlue-500 hover:text-criptoBlue-900 text-3xl mr-1">
+      <AniLink swipe direction='right' to='/categorias'>
+        <span className='text-criptoBlue-500 hover:text-criptoBlue-900 text-3xl mr-1'>
           &#60;&#60;
         </span>
         Procurar por Categorias

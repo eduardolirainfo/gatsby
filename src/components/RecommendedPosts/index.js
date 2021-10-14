@@ -1,10 +1,10 @@
-import React from "react"
-import { ArrowReturnLeft } from "@styled-icons/bootstrap/ArrowReturnLeft"
-import { ArrowReturnRight } from "@styled-icons/bootstrap/ArrowReturnRight"
+import React from 'react'
+import { ArrowReturnLeft } from '@styled-icons/bootstrap/ArrowReturnLeft'
+import { ArrowReturnRight } from '@styled-icons/bootstrap/ArrowReturnRight'
 
-import * as S from "./styled"
+import * as S from './styled'
 
-import getThemeColor from "../../utils/getThemeColor"
+import getThemeColor from '../../utils/getThemeColor'
 
 const RecommendedPosts = ({ next, previous }) => (
   <S.RecommendedWrapper>
@@ -12,11 +12,11 @@ const RecommendedPosts = ({ next, previous }) => (
       <S.RecommendedLink
         to={previous.fields.slug}
         cover
-        direction="left"
+        direction='left'
         duration={1}
-        rel="prev"
+        rel='prev'
         bg={getThemeColor()}
-        className="previous"
+        className='previous'
       >
         <ArrowReturnLeft />
         {previous.frontmatter.title}
@@ -26,11 +26,11 @@ const RecommendedPosts = ({ next, previous }) => (
       <S.RecommendedLink
         to={next.fields.slug}
         cover
-        direction="right"
+        direction='right'
         duration={1}
-        rel="next"
+        rel='next'
         bg={getThemeColor()}
-        className="next"
+        className='next'
       >
         {next.frontmatter.title}
         <ArrowReturnRight />
@@ -38,6 +38,5 @@ const RecommendedPosts = ({ next, previous }) => (
     )}
   </S.RecommendedWrapper>
 )
-
 
 export default RecommendedPosts

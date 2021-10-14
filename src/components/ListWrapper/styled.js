@@ -1,7 +1,7 @@
-import styled from "styled-components"
-import media from "styled-media-query"
+import styled from 'styled-components'
+import media from 'styled-media-query'
 
-import transitions from "../../styles/transitions"
+import transitions from '../../styles/transitions'
 
 export const ListWrapper = styled.section`
   body#card & {
@@ -28,16 +28,16 @@ export const ListWrapper = styled.section`
     }
   }
   /*
-  ${media.lessThan("small")`
+  ${media.lessThan('small')`
        body#card & { grid-template-columns: repeat(1, 1fr); }
     `}
-     ${media.between("small", "medium")`
+     ${media.between('small', 'medium')`
        body#card & { grid-template-columns: repeat(2, 1fr); }
     `}
-    ${media.between("medium", "large")`
+    ${media.between('medium', 'large')`
        body#card & { grid-template-columns: repeat(3, 1fr); }
    `}
-   ${media.greaterThan("large")`
+   ${media.greaterThan('large')`
        body#card & { grid-template-columns: repeat(4, 1fr); }
    `}*/
 `

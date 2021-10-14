@@ -1,16 +1,16 @@
-import React from "react"
+import React from 'react'
 
 // Utilities
-import Layout from "../components/Layout"
+import Layout from '../components/Layout'
 
 // Components
-import { graphql } from "gatsby"
+import { graphql } from 'gatsby'
 
-import Seo from "../components/Seo"
-import PostItem from "../components/PostItem"
-import Pagination from "../components/Pagination"
+import Seo from '../components/Seo'
+import PostItem from '../components/PostItem'
+import Pagination from '../components/Pagination'
 
-import * as S from "../components/ListWrapper/styled"
+import * as S from '../components/ListWrapper/styled'
 
 const BlogList = props => {
   const postList = props.data.allMarkdownRemark.edges
@@ -18,21 +18,21 @@ const BlogList = props => {
   const { currentPage, numPages } = props.pageContext
   const isFirst = currentPage === 1
   const isLast = currentPage === numPages
-  const prevPage = currentPage - 1 === 1 ? "/" : `/page/${currentPage - 1}`
+  const prevPage = currentPage - 1 === 1 ? '/' : `/page/${currentPage - 1}`
   const nextPage = `/page/${currentPage + 1}`
 
   return (
     <Layout>
-      <Seo title="Home" />
+      <Seo title='Home' />
       <S.ListWrapper>
         {postList.map(
           ({
             node: {
-              frontmatter: { background, categories, date, description, title , tags},
+              frontmatter: { background, categories, date, description, title, tags },
               timeToRead,
-              fields: { slug },
+              fields: { slug }
             }
-          },i) => (
+          }, i) => (
             <PostItem
               key={i}
               slug={slug}
