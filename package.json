@@ -16,7 +16,8 @@
     "develop:playground": "GATSBY_GRAPHQL_IDE=playground gatsby develop",
     "start": "yarn run develop",
     "serve": "gatsby serve",
-    "test": "standard --fix"
+    "test": "standard --fix",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.2",
@@ -91,7 +92,7 @@
     "gatsby-remark-default-html-attrs": "^1.0.1",
     "gatsby-remark-emoji": "^0.0.3",
     "gatsby-remark-smartypants": "^4.11.0",
-    "husky": "^7.0.2",
+    "husky": "^7.0.0",
     "lint-staged": "^11.2.3",
     "react-lazy-load": "^3.1.13",
     "standard": "^16.0.4"
