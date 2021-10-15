@@ -66,6 +66,7 @@ export const MainContent = styled.section`
   h3,
   h4,
   h5 {
+    font-family: "Poppins", Arial, sans-serif;
     margin: 2.4rem auto 1rem;
   }
 
@@ -226,7 +227,15 @@ export const MainContent = styled.section`
     text-decoration: none;
     transition: ${transitions.ALL}; 
     svg {
-      color: var(--postColor);
+      color: var(--postColor); */
+    } 
+    &.anchor{
+      color: var(--highlight);
+      fill: var(--highlight);
+      border: 0;
+      &:hover{
+        border: 0
+        }
     }
     &:hover {
       opacity: 0.8;
@@ -257,7 +266,6 @@ export const PostTitle = styled.h1`
   padding: 0 1.4rem;
   margin: 1rem auto;
   color: var(--postTitle) !important;
-  font-family: "Poppins", Arial, sans-serif;
   background: linear-gradient(
     45deg,
     var(--postTitle) 32.5%,
@@ -389,6 +397,9 @@ export const BackButton = styled(AniLink)`
     text-decoration: none;
     margin: 0px 0px 1.5rem 1.5rem;
     transition: ${transitions.COLOR};
+    &:hover{
+      color: #8a4baf;
+    }
 `
 
 export const LinkCat = styled(AniLink)`

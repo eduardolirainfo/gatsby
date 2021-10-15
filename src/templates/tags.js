@@ -13,13 +13,12 @@ import * as P from '../components/Post/styled'
 const Tags = ({ pageContext, data }) => {
   const { tag } = pageContext
   const { edges, totalCount } = data.allMarkdownRemark
-  const tagHeader = `${totalCount} post${
-    totalCount === 1 ? '' : 's'
-  } com a tag "${tag}"`
+  const tagHeader = `${totalCount} post${totalCount === 1 ? '' : 's'
+    } com a tag "${tag}"`
   return (
     <Layout>
       <Seo
-        title='Categoria {tag}'
+        title={tag}
         description='Navegue entre as categorias de nosso blog'
       />
       <P.PostHeader>

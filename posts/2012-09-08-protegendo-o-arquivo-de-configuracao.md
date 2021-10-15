@@ -5,9 +5,7 @@ tags: ["Wordpress"]
 description: "Protegendo arquivo de configuração em sua instalação Wordpress"
 categories: Wp
 background: "#117ac9"
-author:
-  twitter: "dudulira"
-  name: "Eduardo Lira"
+author: "Eduardo Lira"
 ---
 
 É indiscutível que o arquivo para se manter mais seguro no WordPress é o arquivo **wp-config.php**

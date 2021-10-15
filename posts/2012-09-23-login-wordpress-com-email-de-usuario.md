@@ -5,9 +5,7 @@ tags: [Wordpress]
 description: "Efetuando login no wordpress como E-mail no campo de usuário"
 categories: Wp
 background: "#117ac9"
-author:
-  twitter: "dudulira"
-  name: "Eduardo Lira"
+author: "Eduardo Lira"
 ---
 
 Caso você esqueça seu usuário de acesso administrativo Wordpress, habilite o acesso com o endereço de E-mail no campo de usuário. Para isso, bastar adicionar o código condicional abaixo no arquivo`functions.php` do tema. O arquivo encontra-se dentro do diretório do tema. Por exemplo, neste caminho: `wp-content/themes/nomedotema/functions.php`

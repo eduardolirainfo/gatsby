@@ -47,7 +47,7 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
   }
   body {
-    background: #16202c;
+    background: var(--background);
     font-family: -apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica Neue','Arial','Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';
     font-weight: normal;
     word-wrap: break-word;
@@ -63,14 +63,10 @@ const GlobalStyles = createGlobalStyle`
   body.dark {
     --texts: rgba(255,255,255,0.8);
     --textsMetaDate: #594a9d;
-    // --postColor: #d9d7e0;
     --postColor: #fff;
     --postDescription: #8b9493;
-    // --highlight: #0bf9c7;
-    // --highlight:#00F0FF;
     --highlight:#02d7f2;
     --mediumBackground: #362066;
-    // --background: rgba(19,18,23,0.975 );
     --background: #1e1935;
     --white: #fff;
     --black: #050A0E;

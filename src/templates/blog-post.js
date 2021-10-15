@@ -34,7 +34,7 @@ const BlogPostTemplate = props => {
             direction='right'
             to={`/categorias/${kebabCase(categories)}`}
           >
-            # {categories}
+            {categories}
           </S.PostCategories>
         )}
         <S.PostDate>

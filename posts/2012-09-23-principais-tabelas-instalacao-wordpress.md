@@ -5,9 +5,7 @@ tags: ["Wordpress"]
 description: "A principais tabelas de instalação no Wordpress"
 categories: Wp
 background: "#117ac9"
-author:
-  twitter: "dudulira"
-  name: "Eduardo Lira"
+author: "Eduardo Lira"
 ---
 
 O wordpress possui 11 tabelas principais, como podemos ver no diagrama abaixo.

@@ -12,14 +12,12 @@ import * as P from '../components/Post/styled'
 const Categories = ({ pageContext, data }) => {
   const { category } = pageContext
   const { edges, totalCount } = data.allMarkdownRemark
-
-  const catHeader = `${totalCount} post${
-    totalCount === 1 ? '' : 's'
-  } na categoria "${category}"`
+  const catHeader = `${totalCount} post${totalCount === 1 ? '' : 's'
+    } na categoria "${category}"`
   return (
     <Layout>
       <Seo
-        title='Categoria {category}'
+        title={category}
         description='Navegue entre as categorias de nosso blog'
       />
       <P.PostHeader>

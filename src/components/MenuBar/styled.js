@@ -68,12 +68,6 @@ export const MenuBarItem = styled.span`
   position: relative;
   width: 3.75rem;
   transition: ${transitions.ALL};
-  /* &.light {
-    transition: ${transitions.ALL};
-  }
-  &.dark {
-    transition: ${transitions.ALL};
-  } */
 
   &:hover {
     transition: ${transitions.ALL};
