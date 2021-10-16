@@ -16,7 +16,13 @@
     "develop:playground": "GATSBY_GRAPHQL_IDE=playground gatsby develop",
     "start": "yarn run develop",
     "serve": "gatsby serve",
-    "prepare": "husky install"
+    "test": "jest --watchAll --silent --colors --noStackTrace",
+    "test:staged": "jest --passWithNoTests --findRelatedTests --silent --noStackTrace"
+  },
+  "standard": {
+    "env": [
+      "jest"
+    ]
   },
   "dependencies": {
     "@styled-icons/boxicons-regular": "^10.18.0",
