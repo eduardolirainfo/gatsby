@@ -4,9 +4,7 @@ date: 2016-11-04 02:11:59 Z
 tags: ["Produtividade"]
 description: "Por que você precisa saber o que é Scrum?"
 categories: dev
-author:
-  twitter: "dudulira"
-  name: "Eduardo Lira"
+author: "Eduardo Lira"
 ---
 
 Todos que trabalham com desenvolvimento já ouviram falar sobre desenvolvimento ágil de software (em inglês Agile software development). Desenvolvimento ágil, como qualquer metodologia de software, providencia uma estrutura conceitual para reger projetos de engenharia de software. Mas isso não significa que não podemos utilizar essas técnicas em outros ramos de negócio ou projetos da vida privada.

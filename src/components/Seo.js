@@ -76,6 +76,20 @@ function SEO ({ description, lang, meta, title, image }) {
   )
 }
 
+export const JSONLD = () => {
+  const jsonld = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    url: 'https://eduardolira.dev.br'
+  }
+  // Add the script to Helmet to output the JSON-LD formatted data in the head tag
+  return (
+    <Helmet>
+      {jsonld && <script type='application/ld+json'>{JSON.stringify(jsonld)}</script>}
+    </Helmet>
+  )
+}
+
 SEO.defaultProps = {
   lang: 'pt-br',
   meta: [],

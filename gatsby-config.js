@@ -7,6 +7,20 @@ const pluginConfig = [
   'gatsby-plugin-advanced-sitemap',
   'gatsby-plugin-twitter',
   'gatsby-plugin-react-helmet',
+  {
+    resolve: 'gatsby-plugin-robots-txt',
+    options: {
+      host: 'https://eduardolira.dev.br',
+      sitemap: 'https://eduardolira.dev.br/sitemap.xml',
+      policy: [{ userAgent: '*', allow: '/' }]
+    }
+  },
+  {
+    resolve: 'gatsby-plugin-react-helmet-canonical-urls',
+    options: {
+      siteUrl: 'https://eduardolira.dev.br/'
+    }
+  },
   'gatsby-plugin-catch-links',
   'gatsby-plugin-transition-link',
   {

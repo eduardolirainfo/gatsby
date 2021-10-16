@@ -5,9 +5,7 @@ tags: ["Magento"]
 categories: Mag
 background: "#f68d2e"
 summary: Vamos corrigir este erro de configuração do Paypal na loja Magento
-author:
-  twitter: "dudulira"
-  name: "Eduardo Lira"
+author:  "Eduardo Lira"
 ---
 
 O erro que ocorre:

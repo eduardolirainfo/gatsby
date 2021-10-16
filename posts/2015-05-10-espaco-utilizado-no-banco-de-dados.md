@@ -5,9 +5,7 @@ tags: ["SQL"]
 image: "/static/images/mysqlDatabase.jpg"
 description: "Banco de dados Mysql"
 categories: db
-author:
-  twitter: "dudulira"
-  name: "Eduardo Lira"
+author:  "Eduardo Lira"
 ---
 
 Neste post vou mostrar algumas consultas que utilizo para saber o espaço alocado no banco de dados [MySQL][mysql].

@@ -4,9 +4,7 @@ date: "2016-10-25 03:10:51 Z"
 tags: ["CSS"]
 image: "/assets/img/cover.jpg"
 description: "Materialize versus bootstrap, ainda existe alguma rivalidade?"
-author:
-  twitter: "dudulira"
-  name: "Eduardo Lira"
+author: "Eduardo Lira"
 ---
 
 ## Existe um duelo?

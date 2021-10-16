@@ -6,9 +6,7 @@ image: "/static/images/"
 description: "Vamos aprender a exibir os erros por trás da tela branca na Prestashop"
 categories: presta
 background: #ff0076
-author:
-  twitter: "dudulira"
-  name: "Eduardo Lira"
+author:  "Eduardo Lira"
 ---
 
 Geralmente na ocorrência de erros da loja Prestashop nos deparamos com uma tela branca. Visualizar a mensagem de erro por trás é muito importante para agilizar a solução de problemas.

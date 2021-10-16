@@ -4,9 +4,7 @@ date: 2015-05-20 20:11:23 Z
 tags: ["Joomla"]
 description: "Corrigir Error: 500 PHP Regular Expression Limit Reached"
 categories: dev
-author:
-  twitter: "dudulira"
-  name: "Eduardo Lira"
+author:  "Eduardo Lira"
 ---
 
 Para solução caso você se depare com a mensagem -> **Error: 500 PHP REGULAR EXPRESSION LIMIT REACHED (PCRE.BACKTRACK_LIMIT)** em seu Joomla, basta adicionar as linhas abaixo no arquivo <code>index.php</code> ou no<code>configuration.php</code> da instalação do aplicativo em sua hospedagem.

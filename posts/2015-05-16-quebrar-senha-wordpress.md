@@ -6,9 +6,7 @@ image: "/static/images/"
 description: "Neste post vamos aprender alguns métodos sobre como quebrar a senha de usuários Wordpress"
 categories: Wp
 background: #117ac9
-author:
-  twitter: "dudulira"
-  name: "Eduardo Lira"
+author:  "Eduardo Lira"
 ---
 
 Esta é uma dica muito legal para quem administra instalações [Wordpress.org].

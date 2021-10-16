@@ -6,9 +6,7 @@ image: "/static/images/"
 description: "Como corrigir este erro que ocorre ao tentar criar um novo usuário na loja Prestashop"
 categories: presta
 background: #ff0076
-author:
-  twitter: "dudulira"
-  name: "Eduardo Lira"
+author: "Eduardo Lira"
 ---
 
 É realmente assustador estar realizando testes, e de repente se deparar com a mensagem de erro **_"Technical Error Unable To Load Form"_** ao tentar criar uma nova conta na loja Prestashop.

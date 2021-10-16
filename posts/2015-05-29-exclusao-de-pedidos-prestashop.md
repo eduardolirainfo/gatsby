@@ -5,9 +5,7 @@ tags: ["Prestashop"]
 categories: presta
 background: "#ff0076"
 description: "Como excluir pedidos no Prestashop"
-author:
-  twitter: "dudulira"
-  name: "Eduardo Lira"
+author:  "Eduardo Lira"
 ---
 
 Esta dica pode ser útil para exclusão de pedidos que não foram concluídos, antigos e de teste.

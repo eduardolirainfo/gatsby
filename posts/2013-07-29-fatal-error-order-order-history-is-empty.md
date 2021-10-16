@@ -5,9 +5,7 @@ tags: ["Prestashop"]
 categories: presta
 background: "#ff0076"
 description: "Erro no status de pagamento Prestashop"
-author:
-  twitter: "dudulira"
-  name: "Eduardo Lira"
+author: "Eduardo Lira"
 ---
 
 A mensagem de erro abaixo pode aparecer ao finalizar compras ou alterar ordens na loja Prestashop.

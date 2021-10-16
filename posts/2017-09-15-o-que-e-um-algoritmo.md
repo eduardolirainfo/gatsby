@@ -6,9 +6,7 @@ draft: false
 description: "O que é um algoritmo?"
 categories: dev
 image: ""
-author:
-  twitter: "dudulira"
-  name: "Eduardo Lira"
+author: "Eduardo Lira"
 ---
 
 Antes do seu computador executar uma tarefa ele recebe um algoritmo de instruções sobre o que deve ser feito.

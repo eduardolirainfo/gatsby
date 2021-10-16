@@ -3,12 +3,10 @@ title: "Mudar nome da categoria padrão"
 date: 2015-11-19 14:04:27 Z
 tags: ["Prestashop"]
 categories: presta
-background: #ff0076
+background: "#ff0076"
 image: "/static/images/"
 description: "Como mudar o nome da categoria padrão na Prestashop"
-author:
-  twitter: "dudulira"
-  name: "Eduardo Lira"
+author: "Eduardo Lira"
 ---
 
 Não é possível alterar esta informação por meio da administração (Back Office) da Loja.

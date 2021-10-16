@@ -6,9 +6,7 @@ description: 'Um programa é uma sequência de instruções que especifica como 
 categories: dev
 background: "#637a91"
 image: ""
-author:
-  twitter: "dudulira"
-  name: "Eduardo Lira"
+author: "Eduardo Lira"
 ---
 
 ## Sequência de instruções

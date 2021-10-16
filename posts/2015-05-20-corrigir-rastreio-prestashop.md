@@ -6,9 +6,7 @@ image: "/static/images/"
 categories: presta
 background: "#ff0076"
 description: "Vamos corrigir um bug da Prestashop, que não exibe o campo para preencher o código de rastreio"
-author:
-  twitter: "dudulira"
-  name: "Eduardo Lira"
+author:  "Eduardo Lira"
 ---
 
 Quando alteramos o status do produto para **Postado** na [Prestashop] o correto é que apareça um campo para preenchermos com o código de rastreio fornecido pelos correios (Edição da ordem de envio na aba de **pedidos dos clientes**).

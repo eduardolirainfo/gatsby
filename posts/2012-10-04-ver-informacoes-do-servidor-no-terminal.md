@@ -4,9 +4,7 @@ date: "2012-10-04"
 tags: ["PHP"]
 description: "Veja informações do servidor por meio do terminal"
 categories: dev
-author:
-  twitter: "dudulira"
-  name: "Eduardo Lira"
+author: "Eduardo Lira"
 ---
 
 Durante um bom tempo utilizei um arquivo .php com a função phpinfo() para visualizar configurações do servidor apache, utilizado pela maioria dos servidores.

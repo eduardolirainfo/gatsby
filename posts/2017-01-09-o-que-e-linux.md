@@ -3,9 +3,7 @@ title: "#1 - O que é Linux?"
 date: 2017-01-09 00:00:00 Z
 tags: ["Linux"]
 description: "O que é Linux?"
-author:
-  twitter: "dudulira"
-  name: "Eduardo Lira"
+author:  "Eduardo Lira"
 ---
 
 Caros amigos, a ideia aqui é criar uma série de artigos bem resumidos, para uma boa compreensão do que é **Linux**. Conhecer a história pode fazer você se apaixonar. Utilizá-lo pode te dar liberdade, e o melhor, aumentar sua **produtividade**. Então venha comigo!

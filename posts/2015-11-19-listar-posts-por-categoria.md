@@ -4,11 +4,9 @@ date: 2015-11-19 14:04:27 Z
 tags: ["Wordpress"]
 image: "/static/images"
 categories: Wp
-background: #117ac9
+background: "#117ac9"
 description: "Listar posts por categoria"
-author:
-  twitter: "dudulira"
-  name: "Eduardo Lira"
+author:  "Eduardo Lira"
 ---
 
 Segue uma consulta que ajuda no entendimento da ligação entre tabelas WordPress e dependendo do caso, pode ser muito útil listar posts por categoria via sql.

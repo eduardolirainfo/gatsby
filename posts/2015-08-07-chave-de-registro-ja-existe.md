@@ -5,9 +5,7 @@ tags: ["Magento"]
 categories: Mag
 background: "#f68d2e"
 description: "Vamos corrigir este erro que ocorre geralmente após a migração da loja Magento"
-author:
-twitter: "dudulira"
-name: "Eduardo Lira"
+author: "Eduardo Lira"
 ---
 
 A mensagem **Mage registry key “\_resource_helper/core” already exists** pode ser exibida como um erro em seu acesso após desenvolver sua loja Magento localmente e enviá-la para o servidor de hospedagem.
