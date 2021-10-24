@@ -5,7 +5,7 @@ tags: ["Prestashop"]
 image: "/static/images/"
 description: "Vamos aprender a exibir os erros por trás da tela branca na Prestashop"
 categories: presta
-background: #ff0076
+background: "#ff0076"
 author:  "Eduardo Lira"
 ---
 

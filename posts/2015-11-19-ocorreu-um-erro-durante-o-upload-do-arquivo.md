@@ -4,7 +4,7 @@ date: 2015-11-19 14:04:27 Z
 tags: ["Prestashop"]
 image: "/static/images/"
 categories: presta
-background: #ff0076
+background: "#ff0076"
 description: "Ocorreu um erro durante o upload do arquivo"
 ---
 

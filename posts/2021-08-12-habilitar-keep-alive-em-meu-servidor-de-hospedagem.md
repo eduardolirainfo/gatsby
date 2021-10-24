@@ -1,9 +1,9 @@
 ---
 title: "Habilitar Keep-Alive em meu servidor de hospedagem"
+date: "2012-09-23 11:17:09"
 description: "De uma forma assustadora ao habilitar o Keep-alive através do arquivo .htaccess no servidor Apache Linux, meu site foi otimizado de forma instantânea."
-date: 2012-09-23 11:17:09
-categories: misc
-background: "#7AAB13"
+categories: DevOps
+background: "#f26c6e"
 ---
 
 Um dica legal para otimizar a velocidade do seu site em um servidor Apache Linux, é habilitar o **keep-alive**. Pelo que pesquisei, a ativação do **keep-alive** informa ao navegador do visitante para estabelecer uma conexão TCP uma vez, em vez de várias vezes. Isso acelera o seu site porque o navegador do seu visitante precisa abrir apenas uma conexão HTTP persistente em vez de estabelecer várias conexões para cada arquivo carregado pela página.

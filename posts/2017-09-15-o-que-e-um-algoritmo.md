@@ -2,9 +2,9 @@
 title: "#2 - O que é um algoritmo?"
 date: "2017-09-15"
 tags: ["Desenvolvimento"]
-draft: false
 description: "O que é um algoritmo?"
 categories: dev
+background: "#637a91"
 image: ""
 author: "Eduardo Lira"
 ---

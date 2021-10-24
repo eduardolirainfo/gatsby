@@ -4,6 +4,7 @@ date: "2012-10-04"
 tags: ["PHP"]
 description: "Veja informações do servidor por meio do terminal"
 categories: dev
+background: "#637a91"
 author: "Eduardo Lira"
 ---
 

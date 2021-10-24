@@ -2,6 +2,8 @@
 title: "#1 - O que é Linux?"
 date: 2017-01-09 00:00:00 Z
 tags: ["Linux"]
+categories: DevOps
+background: "#f26c6e"
 description: "O que é Linux?"
 author:  "Eduardo Lira"
 ---

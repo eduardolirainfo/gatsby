@@ -4,6 +4,7 @@ date: 2016-11-04 02:11:59 Z
 tags: ["Produtividade"]
 description: "Por que você precisa saber o que é Scrum?"
 categories: dev
+background: "#637a91"
 author: "Eduardo Lira"
 ---
 

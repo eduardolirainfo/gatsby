@@ -5,6 +5,7 @@ tags: ["Joomla"]
 image: "/static/images/"
 description: Corrigindo erro de envio de e-mails em versões antigas do Joomla
 categories: dev
+background: "#637a91"
 author:  "Eduardo Lira"
 ---
 

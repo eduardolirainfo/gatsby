@@ -3,7 +3,7 @@ title: "Mage registry key already exists"
 date: 2015-10-22 14:26:34 Z
 tags: ["Magento"]
 categories: Mag
-background: #f68d2e
+background: "#f68d2e"
 image: "/static/images/"
 description: "Vamos corrigir um erro comum após a migração da loja Magento de servidor ou diretório"
 author: "Eduardo Lira"

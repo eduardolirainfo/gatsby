@@ -5,6 +5,7 @@ tags: ["Joomla"]
 image: "/static/images/"
 description: "Vamos aprender a corrigir este erro de depreciação de script na passagem de paramêtros Joomla"
 categories: dev
+background: "#637a91"
 author: "Eduardo Lira"
 ---
 

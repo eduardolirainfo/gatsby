@@ -5,7 +5,7 @@ tags: ["Prestashop"]
 image: "/static/images/"
 description: "Como corrigir este erro que ocorre ao tentar criar um novo usuário na loja Prestashop"
 categories: presta
-background: #ff0076
+background: "#ff0076"
 author: "Eduardo Lira"
 ---
 
