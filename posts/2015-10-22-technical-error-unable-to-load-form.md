@@ -17,7 +17,7 @@ Então, se você é o administrador de uma loja Prestashop, tente criar uma nova
 
 O problema é que o módulo de autenticação não redireciona corretamente para onde deveria, devido a uma falha no Ajax. A solução é modificar um arquivo de modelo. Relaxa, que será fácil realizar os próximos passos.
 
-Conecte-se via FTP no servidor da loja e navegue até a pasta do tema que utiliza na Prestashop. Por exemplo, se temos o tema padrão, devemos seguir o caminho **_/themes/default_**. Uma vez neste caminho, vamos abrir um editor de texto (note que , por vezes, esta extensão de arquivo está associada com PhotoShop ) o arquivo authentication.tpl. Então, configure para abrir com um editor de textos em seu computador.
+Conecte-se via FTP no servidor da loja e navegue até a pasta do tema que utiliza na Prestashop. Por exemplo, se temos o tema padrão, devemos seguir o caminho `_/themes/default_`. Uma vez neste caminho, vamos abrir um editor de texto (note que , por vezes, esta extensão de arquivo está associada com PhotoShop ) o arquivo authentication.tpl. Então, configure para abrir com um editor de textos em seu computador.
 
 No arquivo altere a linha com o seguinte conteúdo:
 

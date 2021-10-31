@@ -35,10 +35,10 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
-  const blogPost = path.resolve('./src/templates/blog-post.js')
-  const blogList = path.resolve('./src/templates/blog-list.js')
-  const tagTemplate = path.resolve('./src/templates/tags.js')
-  const catTemplate = path.resolve('./src/templates/categories.js')
+  const blogPost = path.resolve('./src/templates/blog-post.tsx')
+  const blogList = path.resolve('./src/templates/blog-list.tsx')
+  const tagTemplate = path.resolve('./src/templates/tags.tsx')
+  const catTemplate = path.resolve('./src/templates/categories.tsx')
 
   return graphql(
     `

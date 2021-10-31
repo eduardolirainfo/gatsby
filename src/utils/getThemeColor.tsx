@@ -1,3 +1,7 @@
+
+declare let window: any;
+
+
 const getThemeColor = () => {
   const theme = typeof window !== 'undefined' && window.__theme
 

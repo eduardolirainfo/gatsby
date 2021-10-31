@@ -68,10 +68,10 @@ const BlogPostTemplate = props => {
                 )
               })}
             </div>
-            )
+          )
           : (
             <div />
-            )}
+          )}
       </S.ItemTags>
       <RecommendedPosts next={next} previous={previous} />
       <Comments url={post.fields.slug} title={post.frontmatter.title} />

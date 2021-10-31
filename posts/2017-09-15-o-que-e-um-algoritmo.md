@@ -5,7 +5,6 @@ tags: ["Desenvolvimento"]
 description: "O que é um algoritmo?"
 categories: dev
 background: "#637a91"
-image: ""
 author: "Eduardo Lira"
 ---
 

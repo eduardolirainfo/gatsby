@@ -1,11 +1,17 @@
 require('dotenv').config({ path: '.env' })
 const path = require('path')
 
-const queries = require('./src/utils/algolia_queries')
+const queries = path.resolve('./src/utils/algolia_queries')
 
 const pluginConfig = [
   'gatsby-plugin-advanced-sitemap',
   'gatsby-plugin-twitter',
+  {
+    resolve: 'gatsby-plugin-offline',
+    options: {
+      precachePages: ['/*']
+    }
+  },
   'gatsby-plugin-react-helmet',
   {
     resolve: 'gatsby-plugin-robots-txt',
@@ -15,6 +21,7 @@ const pluginConfig = [
       policy: [{ userAgent: '*', allow: '/' }]
     }
   },
+  'gatsby-plugin-typescript',
   {
     resolve: 'gatsby-plugin-react-helmet-canonical-urls',
     options: {
@@ -133,12 +140,6 @@ const pluginConfig = [
       theme_color: '#200526',
       display: 'minimal-ui',
       icon: 'src/images/ed-icon.png'
-    }
-  },
-  {
-    resolve: 'gatsby-plugin-offline',
-    options: {
-      precachePages: ['/*']
     }
   },
 

@@ -120,7 +120,7 @@ export const MainContent = styled.section`
   blockquote:before {
     content: "\\201C";
     position: absolute;
-    top: 0em;
+    top: -0.1em;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 3rem;
@@ -129,7 +129,7 @@ export const MainContent = styled.section`
     color: var(--highlight);
     font: 6em/1.08em "PT Sans", sans-serif;
     text-align: center;
-    box-shadow: inset -5px 5px 0px 0px var(--highlight);
+    /* box-shadow: inset -5px 5px 0px 0px var(--highlight); */
     border-radius: 10%;
   }
 
