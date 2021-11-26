@@ -66,7 +66,7 @@ const GlobalStyles = createGlobalStyle`
     --postColor: #fff;
     --postDescription: #8b9493;
     --highlight:#02d7f2;
-    --mediumBackground: #1e1935;
+    --mediumBackground: #161625;
     --background: #1e1935;
     --white: #fff;
     --black: #050A0E;
@@ -85,18 +85,18 @@ const GlobalStyles = createGlobalStyle`
     --colorMenuItem: #fed33f;
     --bgMenuBar: #1e181e;
     --animationText: textShadow 1.6s infinite;
-    --animationBox: boxShadow 1.6s infinite;
+    /* --animationBox: boxShadow 1.6s infinite; */
     --textShadowConvert: -9px -6px 40px currentColor;
     --bordersSidebar: var(--highlight);
     --borderCard : solid 1px;
-    --bgSidebar: linear-gradient(183deg, rgba(141,35,46,0.5) 1%, rgba(141,35,46,0) 60%),
+    /* --bgSidebar: linear-gradient(183deg, rgba(141,35,46,0.5) 1%, rgba(141,35,46,0) 60%),
               linear-gradient(250deg, rgba(141,35,46,0) 21%, rgba(141,35,46,0.2) 20%, rgba(11,35,47,0.2) 50%),
               linear-gradient(250deg, rgba(141,35,46,0) 23%, rgba(141,35,46,0.2) 20%, rgba(11,35,47,0.2) 50%),
               linear-gradient(250deg, rgba(141,35,46,0) 25%, rgba(141,35,46,0.2) 20%, rgba(11,35,47,0.2) 50%),
-              repeating-linear-gradient(179deg, rgba(255,255,255,0.1), rgba(255,255,255,0.1) 3px, rgba(0,0,0,0.1) 3px, rgba(0,0,0,0.1) 5px);
+              repeating-linear-gradient(179deg, rgba(255,255,255,0.1), rgba(255,255,255,0.1) 3px, rgba(0,0,0,0.1) 3px, rgba(0,0,0,0.1) 5px); */
      --catHl: 0 0 5px;
     --radiusTheme: 30% 70% 70% 30%/30% 30% 70% 70%;
-    --animaTag: morphing 3s infinite;
+    /* --animaTag: morphing 3s infinite; */
     --linearPre: linear-gradient( 60deg, var(--background) 0%, var(--mediumBackground) 180% );
     --cardHover: none;
     --bgimage: linear-gradient(45deg,rgba(0,0,0,0.25) 25%,transparent 25%,transparent 50%,rgba(0,0,0,0.25) 50%,rgba(0,0,0,0.25) 75%,transparent 75%,transparent);
@@ -135,13 +135,13 @@ body.light {
      --boxPostItem : 0 8px 17px 0 rgba(0, 0, 0, 0.2),
       0 6px 20px 0 rgba(0, 0, 0, 0.19);
     --animationText: none;
-    --animationBox: none;
+    /* --animationBox: none; */
     --borderCard : solid 0px;
-    --bgSidebar: linear-gradient(183deg, rgba(255,255,255,0.5) 1%, rgba(255,255,255,0) 60%),
+    /* --bgSidebar: linear-gradient(183deg, rgba(255,255,255,0.5) 1%, rgba(255,255,255,0) 60%),
               linear-gradient(250deg, rgba(255,255,255,0) 21%, rgba(255,255,255,0.2) 20%, rgba(255,255,255,0.2) 50%),
               linear-gradient(250deg, rgba(255,255,255,0) 23%, rgba(255,255,255,0.2) 20%, rgba(255,255,255,0.2) 50%),
               linear-gradient(250deg, rgba(255,255,255,0) 25%, rgba(255,255,255,0.2) 20%, rgba(255,255,255,0.2) 50%),
-              repeating-linear-gradient(179deg, rgba(255,255,255,0.1), rgba(255,255,255,0.1) 3px, rgba(0,0,0,0.1) 3px, rgba(0,0,0,0.1) 5px);
+              repeating-linear-gradient(179deg, rgba(255,255,255,0.1), rgba(255,255,255,0.1) 3px, rgba(0,0,0,0.1) 3px, rgba(0,0,0,0.1) 5px); */
     --catHl: 0 0 2px;
     --linearPre: linear-gradient( 45deg,var(--postColor) 0%,var(--postDescription) 30% );
     --cardHover: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%238e75b6' fill-opacity='0.4' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
@@ -226,7 +226,7 @@ pre[class*="language-"] {
   }
 }
 
-@keyframes boxShadow {
+/* @keyframes boxShadow {
   0% {
     box-shadow: 0.4389924193300864px 0 1px rgba(0,30,255,0.5), -0.4389924193300864px 0 1px rgba(255,0,80,0.3), 0 0 3px;
   }
@@ -290,7 +290,7 @@ pre[class*="language-"] {
   100% {
     box-shadow: 2.6208764473832513px 0 1px rgba(0,30,255,0.5), -2.6208764473832513px 0 1px rgba(255,0,80,0.3), 0 0 3px;
   }
-}
+} */
 
 ::-webkit-scrollbar {
     width: 12px;

@@ -83,7 +83,7 @@ export const ProfileContainer = styled.section`
     ${AvatarWrapper},
     &:active
     ${AvatarWrapper} {
-    -webkit-animation-name: bob-on-hover-float, bob-on-hover;
+    /* -webkit-animation-name: bob-on-hover-float, bob-on-hover;
     animation-name: bob-on-hover-float, bob-on-hover;
     -webkit-animation-duration: 0.3s, 1.5s;
     animation-duration: 0.3s, 1.5s;
@@ -96,7 +96,7 @@ export const ProfileContainer = styled.section`
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
     -webkit-animation-direction: normal, alternate;
-    animation-direction: normal, alternate;
+    animation-direction: normal, alternate; */
   }
 
   &:hover ${ProfileAuthor} {

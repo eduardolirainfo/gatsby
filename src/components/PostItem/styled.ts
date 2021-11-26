@@ -30,7 +30,7 @@ export const PostItemTitle = styled.h1`
     margin: 0.8rem 0;
   }
 
-  @-moz-keyframes morphing {
+  /* @-moz-keyframes morphing {
     0% {
       border-radius: 30% 70% 70% 30%/30% 30% 70% 70%;
     }
@@ -85,7 +85,7 @@ export const PostItemTitle = styled.h1`
     75% {
       border-radius: 33% 67% 58% 42%/63% 68% 32% 37%;
     }
-  }
+  } */
 `
 
 export const PostItemWrapper = styled.section`
@@ -94,6 +94,7 @@ export const PostItemWrapper = styled.section`
   padding: 2rem 3rem;
   width: 100%;
   transition: ${transitions.ALL};
+  background: var(--background);
 
   &:not(.disableCard) {
     body#card & {
@@ -172,7 +173,7 @@ export const PostItemCat = styled.div`
   box-shadow: var(--catHl)
     ${(props) => (props.background ? props.background : ' var(--highlight)')};
   &:hover {
-    animation: var(--animaTag);
+    /* animation: var(--animaTag); */
     overflow: hidden;
     transform: rotate(360dg);
   }
@@ -220,7 +221,7 @@ export const PostItemLink = styled(AniLink)`
     props.background ? props.background : ' var(--highlight)'};
   }
   &:hover ${PostItemCat} {
-    animation: var(--animationBox);
+    /* animation: var(--animationBox); */
   }
   &:hover h1 {
     color: ${(props) =>

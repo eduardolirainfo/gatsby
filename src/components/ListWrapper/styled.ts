@@ -5,7 +5,7 @@ import transitions from '../../styles/transitions'
 
 export const ListWrapper = styled.section`
   body#card & {
-    background-color: var(--background);
+    background-color: var(--mediumBackground);
     border-bottom: 1px solid var(--borders);
     display: grid;
     grid-area: card;
