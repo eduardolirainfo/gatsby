@@ -8,8 +8,8 @@ import transitions from '../../styles/transitions'
 export const MenuBarWrapper = styled.aside`
   align-items: center;
   background: var(--bgMenuBar);
-  background-image: var(--bgimage);
-  border-left: 1px solid var(--bordersMenuBar);
+  /* background-image: var(--bgimage); */
+  /* border-left: 1px solid var(--bordersMenuBar); */
   display: flex;
   flex-direction: column;
   height: 100vh;

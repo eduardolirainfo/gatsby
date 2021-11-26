@@ -5,7 +5,9 @@ import transitions from '../../styles/transitions'
 
 export const SidebarContainer = styled.aside`
   align-items: center;
-  border-right: 1px solid var(--bordersSidebar);
+  /* border-right: 1px solid var(--bordersSidebar); */
+  box-shadow: 0 4px 9px 0 rgba(0, 0, 0, 0.2),
+      0 3px 10px 0 rgba(0, 0, 0, 0.19);
   background: var(--mediumBackground);
   display: flex;
   flex-direction: column;
@@ -15,11 +17,11 @@ export const SidebarContainer = styled.aside`
   text-align: center;
   width: 22rem;
   /* transition: ${transitions.ALL}; */
-  background: var(--bgSidebar);
-  background-repeat: repeat, repeat, repeat, repeat, repeat;
+  /* background: var(--bgSidebar); */
+  /* background-repeat: repeat, repeat, repeat, repeat, repeat;
   background-attachment: scroll, scroll, scroll, scroll, scroll;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-attachment: fixed; */
   background-color: var(--mediumBackground);
   z-index: 2;
   /*${media.lessThan('large')`

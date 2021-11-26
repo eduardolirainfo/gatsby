@@ -183,7 +183,7 @@ export const PostItemCat = styled.div`
     width: 5px;
     height: 5px;
     background-color: ${(props) =>
-      props.background ? props.background : ' var(--background)'};
+    props.background ? props.background : ' var(--background)'};
     // border: none;
     border-radius: 50%;
     cursor: pointer;
@@ -213,18 +213,18 @@ export const PostItemLink = styled(AniLink)`
   }
   &:hover p {
     color: ${(props) =>
-      props.background ? props.background : ' var(--highlight)'};
+    props.background ? props.background : ' var(--highlight)'};
   }
   &:hover time {
     color: ${(props) =>
-      props.background ? props.background : ' var(--highlight)'};
+    props.background ? props.background : ' var(--highlight)'};
   }
   &:hover ${PostItemCat} {
     animation: var(--animationBox);
   }
   &:hover h1 {
     color: ${(props) =>
-      props.background ? props.background : ' var(--highlight)'};
+    props.background ? props.background : ' var(--highlight)'};
   }
   & ul {
     z-index: 99;
@@ -256,7 +256,7 @@ export const PostItemLink = styled(AniLink)`
   margin: 0.1rem 0 1rem 0;
   transition: ${transitions.ALL};
   &:hover {
-    background-image: var(--cardHover);    
+    background-image: var(--cardHover);
     box-shadow: none;
   }
   &:hover i {

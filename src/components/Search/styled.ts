@@ -40,9 +40,6 @@ export const SearchWrapper = styled.section`
 
   body#card & {
     .ais-Hits-list {
-      /* background-color: var(--borders);
-      border-bottom: 1px solid var(--borders);
-      border-top: 1px solid var(--borders); */
       display: grid;
       grid-area: card;
       grid-gap: 1px;

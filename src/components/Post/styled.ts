@@ -46,7 +46,7 @@ export const MainContent = styled.section`
   .button-post {
     color: var(--postColor);
     font-size: 1.3rem;
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1.9;
     letter-spacing: 0.069rem;
     padding: 0 1.4rem;
@@ -225,10 +225,10 @@ export const MainContent = styled.section`
     border-bottom: 1px dashed var(--highlight);
     color: var(--highlight);
     text-decoration: none;
-    transition: ${transitions.ALL}; 
+    transition: ${transitions.ALL};
     svg {
       color: var(--postColor); */
-    } 
+    }
     &.anchor{
       color: var(--highlight);
       fill: var(--highlight);
@@ -321,7 +321,6 @@ export const PostWrapper = styled.section`
 
   &:not(.disableCard) {
     body#card & {
-      // border: none;
       padding: 2rem 1rem;
       flex-direction: column;
       justify-content: center;
@@ -467,7 +466,7 @@ export const TagPost = styled(AniLink)`
   position: relative;
   margin: 0 10px 10px 0;
   text-decoration: none;
-  transition: ${transitions.DEFAULT};  
+  transition: ${transitions.DEFAULT};
 `
 export const BtnLabel = styled.span`
   height: 1rem;
@@ -504,7 +503,7 @@ export const BtnContent = styled.span`
   clip-path: polygon(92% 0, 100% 25%, 100% 100%, 8% 100%, 0% 75%, 0 0);
   color: var(--mediumBackground);
   border-right: 0.3rem solid var(--highlight);
-  transition: ${transitions.ALL};  
+  transition: ${transitions.ALL};
   &:hover{
     transform: scale(0.96);
   }
