@@ -5,7 +5,6 @@ const queries = path.resolve('./src/utils/algolia_queries')
 
 const pluginConfig = [
   'gatsby-plugin-advanced-sitemap',
-  'gatsby-plugin-twitter',
   {
     resolve: 'gatsby-plugin-offline',
     options: {
