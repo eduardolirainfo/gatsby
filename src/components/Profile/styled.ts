@@ -83,20 +83,6 @@ export const ProfileContainer = styled.section`
     ${AvatarWrapper},
     &:active
     ${AvatarWrapper} {
-    /* -webkit-animation-name: bob-on-hover-float, bob-on-hover;
-    animation-name: bob-on-hover-float, bob-on-hover;
-    -webkit-animation-duration: 0.3s, 1.5s;
-    animation-duration: 0.3s, 1.5s;
-    -webkit-animation-delay: 0s, 0.3s;
-    animation-delay: 0s, 0.3s;
-    -webkit-animation-timing-function: ease-out, ease-in-out;
-    animation-timing-function: ease-out, ease-in-out;
-    -webkit-animation-iteration-count: 1, infinite;
-    animation-iteration-count: 1, infinite;
-    -webkit-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
-    -webkit-animation-direction: normal, alternate;
-    animation-direction: normal, alternate; */
   }
 
   &:hover ${ProfileAuthor} {

@@ -6,12 +6,23 @@ const queries = path.resolve('./src/utils/algolia_queries')
 const pluginConfig = [
   'gatsby-plugin-advanced-sitemap',
   {
-    resolve: 'gatsby-plugin-offline',
+    resolve: 'gatsby-plugin-manifest',
     options: {
-      precachePages: ['/*']
+      name: 'Eduardo Lira',
+      short_name: 'dudulira',
+      start_url: '/',
+      background_color: '#4D3153',
+      theme_color: '#200526',
+      display: 'minimal-ui',
+      icon: 'src/images/ed-icon.png'
     }
   },
-  'gatsby-plugin-react-helmet',
+  {
+    resolve: 'gatsby-plugin-offline',
+    options: {
+      precachePages: ['/sobre/', '/tags/*', '/categorias/*', '/*']
+    }
+  },
   {
     resolve: 'gatsby-plugin-robots-txt',
     options: {
@@ -129,19 +140,6 @@ const pluginConfig = [
       }
     }
   },
-  {
-    resolve: 'gatsby-plugin-manifest',
-    options: {
-      name: 'Eduardo Lira',
-      short_name: 'dudulira',
-      start_url: '/',
-      background_color: '#4D3153',
-      theme_color: '#200526',
-      display: 'minimal-ui',
-      icon: 'src/images/ed-icon.png'
-    }
-  },
-
   'gatsby-plugin-sitemap'
 ]
 
@@ -215,7 +213,7 @@ if (process.env.CONTEXT === 'production') {
     resolve: 'gatsby-plugin-google-analytics',
     options: {
       head: false,
-      trackingId: 'UA-63318724-1'
+      trackingId: process.env.GOOGLE_ANALYTICS_ID
     }
   }
 

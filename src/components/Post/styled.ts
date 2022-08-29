@@ -274,15 +274,17 @@ export const PostTitle = styled.h1`
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 900;
-  font-size: 4rem;
+  font-size: calc(1.5rem + 3vw);
   letter-spacing: -0.2rem;
   line-height: 1.25;
   transition: ${transitions.ALL};
   &:hover {
     text-shadow:3px 3px var(--mediumBackground);
   }
+
+
   ${media.lessThan('large')`
-    font-size: 2.25rem;
+   font-size: calc(1.5rem + 3vw);
     line-height: 1.1;
     padding: 0 1rem;
     letter-spacing: 0.069rem;
@@ -303,7 +305,7 @@ export const PostTitleCat = styled.h1`
   );
   background-size: 400% 400%;
   animation: animateGradient 5s ease infinite;
-
+ 
   ${media.lessThan('large')`
     font-size: 1.8rem;
     line-height: 1.1;
@@ -451,7 +453,7 @@ export const TagLink = styled(AniLink)`
   color: var(--postColor);
   display: inline-block;
   line-height: 26px;
-  padding: 0 1rem 0 1rem;
+  /* padding: 0 1rem 0 1rem; */
   position: relative;
   margin: 0 10px 10px 0;
   text-decoration: none;

@@ -203,6 +203,16 @@ export const PostItemCat = styled.div`
     margin-bottom: 1.5rem;
   }
 `
+
+export const PostItemDescription = styled.p`
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.2;
+  color: var(--postDescription);
+  font-family: Kalam, sans-serif;
+
+`
+
 export const PostItemLink = styled(AniLink)`
   position: relative;
   overflow: hidden;
@@ -221,8 +231,9 @@ export const PostItemLink = styled(AniLink)`
     props.background ? props.background : ' var(--highlight)'};
   }
   &:hover ${PostItemCat} {
-    /* animation: var(--animationBox); */
+    /* animation: var(--animationBox);  */
   }
+
   &:hover h1 {
     color: ${(props) =>
     props.background ? props.background : ' var(--highlight)'};
@@ -370,13 +381,6 @@ export const PostItemDate = styled.time`
   color: var(--textsMetaDate);
 `
 
-export const PostItemDescription = styled.p`
-  font-size: 1rem;
-  font-weight: 300;
-  line-height: 1.2;
-  color: var(--postDescription);
-  font-family: Kalam, sans-serif;
-`
 export const ItemTags = styled.p`
   font-size: 1rem;
   font-weight: 300;

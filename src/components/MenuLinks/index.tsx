@@ -6,12 +6,16 @@ import * as S from './styled'
 
 import getThemeColor from '../../utils/getThemeColor'
 
-const MenuLinks = () => {
+const MenuLinks = ({ setIsMenuOpen, isMenuOpen }) => {
+  const menuLinkClick = () => {
+    setIsMenuOpen(!isMenuOpen)
+  }
+
   return (
     <S.MenuLinksWrapper>
       <S.MenuLinksList>
         {links.map((link, i) => (
-          <S.MenuLinksItem key={i}>
+          <S.MenuLinksItem key={i} onClick={menuLinkClick}>
             <AniLink
               swipe
               top='exit'

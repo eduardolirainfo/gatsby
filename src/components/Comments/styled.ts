@@ -31,9 +31,6 @@ export const CommentsTitle = styled.h2`
   margin: 0 auto;
   color: var(--postTitle) !important;
   text-transform: uppercase;
-  font-family: -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto",
-    "Helvetica Neue", "Arial", "Noto Sans", sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   padding-bottom: 2rem;
 
   ${media.lessThan('large')`

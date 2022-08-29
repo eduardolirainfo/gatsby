@@ -5,18 +5,25 @@ import transitions from '../../styles/transitions'
 
 export const MenuLinksWrapper = styled.nav`
   ${media.lessThan('large')`
-    display: none;
+  margin: auto;
   `}
 `
 
 export const MenuLinksList = styled.ul`
   font-size: 1.2rem;
   font-weight: 300;
+  ${media.lessThan('large')`
+    font-size: 1.8rem;
+  `}
 `
 
 export const MenuLinksItem = styled.li`
   padding: 0.5rem 0;
 
+  ${media.lessThan('large')`     
+    padding: 1rem 0;
+  `}
+  
   .active {
     color: var(--highlight);
     line-height: 1.6;
@@ -35,8 +42,7 @@ export const MenuLinksItem = styled.li`
     display: inline-block;
     overflow: hidden;
     vertical-align: bottom;
-    font-family: -apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica Neue','Arial','Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';
-
+ 
     &:hover {
       color: var(--bordersMenuBar);
       -webkit-transform: skew(-10deg);
@@ -47,5 +53,22 @@ export const MenuLinksItem = styled.li`
       transition: transform 0.25s ease-out;
     }
     }
-  }
 `
+
+// export const MenuLinksItem = styled.li`
+//   padding: 0.5rem 0;
+//   ${media.lessThan('large')`
+//     padding: 1rem 0;
+//   `}
+//   .active {
+//     color: var(--highlight);
+//   }
+//   a {
+//     color: var(--texts);
+//     text-decoration: none;
+//     transition: ${transitions.COLOR};
+//     &:hover {
+//       color: var(--highlight);
+//     }
+//   }
+// `
