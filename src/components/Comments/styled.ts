@@ -3,7 +3,7 @@ import media from 'styled-media-query'
 
 export const CommentsWrapper = styled.section`
   margin: auto;
-  max-width: 70rem;
+  max-width: 64rem;
   padding: 3rem 6.4rem 3rem;
   display: grid;
 

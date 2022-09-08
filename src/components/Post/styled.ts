@@ -5,8 +5,8 @@ import transitions from '../../styles/transitions'
 
 export const MainContent = styled.section`
   margin: auto;
-  max-width: 70rem;
-  padding: 2rem 5rem;
+  max-width: 64rem;
+  padding: 2rem;
 
   &::before{
     content: "";
@@ -251,8 +251,8 @@ export const MainContent = styled.section`
 export const PostHeader = styled.header`
   color: var(--postColor);
   margin: auto;
-  max-width: 70rem;
-  padding: 5rem 5rem 0px;
+  max-width: 64rem;
+  padding: 2rem;
   transform-style: preserve-3d;
 
   ${media.lessThan('large')`
@@ -277,9 +277,11 @@ export const PostTitle = styled.h1`
   font-size: calc(1.5rem + 3vw);
   letter-spacing: -0.2rem;
   line-height: 1.25;
-  transition: ${transitions.ALL};
+  transition: 1s ease-in-out;
+  transform: var(--perspective);
   &:hover {
-    text-shadow:3px 3px var(--mediumBackground);
+    
+  /* text-shadow: 1px 1px var(--textsMetaDate), 2px 2px var(--textsMetaDate), 3px 3px var(--textsMetaDate), 4px 4px var(--textsMetaDate), 5px 5px var(--textsMetaDate), 6px 6px var(--textsMetaDate), 7px 7px var(--textsMetaDate), 8px 8px var(--textsMetaDate), 9px 9px var(--textsMetaDate), 10px 10px var(--textsMetaDate), 11px 11px var(--textsMetaDate), 12px 12px var(--textsMetaDate), 13px 13px var(--textsMetaDate), 14px 14px var(--textsMetaDate), 15px 15px var(--textsMetaDate), 16px 16px var(--textsMetaDate), 17px 17px var(--textsMetaDate), 18px 18px var(--textsMetaDate), 19px 19px rgba(41, 63, 15, 0.24), 20px 20px rgba(41, 63, 15, 0.2), 21px 21px var(--textsMetaDate), 22px 22px var(--textsMetaDate), 23px 23px rgba(41, 63, 15, 0.08), 24px 24px rgba(41, 63, 15, 0.04), 25px 25px rgba(41, 63, 15, 0), 26px 26px rgba(41, 63, 15, 0), 27px 27px rgba(41, 63, 15, 0), 28px 28px rgba(41, 63, 15, 0), 29px 29px rgba(41, 63, 15, 0), 30px 30px rgba(41, 63, 15, 0), 31px 31px rgba(41, 63, 15, 0), 32px 32px rgba(41, 63, 15, 0), 33px 33px rgba(41, 63, 15, 0), 34px 34px rgba(41, 63, 15, 0), 35px 35px rgba(41, 63, 15, 0), 36px 36px rgba(41, 63, 15, 0), 37px 37px rgba(41, 63, 15, 0), 38px 38px rgba(41, 63, 15, 0), 39px 39px rgba(41, 63, 15, 0), 40px 40px rgba(41, 63, 15, 0); */
   }
 
 
@@ -433,11 +435,12 @@ export const PostDate = styled.p`
 
 export const ItemTags = styled.ul`
   list-style: none;
-  margin: 0 0 4rem;
+  margin: 0 auto;
   overflow: hidden;
-  padding: 0 4rem;
+  padding: 2rem;
   display: flex;
   flex-direction: row;
+  max-width: 64rem;
   /* transition: ${transitions.COLOR}; */
   /*
   & li {

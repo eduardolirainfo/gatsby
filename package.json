@@ -26,6 +26,7 @@
   "dependencies": {
     "@styled-icons/boxicons-regular": "^10.38.0",
     "@styled-icons/material-rounded": "^10.34.0",
+    "clsx": "^1.2.1",
     "cross-env": "^7.0.3",
     "dotenv": "^16.0.1",
     "gatsby": "^4.21.1",

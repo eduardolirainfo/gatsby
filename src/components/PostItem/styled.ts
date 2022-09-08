@@ -173,10 +173,10 @@ export const PostItemCat = styled.div`
   box-shadow: var(--catHl)
     ${(props) => (props.background ? props.background : ' var(--highlight)')};
   &:hover {
-    /* animation: var(--animaTag); */
     overflow: hidden;
     transform: rotate(360dg);
   }
+
   span {
     position: absolute;
     right: 14px;

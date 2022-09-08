@@ -10,6 +10,7 @@ const pluginConfig = [
     options: {
       name: 'Eduardo Lira',
       short_name: 'dudulira',
+      description: 'Um blog sobre programação e outras coisas legais.',
       start_url: '/',
       background_color: '#4D3153',
       theme_color: '#200526',
@@ -17,12 +18,7 @@ const pluginConfig = [
       icon: 'src/images/ed-icon.png'
     }
   },
-  {
-    resolve: 'gatsby-plugin-offline',
-    options: {
-      precachePages: ['/sobre/', '/tags/*', '/categorias/*', '/*']
-    }
-  },
+  'gatsby-plugin-offline',
   {
     resolve: 'gatsby-plugin-robots-txt',
     options: {

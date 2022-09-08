@@ -28,7 +28,7 @@ export const SocialLinksItem = styled.li`
 `
 
 export const SocialLinksLink = styled.a`
-  color: var(--texts);
+  color: var(--postTitle) !important;
   text-decoration: none;
   transition: ${transitions.COLOR};
   &:hover {

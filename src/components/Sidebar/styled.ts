@@ -41,7 +41,7 @@ export const SidebarContainer = styled.aside`
     height: 100vh;
     position: fixed;
     text-align: center;
-    width: 22rem;
+    width: 23.40rem;
     background-color: var(--mediumBackground);
     z-index: 2;
     padding: 2rem;

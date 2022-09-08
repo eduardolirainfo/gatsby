@@ -61,6 +61,19 @@ const GlobalStyles = createGlobalStyle`
     height: auto;
   }
   body.dark {
+    --primary-light: #8abdff;
+    --primary: #6d5dfc;
+    --primary-dark: #5b0eeb;
+    --white: #FFFFFF;
+    --greyLight-1: #E4EBF5;
+    --greyLight-2: #c8d0e7;
+    --greyLight-3: #bec8e4;
+    --greyDark: #9baacf;
+    --bgMenu1: rgba(255, 255, 255, 0.1);
+    --bgMenu2: rgba(255, 255, 255, 0.05);
+    --bgMenu3: rgba(0, 0, 0, 0.3);
+    --bgMenu4:rgba(255, 255, 255, 0.15);
+    --bgMenuHover: linear-gradient( 45deg, #95f7d0, #63b9be, #887dc5, #d478ff, #ff94e7, #fec6c0, #fdff94, #b6f9bd );
     --texts: rgba(255,255,255,0.8);
     --textsMetaDate: #594a9d;
     --postColor: #fff;
@@ -85,27 +98,32 @@ const GlobalStyles = createGlobalStyle`
     --colorMenuItem: #fed33f;
     --bgMenuBar: #1e181e;
     --animationText: textShadow 1.6s infinite;
-    /* --animationBox: boxShadow 1.6s infinite; */
-    --textShadowConvert: -9px -6px 40px currentColor;
+     --textShadowConvert: -9px -6px 40px currentColor;
     --bordersSidebar: var(--highlight);
     --borderCard : solid 1px;
-    /* --bgSidebar: linear-gradient(183deg, rgba(141,35,46,0.5) 1%, rgba(141,35,46,0) 60%),
-              linear-gradient(250deg, rgba(141,35,46,0) 21%, rgba(141,35,46,0.2) 20%, rgba(11,35,47,0.2) 50%),
-              linear-gradient(250deg, rgba(141,35,46,0) 23%, rgba(141,35,46,0.2) 20%, rgba(11,35,47,0.2) 50%),
-              linear-gradient(250deg, rgba(141,35,46,0) 25%, rgba(141,35,46,0.2) 20%, rgba(11,35,47,0.2) 50%),
-              repeating-linear-gradient(179deg, rgba(255,255,255,0.1), rgba(255,255,255,0.1) 3px, rgba(0,0,0,0.1) 3px, rgba(0,0,0,0.1) 5px); */
      --catHl: 0 0 5px;
     --radiusTheme: 30% 70% 70% 30%/30% 30% 70% 70%;
-    /* --animaTag: morphing 3s infinite; */
-    --linearPre: linear-gradient( 60deg, var(--background) 0%, var(--mediumBackground) 180% );
+     --linearPre: linear-gradient( 60deg, var(--background) 0%, var(--mediumBackground) 180% );
     --cardHover: none;
     --bgimage: linear-gradient(45deg,rgba(0,0,0,0.25) 25%,transparent 25%,transparent 50%,rgba(0,0,0,0.25) 50%,rgba(0,0,0,0.25) 75%,transparent 75%,transparent);
-    --gradienteLink: linear-gradient(-90deg, yellow, orange)
-
-
+    --gradienteLink: linear-gradient(-90deg, yellow, orange);
+    --perspective: perspective(400px) rotateX(11deg) rotateY(-11deg);
   }
 
 body.light {
+    --primary-light: #8abdff;
+    --primary: #6d5dfc;
+    --primary-dark: #5b0eeb;
+    --white: #FFFFFF;
+    --greyLight-1: #E4EBF5;
+    --greyLight-2: #c8d0e7;
+    --greyLight-3: #bec8e4;
+    --greyDark: #9baacf;
+    --bgMenu1: rgba(255, 255, 255, 0.1);
+    --bgMenu2: rgba(255, 255, 255, 0.05);
+    --bgMenu3: rgba(0, 0, 0, 0.02);
+    --bgMenu4: rgba(255, 255, 255, 0.15);
+    --bgMenuHover: linear-gradient( 45deg, #95f7d0, #63b9be, #887dc5, #d478ff, #ff94e7, #fec6c0, #fdff94, #b6f9bd );
     --postColor:rgba(0, 0, 0, 0.84);
     --postDescription: rgba(0, 0, 0, 0.54);
     --texts: #000;
@@ -135,18 +153,12 @@ body.light {
      --boxPostItem : 0 8px 17px 0 rgba(0, 0, 0, 0.2),
       0 6px 20px 0 rgba(0, 0, 0, 0.19);
     --animationText: none;
-    /* --animationBox: none; */
-    --borderCard : solid 0px;
-    /* --bgSidebar: linear-gradient(183deg, rgba(255,255,255,0.5) 1%, rgba(255,255,255,0) 60%),
-              linear-gradient(250deg, rgba(255,255,255,0) 21%, rgba(255,255,255,0.2) 20%, rgba(255,255,255,0.2) 50%),
-              linear-gradient(250deg, rgba(255,255,255,0) 23%, rgba(255,255,255,0.2) 20%, rgba(255,255,255,0.2) 50%),
-              linear-gradient(250deg, rgba(255,255,255,0) 25%, rgba(255,255,255,0.2) 20%, rgba(255,255,255,0.2) 50%),
-              repeating-linear-gradient(179deg, rgba(255,255,255,0.1), rgba(255,255,255,0.1) 3px, rgba(0,0,0,0.1) 3px, rgba(0,0,0,0.1) 5px); */
+     --borderCard : solid 0px;
     --catHl: 0 0 2px;
     --linearPre: linear-gradient( 45deg,var(--postColor) 0%,var(--postDescription) 30% );
     --cardHover: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%238e75b6' fill-opacity='0.4' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
     --gradienteLink: linear-gradient( 45deg, #95f7d0, #63b9be, #887dc5, #d478ff, #ff94e7, #fec6c0, #fdff94, #b6f9bd );
-
+    --perspective: none;
   }
 
  :not(pre) > code[class*="language-"], pre[class*="language-"] {
@@ -159,7 +171,7 @@ pre[class*="language-"] {
     border-top: var(--highlight) 1px solid;
     border-bottom: var(--highlight) 1px solid;
 }
-
+/* 
 @keyframes textShadow {
   0% {
     text-shadow: 0.4389924193300864px 0 1px rgba(0,30,255,0.5), -0.4389924193300864px 0 1px rgba(255,0,80,0.3), 0 0 3px;
@@ -224,73 +236,8 @@ pre[class*="language-"] {
   100% {
     text-shadow: 2.6208764473832513px 0 1px rgba(0,30,255,0.5), -2.6208764473832513px 0 1px rgba(255,0,80,0.3), 0 0 3px;
   }
-}
-
-/* @keyframes boxShadow {
-  0% {
-    box-shadow: 0.4389924193300864px 0 1px rgba(0,30,255,0.5), -0.4389924193300864px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-  }
-  5% {
-    box-shadow: 2.7928974010788217px 0 1px rgba(0,30,255,0.5), -2.7928974010788217px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-  }
-  10% {
-    box-shadow: 0.02956275843481219px 0 1px rgba(0,30,255,0.5), -0.02956275843481219px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-  }
-  15% {
-    box-shadow: 0.40218538552878136px 0 1px rgba(0,30,255,0.5), -0.40218538552878136px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-  }
-  20% {
-    box-shadow: 3.4794037899852017px 0 1px rgba(0,30,255,0.5), -3.4794037899852017px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-  }
-  25% {
-    box-shadow: 1.6125630401149584px 0 1px rgba(0,30,255,0.5), -1.6125630401149584px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-  }
-  30% {
-    box-shadow: 0.7015590085143956px 0 1px rgba(0,30,255,0.5), -0.7015590085143956px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-  }
-  35% {
-    box-shadow: 3.896914047650351px 0 1px rgba(0,30,255,0.5), -3.896914047650351px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-  }
-  40% {
-    box-shadow: 3.870905614848819px 0 1px rgba(0,30,255,0.5), -3.870905614848819px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-  }
-  45% {
-    box-shadow: 2.231056963361899px 0 1px rgba(0,30,255,0.5), -2.231056963361899px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-  }
-  50% {
-    box-shadow: 0.08084290417898504px 0 1px rgba(0,30,255,0.5), -0.08084290417898504px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-  }
-  55% {
-    box-shadow: 2.3758461067427543px 0 1px rgba(0,30,255,0.5), -2.3758461067427543px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-  }
-  60% {
-    box-shadow: 2.202193051050636px 0 1px rgba(0,30,255,0.5), -2.202193051050636px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-  }
-  65% {
-    box-shadow: 2.8638780614874975px 0 1px rgba(0,30,255,0.5), -2.8638780614874975px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-  }
-  70% {
-    box-shadow: 0.48874025155497314px 0 1px rgba(0,30,255,0.5), -0.48874025155497314px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-  }
-  75% {
-    box-shadow: 1.8948491305757957px 0 1px rgba(0,30,255,0.5), -1.8948491305757957px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-  }
-  80% {
-    box-shadow: 0.0833037308038857px 0 1px rgba(0,30,255,0.5), -0.0833037308038857px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-  }
-  85% {
-    box-shadow: 0.09769827255241735px 0 1px rgba(0,30,255,0.5), -0.09769827255241735px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-  }
-  90% {
-    box-shadow: 3.443339761481782px 0 1px rgba(0,30,255,0.5), -3.443339761481782px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-  }
-  95% {
-    box-shadow: 2.1841838852799786px 0 1px rgba(0,30,255,0.5), -2.1841838852799786px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-  }
-  100% {
-    box-shadow: 2.6208764473832513px 0 1px rgba(0,30,255,0.5), -2.6208764473832513px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-  }
 } */
+
 
 ::-webkit-scrollbar {
     width: 12px;

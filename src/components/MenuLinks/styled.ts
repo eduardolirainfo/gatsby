@@ -26,33 +26,121 @@ export const MenuLinksItem = styled.li`
   
   .active {
     color: var(--highlight);
-    line-height: 1.6;
-    position: relative;
-    z-index: 0;
-    display: inline-block;
-    overflow: hidden;
-    text-decoration: none;
-    transition: ${transitions.COLOR};
+  } 
+
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  margin: 0.5rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:transparent;
+  outline:none;
+  box-shadow: 20px 38px 34px -26px hsla(0,0%,0%,.2);
+  border: solid 2px var(--bgMenu2);
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  padding: 10px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  overflow: hidden;
+  color: var(--titlePostList);
+  font-weight: 400px;
+  z-index: 1;
+  transition: ${transitions.ALL};
+  backdrop-filter: blur(15px);
+  &:hover {
+    box-shadow:2px 8px 4px -6px hsla(0,0%,0%,.3);
   }
-  a {
-    line-height: 1.6;
-    transition: ${transitions.ALL};
-    color: var(--texts);
-    text-decoration: none;
-    display: inline-block;
-    overflow: hidden;
-    vertical-align: bottom;
- 
-    &:hover {
-      color: var(--bordersMenuBar);
-      -webkit-transform: skew(-10deg);
-      transform: skew(-10deg);
-    }
-    &:hover::before {
-      transform: translateY(0);
-      transition: transform 0.25s ease-out;
-    }
-    }
+}
+&:hover a {
+  letter-spacing: 3px;
+}
+& a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to left, var(--bgMenu4), transparent);
+  transform: skewX(45deg) translate(0);
+  transition: 0.5s;
+  filter: blur(0px);
+}
+&:hover a::before {
+	transform: skewX(45deg) translate(200px);
+}
+&::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translatex(-50%);
+  /* bottom: -5px; */
+  width: 30px;
+  height: 10px;
+  background: var(--bgMenu1);
+  border-radius: 10px;
+  transition: 0.5s;
+  transition-delay: 0.5;
+}
+&:hover::before /*lightup button*/ {
+  bottom: 0;
+  height: 50%;
+  width: 80%;
+  border-radius: 30px;
+}
+
+&::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translatex(-50%);
+  /* top: -5px; */
+  width: 30px;
+  height: 10px;
+  background: var(--bgMenu4);
+  border-radius: 10px;
+  transition: 0.5s;
+  transition-delay: 0.5;
+}
+&:hover::after {
+  top: 0;
+  height: 50%;
+  width: 80%;
+  border-radius: 30px;
+}
+/* &:nth-child(1)::before, 
+&:nth-child(1)::after {
+  background: var( --gradienteLink);
+  box-shadow: 0 0 5px var(--gradienteLink), 0 0 15px var(--gradienteLink), 0 0 30px var(--gradienteLink),
+    0 0 60px var(--gradienteLink);
+}
+&:nth-child(2)::before, 
+&:nth-child(2)::after {
+  background: var( --gradienteLink);
+  box-shadow: 0 0 5px var(--gradienteLink), 0 0 15px var(--gradienteLink), 0 0 30px var(--gradienteLink),
+    0 0 60px var(--gradienteLink);
+}
+&:nth-child(3)::before, 
+&:nth-child(3)::after {
+  background: var( --gradienteLink);
+  box-shadow: 0 0 5px var(--gradienteLink), 0 0 15px var(--gradienteLink), 0 0 30px var(--gradienteLink),
+    0 0 60px var(--gradienteLink);
+} */
+
 `
 
 // export const MenuLinksItem = styled.li`

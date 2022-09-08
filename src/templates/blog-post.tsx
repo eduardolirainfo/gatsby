@@ -7,7 +7,7 @@ import RecommendedPosts from '../components/RecommendedPosts'
 import Comments from '../components/Comments'
 import * as S from '../components/Post/styled'
 
-const BlogPostTemplate = props => {
+const BlogPostTemplate = (props: { data: { markdownRemark: any; site: { siteMetadata: { title: any } } }; pageContext: { previous: any; next: any }; location: any }) => {
   const post = props.data.markdownRemark
   const siteTitle = props.data.site.siteMetadata.title
   const { previous, next } = props.pageContext
@@ -50,8 +50,8 @@ const BlogPostTemplate = props => {
       <S.ItemTags>
         {tags
           ? (
-            <div>
-              {tags.map((tag, index) => {
+            <>
+              {tags.map((tag: string | undefined, index: any) => {
                 return (
                   <li key={tag + 'tag'}>
                     <S.TagPost
@@ -67,7 +67,7 @@ const BlogPostTemplate = props => {
                   </li>
                 )
               })}
-            </div>
+            </>
           )
           : (
             <div />
