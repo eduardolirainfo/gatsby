@@ -15,52 +15,26 @@ export const AvatarWrapper = styled.div`
     vertical-align: middle;
     -webkit-transform: perspective(1px) translateZ(0);
     transform: perspective(1px) translateZ(0);
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    box-shadow: 0 0 0 5px var(--Background);
+
+    
+    ${media.lessThan('large')`
+      height: 1.875rem;
+      width: 1.875rem;
+    `}
+
+    &:hover{
+      cursor: pointer; 
+      animation:bounceOut .4s linear;
+
+      @keyframes bounceOut {
+            0%{ box-shadow: 0 0 0 4px var(--highlight); opacity:1;}
+            25%{ box-shadow: 0 0 0 1px var(--highlight); opacity:1;}
+            50%{ box-shadow: 0 0 0 7px var(--highlight); opacity:1; }
+            75%{ box-shadow: 0 0 0 4px var(--highlight); opacity:1;}
+            100%{ box-shadow: 0 0 0 5px var(--highlight); opacity:1;}
+    }
+    }
+    
   }
-
-// @-webkit-keyframes bob-on-hover {
-//   0% {
-//     -webkit-transform: translateY(-8px);
-//     transform: translateY(-8px);
-//   }
-//   50% {
-//     -webkit-transform: translateY(-4px);
-//     transform: translateY(-4px);
-//   }
-//   100% {
-//     -webkit-transform: translateY(-8px);
-//     transform: translateY(-8px);
-//   }
-// }
-// @keyframes bob-on-hover {
-//   0% {
-//     -webkit-transform: translateY(-8px);
-//     transform: translateY(-8px);
-//   }
-//   50% {
-//     -webkit-transform: translateY(-4px);
-//     transform: translateY(-4px);
-//   }
-//   100% {
-//     -webkit-transform: translateY(-8px);
-//     transform: translateY(-8px);
-//   }
-// }
-// @-webkit-keyframes bob-on-hover-float {
-//   100% {
-//     -webkit-transform: translateY(-8px);
-//     transform: translateY(-8px);
-//   }
-// }
-// @keyframes bob-on-hover-float {
-//   100% {
-//     -webkit-transform: translateY(-8px);
-//     transform: translateY(-8px);
-//   }
-// }
-
- img ${media.lessThan('large')`
-    height: 1.875rem;
-    width: 1.875rem;
-  `}
 `

@@ -87,7 +87,6 @@ const pluginConfig = [
     options: {
       plugins: [
         'gatsby-remark-emoji',
-        'gatsby-remark-responsive-iframe',
         'gatsby-remark-copy-linked-files',
         {
           resolve: 'gatsby-remark-relative-images-v2',
@@ -139,56 +138,80 @@ const pluginConfig = [
   'gatsby-plugin-sitemap'
 ]
 
-if (process.env.CONTEXT === 'production') {
+if (process.env.CONTEXT === 'production' || process.env.NODE_ENV === 'production') {
   const feed = {
     resolve: 'gatsby-plugin-feed',
     options: {
       query: `
-          {
-            site {
-              siteMetadata {
-                title
-                author
-                description
-                siteUrl
-              }
+        {
+          site {
+            siteMetadata {
+              title
+              description
+              siteUrl
+              site_url: siteUrl
             }
           }
+        }
       `,
       feeds: [
         {
           serialize: ({ query: { site, allMarkdownRemark } }) => {
-            return allMarkdownRemark.edges.map(edge => {
-              return Object.assign({}, edge.node.frontmatter, {
-                description: edge.node.excerpt,
-                date: edge.node.frontmatter.date,
-                url: `${site.siteMetadata.siteUrl}/${edge.node.fields.slug}`,
-                guid: `${site.siteMetadata.siteUrl}/${edge.node.fields.slug}`
-              })
-            })
-          },
-          query: `
-            {
-              allMarkdownRemark(
-                sort: { fields: [frontmatter___date], order: DESC }
-              ) {
-                edges {
-                  node {
-                    excerpt(pruneLength: 95)
-                    fields { slug }
-                    frontmatter {
-                      title
-                      description
-                      date(formatString: "YYYY-MM-DD")
-                      tags
+            return allMarkdownRemark.edges
+              .filter(
+                edgePost =>
+                  edgePost.node.frontmatter.isPublished === 'true'
+              )
+              .map(edge => {
+                return Object.assign({}, edge.node.frontmatter, {
+                  description: edge.node.frontmatter.description,
+                  date: edge.node.frontmatter.datePublished,
+                  url:
+                    site.siteMetadata.siteUrl +
+                    edge.node.frontmatter.path,
+                  guid:
+                    site.siteMetadata.siteUrl +
+                    edge.node.frontmatter.path,
+                  custom_elements: [
+                    { 'content:encoded': edge.node.html },
+                    { tags: edge.node.frontmatter.tags.join(',') },
+                    {
+                      featuredImage:
+                        site.siteMetadata.siteUrl +
+                        edge.node.frontmatter.titleImage
+                          .childImageSharp.fixed.src
                     }
+                  ]
+                })
+              })
+          },
+          query: `{
+            allMarkdownRemark(
+              sort: { fields: frontmatter___date, order: DESC }
+              limit: $limit
+              skip: $skip
+            ) {
+              edges {
+                node {
+                  excerpt
+                  fields {
+                    slug
                   }
+                  frontmatter {
+                    background
+                    categories
+                    date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
+                    description
+                    title
+                    tags
+                  }
+                  timeToRead
                 }
               }
             }
-          `,
+          }`,
           output: '/rss.xml',
-          title: "Eduardo's blog RSS Feed"
+          title: "Eduardo's RSS Feed"
         }
       ]
     }

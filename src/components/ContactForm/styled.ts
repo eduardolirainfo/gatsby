@@ -25,7 +25,7 @@ const ContactWrapper = styled.div`
 
       label {
         font-weight: 600;
-        color: ${props => props.theme.textColor};
+        color: var(--texts);
 
         span {
           color: #cc0000;

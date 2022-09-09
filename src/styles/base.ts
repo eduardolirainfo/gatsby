@@ -4,7 +4,7 @@ import media from 'styled-media-query'
 export const PostHeader = styled.header`
   color: var(--postColor);
   margin: auto;
-  max-width: 64rem;
+  max-width: 48rem;
   padding: 5rem 5rem 0;
 
   ${media.lessThan('large')`
@@ -42,6 +42,7 @@ export const PostDate = styled.p`
   font-size: 1.1rem;
   font-weight: 300;
   padding: 0 1.4rem;
+  font-family: "Kalam", Arial, sans-serif;
 
   ${media.lessThan('large')`
     padding: 0 1rem;
@@ -50,8 +51,8 @@ export const PostDate = styled.p`
 
 export const MainContent = styled.section`
   margin: auto;
-  max-width: 64rem;
-  padding: 2rem;
+  max-width: 48rem;
+  padding: 0 1rem;
 
   ${media.lessThan('large')`
     padding: 2rem 0;
