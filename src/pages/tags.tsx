@@ -43,12 +43,12 @@ const TagsPage = ({
           </S.ListTag>
         ))}
       </ul>
-      <AniLink swipe direction='right' to='/categorias'>
+      <S.LinkList swipe direction='right' to='/categorias'>
         <span className='text-criptoBlue-500 hover:text-criptoBlue-900 text-3xl mr-1'>
           &#60;&#60;
-        </span>
-        Procurar por Categorias
-      </AniLink>
+
+          Procurar por Categorias</span>
+      </S.LinkList>
     </S.MainContent>
   </Layout>
 )

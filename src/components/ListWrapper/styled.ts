@@ -3,6 +3,8 @@ import media from 'styled-media-query'
 
 import transitions from '../../styles/transitions'
 
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
+
 export const ListWrapper = styled.section`
   body#card & {
     background-color: var(--mediumBackground);
@@ -40,4 +42,24 @@ export const ListWrapper = styled.section`
    ${media.greaterThan('large')`
        body#card & { grid-template-columns: repeat(4, 1fr); }
    `}*/
+`
+export const LinkList = styled(AniLink)`
+  background: var(--mediumBackground) !important;
+  color: var(--texts) !important;
+  border: 1px solid transparent !important;
+  outline: none !important;
+  cursor: pointer !important;
+  padding: .8rem 1.2rem !important;
+  border-radius: .4rem !important;
+  font-size: 1.2rem !important;
+  margin-top: 2rem !important;
+  margin-left: .5rem !important;
+  transition: all 400ms cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+  border-bottom: none !important;
+  flex-direction: column-reverse !important;
+  display: flex !important;
+  align-items: center !important;
+  text-align: center !important;
+  margin: 0 auto !important;
+
 `

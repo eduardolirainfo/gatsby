@@ -60,10 +60,9 @@ const Container = styled.section`
 `
 
 const Title = styled.h1`
-  // background: var(--background);
   color: var(--texts);
   font-size: 120px;
-  font-weight: bold;
+  font-weight: 300;
   letter-spacing: 0.1em;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   transition: ${transitions.ALL};
@@ -189,7 +188,7 @@ const Button = styled(Link)`
 
 const NotFoundPage = () => (
   <Container>
-    <Seo title='404: Not found' />
+    <Seo title='404: Not found' image='https://eduardolira.dev.br/assets/img/john-404.gif' />
     <GlobalStyles />
     <Title>404</Title>
     <Text>Ué? Cadê? Parece que não tem o que você procura.</Text>

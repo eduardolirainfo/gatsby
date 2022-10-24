@@ -39,46 +39,47 @@ const MenuBar = ({ setIsMenuOpen, isMenuOpen }) => {
   return (
     <S.MenuBarWrapper>
       <S.MenuBarGroup>
-        <S.MenuBarLink
-          to='/'
-          cover
-          direction='right'
-          bg={getThemeColor()}
-          title='Voltar para Home'
-          activeClassName='active'
-        >
-          <S.MenuBarItem onClick={openMenu}>
-            <Home />
-          </S.MenuBarItem>
-        </S.MenuBarLink>
+        <S.MenuBarGroupDesktop>
+          <S.MenuBarLink
+            to='/'
+            cover
+            direction='right'
+            bg={getThemeColor()}
+            title='Voltar para Home'
+            activeClassName='active'
+          >
+            <S.MenuBarItem>
+              <Home />
+            </S.MenuBarItem>
+          </S.MenuBarLink>
 
-        <S.MenuBarLink
-          to='/sobre'
-          title='Sobre'
-          cover
-          direction='left'
-          bg='var(--background)'
-          duration={0.6}
-          activeClassName='active'
-        >
-          <S.MenuBarItem onClick={openMenu}>
-            <User />
-          </S.MenuBarItem>
-        </S.MenuBarLink>
-        <S.MenuBarLink
-          to='/rss.xml'
-          title='Feed'
-          cover
-          direction='left'
-          bg='var(--background)'
-          duration={0.6}
-          activeClassName='active'
-        >
-          <S.MenuBarItem>
-            <Feed />
-          </S.MenuBarItem>
-        </S.MenuBarLink>
-
+          <S.MenuBarLink
+            to='/sobre'
+            title='Sobre'
+            cover
+            direction='left'
+            bg='var(--background)'
+            duration={0.6}
+            activeClassName='active'
+          >
+            <S.MenuBarItem>
+              <User />
+            </S.MenuBarItem>
+          </S.MenuBarLink>
+          <S.MenuBarLink
+            to='/rss.xml'
+            title='Feed'
+            cover
+            direction='left'
+            bg='var(--background)'
+            duration={0.6}
+            activeClassName='active'
+          >
+            <S.MenuBarItem>
+              <Feed />
+            </S.MenuBarItem>
+          </S.MenuBarLink>
+        </S.MenuBarGroupDesktop>
         <S.MenuBarLink
           to='/search'
           cover
@@ -88,7 +89,7 @@ const MenuBar = ({ setIsMenuOpen, isMenuOpen }) => {
           title='Pesquisar'
           activeClassName='active'
         >
-          <S.MenuBarItem onClick={openMenu}>
+          <S.MenuBarItem>
             <Search />
           </S.MenuBarItem>
         </S.MenuBarLink>
@@ -114,23 +115,25 @@ const MenuBar = ({ setIsMenuOpen, isMenuOpen }) => {
           {!isDarkMode ? <Dark /> : <Light />}
         </S.MenuBarItem>
         {/* Mudar visualização */}
-        <S.MenuBarItem
-          title='Mudar visualização'
-          onClick={() => {
-            window.__setPreferredDisplay(isListMode ? 'card' : 'list')
-          }}
-          className={display}
-        >
-          {isListMode ? <Grid /> : <List />}
-        </S.MenuBarItem>
-        <S.MenuBarItem
-          title='Ir para o Topo'
-          onClick={() => {
-            window.scroll({ top: 0, behavior: 'smooth' })
-          }}
-        >
-          <Arrow />
-        </S.MenuBarItem>
+        <S.MenuBarGroupDesktop>
+          <S.MenuBarItem
+            title='Mudar visualização'
+            onClick={() => {
+              window.__setPreferredDisplay(isListMode ? 'card' : 'list')
+            }}
+            className={display}
+          >
+            {isListMode ? <Grid /> : <List />}
+          </S.MenuBarItem>
+          <S.MenuBarItem
+            title='Ir para o Topo'
+            onClick={() => {
+              window.scroll({ top: 0, behavior: 'smooth' })
+            }}
+          >
+            <Arrow />
+          </S.MenuBarItem>
+        </S.MenuBarGroupDesktop>
       </S.MenuBarGroup>
     </S.MenuBarWrapper>
   )

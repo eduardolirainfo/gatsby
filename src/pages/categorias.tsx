@@ -2,7 +2,6 @@ import React from 'react'
 
 // Utilities
 import kebabCase from 'lodash/kebabCase'
-import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 // Components
 import { graphql } from 'gatsby'
@@ -50,10 +49,10 @@ const CatsPage = ({
           </S.ListTag>
         ))}
       </ul>
-      <AniLink swipe to='/tags' direction='right'>
-        <span>&#60;&#60;</span>
-        Procurar por Tags
-      </AniLink>
+      <S.LinkList swipe to='/tags' direction='right'>
+        <span>&#60;&#60;
+          Procurar por Tags </span>
+      </S.LinkList>
     </S.MainContent>
   </Layout>
 )

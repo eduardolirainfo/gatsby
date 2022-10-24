@@ -1,19 +1,23 @@
 import React from 'react'
-import ReactDisqusComments from 'react-disqus-comments'
+import { Disqus } from 'gatsby-plugin-disqus'
+import { CommentsProps } from './CommentsProps'
 
 import * as S from './styled'
 
-const Comments = ({ url, title }) => {
+const Comments = ({ url, title }: CommentsProps) => {
   const completeURL = `https://eduardolira.dev.br${url}`
+
+  const disqusConfig = {
+    url: completeURL,
+    identifier: completeURL,
+    title
+  }
 
   return (
     <S.CommentsWrapper>
       <S.CommentsTitle>Comentários</S.CommentsTitle>
-      <ReactDisqusComments
-        shortname='eduardolirainfo'
-        identifier={completeURL}
-        title={title}
-        url={completeURL}
+      <Disqus
+        config={disqusConfig}
       />
     </S.CommentsWrapper>
   )

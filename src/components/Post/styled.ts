@@ -32,6 +32,7 @@ export const MainContent = styled.section`
   ${media.lessThan('large')`
     padding: 2rem 0;
     max-width: 100%;
+    margin: 0 auto;
   `}
 
   p,
@@ -46,7 +47,7 @@ export const MainContent = styled.section`
   .button-post {
     color: var(--postColor);
     font-size: 1.3rem;
-    font-weight: 400;
+    font-weight: var(--fontWeightRegular);
     line-height: 1.9;
     letter-spacing: 0.069rem;
     padding: 0 1.4rem;
@@ -108,7 +109,7 @@ export const MainContent = styled.section`
 
   blockquote {
     font-family: Kalam;
-    border-width: 5px 0;
+    border-width: 0.1rem 0;
     border-style: solid;
     border-color: var(--highlight);
     padding: 1.5em 0 0.5em;
@@ -125,7 +126,7 @@ export const MainContent = styled.section`
     transform: translate(-50%, -50%);
     width: 3rem;
     height: 2rem;
-    background: var(--background);
+    background: var(--mediumBackground);
     color: var(--highlight);
     font: 6em/1.08em "PT Sans", sans-serif;
     text-align: center;
@@ -190,7 +191,7 @@ export const MainContent = styled.section`
   }
 
   strong {
-    font-weight: 800;
+    font-weight: 600;
   }
 
   .gatsby-resp-image-background-image {
@@ -221,14 +222,13 @@ export const MainContent = styled.section`
   }
 
   a {
-    /* animation: var(--animationText); */
     border-bottom: 1px dashed var(--highlight);
     color: var(--highlight);
     text-decoration: none;
     transition: ${transitions.ALL};
     font-family: "Kalam", Arial, sans-serif;
     svg {
-      color: var(--postColor); */
+      color: var(--postColor); 
     }
     &.anchor{
       color: var(--highlight);
@@ -259,6 +259,7 @@ export const PostHeader = styled.header`
   ${media.lessThan('large')`
     padding: 2rem 0 0;
     max-width: 100%;
+    margin: 0 auto;
   `}
 `
 
@@ -267,19 +268,14 @@ export const PostTitle = styled.h1`
   padding: 0 1.4rem;
   margin: 1rem auto;
   color: var(--postTitle) !important;
-  background: linear-gradient(
-    45deg,
-    var(--postTitle) 32.5%,
-    var(--highlight) 50.5%
-  );
+  background: linear-gradient(to right, #25aae1, #4481eb, #04befe, #3f86ed);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-weight: 900;
+  font-weight: 300;
   font-size: calc(1.5rem + 3vw);
   letter-spacing: -0.2rem;
   line-height: 1.35;
   transition: 1s ease-in-out;
-  /* transform: var(--perspective); */
   &:hover {
     
   /* text-shadow: 1px 1px var(--textsMetaDate), 2px 2px var(--textsMetaDate), 3px 3px var(--textsMetaDate), 4px 4px var(--textsMetaDate), 5px 5px var(--textsMetaDate), 6px 6px var(--textsMetaDate), 7px 7px var(--textsMetaDate), 8px 8px var(--textsMetaDate), 9px 9px var(--textsMetaDate), 10px 10px var(--textsMetaDate), 11px 11px var(--textsMetaDate), 12px 12px var(--textsMetaDate), 13px 13px var(--textsMetaDate), 14px 14px var(--textsMetaDate), 15px 15px var(--textsMetaDate), 16px 16px var(--textsMetaDate), 17px 17px var(--textsMetaDate), 18px 18px var(--textsMetaDate), 19px 19px rgba(41, 63, 15, 0.24), 20px 20px rgba(41, 63, 15, 0.2), 21px 21px var(--textsMetaDate), 22px 22px var(--textsMetaDate), 23px 23px rgba(41, 63, 15, 0.08), 24px 24px rgba(41, 63, 15, 0.04), 25px 25px rgba(41, 63, 15, 0), 26px 26px rgba(41, 63, 15, 0), 27px 27px rgba(41, 63, 15, 0), 28px 28px rgba(41, 63, 15, 0), 29px 29px rgba(41, 63, 15, 0), 30px 30px rgba(41, 63, 15, 0), 31px 31px rgba(41, 63, 15, 0), 32px 32px rgba(41, 63, 15, 0), 33px 33px rgba(41, 63, 15, 0), 34px 34px rgba(41, 63, 15, 0), 35px 35px rgba(41, 63, 15, 0), 36px 36px rgba(41, 63, 15, 0), 37px 37px rgba(41, 63, 15, 0), 38px 38px rgba(41, 63, 15, 0), 39px 39px rgba(41, 63, 15, 0), 40px 40px rgba(41, 63, 15, 0); */
@@ -449,6 +445,11 @@ export const ItemTags = styled.ul`
   & li {
       float: left;
  }*/
+ ${media.lessThan('large')`
+    padding: 2rem 0 0;
+    max-width: 100%;
+    margin: 0 auto;
+  `}
 `
 
 export const ListTag = styled.li`
@@ -461,7 +462,7 @@ export const TagLink = styled(AniLink)`
   line-height: 26px;
   /* padding: 0 1rem 0 1rem; */
   position: relative;
-  margin: 0 10px 10px 0;
+  margin: 0 7px 7px 0;
   text-decoration: none;
   transition: ${transitions.DEFAULT};
   border-bottom: none !important;
@@ -472,7 +473,7 @@ export const TagPost = styled(AniLink)`
   line-height: 26px;
   padding: 0 1rem 0 1rem;
   position: relative;
-  margin: 0 10px 10px 0;
+  margin: 0 7px 7px 0;
   text-decoration: none;
   transition: ${transitions.DEFAULT};
 `
@@ -512,6 +513,7 @@ export const BtnContent = styled.span`
   color: var(--mediumBackground);
   border-right: 0.3rem solid var(--highlight);
   transition: ${transitions.ALL};
+  font-weight: 700;
   &:hover{
     transform: scale(0.96);
   }
@@ -650,4 +652,25 @@ export const Button = styled.button`
       opacity: 1;
     }
   }
+`
+
+export const LinkList = styled(AniLink)`
+  background: var(--Background);
+  color: var(--texts);
+  border: 1px solid transparent;
+  outline: none;
+  cursor: pointer;
+  padding: .8rem 1.2rem;
+  border-radius: .4rem;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+  margin-left: .5rem;
+  transition: all 400ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border-bottom: none !important;
+  flex-direction: column-reverse;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+
 `

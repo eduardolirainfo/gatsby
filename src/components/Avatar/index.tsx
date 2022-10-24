@@ -1,12 +1,11 @@
 import React from 'react'
 import * as S from './styled'
-import FileImage from '../../../static/assets/img/dudulirafront.jpg'
 
 const Avatar = () => {
   return (
     <S.AvatarWrapper>
       <img
-        src={FileImage}
+        src='https://eduardolira.dev.br/assets/img/dudulirafront.jpg'
         alt='Eduardo Lira'
         placeholder='blurred'
       />

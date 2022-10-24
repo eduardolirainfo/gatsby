@@ -4,7 +4,6 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Seo from '../components/Seo'
 import PostItem from '../components/PostItem'
-import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 import * as S from '../components/ListWrapper/styled'
 import * as P from '../components/Post/styled'
@@ -18,8 +17,7 @@ const Categories = ({ pageContext, data }) => {
     <Layout>
       <Seo
         title={category}
-        description='Navegue entre as categorias de nosso blog'
-      />
+        description='Navegue entre as categorias de nosso blog' image={undefined} />
       <P.PostHeader>
         <P.PostTitleCat>{catHeader}</P.PostTitleCat>
       </P.PostHeader>
@@ -36,15 +34,15 @@ const Categories = ({ pageContext, data }) => {
               categories={node.frontmatter.categories}
               date={node.frontmatter.date}
               title={node.frontmatter.title}
-              description={node.frontmatter.description}
+              description={node.frontmatter.description} timeToRead={undefined} disableCard={undefined} tags={undefined}
             />
           )
         })}
       </S.ListWrapper>
       <P.MainContent>
-        <AniLink swipe direction='right' to='/categorias'>
+        <S.LinkList swipe direction='right' to='/categorias'>
           Ver todas as categorias
-        </AniLink>
+        </S.LinkList>
       </P.MainContent>
     </Layout>
   )

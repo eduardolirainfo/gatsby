@@ -71,7 +71,7 @@ export const MainContent = styled.section`
   .button-post {
     color: var(--postColor);
     font-size: 1.3rem;
-    font-weight: 300;
+    font-weight: 300 !important;
     line-height: 1.9;
     letter-spacing: 0.079rem;
     padding: 0 1.4rem;
@@ -195,7 +195,7 @@ export const MainContent = styled.section`
   }
 
   strong {
-    font-weight: 800;
+    font-weight: 600;
   }
 
   .gatsby-resp-image-background-image {

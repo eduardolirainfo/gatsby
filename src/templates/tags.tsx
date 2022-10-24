@@ -5,7 +5,6 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Seo from '../components/Seo'
 import PostItem from '../components/PostItem'
-import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 import * as S from '../components/ListWrapper/styled'
 import * as P from '../components/Post/styled'
@@ -19,8 +18,7 @@ const Tags = ({ pageContext, data }) => {
     <Layout>
       <Seo
         title={tag}
-        description='Navegue entre as categorias de nosso blog'
-      />
+        description='Navegue entre as categorias de nosso blog' image={undefined} />
       <P.PostHeader>
         <P.PostTitleCat>{tagHeader}</P.PostTitleCat>
       </P.PostHeader>
@@ -34,15 +32,14 @@ const Tags = ({ pageContext, data }) => {
               categories={node.frontmatter.categories}
               date={node.frontmatter.date}
               title={node.frontmatter.title}
-              description={node.frontmatter.description}
-            />
+              description={node.frontmatter.description} timeToRead={undefined} disableCard={undefined} tags={undefined} />
           )
         })}
       </S.ListWrapper>
       <P.MainContent>
-        <AniLink swipe direction='left' to='/tags'>
+        <S.LinkList sswipe direction='left' to='/tags'>
           Ver todas as tags
-        </AniLink>
+        </S.LinkList>
       </P.MainContent>
     </Layout>
   )

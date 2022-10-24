@@ -43,6 +43,12 @@ const pluginConfig = [
       name: 'uploads'
     }
   },
+  {
+    resolve: 'gatsby-plugin-disqus',
+    options: {
+      shortname: 'eduardolirainfo'
+    }
+  },
   'gatsby-plugin-styled-components',
   {
     resolve: 'gatsby-source-filesystem',
@@ -156,60 +162,42 @@ if (process.env.CONTEXT === 'production' || process.env.NODE_ENV === 'production
       `,
       feeds: [
         {
+          /* highlight-start */
           serialize: ({ query: { site, allMarkdownRemark } }) => {
-            return allMarkdownRemark.edges
-              .filter(
-                edgePost =>
-                  edgePost.node.frontmatter.isPublished === 'true'
-              )
-              .map(edge => {
-                return Object.assign({}, edge.node.frontmatter, {
-                  description: edge.node.frontmatter.description,
-                  date: edge.node.frontmatter.datePublished,
-                  url:
-                    site.siteMetadata.siteUrl +
-                    edge.node.frontmatter.path,
-                  guid:
-                    site.siteMetadata.siteUrl +
-                    edge.node.frontmatter.path,
-                  custom_elements: [
-                    { 'content:encoded': edge.node.html },
-                    { tags: edge.node.frontmatter.tags.join(',') },
-                    {
-                      featuredImage:
-                        site.siteMetadata.siteUrl +
-                        edge.node.frontmatter.titleImage
-                          .childImageSharp.fixed.src
-                    }
-                  ]
-                })
+            return allMarkdownRemark.edges.map(edge => {
+              /* highlight-end */
+              return Object.assign({}, edge.node.frontmatter, {
+                description: edge.node.excerpt,
+                date: edge.node.frontmatter.date,
+                url: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                custom_elements: [{ 'content:encoded': edge.node.html }]
               })
+            })
           },
-          query: `{
+          query: `
+          {
             allMarkdownRemark(
-              sort: { fields: frontmatter___date, order: DESC }
-              limit: $limit
-              skip: $skip
+              limit: 30,
+              sort: { order: DESC, fields: [frontmatter___date] }
             ) {
               edges {
                 node {
-                  excerpt
-                  fields {
-                    slug
+                  excerpt                      
+                  fields { 
+                    slug 
                   }
                   frontmatter {
-                    background
-                    categories
-                    date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
-                    description
                     title
+                    date
                     tags
-                  }
-                  timeToRead
+                    categories
+                   }
                 }
               }
             }
-          }`,
+          }
+          `,
           output: '/rss.xml',
           title: "Eduardo's RSS Feed"
         }
@@ -242,18 +230,17 @@ if (process.env.CONTEXT === 'production' || process.env.NODE_ENV === 'production
 }
 
 module.exports = {
+  graphqlTypegen: true,
+  pathPrefix: '/gatsby',
   siteMetadata: {
     title: 'Eduardo Lira',
     position: 'Developer',
-    description: 'Um blog sobre programação e outras coisas legais.',
     authorDescription: 'Ideias, café e tecnologias',
     author: '@dudulira',
-    pathPrefix: '/eduardolirainfo/gatsby',
-    siteUrl: 'https://eduardolira.dev.br'
+    pathPrefix: '/',
+    siteUrl: 'https://eduardolira.dev.br',
+    description: 'Um blog sobre programação e tecnologias da informação.',
+    feedUrl: 'https://eduardolira.dev.br/rss.xml'
   },
-  plugins: pluginConfig,
-  flags: {
-    DEV_SSR: false,
-    FAST_DEV: true
-  }
+  plugins: pluginConfig
 }

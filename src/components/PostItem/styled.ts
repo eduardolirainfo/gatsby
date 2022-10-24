@@ -7,7 +7,7 @@ import transitions from '../../styles/transitions'
 export const PostItemTitle = styled.h1`
   font-family: "Poppins", Arial, sans-serif;
   font-size: 2.25rem;
-  font-weight: bold;
+  font-weight: 300;
   text-transform: uppercase;
   margin: 0.4rem 0 0.4rem;
   color: var(--titlePostList);
@@ -139,6 +139,9 @@ export const PostItemWrapper = styled.section`
     text-shadow: var(--highlightText);
     box-shadow: none;
   }
+  &:hover ${PostItemTitle}{
+    text-decoration: underline !important;
+  }
 
   // &:hover {
   //    transform: perspective(300px) translate3d(0, 0, 3px);
@@ -163,7 +166,7 @@ export const PostItemCat = styled.div`
   color: ${(props) =>
     props.background ? props.background : ' var(--highlight)'};
   display: flex;
-  font-weight: 900;
+  font-weight: 600;
   justify-content: center;
   min-height: 90px;
   min-width: 90px;

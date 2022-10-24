@@ -29,7 +29,7 @@ import { AvatarWrapper } from '../Avatar/styled'
 
 export const ProfileAuthor = styled.h1`
   font-size: 1.6rem;
-  font-weight: 800;
+  font-weight: 600;
   margin: 0.5rem auto 1.5rem;
   text-transform: uppercase;
   margin-top: 1rem;

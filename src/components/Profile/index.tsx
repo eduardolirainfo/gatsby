@@ -4,8 +4,9 @@ import Avatar from '../Avatar'
 import * as S from './styled'
 
 import getThemeColor from '../../utils/getThemeColor'
+import { ProfileProps } from './ProfileProps'
 
-const Profile = ({ title, position, authorDescription, isMobileHeader }) => {
+const Profile = ({ title, position, authorDescription, isMobileHeader }: ProfileProps) => {
   return (
     <S.ProfileContainer isMobileHeader={isMobileHeader}>
       <S.ProfileLink paintDrip to='/' hex={getThemeColor()} duration={0.6}>

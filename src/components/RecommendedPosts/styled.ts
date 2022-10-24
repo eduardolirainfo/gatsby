@@ -139,6 +139,11 @@ export const RecommendedLink = styled(AniLink)`
   &.previous:only-child {
     margin-left: auto;
     /* border-left: 1px solid var(--borders); */
+
+    ${media.lessThan('large')`
+      position: absolute;
+      max-width: 95%;
+  `}
   }
 
   &.next:only-child {

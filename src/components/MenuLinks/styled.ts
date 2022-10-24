@@ -20,10 +20,6 @@ export const MenuLinksList = styled.ul`
 export const MenuLinksItem = styled.li`
   padding: 0.5rem 0;
 
-  ${media.lessThan('large')`     
-    padding: 1rem 0;
-  `}
-  
   .active {
     color: var(--highlight);
   } 
@@ -37,6 +33,10 @@ export const MenuLinksItem = styled.li`
   display: flex;
   justify-content: center;
   align-items: center;
+  ${media.lessThan('large')`     
+    padding: 2rem;
+    display: inline-flex;
+   `}
 
 a {
   position: absolute;
@@ -64,6 +64,8 @@ a {
   &:hover {
     box-shadow:2px 8px 4px -6px hsla(0,0%,0%,.3);
   }
+  
+  
 }
 &:hover a {
   letter-spacing: 3px;
@@ -81,14 +83,13 @@ a {
   filter: blur(0px);
 }
 &:hover a::before {
-	transform: skewX(45deg) translate(200px);
+  transform: skewX(45deg) translate(200px);
 }
 &::before {
   content: "";
   position: absolute;
   left: 50%;
   transform: translatex(-50%);
-  /* bottom: -5px; */
   width: 30px;
   height: 10px;
   background: var(--bgMenu1);
@@ -122,41 +123,5 @@ a {
   width: 80%;
   border-radius: 30px;
 }
-/* &:nth-child(1)::before, 
-&:nth-child(1)::after {
-  background: var( --gradienteLink);
-  box-shadow: 0 0 5px var(--gradienteLink), 0 0 15px var(--gradienteLink), 0 0 30px var(--gradienteLink),
-    0 0 60px var(--gradienteLink);
-}
-&:nth-child(2)::before, 
-&:nth-child(2)::after {
-  background: var( --gradienteLink);
-  box-shadow: 0 0 5px var(--gradienteLink), 0 0 15px var(--gradienteLink), 0 0 30px var(--gradienteLink),
-    0 0 60px var(--gradienteLink);
-}
-&:nth-child(3)::before, 
-&:nth-child(3)::after {
-  background: var( --gradienteLink);
-  box-shadow: 0 0 5px var(--gradienteLink), 0 0 15px var(--gradienteLink), 0 0 30px var(--gradienteLink),
-    0 0 60px var(--gradienteLink);
-} */
 
 `
-
-// export const MenuLinksItem = styled.li`
-//   padding: 0.5rem 0;
-//   ${media.lessThan('large')`
-//     padding: 1rem 0;
-//   `}
-//   .active {
-//     color: var(--highlight);
-//   }
-//   a {
-//     color: var(--texts);
-//     text-decoration: none;
-//     transition: ${transitions.COLOR};
-//     &:hover {
-//       color: var(--highlight);
-//     }
-//   }
-// `
