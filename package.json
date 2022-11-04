@@ -55,6 +55,7 @@
     "gatsby-plugin-transition-link": "^1.20.5",
     "gatsby-plugin-twitter": "^4.22.0",
     "gatsby-plugin-typescript": "^4.22.0",
+    "gatsby-plugin-vercel": "^1.0.3",
     "gatsby-remark-autolink-headers": "^5.22.0",
     "gatsby-remark-copy-linked-files": "^5.22.0",
     "gatsby-remark-external-links": "0.0.4",

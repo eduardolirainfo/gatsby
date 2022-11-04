@@ -27,6 +27,12 @@ const pluginConfig = [
       policy: [{ userAgent: '*', allow: '/' }]
     }
   },
+  {
+    resolve: 'gatsby-plugin-vercel',
+    options: {
+      debug: false
+    }
+  },
   'gatsby-plugin-typescript',
   {
     resolve: 'gatsby-plugin-react-helmet-canonical-urls',
@@ -207,9 +213,9 @@ if (process.env.CONTEXT === 'production' || process.env.NODE_ENV === 'production
   const algolia = {
     resolve: 'gatsby-plugin-algolia-search',
     options: {
-      appId: process.env.GATSBY_ALGOLIA_APP_ID,
+      appId: process.env.ALGOLIA_APP_ID,
       apiKey: process.env.ALGOLIA_ADMIN_KEY,
-      indexName: process.env.GATSBY_ALGOLIA_INDEX_NAME,
+      indexName: process.env.ALGOLIA_INDEX_NAME,
       queries,
       chunkSize: 10000, // default: 1000
       enablePartialUpdates: true
