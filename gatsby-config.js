@@ -152,60 +152,55 @@ const pluginConfig = [
 
 if (process.env.CONTEXT === 'production' || process.env.NODE_ENV === 'production') {
   const feed = {
-    resolve: 'gatsby-plugin-feed',
+    resolve: 'gatsby-plugin-feed-generator',
     options: {
-      query: `
-        {
-          site {
-            siteMetadata {
-              title
-              description
-              siteUrl
-              site_url: siteUrl
-            }
+      generator: 'GatsbyJS',
+      rss: true, // Set to true to enable rss generation
+      json: true, // Set to true to enable json feed generation
+      siteQuery: `
+      {
+        site {
+          siteMetadata {
+            title
+            description
+            siteUrl
+            author
           }
         }
-      `,
+      }
+    `,
       feeds: [
         {
-          /* highlight-start */
-          serialize: ({ query: { site, allMarkdownRemark } }) => {
-            return allMarkdownRemark.edges.map(edge => {
-              /* highlight-end */
-              return Object.assign({}, edge.node.frontmatter, {
-                description: edge.node.excerpt,
-                date: edge.node.frontmatter.date,
-                url: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                custom_elements: [{ 'content:encoded': edge.node.html }]
-              })
-            })
-          },
+          name: 'rss', // This determines the name of your feed file => feed.json & feed.xml
           query: `
-          {
-            allMarkdownRemark(
-              limit: 30,
-              sort: { order: DESC, fields: [frontmatter___date] }
+        {
+          allMarkdownRemark(
+            sort: {order: DESC, fields: [frontmatter___date]},
+            limit: 100,
             ) {
-              edges {
-                node {
-                  excerpt                      
-                  fields { 
-                    slug 
-                  }
-                  frontmatter {
-                    title
-                    date
-                    tags
-                    categories
-                   }
+            edges {
+              node {
+                html
+                frontmatter {
+                  date
+                  path
+                  title
                 }
               }
             }
           }
-          `,
-          output: '/rss.xml',
-          title: "Eduardo's RSS Feed"
+        }
+        `,
+          normalize: ({ query: { site, allMarkdownRemark } }) => {
+            return allMarkdownRemark.edges.map(edge => {
+              return {
+                title: edge.node.frontmatter.title,
+                date: edge.node.frontmatter.date,
+                url: site.siteMetadata.siteUrl + edge.node.frontmatter.path,
+                html: edge.node.html
+              }
+            })
+          }
         }
       ]
     }
